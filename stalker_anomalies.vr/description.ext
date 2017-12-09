@@ -1,0 +1,13 @@
+
+class CfgFunctions {
+  createShortcuts = 1;
+  #include "scripts\funcs.hpp"
+};
+
+class CfgSounds {
+	sounds[] = {};
+    #include "sounds\sounds.hpp"
+};
+
+enableDebugConsole = 1;
+enableTargetDebug = 1;
