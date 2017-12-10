@@ -1,6 +1,6 @@
-params["_obj","_pos",["_intensity",1]];
+params["_obj","_pos",["_intensity",1], ["_duration", 10]];
 
-_time = time + 10;
+_time = time + _duration;
 
 while {(alive _obj) && (time <= _time)} do {
 	_pos2 = getpos _obj;

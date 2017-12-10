@@ -58,3 +58,15 @@ class electra_idle1
     sound[] = {"sounds\anomalies\electra_idle1.ogg", 1, 1, 100};
     titles[] = {0,""};
 };
+class electra_blast1
+{
+    name = "electra_blast1";
+    sound[] = {"sounds\anomalies\electra_blast1.ogg", 1, 1, 200};
+    titles[] = {0,""};
+};
+class electra_blast2
+{
+    name = "electra_blast2";
+    sound[] = {"sounds\anomalies\electra_blast2.ogg", 1, 1, 200};
+    titles[] = {0,""};
+};

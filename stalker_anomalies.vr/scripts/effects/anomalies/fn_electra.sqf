@@ -11,4 +11,3 @@ switch (_state) do {
 	};
 	default {};
 };
-

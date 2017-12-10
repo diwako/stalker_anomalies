@@ -7,6 +7,7 @@ class anomaly{
 		class createMeatgrinder;
 		class activateMeatgrinder;
 		class createElectra;
+		class activateElectra;
 		class minceCorpse;
 		class suckToLocation;
 		class init;

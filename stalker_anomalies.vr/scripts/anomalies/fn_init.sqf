@@ -6,6 +6,8 @@ ANOMALY_DETECTION_RANGE = 20;
 ANOMALY_DETECTOR_ACTIVE = false;
 
 ACTIVE_ANOMALIES = [];
+
+enableCamShake true;
 [] spawn {
 	// respawn won't work on this, need better solution than {true}
 	// zeus and spectators will also not be updated...
@@ -27,7 +29,11 @@ ACTIVE_ANOMALIES = [];
 					switch (_type) do {
 						case "meatgrinder": {_arr call anomalyEffect_fnc_meatgrinder;};
 						case "springboard": {_arr call anomalyEffect_fnc_springboard;};
-						case "electra": 	{_arr call anomalyEffect_fnc_electra;};
+						case "electra": 	{
+							if(!(_x getVariable ["anomaly_cooldown", false])) then {
+								_arr call anomalyEffect_fnc_electra;
+							};
+						};
 						default { };
 					};
 					_x setVariable ["anomaly_particle_source", _proxy];
