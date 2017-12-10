@@ -1,7 +1,10 @@
 [] spawn {
 	_sleep = 2;
-	_m = 0.9 / 5.2;
-	_b = 0.1 - (_m * 4.8);
+	_m = 0.9 / 5;
+	_b = 0.1 - (_m * 5);
+	sleep 1:
+	// small wait so ace interaction window does not gobble up the title text prompt
+	titleText ["Detector has been turned on", "PLAIN DOWN"];
 	while {alive player && ANOMALY_DETECTOR_ACTIVE} do {
 		_found = false;
 		_min = ANOMALY_DETECTION_RANGE + 4;
@@ -21,6 +24,10 @@
 			_sleep = _m * _min + _b;
 			if(_sleep < 0.1) then {
 				_sleep = 0.1;
+			} else {
+				if( _sleep > 1.5) then {
+					_sleep = 1.5;
+				};
 			};
 		} else {
 			_sleep = 1.5;
@@ -28,4 +35,5 @@
 		sleep _sleep;
 	};
 	ANOMALY_DETECTOR_ACTIVE = false;
+	titleText ["Detector has been turned off", "PLAIN DOWN"];
 };

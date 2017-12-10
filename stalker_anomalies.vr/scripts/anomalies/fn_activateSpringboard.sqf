@@ -33,13 +33,23 @@ if(isServer) then {
 			_pos2 = getpos _trg;
 			_a = ((_pos1 select 0) - (_pos2 select 0));
 			_b = ((_pos1 select 1) - (_pos2 select 1));
-			[_x, [_a*4, _b*4, 3 + (5 / (1 + _a + _b))]] remoteExec ["setVelocity", _x];
 			if(!(isPlayer _x)) then {
 				_x spawn {
 					sleep 0.5;
 					[_this, 1] remoteExec ["setDamage", _this];
 				};
+			} else {
+				if(!isNil "ace_medical_fnc_addDamageToUnit") then {
+					// Ace medical is enabled
+					_dam = (missionNamespace getVariable ["ace_medical_playerDamageThreshold", 1]) / 1.1;
+					[_x, _dam, selectRandom ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "stab"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
+				} else {
+					// Ace medical is not enabled
+					_dam = damage _x;
+					_x setDamage _dam + 0.5;
+				};
 			};
+			[_x, [_a*4, _b*4, 3 + (5 / (1 + (abs _a) + (abs _b)))]] remoteExec ["setVelocity", _x];
 		} else {
 			[_x] remoteExec ["anomaly_fnc_minceCorpse"];
 		};

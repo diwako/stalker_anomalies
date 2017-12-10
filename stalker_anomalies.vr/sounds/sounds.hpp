@@ -52,3 +52,9 @@ class da_2_beep1
     sound[] = {"sounds\detector\da-2_beep1.ogg", 1, 1, 20};
     titles[] = {0,""};
 };
+class electra_idle1
+{
+    name = "electra_idle1";
+    sound[] = {"sounds\anomalies\electra_idle1.ogg", 1, 1, 100};
+    titles[] = {0,""};
+};

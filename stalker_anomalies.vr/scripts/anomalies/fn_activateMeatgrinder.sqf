@@ -25,7 +25,8 @@ if(isServer) then {
 };
 sleep 5.8;
 {
-	[_x,1] remoteExec ["setDamage",_x];
+	// ace medical not needed, people trapped in this trap are dead
+	_x setDamage 1;
 	[_x] remoteExec ["anomaly_fnc_minceCorpse"];
 } forEach _sucked;
 

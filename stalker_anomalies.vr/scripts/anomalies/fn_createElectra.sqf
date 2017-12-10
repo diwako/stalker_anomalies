@@ -17,5 +17,18 @@ if(isNil "ANOMALIES_HOLDER") then {
 	ANOMALIES_HOLDER = [];
 };
 
+
+
 ANOMALIES_HOLDER pushBackUnique _trg;
 publicVariable "ANOMALIES_HOLDER";
+
+// set up idle sound speaker;
+_trg2 = createTrigger ["EmptyDetector", _pos];
+_proxy = "Land_HelipadEmpty_F" createVehicle position _trg2;
+_proxy enableSimulationGlobal false;
+_proxy attachTo [_trg2, [0, 0, 0.5]];
+_trg2 setVariable ["anomaly_idle_sound", _proxy, true];
+_trg2 setTriggerArea [50, 50, 0, false, 2];
+_trg2 setTriggerActivation ["ANY", "PRESENT", true];
+// the random interval is there to no have two sounds play at the very same time
+_trg2 setTriggerStatements ["this && {([] call CBA_fnc_currentUnit) in thisList}", "[thisTrigger] spawn {params['_thisTrigger']; sleep random 5; while{triggerActivated _thisTrigger} do {(_thisTrigger getVariable 'anomaly_idle_sound') say3D 'electra_idle1'; sleep 5.455}}", ""];

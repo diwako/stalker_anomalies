@@ -7,7 +7,8 @@ ANOMALY_DETECTOR_ACTIVE = false;
 
 ACTIVE_ANOMALIES = [];
 [] spawn {
-	// respawn won't work on this, need better solution then {true}
+	// respawn won't work on this, need better solution than {true}
+	// zeus and spectators will also not be updated...
 	while {alive player} do {
 		FOUND_ANOMALIES = [];
 		// find trigger
@@ -42,16 +43,25 @@ ACTIVE_ANOMALIES = [];
 	};
 };
 
+if(!isNil "ace_interact_menu_fnc_createAction") then {
+	_action = ["anomaly_detector","Enable anomaly detector","",{
+		ANOMALY_DETECTOR_ACTIVE = true;
+		[] call anomalyDetector_fnc_detector;
+	},{!ANOMALY_DETECTOR_ACTIVE},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
-_action = ["anomaly_detector","Enable anomaly detector","",{
-	ANOMALY_DETECTOR_ACTIVE = true;
-	[] call anomalyDetector_fnc_detector;
-},{!ANOMALY_DETECTOR_ACTIVE},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
+	[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
 
-[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+	_action = ["anomaly_detector","Turn off anomaly detector","",{
+		ANOMALY_DETECTOR_ACTIVE = false;
+	},{ANOMALY_DETECTOR_ACTIVE},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
-_action = ["anomaly_detector","Turn off anomaly detector","",{
-	ANOMALY_DETECTOR_ACTIVE = false;
-},{ANOMALY_DETECTOR_ACTIVE},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
-
-[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+	[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+} else {
+	player addAction ["Enable anomaly detector", {
+		ANOMALY_DETECTOR_ACTIVE = true;
+		[] call anomalyDetector_fnc_detector;
+	},nil,0,false,true,"","!ANOMALY_DETECTOR_ACTIVE"];
+	player addAction ["Enable anomaly detector", {
+		ANOMALY_DETECTOR_ACTIVE = false;
+	},nil,0,false,true,"","ANOMALY_DETECTOR_ACTIVE"];
+};
