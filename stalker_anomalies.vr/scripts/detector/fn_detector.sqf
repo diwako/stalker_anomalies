@@ -1,3 +1,19 @@
+/*
+	Function: detector_fnc_detector
+
+	Description:
+        Spawns an infinite loop to detect anomalies and produce beeping sounds
+		Will stop if player is dead or player deactivates detector
+
+    Parameter:
+
+    Returns:
+        nothing
+
+	Author:
+	diwako 2017-12-11
+*/
+
 [] spawn {
 	_sleep = 2;
 	_m = 0.9 / 5;

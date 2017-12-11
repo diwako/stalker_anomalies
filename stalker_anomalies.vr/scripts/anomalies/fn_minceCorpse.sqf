@@ -1,3 +1,18 @@
+/*
+	Function: anomaly_fnc_minceCorpse
+
+	Description:
+        Turns a given object into (coarsely) minced meat
+
+    Parameter:
+        _body - Object that is about to be minced (default: objNull)
+
+    Returns:
+        nothing
+
+	Author:
+	diwako 2017-12-11
+*/
 params[["_body",objNull]];
 
 if(isNull _body) exitWith {};

@@ -1,3 +1,19 @@
+/*
+	Function: anomaly_fnc_activateSpringboard
+
+	Description:
+        Activates anomaly when something enters its activation range
+
+    Parameters:
+        _trg - the anomaly trigger that is being activated (default: objNull)
+		_list - thisList given by the trigger (default: [])
+
+    Returns:
+        nothing
+
+	Author:
+	diwako 2017-12-11
+*/
 params[["_trg",objNull],["_list",[]]];
 
 if(isNull _trg) exitWith {};

@@ -1,3 +1,17 @@
+/*
+	Function: anomaly_fnc_init
+
+	Description:
+        Initialises the use of anomalies in the mission, called form init.sqf!
+
+    Parameter:
+
+    Returns:
+        nothing
+
+	Author:
+	diwako 2017-12-11
+*/
 if(!hasInterface) exitWith {};
 
 // minimmum distance to player to how idle particles

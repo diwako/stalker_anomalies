@@ -1,3 +1,18 @@
+/*
+	Function: anomaly_fnc_createElectra
+
+	Description:
+        Creates an anomaly of the type "Electra"
+
+    Parameter:
+        _pos - Position where the anomaly should be (default: [0,0,0]])
+
+    Returns:
+        nothing
+
+	Author:
+	diwako 2017-12-11
+*/
 params[["_pos",[0,0,0]]];
 
 if(!isServer) exitWith {};
