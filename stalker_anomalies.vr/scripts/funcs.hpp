@@ -8,6 +8,8 @@ class anomaly{
 		class activateMeatgrinder;
 		class createElectra;
 		class activateElectra;
+		class createBurner;
+		class activateBurner;
 		class minceCorpse;
 		class suckToLocation;
 		class init;
@@ -21,6 +23,7 @@ class anomalyEffect{
 		class springboard;
 		class meatgrinder;
 		class electra;
+		class burner;
 	};
 };
 class anomalyDetector{

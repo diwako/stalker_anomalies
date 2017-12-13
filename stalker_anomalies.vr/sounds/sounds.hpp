@@ -70,3 +70,27 @@ class electra_blast2
     sound[] = {"sounds\anomalies\electra_blast2.ogg", 1, 1, 200};
     titles[] = {0,""};
 };
+class gravi_idle00
+{
+    name = "gravi_idle00";
+    sound[] = {"sounds\anomalies\gravi_idle00.ogg", 1, 1, 50};
+    titles[] = {0,""};
+};
+class gravi_idle01
+{
+    name = "gravi_idle01";
+    sound[] = {"sounds\anomalies\gravi_idle01.ogg", 1, 1, 50};
+    titles[] = {0,""};
+};
+class fire_idle
+{
+    name = "fire_idle";
+    sound[] = {"sounds\anomalies\fire_idle.ogg", 1, 1, 50};
+    titles[] = {0,""};
+};
+class fire2
+{
+    name = "fire2";
+    sound[] = {"sounds\anomalies\fire2.ogg", 2, 1, 200};
+    titles[] = {0,""};
+};

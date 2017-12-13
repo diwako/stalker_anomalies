@@ -23,8 +23,7 @@ ACTIVE_ANOMALIES = [];
 
 enableCamShake true;
 [] spawn {
-	// respawn won't work on this, need better solution than {true}
-	// zeus and spectators will also not be updated...
+	// respawn won't work with this, need better solution than {true}
 	while {alive player} do {
 		FOUND_ANOMALIES = [];
 		// find trigger
@@ -43,6 +42,7 @@ enableCamShake true;
 					switch (_type) do {
 						case "meatgrinder": {_arr call anomalyEffect_fnc_meatgrinder;};
 						case "springboard": {_arr call anomalyEffect_fnc_springboard;};
+						case "burner": 		{_arr call anomalyEffect_fnc_burner;};
 						case "electra": 	{
 							if(!(_x getVariable ["anomaly_cooldown", false])) then {
 								_arr call anomalyEffect_fnc_electra;
@@ -53,7 +53,7 @@ enableCamShake true;
 					_x setVariable ["anomaly_particle_source", _proxy];
 				};
 			};
-		} forEach (getpos player nearObjects ["EmptyDetector", ANOMALY_IDLE_DISTANCE]);
+		} forEach ( (positionCameraToWorld [0,0,0]) nearObjects ["EmptyDetector", ANOMALY_IDLE_DISTANCE]);
 		_diff = ACTIVE_ANOMALIES - FOUND_ANOMALIES;
 		{
 			deleteVehicle (_x getVariable "anomaly_particle_source");

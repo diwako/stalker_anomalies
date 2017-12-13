@@ -6,8 +6,9 @@ setTerrainGrid 25;
 // [[7968,3922]] call anomaly_fnc_createMeatgrinder;
 // [[7900,3922]] call anomaly_fnc_createMeatgrinder;
 
-[[7866,3920]] call anomaly_fnc_createElectra;
-[[7850,3920]] call anomaly_fnc_createElectra;
+// [[7866,3920]] call anomaly_fnc_createElectra;
+// [[7850,3920]] call anomaly_fnc_createElectra;
+[[7866,3920]] call anomaly_fnc_createBurner;
 // [[7866,3920]] call anomaly_fnc_createSpringboard;
 // [[7876,3920]] call anomaly_fnc_createSpringboard;
 // [[7876,3920]] call anomaly_fnc_createMeatgrinder;

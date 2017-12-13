@@ -1,5 +1,5 @@
 /*
-	Function: anomaly_fnc_activateSpringboard
+	Function: anomaly_fnc_activateBurner
 
 	Description:
         Activates anomaly when something enters its activation range
@@ -12,27 +12,31 @@
         nothing
 
 	Author:
-	diwako 2017-12-11
+	diwako 2017-12-13
 */
 params[["_trg",objNull],["_list",[]]];
 
 if(isNull _trg) exitWith {};
-if(_trg getVariable ["anomaly_type",""] != "springboard") exitWith {};
+if(_trg getVariable ["anomaly_type",""] != "burner") exitWith {};
 
-if(isServer) then {
-	private _proxy = _trg getVariable "anomaly_sound";
-	_sound = ("gravi_blowout" + str ( (floor random 6) + 1 ));
-	[_proxy, _sound] remoteExec ["say3d"];
-};
+private _proxy = _trg getVariable "anomaly_sound";
+_proxy say3d "fire2";
 
-
-sleep 0.25;
+_pos = position _trg;
 _source = "#particlesource" createVehicleLocal getPos _trg;
-private _proxy2 = "Land_HelipadEmpty_F" createVehicle position _trg;
+private _proxy2 = "Land_HelipadEmpty_F" createVehicle [((_pos select 0) - 2 + (random 2)), ((_pos select 1) - 2 + (random 2)), _pos select 2];
 _proxy2 enableSimulationGlobal false;
-_proxy2 attachTo [_trg, [0, 0, 0.5]];
+// _proxy2 attachTo [_trg, [2, 2, 0]];
+// _proxy2 attachTo [_trg, [((random 4) - 2), ((random 4) -2), 0]];
+_source2 = "#particlesource" createVehicleLocal [((_pos select 0) - 2 + (random 2)), ((_pos select 1) - 2 + (random 2)), _pos select 2];
+// _source2 = "#particlesource" createVehicleLocal getPos _trg;
+private _proxy3 = "Land_HelipadEmpty_F" createVehicle position _trg;
+_proxy3 enableSimulationGlobal false;
+// _proxy3 attachTo [_trg, [-2, -2, 0]];
+// _proxy3 attachTo [_trg, [(2 - (random 4)), (2 - (random 4)), 0]];
 if(hasInterface) then {
-	[_proxy2, _source, "active"] call anomalyEffect_fnc_springboard;
+	[_proxy2, _source, "active"] call anomalyEffect_fnc_burner;
+	[_proxy3, _source2, "active"] call anomalyEffect_fnc_burner;
 };
 
 if(isServer) then {
@@ -45,14 +49,10 @@ if(isServer) then {
 	_trg setVariable ["anomaly_cooldown", true, true];
 	{
 		if(alive _x) then {
-			_pos1 = getpos _x;
-			_pos2 = getpos _trg;
-			_a = ((_pos1 select 0) - (_pos2 select 0));
-			_b = ((_pos1 select 1) - (_pos2 select 1));
 			if(!(isPlayer _x)) then {
 				_x spawn {
 					sleep 0.5;
-					[_this, 1] remoteExec ["setDamage", _this];
+					_this setDamage 1;
 				};
 			} else {
 				if(!isNil "ace_medical_fnc_addDamageToUnit") then {
@@ -65,19 +65,24 @@ if(isServer) then {
 					_x setDamage _dam + 0.5;
 				};
 			};
-			[_x, [_a*4, _b*4, 3 + (5 / (1 + (abs _a) + (abs _b)))]] remoteExec ["setVelocity", _x];
 		} else {
 			[_x] remoteExec ["anomaly_fnc_minceCorpse"];
 		};
 	} forEach _men;
 };
-sleep 1;
+sleep 5;
 
 if(!(isNull _source)) then {
 	deleteVehicle _source;
 };
 if(!(isNull _proxy2)) then {
 	deleteVehicle _proxy2;
+};
+if(!(isNull _source2)) then {
+	deleteVehicle _source2;
+};
+if(!(isNull _proxy3)) then {
+	deleteVehicle _proxy3;
 };
 
 if(isServer) then {
