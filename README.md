@@ -6,6 +6,8 @@ If you want to use this in a mission, sure go ahead, but please write me in the 
 
 This project is aiming to be compatible with addons CBA and ACE. It should work in single and multiplayer. It tries to use as much content as vanilla offers, so this project can be implemented on mission basis and does not need any addons (besides CBA and ACE).
 
+Also check out [BI forums thread](https://forums.bistudio.com/forums/topic/212324-release-stalker-like-anomalies/).
+
 Currently in:
 * Anomalies:
     * Springboard
