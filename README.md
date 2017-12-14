@@ -10,13 +10,14 @@ Currently in:
 * Anomalies:
     * Springboard
     * Meatgrinder
+    * Electra
+    * Burner
+    * Teleport
 * Anomaly detector in ACE self-interact (no item requirement)
 * System to show anomalies only around players to safe those scarce FPS
 
-Somewhat in:
-* Electra Anomaly
-
 Planned:
-* Support for ACE Damage model
 * Anomaly detector needs a configured item (probably the banana)
 * Some more anomalies
+* Respawn support
+* Handling for anything dropping into an anomaly that is not human
