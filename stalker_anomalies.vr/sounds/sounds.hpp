@@ -94,3 +94,21 @@ class fire2
     sound[] = {"sounds\anomalies\fire2.ogg", 2, 1, 200};
     titles[] = {0,""};
 };
+class teleport_idle
+{
+    name = "teleport_idle";
+    sound[] = {"sounds\anomalies\teleport_idle.ogg", 1, 1, 25};
+    titles[] = {0,""};
+};
+class teleport_work_1
+{
+    name = "teleport_work_1";
+    sound[] = {"sounds\anomalies\teleport_work_1.ogg", 2, 1, 50};
+    titles[] = {0,""};
+};
+class teleport_work_2
+{
+    name = "teleport_work_2";
+    sound[] = {"sounds\anomalies\teleport_work_2.ogg", 2, 1, 50};
+    titles[] = {0,""};
+};

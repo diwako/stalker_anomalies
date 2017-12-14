@@ -8,7 +8,7 @@
         _pos - Position where the anomaly should be (default: [0,0,0]])
 
     Returns:
-        nothing
+        Anomaly Trigger
 
 	Author:
 	diwako 2017-12-11
@@ -45,3 +45,4 @@ _trg2 setTriggerArea [25, 25, 0, false, 2];
 _trg2 setTriggerActivation ["ANY", "PRESENT", true];
 // the random interval is there to no have two sounds play at the very same time
 _trg2 setTriggerStatements ["this && {([] call CBA_fnc_currentUnit) in thisList}", "[thisTrigger] spawn {params['_thisTrigger']; sleep random 5; while{triggerActivated _thisTrigger} do {(_thisTrigger getVariable 'anomaly_idle_sound') say3D 'fire_idle'; sleep 8.272060}}", ""];
+_trg

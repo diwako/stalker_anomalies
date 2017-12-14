@@ -43,6 +43,7 @@ enableCamShake true;
 						case "meatgrinder": {_arr call anomalyEffect_fnc_meatgrinder;};
 						case "springboard": {_arr call anomalyEffect_fnc_springboard;};
 						case "burner": 		{_arr call anomalyEffect_fnc_burner;};
+						case "teleport": 		{_arr call anomalyEffect_fnc_teleport;};
 						case "electra": 	{
 							if(!(_x getVariable ["anomaly_cooldown", false])) then {
 								_arr call anomalyEffect_fnc_electra;

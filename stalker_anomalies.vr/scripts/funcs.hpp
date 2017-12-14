@@ -10,6 +10,9 @@ class anomaly{
 		class activateElectra;
 		class createBurner;
 		class activateBurner;
+		class createTeleport;
+		class activateTeleport;
+		class teleportFlash;
 		class minceCorpse;
 		class suckToLocation;
 		class init;
@@ -24,6 +27,7 @@ class anomalyEffect{
 		class meatgrinder;
 		class electra;
 		class burner;
+		class teleport;
 	};
 };
 class anomalyDetector{

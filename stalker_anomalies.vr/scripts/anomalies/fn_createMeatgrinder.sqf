@@ -8,7 +8,7 @@
         _pos - Position where the anomaly should be (default: [0,0,0]])
 
     Returns:
-        nothing
+        Anomaly Trigger
 
 	Author:
 	diwako 2017-12-11
@@ -34,3 +34,4 @@ if(isNil "ANOMALIES_HOLDER") then {
 
 ANOMALIES_HOLDER pushBackUnique _trg;
 publicVariable "ANOMALIES_HOLDER";
+_trg
