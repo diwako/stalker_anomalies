@@ -55,7 +55,6 @@ if(isServer) then {
 if(hasInterface) then {
 	[_trg] spawn {
 		params["_trg"];
-		hint "maaan";
 		_proxy = _trg getVariable "anomaly_sound";
 		_light = "#lightpoint" createVehicleLocal (getpos _proxy);
 		light = _light;
