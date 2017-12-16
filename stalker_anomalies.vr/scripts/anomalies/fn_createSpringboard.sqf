@@ -1,15 +1,15 @@
 /*
   Function: anomaly_fnc_createSpringboard
- 
+
   Description:
         Creates an anomaly of the type "Springboard"
- 
+
     Parameter:
         _pos - Position where the anomaly should be (default: [0,0,0]])
- 
+
     Returns:
         nothing
- 
+
   Author:
   diwako 2017-12-11
 */
@@ -24,7 +24,7 @@ private _proxy = "Land_HelipadEmpty_F" createVehicle position _trg;
 _proxy enableSimulationGlobal false;
 _proxy attachTo [_trg, [0, 0, 0.5]];
 _trg setVariable ["anomaly_sound", _proxy, true];
-_trg setTriggerArea [4, 4, 0, false,2];
+_trg setTriggerArea [4, 4, 0, false,4];
 _trg setTriggerActivation ["ANY", "PRESENT", true];
 _trg setTriggerStatements ["this and !(thisTrigger getVariable ['anomaly_cooldown',false])", "[thisTrigger,thisList] spawn anomaly_fnc_activateSpringboard", ""];
  

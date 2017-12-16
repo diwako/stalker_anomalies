@@ -24,13 +24,15 @@ ACTIVE_ANOMALIES = [];
 enableCamShake true;
 [] spawn {
 	// respawn won't work with this, need better solution than {true}
-	while {alive player} do {
+	// while {alive player} do {
+	while {true} do {
 		FOUND_ANOMALIES = [];
+		_pos = (positionCameraToWorld [0,0,0]);
 		// find trigger
 		{
 			_type = _x getVariable ["anomaly_type", nil];
 			// only accept triggers that are anomalies
-			if(!(isNil "_type")) then {
+			if(!(isNil "_type") && (_pos distance _x) <= ANOMALY_IDLE_DISTANCE) then {
 				FOUND_ANOMALIES pushBackUnique _x;
 				_source = _x getVariable ["anomaly_particle_source", objNull];
 				if(isNull _source) then {
@@ -54,13 +56,15 @@ enableCamShake true;
 					_x setVariable ["anomaly_particle_source", _proxy];
 				};
 			};
-		} forEach ( (positionCameraToWorld [0,0,0]) nearObjects ["EmptyDetector", ANOMALY_IDLE_DISTANCE]);
+		} forEach ANOMALIES_HOLDER;
+		// old detection, now not needed anymore
+		// } forEach ( (positionCameraToWorld [0,0,0]) nearObjects ["EmptyDetector", ANOMALY_IDLE_DISTANCE]);
 		_diff = ACTIVE_ANOMALIES - FOUND_ANOMALIES;
 		{
 			deleteVehicle (_x getVariable "anomaly_particle_source");
 		} forEach _diff;
 		ACTIVE_ANOMALIES = FOUND_ANOMALIES;
-		sleep 10;
+		sleep 5;
 	};
 };
 

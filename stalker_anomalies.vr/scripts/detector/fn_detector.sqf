@@ -24,29 +24,31 @@
 	while {alive player && ANOMALY_DETECTOR_ACTIVE} do {
 		_found = false;
 		_min = ANOMALY_DETECTION_RANGE + 4;
+		// add support for remote controlled units
+		_plr = [] call CBA_fnc_currentUnit;
 		{
 			_type = _x getVariable ["anomaly_type", nil];
 			// only accept triggers that are anomalies
 			if(!(isNil "_type") && {!(_x getVariable "anomaly_cooldown")}) then {
 				_found = true;
-				_tmp = _x distance player;
+				_tmp = _x distance _plr;
 				if(_tmp < _min) then {
 					_min = _tmp;
 				};
 			};
-		} forEach (getpos player nearObjects ["EmptyDetector", ANOMALY_DETECTION_RANGE + 4]);
+		} forEach (getpos _plr nearObjects ["EmptyDetector", ANOMALY_DETECTION_RANGE + 4]);
 		if(_found) then {
 			playSound "da_2_beep1";
 			_sleep = _m * _min + _b;
 			if(_sleep < 0.1) then {
 				_sleep = 0.1;
 			} else {
-				if( _sleep > 1.5) then {
-					_sleep = 1.5;
+				if( _sleep > 1) then {
+					_sleep = 1;
 				};
 			};
 		} else {
-			_sleep = 1.5;
+			_sleep = 1;
 		};
 		sleep _sleep;
 	};

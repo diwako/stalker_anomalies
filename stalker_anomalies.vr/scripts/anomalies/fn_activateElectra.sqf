@@ -24,24 +24,44 @@ if(isServer) then {
 	_sound = ("electra_blast" + str ( (floor random 2) + 1 ));
 	[_proxy, _sound] remoteExec ["say3d"];
 
-	_men = nearestObjects [getPos _trg,  ["CAManBase"], 5];
+	_men = nearestObjects [getPos _trg,  ["CAManBase","landvehicle"], 5];
+	test = _men;
 	{
-		if(!(_x isKindOf "CAManBase")) then {
+		if(!(_x isKindOf "CAManBase" || _x isKindOf "landvehicle")) then {
 			deleteVehicle _x;
+		};
+		if( _x isKindOf "landvehicle") then {
+
 		};
 	} forEach _list;
 	{
 		if(alive _x) then {
 			if(!(isPlayer _x)) then {
-				[_trg, _x] spawn {
-					params["_trg","_x"];
-					[_x, getpos _trg, 2, 2] remoteExec ["anomaly_fnc_suckToLocation",_x];
-					sleep 2;
-					_x setDamage 1;
+				if(_x isKindOf "landvehicle") then {
+					[_x] spawn {
+						params["_x"];
+						// switch of the engine
+						_curDam = _x getHit "motor";
+						[_x, ["motor", 1]] remoteExec ["setHit", _x];
+						_curDam2 = _x getHitPointDamage "hitHull";
+						[_x, ["hitHull", (_curDam2 + 0.1)]] remoteExec ["setHitPointDamage", _x];
+						sleep 5;
+						[_x, ["motor", (_curDam + 0.25)]] remoteExec ["setHit", _x];
+					};
+				} else {
+					[_trg, _x] spawn {
+						params["_trg","_x"];
+						[_x, getpos _trg, 2, 2] remoteExec ["anomaly_fnc_suckToLocation",_x];
+						sleep 2;
+						_x setDamage 1;
+					};
 				};
 			};
+			
 		} else {
-			[_x] remoteExec ["anomaly_fnc_minceCorpse"];
+			if(!(_x isKindOf "landvehicle")) then {
+				[_x] remoteExec ["anomaly_fnc_minceCorpse"];
+			};
 		};
 	} forEach _men;
 	[_trg] spawn {
@@ -85,6 +105,18 @@ if(hasInterface) then {
 	if( _in ) then {
 		[_plr, getpos _trg, 2, 2] spawn anomaly_fnc_suckToLocation;
 		addCamShake [15, 3, 25];
+	};
+	if( vehicle _plr in _list && { (vehicle _plr) isKindOf "landvehicle" && {(driver vehicle _plr) == _plr}}) then {
+		[(vehicle _plr)] spawn {
+			params["_x"];
+			// switch of the engine
+			_curDam = _x getHit "motor";
+			[_x, ["motor", 2]] remoteExec ["setHit", _x];
+			_curDam2 = _x getHitPointDamage "hitHull";
+			[_x, ["hitHull", (_curDam2 + 0.1)]] remoteExec ["setHitPointDamage", _x];
+			sleep 5;
+			[_x, ["motor", (_curDam + 0.25)]] remoteExec ["setHit", _x];
+		};
 	};
 	sleep 2;
 	if( _in ) then {

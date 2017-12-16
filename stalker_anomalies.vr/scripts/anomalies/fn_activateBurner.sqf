@@ -26,47 +26,67 @@ _pos = position _trg;
 _source = "#particlesource" createVehicleLocal getPos _trg;
 private _proxy2 = "Land_HelipadEmpty_F" createVehicle [((_pos select 0) - 2 + (random 2)), ((_pos select 1) - 2 + (random 2)), _pos select 2];
 _proxy2 enableSimulationGlobal false;
-// _proxy2 attachTo [_trg, [2, 2, 0]];
-// _proxy2 attachTo [_trg, [((random 4) - 2), ((random 4) -2), 0]];
 _source2 = "#particlesource" createVehicleLocal [((_pos select 0) - 2 + (random 2)), ((_pos select 1) - 2 + (random 2)), _pos select 2];
-// _source2 = "#particlesource" createVehicleLocal getPos _trg;
 private _proxy3 = "Land_HelipadEmpty_F" createVehicle position _trg;
 _proxy3 enableSimulationGlobal false;
-// _proxy3 attachTo [_trg, [-2, -2, 0]];
-// _proxy3 attachTo [_trg, [(2 - (random 4)), (2 - (random 4)), 0]];
+
 if(hasInterface) then {
 	[_proxy2, _source, "active"] call anomalyEffect_fnc_burner;
 	[_proxy3, _source2, "active"] call anomalyEffect_fnc_burner;
 };
 
 if(isServer) then {
-	_men = nearestObjects [getPos _trg,  ["CAManBase"], 5];
+	_trg setVariable ["anomaly_cooldown", true, true];
+	_men = nearestObjects [getPos _trg,  ["CAManBase","landvehicle"], 5];
 	{
-		if(!(_x isKindOf "CAManBase")) then {
+		if(!(_x isKindOf "CAManBase" || _x isKindOf "landvehicle")) then {
 			deleteVehicle _x;
 		};
 	} forEach _list;
-	_trg setVariable ["anomaly_cooldown", true, true];
 	{
-		if(alive _x) then {
-			if(!(isPlayer _x)) then {
-				_x spawn {
-					sleep 0.5;
-					_this setDamage 1;
+		if(alive _x) then {		
+			if(_x isKindOf "CAManBase") then {
+				if(!(isPlayer _x)) then {
+					_x spawn {
+						sleep 0.5;
+						_this setDamage 1;
+					};
+				} else {
+					if(!isNil "ace_medical_fnc_addDamageToUnit") then {
+						// Ace medical is enabled
+						_dam = (missionNamespace getVariable ["ace_medical_playerDamageThreshold", 1]) / 1.1;
+						[_x, _dam, selectRandom ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "stab"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
+					} else {
+						// Ace medical is not enabled
+						_dam = damage _x;
+						_x setDamage _dam + 0.5;
+					};
 				};
 			} else {
-				if(!isNil "ace_medical_fnc_addDamageToUnit") then {
-					// Ace medical is enabled
-					_dam = (missionNamespace getVariable ["ace_medical_playerDamageThreshold", 1]) / 1.1;
-					[_x, _dam, selectRandom ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "stab"] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];
+				_curDam = _x getHit "motor";
+				if(isNil "_curDam") then {
+					_curDam = 0;
+				};
+				if(_curDam >= 1) then {
+					_x setDamage 1;
 				} else {
-					// Ace medical is not enabled
-					_dam = damage _x;
-					_x setDamage _dam + 0.5;
+					[_x, ["motor", (_curDam + 0.15)]] remoteExec ["setHit", _x];
+					if(!(_x isKindOf "tank"))then {
+						[_x, ["wheel_1_1_steering", 1]] remoteExec ["setHit", _x];
+						[_x, ["wheel_1_2_steering", 1]] remoteExec ["setHit", _x];
+						[_x, ["wheel_1_3_steering", 1]] remoteExec ["setHit", _x];
+						[_x, ["wheel_1_4_steering", 1]] remoteExec ["setHit", _x];
+						[_x, ["wheel_2_1_steering", 1]] remoteExec ["setHit", _x];
+						[_x, ["wheel_2_2_steering", 1]] remoteExec ["setHit", _x];
+						[_x, ["wheel_2_3_steering", 1]] remoteExec ["setHit", _x];
+						[_x, ["wheel_2_4_steering", 1]] remoteExec ["setHit", _x];
+					};
 				};
 			};
 		} else {
-			[_x] remoteExec ["anomaly_fnc_minceCorpse"];
+			if(!(_x isKindOf "landvehicle")) then {
+				[_x] remoteExec ["anomaly_fnc_minceCorpse"];
+			};
 		};
 	} forEach _men;
 };
