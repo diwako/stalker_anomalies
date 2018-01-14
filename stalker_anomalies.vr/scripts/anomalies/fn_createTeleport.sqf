@@ -52,6 +52,9 @@ if(isNil "ANOMALIES_HOLDER") then {
 ANOMALIES_HOLDER pushBackUnique _trg;
 publicVariable "ANOMALIES_HOLDER";
 
+// used for deleting anomalies triggered from client
+publicVariable "ANOMALY_TELEPORT_IDS";
+
 // set up idle sound speaker;
 _trg2 = createTrigger ["EmptyDetector", _pos];
 _proxy = "Land_HelipadEmpty_F" createVehicle position _trg2;
@@ -61,5 +64,5 @@ _trg2 setVariable ["anomaly_idle_sound", _proxy, true];
 _trg2 setTriggerArea [25, 25, 0, false, 2];
 _trg2 setTriggerActivation ["ANY", "PRESENT", true];
 // the random interval is there to no have two sounds play at the very same time
-_trg2 setTriggerStatements ["this && {([] call CBA_fnc_currentUnit) in thisList}", "[thisTrigger] spawn {params['_thisTrigger']; _proxy = _thisTrigger getVariable 'anomaly_idle_sound'; while{triggerActivated _thisTrigger} do {_proxy say3D 'teleport_idle'; sleep 3.67075}}", ""];
+_trg2 setTriggerStatements ["this && !(thisTrigger getVariable ['anomaly_cooldown',false]) && {([] call CBA_fnc_currentUnit) in thisList}", "[thisTrigger] spawn {params['_thisTrigger']; _proxy = _thisTrigger getVariable 'anomaly_idle_sound'; while{!isNull _thisTrigger && {triggerActivated _thisTrigger} do {_proxy say3D 'teleport_idle'; sleep 3.67075}}", ""];
 _trg

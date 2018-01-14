@@ -64,7 +64,7 @@ if(isServer) then {
 				} else {
 					// Ace medical is not enabled
 					_dam = damage _x;
-					_x setDamage _dam + 0.5;
+					[_x,(_dam + 0.5)] remoteExec ["setDamage",_x];
 				};
 			};
 			_mult = 4;
@@ -96,7 +96,7 @@ if(!(isNull _proxy2)) then {
 
 if(isServer) then {
 	_trg spawn {
-		sleep (10 + random 21);
+		sleep (10 + random 6);
 		_this setVariable ["anomaly_cooldown", false, true];
 	};
 };

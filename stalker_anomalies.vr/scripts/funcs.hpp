@@ -16,9 +16,11 @@ class anomaly{
 		class minceCorpse;
 		class suckToLocation;
 		class init;
+		class hasItem;
+		class deleteParticleSource;
+		class deleteAnomalies;
 	};
 };
-
 class anomalyEffect{
 	tag="anomalyEffect";
 	class functions{

@@ -12,17 +12,22 @@
 	Author:
 	diwako 2017-12-11
 */
+
 if(!hasInterface) exitWith {};
 
 // minimmum distance to player to how idle particles
-ANOMALY_IDLE_DISTANCE = 500;
+ANOMALY_IDLE_DISTANCE = 350;
 ANOMALY_DETECTION_RANGE = 20;
 ANOMALY_DETECTOR_ACTIVE = false;
+ANOMALY_DETECTOR_ITEM = "";
 
 ACTIVE_ANOMALIES = [];
 
 enableCamShake true;
 [] spawn {
+	if(isNil "ANOMALIES_HOLDER") then {
+		ANOMALIES_HOLDER = [];
+	};
 	// respawn won't work with this, need better solution than {true}
 	// while {alive player} do {
 	while {true} do {
@@ -72,7 +77,7 @@ if(!isNil "ace_interact_menu_fnc_createAction") then {
 	_action = ["anomaly_detector","Enable anomaly detector","",{
 		ANOMALY_DETECTOR_ACTIVE = true;
 		[] call anomalyDetector_fnc_detector;
-	},{!ANOMALY_DETECTOR_ACTIVE},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
+	},{!ANOMALY_DETECTOR_ACTIVE && [player, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
 	[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
 
@@ -85,8 +90,72 @@ if(!isNil "ace_interact_menu_fnc_createAction") then {
 	player addAction ["Enable anomaly detector", {
 		ANOMALY_DETECTOR_ACTIVE = true;
 		[] call anomalyDetector_fnc_detector;
-	},nil,0,false,true,"","!ANOMALY_DETECTOR_ACTIVE"];
+	},nil,0,false,true,"","!ANOMALY_DETECTOR_ACTIVE  && [player, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem"];
 	player addAction ["Enable anomaly detector", {
 		ANOMALY_DETECTOR_ACTIVE = false;
 	},nil,0,false,true,"","ANOMALY_DETECTOR_ACTIVE"];
+};
+
+// add Ares modules for zeus
+if(!isNil "Ares_fnc_RegisterCustomModule") then {
+	["Stalker Anomalies", "Spawn Anomaly", 
+		{
+			_pos = _this select 0;
+			private _anomalies = ["Burner","Electra","Meatgrinder","Springboard","Teleport"];
+
+			private _dialogResult =
+			[
+				"Spawn anomaly",
+				[
+					["Anomaly", _anomalies]
+				]
+			] call Ares_fnc_ShowChooseDialog;
+
+			if (count _dialogResult == 0) exitWith {};
+
+			_dialogResult params ["_type"];
+
+			switch (_type) do {
+				case 0: { [_pos] remoteExec ["anomaly_fnc_createBurner",2] };
+				case 1: { [_pos] remoteExec ["anomaly_fnc_createElectra",2] };
+				case 2: { [_pos] remoteExec ["anomaly_fnc_createMeatgrinder",2] };
+				case 3: { [_pos] remoteExec ["anomaly_fnc_createSpringboard",2] };
+				case 4: {
+					private _dialogResult =
+					[
+						"Teleport ID (Number)",
+						[
+							["ID", "NUMBER"]
+						]
+					] call Ares_fnc_ShowChooseDialog;
+					if (count _dialogResult == 0) exitWith {};
+					_dialogResult params ["_id"];
+					_id = parseNumber _id;
+					[_pos,_id] remoteExec ["anomaly_fnc_createTeleport",2] 
+				};
+				default { };
+			};
+		}
+	] call Ares_fnc_RegisterCustomModule;
+
+	["Stalker Anomalies", "Delete Anomalies", 
+		{
+			_pos = _this select 0;
+			private _radius = ["1","5","10","100","250"];
+
+			private _dialogResult =
+			[
+				"Delete anomalies",
+				[
+					["Radius", _radius]
+				]
+			] call Ares_fnc_ShowChooseDialog;
+			if (count _dialogResult == 0) exitWith {};
+			_dialogResult params ["_selected"];
+			
+			_radius = parseNumber (_radius select _selected);
+			_trigs = _pos nearObjects ["EmptyDetector", _radius];
+			[_trigs] call anomaly_fnc_deleteAnomalies;
+		}
+	] call Ares_fnc_RegisterCustomModule;
 };

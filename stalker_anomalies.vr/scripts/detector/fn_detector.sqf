@@ -21,7 +21,7 @@
 	sleep 1:
 	// small wait so ace interaction window does not gobble up the title text prompt
 	titleText ["Detector has been turned on", "PLAIN DOWN"];
-	while {alive player && ANOMALY_DETECTOR_ACTIVE} do {
+	while {alive player && ANOMALY_DETECTOR_ACTIVE && ([player, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem)} do {
 		_found = false;
 		_min = ANOMALY_DETECTION_RANGE + 4;
 		// add support for remote controlled units
