@@ -9,5 +9,9 @@ class CfgSounds {
     #include "sounds\sounds.hpp"
 };
 
+respawn = BASE;
+respawnDelay = 1;
+respawnDialog = 0;
+
 enableDebugConsole = 1;
 enableTargetDebug = 1;

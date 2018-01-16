@@ -17,11 +17,17 @@ if(!hasInterface) exitWith {};
 
 // minimmum distance to player to how idle particles
 ANOMALY_IDLE_DISTANCE = 350;
+// distance to nearest anomaly detector starts to beep
 ANOMALY_DETECTION_RANGE = 20;
-ANOMALY_DETECTOR_ACTIVE = false;
+// required item to use detector, leave empty for no item
 ANOMALY_DETECTOR_ITEM = "";
+// required item to be able to throw bolts, leave empty for no item
+ANOMALY_BOLT_ITEM = "";
 
+/*== DO NOT EDIT Below unless you know what you are doing! ==*/
 ACTIVE_ANOMALIES = [];
+ANOMALY_DETECTOR_ACTIVE = false;
+ANOMALY_BOLT_THROW_TIME = (time - 1);
 
 enableCamShake true;
 [] spawn {
@@ -86,14 +92,29 @@ if(!isNil "ace_interact_menu_fnc_createAction") then {
 	},{ANOMALY_DETECTOR_ACTIVE},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
 	[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+
+	_action = ["throw_bolt","Throw a bolt","",{
+		[player] call anomaly_fnc_throwBolt;
+	},{ANOMALY_BOLT_THROW_TIME < time && [player, ANOMALY_BOLT_ITEM] call anomaly_fnc_hasItem},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
+
+	[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
 } else {
-	player addAction ["Enable anomaly detector", {
-		ANOMALY_DETECTOR_ACTIVE = true;
-		[] call anomalyDetector_fnc_detector;
-	},nil,0,false,true,"","!ANOMALY_DETECTOR_ACTIVE  && [player, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem"];
-	player addAction ["Enable anomaly detector", {
-		ANOMALY_DETECTOR_ACTIVE = false;
-	},nil,0,false,true,"","ANOMALY_DETECTOR_ACTIVE"];
+	anomaly_fnc_respawn = {
+		player addAction ["Enable anomaly detector", {
+			ANOMALY_DETECTOR_ACTIVE = true;
+			[] call anomalyDetector_fnc_detector;
+		},nil,0,false,true,"","!ANOMALY_DETECTOR_ACTIVE  && [_target, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem && alive _target"];
+		player addAction ["Disable anomaly detector", {
+			ANOMALY_DETECTOR_ACTIVE = false;
+		},nil,0,false,true,"","ANOMALY_DETECTOR_ACTIVE"];
+		player addAction ["Throw a bolt", {
+			[player] call anomaly_fnc_throwBolt;
+		},nil,0,false,true,"","ANOMALY_BOLT_THROW_TIME < time && [_target, ANOMALY_BOLT_ITEM] call anomaly_fnc_hasItem && alive _target"];
+	};
+	[] call anomaly_fnc_respawn;
+	player addEventHandler["Respawn",{
+		[] call anomaly_fnc_respawn;
+	}];
 };
 
 // add Ares modules for zeus

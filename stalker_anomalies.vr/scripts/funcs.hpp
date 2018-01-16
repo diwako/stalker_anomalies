@@ -19,6 +19,7 @@ class anomaly{
 		class hasItem;
 		class deleteParticleSource;
 		class deleteAnomalies;
+		class throwBolt;
 	};
 };
 class anomalyEffect{
