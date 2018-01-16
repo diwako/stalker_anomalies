@@ -4,7 +4,7 @@ This is a small side project of mine to create some anomalies like they are foun
 If you like this idea and want to contribute, just do a pull request.
 If you want to use this in a mission, sure go ahead, but please write me in the credits.
 
-This project is aiming to be compatible with addons CBA and ACE. It should work in single and multiplayer. It tries to use as much content as vanilla offers, so this project can be implemented on mission basis and does not need any addons (besides CBA and ACE).
+This project is aiming to be compatible with addons CBA and ACE. ACE itself is a soft requirement and is only needed for the burner anomaly right now. It should work in single and multiplayer. It tries to use as much content as vanilla offers, so this project can be implemented on mission basis and does not need any addons (besides CBA and ACE).
 
 Also check out [BI forums thread](https://forums.bistudio.com/forums/topic/212324-release-stalker-like-anomalies/).
 
@@ -15,11 +15,10 @@ Currently in:
     * Electra
     * Burner
     * Teleport
-* Anomaly detector in ACE self-interact (no item requirement)
+* Anomaly detector (item requirement can be added)
+* It is possible to throw bolts (item requirement can be added)
 * System to show anomalies only around players to safe those scarce FPS
 
 Planned:
-* Anomaly detector needs a configured item (probably the banana)
 * Some more anomalies
-* Respawn support
 * Handling for anything dropping into an anomaly that is not human
