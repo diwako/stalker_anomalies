@@ -128,7 +128,7 @@ if(hasInterface) then {
 		} else {
 			// Ace medical is not enabled
 			_dam = damage _plr;
-			_plr setDamage _dam + 0.5;
+			_plr setDamage (_dam + 0.5);
 		};
 	};
 	_proxy = _trg getVariable ["anomaly_particle_source", objNull];
