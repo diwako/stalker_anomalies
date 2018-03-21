@@ -16,7 +16,7 @@
 if(!hasInterface) exitWith {};
 
 // if true, displays a marker were anomaly has been placed.
-ANOMALY_DEBUG = true;
+ANOMALY_DEBUG = false;
 
 // minimmum distance to player to how idle particles
 ANOMALY_IDLE_DISTANCE = 350;
@@ -59,10 +59,12 @@ enableCamShake true;
 						case "meatgrinder": {_arr call anomalyEffect_fnc_meatgrinder;};
 						case "springboard": {_arr call anomalyEffect_fnc_springboard;};
 						case "burner": 		{_arr call anomalyEffect_fnc_burner;};
-						case "teleport": 		{_arr call anomalyEffect_fnc_teleport;};
+						case "teleport": 	{_arr call anomalyEffect_fnc_teleport;};
 						case "electra": 	{
 							if(!(_x getVariable ["anomaly_cooldown", false])) then {
 								_arr call anomalyEffect_fnc_electra;
+							} else {
+								deleteVehicle _proxy;
 							};
 						};
 						default { };
