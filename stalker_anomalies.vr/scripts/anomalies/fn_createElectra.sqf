@@ -46,4 +46,11 @@ _trg2 setTriggerArea [50, 50, 0, false, 2];
 _trg2 setTriggerActivation ["ANY", "PRESENT", true];
 // the random interval is there to no have two sounds play at the very same time
 _trg2 setTriggerStatements ["this && {([] call CBA_fnc_currentUnit) in thisList}", "[thisTrigger] spawn {params['_thisTrigger']; sleep random 5; while{!isNull _thisTrigger && {triggerActivated _thisTrigger}} do {(_thisTrigger getVariable 'anomaly_idle_sound') say3D 'electra_idle1'; sleep 5.455}}", ""];
+
+if(!isNil "ANOMALY_DEBUG" && {ANOMALY_DEBUG}) then {
+	_marker = createMarkerLocal [str(_pos),_pos];
+	_marker setMarkerShapeLocal "ICON";
+	_marker setMarkerTypeLocal "hd_dot";
+	_marker setMarkerTextLocal (_trg getVariable "anomaly_type");
+};
 _trg

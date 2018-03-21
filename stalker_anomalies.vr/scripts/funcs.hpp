@@ -20,6 +20,7 @@ class anomaly{
 		class deleteParticleSource;
 		class deleteAnomalies;
 		class throwBolt;
+		class createAnomalyField;
 	};
 };
 class anomalyEffect{

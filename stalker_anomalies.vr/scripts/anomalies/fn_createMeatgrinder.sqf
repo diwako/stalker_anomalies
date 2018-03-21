@@ -34,4 +34,11 @@ if(isNil "ANOMALIES_HOLDER") then {
 
 ANOMALIES_HOLDER pushBackUnique _trg;
 publicVariable "ANOMALIES_HOLDER";
+
+if(!isNil "ANOMALY_DEBUG" && {ANOMALY_DEBUG}) then {
+	_marker = createMarkerLocal [str(_pos),_pos];
+	_marker setMarkerShapeLocal "ICON";
+	_marker setMarkerTypeLocal "hd_dot";
+	_marker setMarkerTextLocal (_trg getVariable "anomaly_type");
+};
 _trg

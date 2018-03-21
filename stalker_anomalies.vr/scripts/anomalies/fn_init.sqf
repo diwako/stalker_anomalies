@@ -15,6 +15,9 @@
 
 if(!hasInterface) exitWith {};
 
+// if true, displays a marker were anomaly has been placed.
+ANOMALY_DEBUG = true;
+
 // minimmum distance to player to how idle particles
 ANOMALY_IDLE_DISTANCE = 350;
 // distance to nearest anomaly detector starts to beep
