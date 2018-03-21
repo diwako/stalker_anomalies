@@ -30,9 +30,19 @@ _source2 = "#particlesource" createVehicleLocal [((_pos select 0) - 2 + (random 
 private _proxy3 = "Land_HelipadEmpty_F" createVehicle position _trg;
 _proxy3 enableSimulationGlobal false;
 
+_light = objNull;
 if(hasInterface) then {
 	[_proxy2, _source, "active"] call anomalyEffect_fnc_burner;
 	[_proxy3, _source2, "active"] call anomalyEffect_fnc_burner;
+
+	_light = "#lightpoint" createVehicleLocal (getpos _proxy);
+	_light setLightBrightness 1;
+	_light setLightAmbient [1, 0.6, 0.6];
+	_light setLightColor [1, 0.6, 0.6];
+	_light setLightUseFlare false;
+	_light setLightFlareSize 100;
+	_light setLightFlareMaxDistance 100;
+	_light setLightDayLight true;
 };
 
 if(isServer) then {
@@ -104,6 +114,9 @@ if(!(isNull _source2)) then {
 };
 if(!(isNull _proxy3)) then {
 	deleteVehicle _proxy3;
+};
+if(!(isNull _light)) then {
+	deleteVehicle _light;
 };
 
 if(isServer) then {

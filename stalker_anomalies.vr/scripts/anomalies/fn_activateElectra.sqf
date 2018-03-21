@@ -77,7 +77,6 @@ if(hasInterface) then {
 		params["_trg"];
 		_proxy = _trg getVariable "anomaly_sound";
 		_light = "#lightpoint" createVehicleLocal (getpos _proxy);
-		light = _light;
 		_light setLightBrightness 10;
 		_light setLightAmbient [0.6, 0.6, 1];
 		_light setLightColor [0.6, 0.6, 1];
