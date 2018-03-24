@@ -104,22 +104,16 @@ if(!isNil "ace_interact_menu_fnc_createAction") then {
 
 	[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
 } else {
-	anomaly_fnc_respawn = {
-		player addAction ["Enable anomaly detector", {
-			ANOMALY_DETECTOR_ACTIVE = true;
-			[] call anomalyDetector_fnc_detector;
-		},nil,0,false,true,"","!ANOMALY_DETECTOR_ACTIVE  && [_target, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem && alive _target"];
-		player addAction ["Disable anomaly detector", {
-			ANOMALY_DETECTOR_ACTIVE = false;
-		},nil,0,false,true,"","ANOMALY_DETECTOR_ACTIVE"];
-		player addAction ["Throw a bolt", {
-			[player] call anomaly_fnc_throwBolt;
-		},nil,0,false,true,"","ANOMALY_BOLT_THROW_TIME < time && [_target, ANOMALY_BOLT_ITEM] call anomaly_fnc_hasItem && alive _target"];
-	};
-	[] call anomaly_fnc_respawn;
-	player addEventHandler["Respawn",{
-		[] call anomaly_fnc_respawn;
-	}];
+	[["Enable anomaly detector", {
+		ANOMALY_DETECTOR_ACTIVE = true;
+		[] call anomalyDetector_fnc_detector;
+	},nil,0,false,true,"","!ANOMALY_DETECTOR_ACTIVE  && [_target, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem && alive _target"]] call CBA_fnc_addPlayerAction;
+	[["Disable anomaly detector", {
+		ANOMALY_DETECTOR_ACTIVE = false;
+	},nil,0,false,true,"","ANOMALY_DETECTOR_ACTIVE"]]  call CBA_fnc_addPlayerAction;
+	[["Throw a bolt", {
+		[player] call anomaly_fnc_throwBolt;
+	},nil,0,false,true,"","ANOMALY_BOLT_THROW_TIME < time && [_target, ANOMALY_BOLT_ITEM] call anomaly_fnc_hasItem && alive _target"]] call CBA_fnc_addPlayerAction;
 };
 
 // add Ares modules for zeus
