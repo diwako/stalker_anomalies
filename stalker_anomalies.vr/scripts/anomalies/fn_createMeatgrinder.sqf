@@ -16,8 +16,11 @@
 params[["_pos",[0,0,0]]];
 
 if(!isServer) exitWith {};
-
+if(count _pos < 3) then {
+	_pos set [2,0];
+};
 _trg = createTrigger ["EmptyDetector", _pos];
+_trg setPosATL _pos;
 _trg setVariable ["anomaly_cooldown", false, true];
 _trg setVariable ["anomaly_type", "meatgrinder", true];
 private _proxy = "Land_HelipadEmpty_F" createVehicle position _trg;

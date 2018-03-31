@@ -16,8 +16,11 @@
 params[["_pos",[0,0,0]]];
 
 if(!isServer) exitWith {};
-
+if(count _pos < 3) then {
+	_pos set [2,0];
+};
 _trg = createTrigger ["EmptyDetector", _pos];
+_trg setPosATL _pos;
 _trg setVariable ["anomaly_cooldown", false, true];
 _trg setVariable ["anomaly_type", "burner", true];
 private _proxy = "Land_HelipadEmpty_F" createVehicle position _trg;
@@ -37,6 +40,7 @@ publicVariable "ANOMALIES_HOLDER";
 
 // set up idle sound speaker;
 _trg2 = createTrigger ["EmptyDetector", _pos];
+_trg2 setPosATL _pos;
 _trg setVariable ["anomaly_idle_sound", _trg2, true];
 _proxy = "Land_HelipadEmpty_F" createVehicle position _trg2;
 _proxy enableSimulationGlobal false;

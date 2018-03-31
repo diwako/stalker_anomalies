@@ -15,7 +15,9 @@
 	diwako 2017-12-14
 */
 params[["_pos",[0,0,0]],["_id",-1]];
-
+if(count _pos < 3) then {
+	_pos set [2,0];
+};
 if(!isServer) exitWith {};
 
 if(_id < 0) exitWith {
@@ -32,6 +34,7 @@ if( (count _teleporters) >= 2) exitWith {
 };
 
 _trg = createTrigger ["EmptyDetector", _pos];
+_trg setPosATL _pos;
 _teleporters pushBack _trg;
 [ANOMALY_TELEPORT_IDS, _id, _teleporters] call CBA_fnc_hashSet;
 _trg setVariable ["anomaly_cooldown", false, true];
@@ -57,6 +60,7 @@ publicVariable "ANOMALY_TELEPORT_IDS";
 
 // set up idle sound speaker;
 _trg2 = createTrigger ["EmptyDetector", _pos];
+_trg2 setPosATL _pos;
 _proxy = "Land_HelipadEmpty_F" createVehicle position _trg2;
 _proxy enableSimulationGlobal false;
 _proxy attachTo [_trg2, [0, 0, 0.5]];
