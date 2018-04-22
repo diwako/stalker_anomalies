@@ -21,18 +21,18 @@ if(_trg getVariable ["anomaly_type",""] != "meatgrinder") exitWith {};
 
 _sucked = [];
 if(isServer) then {
-	_men = nearestObjects [getPos _trg,  ["CAManBase","landvehicle"], 5];
+	_men = nearestObjects [getPos _trg,  ["Man","landvehicle","air"], 5];
 	private _proxy = _trg getVariable "anomaly_sound";
 	[_proxy, "anomaly_mincer_blowout"] remoteExec ["say3d"];
 	{
-		if(!(_x isKindOf "CAManBase" || _x isKindOf "landvehicle")) then {
+		if(!(_x isKindOf "Man" || _x isKindOf "landvehicle" || _x isKindOf "air")) then {
 			deleteVehicle _x;
 		};
 	} forEach _list;
 	_trg setVariable ["anomaly_cooldown", true, true];
 	{
 		if(alive _x) then {
-			if(_x isKindOf "landvehicle") then {
+			if(_x isKindOf "landvehicle" || _x isKindOf "air") then {
 				if(getMass _x <= 10000) then {
 					
 					[_x, getpos _trg,1,5.8] remoteExec ["anomaly_fnc_suckToLocation",_x];
@@ -43,7 +43,7 @@ if(isServer) then {
 				[_x, getpos _trg,2] remoteExec ["anomaly_fnc_suckToLocation",_x];
 			};
 		} else {
-			if(!(_x isKindOf "landvehicle")) then {
+			if(!(_x isKindOf "landvehicle") || _x isKindOf "air") then {
 				[_x] remoteExec ["anomaly_fnc_minceCorpse"];
 			};
 		};
@@ -51,7 +51,7 @@ if(isServer) then {
 };
 sleep 5.8;
 {
-	if(_x isKindOf "CAManBase") then {
+	if(_x isKindOf "Man") then {
 		// ace medical not needed, people trapped in this trap are dead
 		[_x, 1] remoteExec ["setDamage",_x];
 		[_x] remoteExec ["anomaly_fnc_minceCorpse"];

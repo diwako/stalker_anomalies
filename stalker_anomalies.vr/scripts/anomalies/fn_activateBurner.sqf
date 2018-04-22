@@ -47,15 +47,15 @@ if(hasInterface) then {
 
 if(isServer) then {
 	_trg setVariable ["anomaly_cooldown", true, true];
-	_men = nearestObjects [getPos _trg,  ["CAManBase","landvehicle"], 5];
+	_men = nearestObjects [getPos _trg,  ["Man","landvehicle","air"], 5];
 	{
-		if(!(_x isKindOf "CAManBase" || _x isKindOf "landvehicle")) then {
+		if(!(_x isKindOf "Man" || _x isKindOf "landvehicle"|| _x isKindOf "air")) then {
 			deleteVehicle _x;
 		};
 	} forEach _list;
 	{
-		if(alive _x) then {		
-			if(_x isKindOf "CAManBase") then {
+		if(alive _x) then {
+			if(_x isKindOf "Man") then {
 				if(!(isPlayer _x)) then {
 					_x spawn {
 						sleep 0.5;
@@ -95,7 +95,7 @@ if(isServer) then {
 				};
 			};
 		} else {
-			if(!(_x isKindOf "landvehicle")) then {
+			if(!(_x isKindOf "landvehicle" || _x isKindOf "air")) then {
 				[_x] remoteExec ["anomaly_fnc_minceCorpse"];
 			};
 		};

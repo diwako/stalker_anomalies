@@ -36,9 +36,9 @@ if(hasInterface) then {
 };
 
 if(isServer) then {
-	_men = nearestObjects [getPos _trg,  ["CAManBase","landvehicle"], 5];
+	_men = nearestObjects [getPos _trg,  ["Man","landvehicle","air"], 5];
 	{
-		if(!(_x isKindOf "CAManBase" || _x isKindOf "landvehicle")) then {
+		if(!(_x isKindOf "Man" || _x isKindOf "landvehicle" || _x isKindOf "air")) then {
 			deleteVehicle _x;
 		};
 	} forEach _list;
@@ -50,7 +50,7 @@ if(isServer) then {
 			_a = ((_pos1 select 0) - (_pos2 select 0));
 			_b = ((_pos1 select 1) - (_pos2 select 1));
 			if(!(isPlayer _x)) then {
-				if(!(_x isKindOf "landvehicle")) then {
+				if(!(_x isKindOf "landvehicle"  || _x isKindOf "air")) then {
 					_x spawn {
 						sleep 0.5;
 						[_this, 1] remoteExec ["setDamage", _this];
@@ -68,7 +68,7 @@ if(isServer) then {
 				};
 			};
 			_mult = 4;
-			if(_x isKindOf "landvehicle") then {
+			if(_x isKindOf "landvehicle" || _x isKindOf "air") then {
 				if(getMass _x <= 10000) then {
 					_mult = _mult * 2;
 					_curDam = _x getHitPointDamage "hitHull";
@@ -79,7 +79,7 @@ if(isServer) then {
 			};
 			[_x, [_a*_mult, _b*_mult, _mult + (5 / (1 + (abs _a) + (abs _b)))]] remoteExec ["setVelocity", _x];
 		} else {
-			if(!(_x isKindOf "landvehicle")) then {
+			if(!(_x isKindOf "landvehicle" || _x isKindOf "air")) then {
 				[_x] remoteExec ["anomaly_fnc_minceCorpse"];
 			};
 		};

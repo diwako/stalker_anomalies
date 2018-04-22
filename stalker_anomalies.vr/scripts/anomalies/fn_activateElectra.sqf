@@ -24,29 +24,36 @@ if(isServer) then {
 	_sound = ("electra_blast" + str ( (floor random 2) + 1 ));
 	[_proxy, _sound] remoteExec ["say3d"];
 
-	_men = nearestObjects [getPos _trg,  ["CAManBase","landvehicle"], 5];
+	_men = nearestObjects [getPos _trg,  ["Man","landvehicle","air"], 5];
 	test = _men;
 	{
-		if(!(_x isKindOf "CAManBase" || _x isKindOf "landvehicle")) then {
+		if(!(_x isKindOf "Man" || _x isKindOf "landvehicle" || _x isKindOf "air")) then {
 			deleteVehicle _x;
-		};
-		if( _x isKindOf "landvehicle") then {
-
 		};
 	} forEach _list;
 	{
 		if(alive _x) then {
 			if(!(isPlayer _x)) then {
-				if(_x isKindOf "landvehicle") then {
+				if(_x isKindOf "landvehicle" || _x isKindOf "air") then {
 					[_x] spawn {
 						params["_x"];
 						// switch of the engine
-						_curDam = _x getHit "motor";
-						[_x, ["motor", 1]] remoteExec ["setHit", _x];
+						_curDam = 0;
+						if(_x isKindOf "landvehicle" ) then {
+							_curDam = _x getHit "motor";
+							[_x, ["motor", 1]] remoteExec ["setHit", _x];
+						} else {
+							_curDam = _x getHitPointDamage "HitEngine";
+							[_x, ["HitEngine", 1]] remoteExec ["setHitPointDamage", _x];
+						};
 						_curDam2 = _x getHitPointDamage "hitHull";
 						[_x, ["hitHull", (_curDam2 + 0.1)]] remoteExec ["setHitPointDamage", _x];
 						sleep 5;
-						[_x, ["motor", (_curDam + 0.25)]] remoteExec ["setHit", _x];
+						if(_x isKindOf "landvehicle" ) then {
+							[_x, ["motor", (_curDam + 0.25)]] remoteExec ["setHit", _x];
+						} else {
+							[_x, ["HitEngine", (_curDam + 0.25)]] remoteExec ["setHitPointDamage", _x];
+						};
 					};
 				} else {
 					[_trg, _x] spawn {
@@ -57,9 +64,9 @@ if(isServer) then {
 					};
 				};
 			};
-			
+
 		} else {
-			if(!(_x isKindOf "landvehicle")) then {
+			if(!(_x isKindOf "landvehicle" || _x isKindOf "air") ) then {
 				[_x] remoteExec ["anomaly_fnc_minceCorpse"];
 			};
 		};
