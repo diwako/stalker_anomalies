@@ -44,9 +44,9 @@ private _proxy = "Land_HelipadEmpty_F" createVehicle position _trg;
 _proxy enableSimulationGlobal false;
 _proxy attachTo [_trg, [0, 0, 0.5]];
 _trg setVariable ["anomaly_sound", _proxy, true];
-_trg setTriggerArea [2, 2, 0, false,4];
-_trg setTriggerActivation ["ANY", "PRESENT", true];
-_trg setTriggerStatements ["this and !(thisTrigger getVariable ['anomaly_cooldown',false])", "[thisTrigger,thisList] spawn anomaly_fnc_activateTeleport", ""];
+[_trg, [2, 2, 0, false,4]] remoteExec ["setTriggerArea",0,_trg];
+[_trg, ["ANY", "PRESENT", true]] remoteExec ["setTriggerActivation",0,_trg];
+[_trg, ["this and !(thisTrigger getVariable ['anomaly_cooldown',false])", "[thisTrigger,thisList] spawn anomaly_fnc_activateTeleport", ""]] remoteExec ["setTriggerStatements",0,_trg];
 
 if(isNil "ANOMALIES_HOLDER") then {
 	ANOMALIES_HOLDER = [];
@@ -65,10 +65,10 @@ _proxy = "Land_HelipadEmpty_F" createVehicle position _trg2;
 _proxy enableSimulationGlobal false;
 _proxy attachTo [_trg2, [0, 0, 0.5]];
 _trg2 setVariable ["anomaly_idle_sound", _proxy, true];
-_trg2 setTriggerArea [25, 25, 0, false, 2];
-_trg2 setTriggerActivation ["ANY", "PRESENT", true];
+[_trg2, [25, 25, 0, false, 2]] remoteExec ["setTriggerArea",0,_trg];
+[_trg2, ["ANY", "PRESENT", true]] remoteExec ["setTriggerActivation",0,_trg];
 // the random interval is there to no have two sounds play at the very same time
-_trg2 setTriggerStatements ["this && !(thisTrigger getVariable ['anomaly_cooldown',false]) && {([] call CBA_fnc_currentUnit) in thisList}", "[thisTrigger] spawn {params['_thisTrigger']; _proxy = _thisTrigger getVariable 'anomaly_idle_sound'; while{!isNull _thisTrigger && {triggerActivated _thisTrigger} do {_proxy say3D 'teleport_idle'; sleep 3.67075}}", ""];
+[_trg2, ["this && !(thisTrigger getVariable ['anomaly_cooldown',false]) && {([] call CBA_fnc_currentUnit) in thisList}", "[thisTrigger] spawn {params['_thisTrigger']; _proxy = _thisTrigger getVariable 'anomaly_idle_sound'; while{!isNull _thisTrigger && {triggerActivated _thisTrigger} do {_proxy say3D 'teleport_idle'; sleep 3.67075}}", ""]] remoteExec ["setTriggerStatements",0,_trg];
 
 if(!isNil "ANOMALY_DEBUG" && {ANOMALY_DEBUG}) then {
 	_marker = createMarkerLocal [str(_pos),_pos];
