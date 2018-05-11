@@ -6,6 +6,10 @@ If you want to use this in a mission, sure go ahead, but please write me in the 
 
 This project is aiming to be compatible with addons CBA and ACE. ACE itself is a soft requirement and is only needed for the burner anomaly right now. It should work in single and multiplayer. It tries to use as much content as vanilla offers, so this project can be implemented on mission basis and does not need any addons (besides CBA and ACE).
 
+Additionally a mod verison has been added which adds some items and uses CBA settings, so mission makers do not need to add the sounds and scripts to their missions. Just make sure to enable the anomalies in the CBA settings first!
+
+Link to mod version on workshop: TBA
+
 Also check out [BI forums thread](https://forums.bistudio.com/forums/topic/212324-release-stalker-like-anomalies/).
 
 Currently in:
@@ -18,7 +22,7 @@ Currently in:
 * Anomaly detector (item requirement can be added)
 * It is possible to throw bolts (item requirement can be added)
 * System to show anomalies only around players to safe those scarce FPS
+* Anomaly detector and bag of bolts item (mod verison only)
 
 Planned:
 * Some more anomalies
-* Handling for anything dropping into an anomaly that is not human
