@@ -40,8 +40,8 @@ if(isServer) then {
 						// switch of the engine
 						_curDam = 0;
 						if(_x isKindOf "landvehicle" ) then {
-							_curDam = _x getHit "motor";
-							[_x, ["motor", 1]] remoteExec ["setHit", _x];
+							_curDam = _x getHit "engine";
+							[_x, ["engine", 1]] remoteExec ["setHit", _x];
 						} else {
 							_curDam = _x getHitPointDamage "HitEngine";
 							[_x, ["HitEngine", 1]] remoteExec ["setHitPointDamage", _x];
@@ -50,7 +50,7 @@ if(isServer) then {
 						[_x, ["hitHull", (_curDam2 + 0.1)]] remoteExec ["setHitPointDamage", _x];
 						sleep 5;
 						if(_x isKindOf "landvehicle" ) then {
-							[_x, ["motor", (_curDam + 0.25)]] remoteExec ["setHit", _x];
+							[_x, ["engine", (_curDam + 0.25)]] remoteExec ["setHit", _x];
 						} else {
 							[_x, ["HitEngine", (_curDam + 0.25)]] remoteExec ["setHitPointDamage", _x];
 						};
@@ -112,18 +112,18 @@ if(hasInterface) then {
 		[_plr, getpos _trg, 2, 2] spawn anomaly_fnc_suckToLocation;
 		addCamShake [15, 3, 25];
 	};
-	if( vehicle _plr in _list && { (vehicle _plr) isKindOf "landvehicle" && {(driver vehicle _plr) == _plr}}) then {
-		[(vehicle _plr)] spawn {
-			params["_x"];
+	// if( vehicle _plr in _list && { (vehicle _plr) isKindOf "landvehicle" && {(driver vehicle _plr) == _plr}}) then {
+		// [(vehicle _plr)] spawn {
+			// params["_veh"];
 			// switch of the engine
-			_curDam = _x getHit "motor";
-			[_x, ["motor", 2]] remoteExec ["setHit", _x];
-			_curDam2 = _x getHitPointDamage "hitHull";
-			[_x, ["hitHull", (_curDam2 + 0.1)]] remoteExec ["setHitPointDamage", _x];
-			sleep 5;
-			[_x, ["motor", (_curDam + 0.25)]] remoteExec ["setHit", _x];
-		};
-	};
+			// _curDam = _veh getHit "engine";
+			// [_veh, ["engine", 1]] remoteExec ["setHit", _veh];
+			// _curDam2 = _veh getHitPointDamage "hitHull";
+			// [_veh, ["hitHull", (_curDam2 + 0.1)]] remoteExec ["setHitPointDamage", _veh];
+			// sleep 5;
+			// [_veh, ["engine", (_curDam + 0.25)]] remoteExec ["setHit", _veh];
+		// };
+	// };
 	sleep 2;
 	if( _in ) then {
 		if(!isNil "ace_medical_fnc_addDamageToUnit") then {
