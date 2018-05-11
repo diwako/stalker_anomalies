@@ -22,6 +22,8 @@ Currently in:
 * Anomaly detector (item requirement can be added)
 * It is possible to throw bolts (item requirement can be added)
 * System to show anomalies only around players to safe those scarce FPS
+* Ares Achilles support
+* Support for ace medical
 * Anomaly detector and bag of bolts item (mod verison only)
 
 Planned:
