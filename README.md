@@ -8,7 +8,7 @@ This project is aiming to be compatible with addons CBA and ACE. ACE itself is a
 
 Additionally a mod verison has been added which adds some items and uses CBA settings, so mission makers do not need to add the sounds and scripts to their missions. Just make sure to enable the anomalies in the CBA settings first!
 
-Link to mod version on workshop: TBA
+Also available as mod on [Steam workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1383903166)
 
 Also check out [BI forums thread](https://forums.bistudio.com/forums/topic/212324-release-stalker-like-anomalies/).
 
