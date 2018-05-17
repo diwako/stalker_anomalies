@@ -48,6 +48,8 @@ class cfgFunctions {
 		class functions{
 			file = "diwako_anomalies\functions\added";
 			class autoInit {postInit = 1;};
+			class throwEVH {postInit = 1;};
+			class grenadeBolt;
 			class registerSettings;
 		};
 	};

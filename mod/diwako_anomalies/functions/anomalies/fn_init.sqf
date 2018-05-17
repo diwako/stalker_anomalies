@@ -28,8 +28,8 @@ ANOMALY_DETECTION_RANGE = 20;
 // required item to use detector, leave empty for no item
 ANOMALY_DETECTOR_ITEM = "";
 // required item to be able to throw bolts, leave empty for no item
-ANOMALY_BOLT_ITEM = "";
 */
+ANOMALY_BOLT_ITEM = "";
 
 /*== DO NOT EDIT Below unless you know what you are doing! ==*/
 ACTIVE_ANOMALIES = [];
@@ -102,11 +102,14 @@ if(!isNil "ace_interact_menu_fnc_createAction") then {
 
 	[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
 
-	_action = ["throw_bolt","Throw a bolt","",{
-		[player] call anomaly_fnc_throwBolt;
-	},{ANOMALY_BOLT_THROW_TIME < time && [player, ANOMALY_BOLT_ITEM] call anomaly_fnc_hasItem},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
+	if ! (isClass(configFile >> "CfgPatches" >> "diwako_anomalies")) then {
+		_action = ["throw_bolt","Throw a bolt","",{
+			[player] call anomaly_fnc_throwBolt;
+		},{ANOMALY_BOLT_THROW_TIME < time && [player, ANOMALY_BOLT_ITEM] call anomaly_fnc_hasItem},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
-	[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+		[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+	};
+	
 } else {
 	[["Enable anomaly detector", {
 		ANOMALY_DETECTOR_ACTIVE = true;
@@ -115,9 +118,11 @@ if(!isNil "ace_interact_menu_fnc_createAction") then {
 	[["Disable anomaly detector", {
 		ANOMALY_DETECTOR_ACTIVE = false;
 	},nil,0,false,true,"","ANOMALY_DETECTOR_ACTIVE"]]  call CBA_fnc_addPlayerAction;
-	[["Throw a bolt", {
-		[player] call anomaly_fnc_throwBolt;
-	},nil,0,false,true,"","ANOMALY_BOLT_THROW_TIME < time && [_target, ANOMALY_BOLT_ITEM] call anomaly_fnc_hasItem && alive _target"]] call CBA_fnc_addPlayerAction;
+	if !(isClass(configFile >> "CfgPatches" >> "diwako_anomalies")) then {
+		[["Throw a bolt", {
+			[player] call anomaly_fnc_throwBolt;
+		},nil,0,false,true,"","ANOMALY_BOLT_THROW_TIME < time && [_target, ANOMALY_BOLT_ITEM] call anomaly_fnc_hasItem && alive _target"]] call CBA_fnc_addPlayerAction;
+	};
 };
 
 // add Ares modules for zeus

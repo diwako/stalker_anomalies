@@ -1,6 +1,6 @@
 class cfgSounds {
 	sounds[] = {};
-	
+
 	class gravi_blowout1
 	{
 		name = "gravi_blowout1";

@@ -44,6 +44,7 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 	,true
 ] call CBA_Settings_fnc_init;
 
+/*
 //Bolt Item:
 [
 	"ANOMALY_BOLT_ITEM"
@@ -53,6 +54,7 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 	,"BagOfBolts"
 	,true
 ] call CBA_Settings_fnc_init;
+*/
 
 //Enable Debugging:
 [
