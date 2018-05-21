@@ -22,6 +22,7 @@ class cfgFunctions {
 			class deleteAnomalies;
 			class throwBolt;
 			class createAnomalyField;
+			class getLocationFromModule;
 		};
 	};
 	class anomalyEffect {

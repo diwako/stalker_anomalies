@@ -1,5 +1,4 @@
-class cfgAmmo
-{
+class cfgAmmo {
 	class GrenadeHand_stone;
 
 	class bolt_ammo: GrenadeHand_stone

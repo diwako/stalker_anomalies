@@ -19,6 +19,18 @@
 */
 params["_posParams",["_springboard",0],["_burner",0],["_electra",0],["_meatgrinder",0]];
 
+if(typeName _posParams != typeName []) then {
+	//created via module
+	private _pos = _posParams getVariable "objectarea";
+	_springboard = _posParams getVariable ["springboards",0];
+	_burner = _posParams getVariable ["burners",0];
+	_electra = _posParams getVariable ["electras",0];
+	_meatgrinder = _posParams getVariable ["meatgrinders",0];
+	private _module = _posParams;
+	_posParams = [[(getpos _posParams), _pos#0, _pos#1, _pos#2, _pos#3]];
+	deleteVehicle _module;
+};
+
 _anomalies = [];
 
 for "_i" from 1 to _springboard do {

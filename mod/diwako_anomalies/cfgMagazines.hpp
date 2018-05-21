@@ -1,9 +1,7 @@
-class cfgMagazines
-{
+class cfgMagazines {
 	class HandGrenade_Stone;
 
-	class bolts_infinite_mag : HandGrenade_Stone
-	{
+	class bolts_infinite_mag : HandGrenade_Stone {
 		ammo = "bolt_ammo";
 		scope = 2;
 		count = 9999;
@@ -16,8 +14,7 @@ class cfgMagazines
 		picture = "\A3\Weapons_f\data\UI\gear_satchel_CA.paa";
 	};
 
-	class bolts_one_mag : bolts_infinite_mag
-	{
+	class bolts_one_mag : bolts_infinite_mag {
 		scope = 2;
 		mass = 1;
 		displayName = "Bolt";

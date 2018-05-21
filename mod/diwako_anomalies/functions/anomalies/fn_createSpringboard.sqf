@@ -16,6 +16,9 @@
 params[["_pos",[0,0,0]]];
  
 if(!isServer) exitWith {};
+
+_pos = [_pos] call anomaly_fnc_getLocationFromModule;
+
 if(count _pos < 3) then {
 	_pos set [2,0];
 };

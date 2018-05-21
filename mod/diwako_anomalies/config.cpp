@@ -15,8 +15,8 @@
 			"cba_xeh"
 			,"cba_common"
 		};
-		version = "1.10";
-		versionStr = "1.10";
+		version = "1.11";
+		versionStr = "1.11";
 		author = "diwako";
 		authorUrl = "https://github.com/diwako/stalker_anomalies";
     };
@@ -32,6 +32,7 @@ class Extended_PreInit_EventHandlers {
 	};
 };
 
+#include "cfgFactionClasses.hpp"
 #include "cfgFunctions.hpp"
 #include "cfgSounds.hpp"
 #include "cfgAmmo.hpp"

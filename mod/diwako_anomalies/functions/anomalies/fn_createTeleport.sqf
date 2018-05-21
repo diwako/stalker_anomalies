@@ -15,14 +15,22 @@
 	diwako 2017-12-14
 */
 params[["_pos",[0,0,0]],["_id",-1]];
+if(!isServer) exitWith {};
+
+if(typeName _pos != typeName []) then {
+	//created via module
+	_id = _pos getVariable ["anomalyid",-1];
+	_pos = [_pos] call anomaly_fnc_getLocationFromModule;
+};
+
 if(count _pos < 3) then {
 	_pos set [2,0];
 };
-if(!isServer) exitWith {};
 
 if(_id < 0) exitWith {
 	hintC ("Teleport Anomaly ID cannot be below 0. Affected anomaly at " + str(_pos));
 };
+
 if (isNil "ANOMALY_TELEPORT_IDS") then {
   ANOMALY_TELEPORT_IDS = [[], []] call CBA_fnc_hashCreate;
 };
