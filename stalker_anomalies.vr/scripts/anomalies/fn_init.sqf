@@ -181,7 +181,7 @@ if(!isNil "Ares_fnc_RegisterCustomModule") then {
 			
 			_radius = parseNumber (_radius select _selected);
 			_trigs = _pos nearObjects ["EmptyDetector", _radius];
-			[_trigs] call anomaly_fnc_deleteAnomalies;
+			[_trigs] remoteExec ["anomaly_fnc_deleteAnomalies",2];
 		}
 	] call Ares_fnc_RegisterCustomModule;
 };
