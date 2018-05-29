@@ -9,6 +9,8 @@ setTerrainGrid 25;
 [getMarkerPos "Teleport_1",1] call anomaly_fnc_createTeleport;
 [getMarkerPos "Teleport_2",1] call anomaly_fnc_createTeleport;
 
+[[7850,3963],20,false] call anomaly_fnc_createFog;
+
 // [[7968,3922]] call anomaly_fnc_createMeatgrinder;
 // [[7900,3922]] call anomaly_fnc_createMeatgrinder;
 

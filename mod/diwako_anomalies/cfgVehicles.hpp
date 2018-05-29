@@ -179,4 +179,34 @@ class cfgVehicles {
             sync[] = {};
         };
     };
+
+    class anoamly_moduleCreateFog: Module_F {
+        author = "diwako";
+        category = "DIW_ANOMALY";
+        displayName = "Fog field";
+        function = "anomaly_fnc_createFog";
+        functionPriority = 1;
+        canSetArea = 1;
+        canSetAreaHeight = 0;
+        canSetAreaShape = 1;
+        scope = 2;  //show in editor
+        isGlobal = 0; //run on server
+        isTriggerActivated  = 0; //Wait for triggers
+        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
+        functionPriority = 0;
+        class Arguments {
+        };
+        class ModuleDescription : ModuleDescription{
+            description = "Spawn a fog anomaly field at module location. Set area size A and B the same! Only size A will be used to set the field size!";
+            sync[] = {"LocationArea_F"};
+            class LocationArea_F {
+                description[] = {
+                    "Set area size A and B the same!",
+                    "Only size A will be used to set the field size!"
+                };
+                optional = 1;
+                synced[] = {"Any"};
+            };
+        };
+    };
 };

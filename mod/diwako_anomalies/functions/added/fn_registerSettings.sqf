@@ -66,4 +66,14 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 	,true
 ] call CBA_Settings_fnc_init;
 
+//Set gasmask items:
+[
+	"ANOMALY_GAS_MASKS"
+	,"EDITBOX"
+	,["Gas masks","Write in gasmask class names comma separated, no spaces! Case insensitive!"]
+	,CBA_SETTINGS_CAT
+	,"GP5_RaspiratorPS,GP5Filter_RaspiratorPS,GP7_RaspiratorPS,GP21_GasmaskPS,SE_S10,G_Respirator_white_F,MASK_M40_OD,MASK_M40,MASK_M50"
+	,true
+] call CBA_Settings_fnc_init;
+
 nil

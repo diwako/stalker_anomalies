@@ -26,6 +26,8 @@ ANOMALY_DETECTION_RANGE = 20;
 ANOMALY_DETECTOR_ITEM = "";
 // required item to be able to throw bolts, leave empty for no item
 ANOMALY_BOLT_ITEM = "";
+// enter item google classes which function as gasmasks
+ANOMALY_GAS_MASKS = ["GP5_RaspiratorPS","GP5Filter_RaspiratorPS","GP7_RaspiratorPS","GP21_GasmaskPS","SE_S10","G_Respirator_white_F","MASK_M40_OD","MASK_M40","MASK_M50"];
 
 /*== DO NOT EDIT Below unless you know what you are doing! ==*/
 ACTIVE_ANOMALIES = [];
@@ -62,6 +64,7 @@ if(isNil "ANOMALIES_HOLDER") then {
 					case "springboard": {_arr call anomalyEffect_fnc_springboard;};
 					case "burner": 		{_arr call anomalyEffect_fnc_burner;};
 					case "teleport": 	{_arr call anomalyEffect_fnc_teleport;};
+					case "fog": 		{_arr call anomalyEffect_fnc_fog;};
 					case "electra": 	{
 						if(!(_x getVariable ["anomaly_cooldown", false])) then {
 							_arr call anomalyEffect_fnc_electra;
@@ -127,7 +130,7 @@ if(!isNil "Ares_fnc_RegisterCustomModule") then {
 	["Stalker Anomalies", "Spawn Anomaly", 
 		{
 			_pos = _this select 0;
-			private _anomalies = ["Burner","Electra","Meatgrinder","Springboard","Teleport"];
+			private _anomalies = ["Burner","Electra","Meatgrinder","Springboard","Teleport","Fog"];
 
 			private _dialogResult =
 			[
@@ -159,6 +162,20 @@ if(!isNil "Ares_fnc_RegisterCustomModule") then {
 					_id = parseNumber _id;
 					[_pos,_id] remoteExec ["anomaly_fnc_createTeleport",2] 
 				};
+				case 5: {
+					private _dialogResult =
+					[
+						"Create fog anomaly",
+						[
+							["Radius", "NUMBER"],
+							["Rectangle", ["Yes","no"]]
+						]
+					] call Ares_fnc_ShowChooseDialog;
+					if (count _dialogResult == 0) exitWith {};
+					_dialogResult params ["_radius","_rectangle"];
+					_radius = parseNumber _radius;
+					[_pos,_radius,(_rectangle == 0)] remoteExec ["anomaly_fnc_createFog",2] 
+				};
 				default { };
 			};
 		}
@@ -185,3 +202,8 @@ if(!isNil "Ares_fnc_RegisterCustomModule") then {
 		}
 	] call Ares_fnc_RegisterCustomModule;
 };
+
+{
+	// set them upper case so we can use the "in" operator without any problems
+	ANOMALY_GAS_MASKS set[_forEachIndex,toUpper(ANOMALY_GAS_MASKS#_forEachIndex)];
+} forEach ANOMALY_GAS_MASKS;

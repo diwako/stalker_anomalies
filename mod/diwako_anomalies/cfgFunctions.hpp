@@ -23,6 +23,8 @@ class cfgFunctions {
 			class throwBolt;
 			class createAnomalyField;
 			class getLocationFromModule;
+			class createFog;
+			class activateFog;
 		};
 	};
 	class anomalyEffect {
@@ -34,6 +36,7 @@ class cfgFunctions {
 			class electra;
 			class burner;
 			class teleport;
+			class fog;
 		};
 	};
 	class anomalyDetector {
