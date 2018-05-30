@@ -203,6 +203,10 @@ if(!isNil "Ares_fnc_RegisterCustomModule") then {
 	] call Ares_fnc_RegisterCustomModule;
 };
 
+if(typeName ANOMALY_GAS_MASKS == typeName "") then {
+	ANOMALY_GAS_MASKS = ANOMALY_GAS_MASKS splitString ",";
+};
+
 {
 	// set them upper case so we can use the "in" operator without any problems
 	ANOMALY_GAS_MASKS set[_forEachIndex,toUpper(ANOMALY_GAS_MASKS#_forEachIndex)];

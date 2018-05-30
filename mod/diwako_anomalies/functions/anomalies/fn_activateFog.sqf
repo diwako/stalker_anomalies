@@ -46,9 +46,9 @@ if(_trg getVariable ["anomaly_type",""] != "fog") exitWith {};
 			};
 			if((cba_missiontime - 2.5) > (_x getVariable["anomaly_cough",-1])) then {
 				// cough cough
-				private _coughers = ["WoundedGuyA_02","WoundedGuyA_04","WoundedGuyA_05","WoundedGuyA_07","WoundedGuyA_08"];
 				[{
 					params["_unit"];
+					private _coughers = ["WoundedGuyA_02","WoundedGuyA_04","WoundedGuyA_05","WoundedGuyA_07","WoundedGuyA_08"];
 					[_unit, selectRandom _coughers] remoteExecCall ["say3d"];
 				}, [_x], (random 2)] call CBA_fnc_waitAndExecute;
 				_x setVariable["anomaly_cough",cba_missiontime];
