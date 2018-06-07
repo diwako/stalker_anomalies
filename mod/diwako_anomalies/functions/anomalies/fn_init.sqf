@@ -13,8 +13,25 @@
 	diwako 2017-12-11
 */
 
-if(!hasInterface || missionNamespace getVariable ["anomaly_var_init",false]) exitWith {};
+if(missionNamespace getVariable ["anomaly_var_init",false]) exitWith {};
 missionNamespace setVariable ["anomaly_var_init",true];
+
+if(isServer && isMultiplayer) then {
+	// publish PFH which publishes all anomalies each 5 seconds
+	[{
+		params ["_args", "_pfhHandle"];
+		_args params ["_transmitted"];
+		private _count = count ANOMALIES_HOLDER;
+		// systemChat format["%1 to %2", _count, _transmitted];
+		if(_count != _transmitted) then {
+			// systemChat "SYNC!";
+			publicVariable "ANOMALIES_HOLDER";
+			_args set [0, _count];
+		};
+	}, 5, [0] ] call CBA_fnc_addPerFrameHandler;
+};
+
+if(!hasInterface) exitWith {};
 
 /*
 //this is now handled by cba settings:

@@ -13,6 +13,21 @@
 	diwako 2017-12-11
 */
 
+if(isServer && isMultiplayer) then {
+	// publish PFH which publishes all anomalies each 5 seconds
+	[{
+		params ["_args", "_pfhHandle"];
+		_args params ["_transmitted"];
+		private _count = count ANOMALIES_HOLDER;
+		// systemChat format["%1 to %2", _count, _transmitted];
+		if(_count != _transmitted) then {
+			// systemChat "SYNC!";
+			publicVariable "ANOMALIES_HOLDER";
+			_args set [0, _count];
+		};
+	}, 5, [0] ] call CBA_fnc_addPerFrameHandler;
+};
+
 if(!hasInterface) exitWith {};
 
 // if true, displays a marker were anomaly has been placed.

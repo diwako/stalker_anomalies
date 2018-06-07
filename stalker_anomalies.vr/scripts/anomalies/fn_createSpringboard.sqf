@@ -39,7 +39,7 @@ if(isNil "ANOMALIES_HOLDER") then {
 };
  
 ANOMALIES_HOLDER pushBackUnique _trg;
-publicVariable "ANOMALIES_HOLDER";
+// publicVariable "ANOMALIES_HOLDER";
  
 // set up idle sound speaker;
 _trg2 = createTrigger ["EmptyDetector", _pos];

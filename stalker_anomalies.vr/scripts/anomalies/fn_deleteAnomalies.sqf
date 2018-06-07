@@ -53,5 +53,5 @@ _anomalies = if (typeName _anomalies != typeName []) then {[_anomalies]} else {_
 	};
 } forEach _anomalies;
 // publish updated arrays
-publicVariable "ANOMALIES_HOLDER";
+// publicVariable "ANOMALIES_HOLDER";
 publicVariable "ANOMALY_TELEPORT_IDS";

@@ -39,7 +39,7 @@ if(isNil "ANOMALIES_HOLDER") then {
 };
 
 ANOMALIES_HOLDER pushBackUnique _trg;
-publicVariable "ANOMALIES_HOLDER";
+// publicVariable "ANOMALIES_HOLDER";
 
 if(!isNil "ANOMALY_DEBUG" && {ANOMALY_DEBUG}) then {
 	_marker = createMarkerLocal [str(_pos),_pos];

@@ -61,7 +61,7 @@ if(isNil "ANOMALIES_HOLDER") then {
 };
 
 ANOMALIES_HOLDER pushBackUnique _trg;
-publicVariable "ANOMALIES_HOLDER";
+// publicVariable "ANOMALIES_HOLDER";
 
 // used for deleting anomalies triggered from client
 publicVariable "ANOMALY_TELEPORT_IDS";
