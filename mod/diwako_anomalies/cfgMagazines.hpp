@@ -12,6 +12,7 @@ class cfgMagazines {
 		model = "\A3\weapons_F\ammo\mag_univ.p3d";
 		/*picture = "\diwako_anomalies\data\ui\bolts.paa";*/
 		picture = "\A3\Weapons_f\data\UI\gear_satchel_CA.paa";
+		author = "diwako";
 	};
 
 	class bolts_one_mag : bolts_infinite_mag {
@@ -24,5 +25,6 @@ class cfgMagazines {
 		model = "\diwako_anomalies\data\models\bolt.p3d";
 		count = 1;
 		ammo = "bolt_ammo";
+		author = "diwako";
 	};
 };
