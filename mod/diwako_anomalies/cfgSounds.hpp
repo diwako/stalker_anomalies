@@ -115,4 +115,22 @@ class cfgSounds {
 		sound[] = {"diwako_anomalies\sounds\anomalies\teleport_work_2.ogg", 2, 1, 50};
 		titles[] = {0,""};
 	};
+	class bfuzz_hit
+	{
+		name = "bfuzz_hit";
+		sound[] = {"diwako_anomalies\sounds\anomalies\bfuzz_hit.ogg", 2, 1, 50};
+		titles[] = {0,""};
+	};
+	class buzz_hit
+	{
+		name = "buzz_hit";
+		sound[] = {"diwako_anomalies\sounds\anomalies\buzz_hit.ogg", 2, 1, 50};
+		titles[] = {0,""};
+	};
+	class buzz_idle
+	{
+		name = "buzz_idle";
+		sound[] = {"diwako_anomalies\sounds\anomalies\buzz_idle.ogg", 1, 1, 25};
+		titles[] = {0,""};
+	};
 };

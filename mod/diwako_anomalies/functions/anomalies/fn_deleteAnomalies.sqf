@@ -43,6 +43,13 @@ _anomalies = if (typeName _anomalies != typeName []) then {[_anomalies]} else {_
 				};
 				[ANOMALY_TELEPORT_IDS, _id, _teleporters] call CBA_fnc_hashSet;
 			};
+
+			if(_type == "fruitpunch") then {
+				private _trg = _x;
+				deleteVehicle (_trg getVariable ["light",objNull]);
+				deleteVehicle (_trg getVariable ["field",objNull]);
+				_x = _trg;
+			};
 			[_x] spawn {
 				// wait for clients to delete particle source
 				params ["_x"];

@@ -23,6 +23,8 @@ class anomaly{
 		class createAnomalyField{};
 		class createFog{};
 		class activateFog{};
+		class createFruitPunch{};
+		class activateFruitPunch{};
 	};
 };
 class anomalyEffect{
@@ -35,6 +37,7 @@ class anomalyEffect{
 		class burner{};
 		class teleport{};
 		class fog{};
+		class fruitPunch{};
 	};
 };
 class anomalyDetector{

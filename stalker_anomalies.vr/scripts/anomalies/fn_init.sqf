@@ -87,6 +87,7 @@ if(isNil "ANOMALIES_HOLDER") then {
 							deleteVehicle _proxy;
 						};
 					};
+					case "fruitpunch": 	{_arr call anomalyEffect_fnc_fruitPunch;};
 					default { };
 				};
 				_x setVariable ["anomaly_particle_source", _proxy];
@@ -145,7 +146,7 @@ if(!isNil "Ares_fnc_RegisterCustomModule") then {
 	["Stalker Anomalies", "Spawn Anomaly", 
 		{
 			_pos = _this select 0;
-			private _anomalies = ["Burner","Electra","Meatgrinder","Springboard","Teleport","Fog"];
+			private _anomalies = ["Burner","Electra","Meatgrinder","Springboard","Teleport","Fog","Fruit Punch"];
 
 			private _dialogResult =
 			[
@@ -191,6 +192,7 @@ if(!isNil "Ares_fnc_RegisterCustomModule") then {
 					_radius = parseNumber _radius;
 					[_pos,_radius,(_rectangle == 0)] remoteExec ["anomaly_fnc_createFog",2] 
 				};
+				case 6: { [_pos] remoteExec ["anomaly_fnc_createFruitPunch",2] };
 				default { };
 			};
 		}

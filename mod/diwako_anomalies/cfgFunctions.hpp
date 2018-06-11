@@ -25,6 +25,8 @@ class cfgFunctions {
 			class getLocationFromModule;
 			class createFog;
 			class activateFog;
+			class createFruitPunch;
+			class activateFruitPunch;
 		};
 	};
 	class anomalyEffect {
@@ -37,6 +39,7 @@ class cfgFunctions {
 			class burner;
 			class teleport;
 			class fog;
+			class fruitPunch;
 		};
 	};
 	class anomalyDetector {

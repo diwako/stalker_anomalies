@@ -209,4 +209,22 @@ class cfgVehicles {
             };
         };
     };
+	
+	class anoamly_moduleFruitPunch: Module_F {
+        author = "diwako";
+        category = "DIW_ANOMALY";
+        displayName = "Fruit Punch";
+        function = "anomaly_fnc_createFruitPunch";
+        functionPriority = 1;
+        scope = 2;  //show in editor
+        isGlobal = 0; //run on server
+        isTriggerActivated  = 0; //Wait for triggers
+        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
+        functionPriority = 0;
+        class Arguments {};
+        class ModuleDescription: ModuleDescription {
+            description = "Spawn a Fruit Punch anomaly at module location";
+            sync[] = {};
+        };
+    };
 };
