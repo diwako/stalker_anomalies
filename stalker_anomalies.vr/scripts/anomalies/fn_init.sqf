@@ -13,6 +13,9 @@
 	diwako 2017-12-11
 */
 
+if(missionNamespace getVariable ["anomaly_var_init",false]) exitWith {};
+missionNamespace setVariable ["anomaly_var_init",true];
+
 if(isServer && isMultiplayer) then {
 	// publish PFH which publishes all anomalies each 5 seconds
 	[{
