@@ -47,7 +47,6 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        functionPriority = 0;
         class Arguments {};
         class ModuleDescription: ModuleDescription {
             description = "Spawn a springboard anomaly at module location";
@@ -65,7 +64,6 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        functionPriority = 0;
         class Arguments {};
         class ModuleDescription: ModuleDescription {
             description = "Spawn an electra anomaly at module location";
@@ -83,7 +81,6 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        functionPriority = 0;
         class Arguments {};
         class ModuleDescription: ModuleDescription {
             description = "Spawn a burner anomaly at module location";
@@ -101,7 +98,6 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        functionPriority = 0;
         class Arguments {};
         class ModuleDescription: ModuleDescription {
             description = "Spawn a meatgrinder anomaly at module location";
@@ -119,7 +115,6 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        functionPriority = 0;
         class Arguments {
             class anomalyId {
                 displayName = "ID";
@@ -147,7 +142,6 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        functionPriority = 0;
         class Arguments {
             class springboards {
                 displayName = "Springboards";
@@ -193,7 +187,6 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        functionPriority = 0;
         class Arguments {
         };
         class ModuleDescription : ModuleDescription{
@@ -220,7 +213,6 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        functionPriority = 0;
         class Arguments {};
         class ModuleDescription: ModuleDescription {
             description = "Spawn a Fruit Punch anomaly at module location";
