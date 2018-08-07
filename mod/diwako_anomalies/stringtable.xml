@@ -17,6 +17,12 @@
             <Chinesesimp></Chinesesimp>
             <Chinese></Chinese>
         </Key>
+        <Key ID="STR_anomaly_category">
+            <Original>Stalker anomalies</Original>
+            <English>Stalker anomalies</English>
+            <German>Stalker Anomalien</German>
+            <!-- <Russian></Russian> -->
+        </Key>
         <Key ID="STR_anomaly_detector">
             <Original>Anomaly Detector</Original>
             <English>Anomaly Detector</English>
