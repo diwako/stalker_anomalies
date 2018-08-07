@@ -10,7 +10,7 @@
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese></Portuguese>
-            <!-- <Russian></Russian> -->
+            <Russian></Russian>
             <Spanish></Spanish>
             <Korean></Korean>
             <Japanese></Japanese>
@@ -105,13 +105,13 @@
             <Original>Springboards</Original>
             <English>Springboards</English>
             <German>Springboards</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Трамплины</Russian>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_spingboard_desc">
             <Original>How many springboards shall be placed within the zone?</Original>
             <English>How many springboards shall be placed within the zone?</English>
             <German>Wie viele Springboards sollen in dem Feld plaziet werden?</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Сколько Трамплинов должно быть размещено внутри зоны?</Russian>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_meatgrinder">
             <Original>Meatgrinders</Original>
@@ -159,7 +159,7 @@
             <Original>Fog field</Original>
             <English>Fog field</English>
             <German>Nebel Feld</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Туманное поле</Russian>
         </Key>
         <Key ID="STR_anomaly_fog_desc">
             <Original>Spawn a fog anomaly field at module location. Set area size A and B the same! Only size A will be used to set the field size!</Original>
@@ -195,19 +195,13 @@
             <Original>Enable anomaly detector</Original>
             <English>Enable anomaly detector</English>
             <German>Anomalien Detektor einschalten</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Включить детектор аномалий</Russian>
         </Key>
         <Key ID="STR_anomaly_disable_detector">
             <Original>Turn off anomaly detector</Original>
             <English>Turn off anomaly detector</English>
             <German>Anomalien Detektor ausschalten</German>
-            <!-- <Russian></Russian> -->
-        </Key>
-        <Key ID="STR_anomaly_disable_detector">
-            <Original>Turn off anomaly detector</Original>
-            <English>Turn off anomaly detector</English>
-            <German>Anomalien Detektor ausschalten</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Выключить детектор аномалий</Russian>
         </Key>
 	</Package>
 </Project>
