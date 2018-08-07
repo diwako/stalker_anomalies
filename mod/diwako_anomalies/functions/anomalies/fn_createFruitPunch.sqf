@@ -64,10 +64,13 @@ _proxy = "Land_HelipadEmpty_F" createVehicle position _trg2;
 _proxy enableSimulationGlobal false;
 _proxy attachTo [_trg2, [0, 0, 0.5]];
 _trg2 setVariable ["anomaly_idle_sound", _proxy, true];
-[_trg2, [25, 25, 0, false, 2]] remoteExec ["setTriggerArea",0,_trg];
-[_trg2, ["ANY", "PRESENT", true]] remoteExec ["setTriggerActivation",0,_trg];
-// the random interval is there to no have two sounds play at the very same time
-[_trg2, ["this && {([] call CBA_fnc_currentUnit) in thisList}", "[thisTrigger] spawn {params['_thisTrigger']; sleep random 5; while{!isNull _thisTrigger && {triggerActivated _thisTrigger}} do {(_thisTrigger getVariable 'anomaly_idle_sound') say3D 'buzz_idle'; sleep 5.325}}", ""]] remoteExec ["setTriggerStatements",0,_trg];
+[
+	_trg2, //trigger
+	[25, 25, 0, false, 2], // area
+	["ANY", "PRESENT", true], // activation
+	// the random interval is there to no have two sounds play at the very same time
+	["this && {([] call CBA_fnc_currentUnit) in thisList}", "[thisTrigger] spawn {params['_thisTrigger']; sleep random 5; while{!isNull _thisTrigger && {triggerActivated _thisTrigger}} do {(_thisTrigger getVariable 'anomaly_idle_sound') say3D 'buzz_idle'; sleep 5.325}}", ""] // statements
+] remoteExec ["anomaly_fnc_setTrigger", 0, _trg2];
 
 if(isNil "ANOMALIES_HOLDER") then {
   ANOMALIES_HOLDER = [];
@@ -80,5 +83,6 @@ if(!isNil "ANOMALY_DEBUG" && {ANOMALY_DEBUG}) then {
 	_marker setMarkerShapeLocal "ICON";
 	_marker setMarkerTypeLocal "hd_dot";
 	_marker setMarkerTextLocal (_trg getVariable "anomaly_type");
+	_trg setVariable ["debug_marker",_marker];
 };
 _trg

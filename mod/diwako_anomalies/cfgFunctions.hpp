@@ -27,6 +27,7 @@ class cfgFunctions {
 			class activateFog;
 			class createFruitPunch;
 			class activateFruitPunch;
+			class setTrigger;
 		};
 	};
 	class anomalyEffect {

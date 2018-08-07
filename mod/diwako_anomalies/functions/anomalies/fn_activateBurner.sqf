@@ -60,7 +60,6 @@ if(isServer) then {
 					_x spawn {
 						sleep 0.5;
 						_this setDamage 1;
-						[_this,1] remoteExec ["setDamage",_this];
 					};
 				} else {
 					if(!isNil "ace_medical_fnc_addDamageToUnit") then {
@@ -70,7 +69,7 @@ if(isServer) then {
 					} else {
 						// Ace medical is not enabled
 						_dam = damage _x;
-						[_x,(_dam + 0.5)] remoteExec ["setDamage",_x];
+						_x setDamage (_dam + 0.5);
 					};
 				};
 			} else {

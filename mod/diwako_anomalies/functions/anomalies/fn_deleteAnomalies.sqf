@@ -21,7 +21,7 @@ _anomalies = if (typeName _anomalies != typeName []) then {[_anomalies]} else {_
 	if(!isNull _x) then {
 		_type = _x getVariable ["anomaly_type", ""];
 		if(!isNil "ANOMALY_DEBUG" && {ANOMALY_DEBUG}) then {
-			deleteMarker str(getPos _x);
+			deleteMarker (_x getVariable ["debug_marker",""]);
 		};
 		if(_type != "") then {
 			[_x] remoteExec ["anomaly_fnc_deleteParticleSource"];

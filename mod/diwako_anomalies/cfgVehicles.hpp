@@ -4,7 +4,7 @@ class cfgVehicles {
 	class AnomalyDetector_Item: Item_Base_F {
         scope = 2;
         scopeCurator = 2;
-        displayName = "Anomaly Detector";
+        displayName = "$STR_anomaly_detector";
         author = "[SeL] Belbo";
         vehicleClass = "Items";
 		editorPreview = "\diwako_anomalies\data\ui\AnomalyDetector.jpg";
@@ -40,7 +40,7 @@ class cfgVehicles {
     class anoamly_moduleSpringboard: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
-        displayName = "Springboard";
+        displayName = "$STR_anomaly_springboard";
         function = "anomaly_fnc_createSpringboard";
         functionPriority = 1;
         scope = 2;  //show in editor
@@ -49,7 +49,7 @@ class cfgVehicles {
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
-            description = "Spawn a springboard anomaly at module location";
+            description = "$STR_anomaly_springboard_desc";
             sync[] = {};
         };
     };
@@ -57,7 +57,7 @@ class cfgVehicles {
     class anoamly_moduleElectra: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
-        displayName = "Electra";
+        displayName = "$STR_anomaly_electra";
         function = "anomaly_fnc_createElectra";
         functionPriority = 1;
         scope = 2;  //show in editor
@@ -66,7 +66,7 @@ class cfgVehicles {
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
-            description = "Spawn an electra anomaly at module location";
+            description = "$STR_anomaly_electra_desc";
             sync[] = {};
         };
     };
@@ -74,7 +74,7 @@ class cfgVehicles {
     class anoamly_moduleBurner: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
-        displayName = "Burner";
+        displayName = "$STR_anomaly_burner";
         function = "anomaly_fnc_createBurner";
         functionPriority = 1;
         scope = 2;  //show in editor
@@ -83,7 +83,7 @@ class cfgVehicles {
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
-            description = "Spawn a burner anomaly at module location";
+            description = "$STR_anomaly_burner_desc";
             sync[] = {};
         };
     };
@@ -91,7 +91,7 @@ class cfgVehicles {
     class anoamly_moduleMeatgrinder: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
-        displayName = "Meatgrinder";
+        displayName = "$STR_anomaly_meatgrinder";
         function = "anomaly_fnc_createMeatgrinder";
         functionPriority = 1;
         scope = 2;  //show in editor
@@ -100,7 +100,7 @@ class cfgVehicles {
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
-            description = "Spawn a meatgrinder anomaly at module location";
+            description = "$STR_anomaly_meatgrinder_desc";
             sync[] = {};
         };
     };
@@ -108,7 +108,7 @@ class cfgVehicles {
     class anoamly_moduleTeleport: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
-        displayName = "Teleporter";
+        displayName = "$STR_anomaly_teleport";
         function = "anomaly_fnc_createTeleport";
         functionPriority = 1;
         scope = 2;  //show in editor
@@ -118,13 +118,13 @@ class cfgVehicles {
         class Arguments {
             class anomalyId {
                 displayName = "ID";
-                description = "Teleporters need the same ID to work together. It is only allowed to have the same ID twice!";
+                description = "$STR_anomaly_teleport_id_desc";
                 typeName = "NUMBER";
                 defaultValue = 0;
             };
         };
         class ModuleDescription: ModuleDescription {
-            description = "Spawn a teleport anomaly at module location";
+            description = "$STR_anomaly_teleport_desc";
             sync[] = {};
         };
     };
@@ -132,7 +132,7 @@ class cfgVehicles {
     class anoamly_moduleCreateAnomalyField: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
-        displayName = "Anomaly field";
+        displayName = "$STR_anomaly_anomaly_field";
         function = "anomaly_fnc_createAnomalyField";
         functionPriority = 1;
         canSetArea = 1;
@@ -144,32 +144,32 @@ class cfgVehicles {
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {
             class springboards {
-                displayName = "Springboards";
-                description = "How many springboards shall be placed within the zone?";
+                displayName = "$STR_anomaly_anomaly_field_spingboard";
+                description = "$STR_anomaly_anomaly_field_spingboard_desc";
                 typeName = "NUMBER";
                 defaultValue = 20;
             };
             class meatgrinders {
-                displayName = "Meatgrinderss";
-                description = "How many meatgrinderss shall be placed within the zone?";
+                displayName = "$STR_anomaly_anomaly_field_meatgrinder";
+                description = "$STR_anomaly_anomaly_field_meatgrinder_desc";
                 typeName = "NUMBER";
                 defaultValue = 10;
             };
             class electras {
-                displayName = "Electras";
-                description = "How many electras shall be placed within the zone?";
+                displayName = "$STR_anomaly_anomaly_field_electra";
+                description = "$STR_anomaly_anomaly_field_electra_desc";
                 typeName = "NUMBER";
                 defaultValue = 0;
             };
             class burners {
-                displayName = "Burners";
-                description = "How many burners shall be placed within the zone?";
+                displayName = "$STR_anomaly_anomaly_field_burner";
+                description = "$STR_anomaly_anomaly_field_burner_desc";
                 typeName = "NUMBER";
                 defaultValue = 0;
             };
         };
         class ModuleDescription: ModuleDescription {
-            description = "Spawn an anomaly field at module location";
+            description = "$STR_anomaly_anomaly_field_desc";
             sync[] = {};
         };
     };
@@ -177,7 +177,7 @@ class cfgVehicles {
     class anoamly_moduleCreateFog: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
-        displayName = "Fog field";
+        displayName = "$STR_anomaly_fog";
         function = "anomaly_fnc_createFog";
         functionPriority = 1;
         canSetArea = 1;
@@ -190,12 +190,12 @@ class cfgVehicles {
         class Arguments {
         };
         class ModuleDescription : ModuleDescription{
-            description = "Spawn a fog anomaly field at module location. Set area size A and B the same! Only size A will be used to set the field size!";
+            description = "$STR_anomaly_fog_desc";
             sync[] = {"LocationArea_F"};
             class LocationArea_F {
                 description[] = {
-                    "Set area size A and B the same!",
-                    "Only size A will be used to set the field size!"
+                    "$STR_anomaly_fog_desc2",
+                    "$STR_anomaly_fog_desc3"
                 };
                 optional = 1;
                 synced[] = {"Any"};
@@ -206,7 +206,7 @@ class cfgVehicles {
 	class anoamly_moduleFruitPunch: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
-        displayName = "Fruit Punch";
+        displayName = "$STR_anomaly_fruitpunch";
         function = "anomaly_fnc_createFruitPunch";
         functionPriority = 1;
         scope = 2;  //show in editor
@@ -215,7 +215,7 @@ class cfgVehicles {
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
-            description = "Spawn a Fruit Punch anomaly at module location";
+            description = "$STR_anomaly_fruitpunch_desc";
             sync[] = {};
         };
     };

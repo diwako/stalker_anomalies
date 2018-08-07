@@ -111,14 +111,14 @@ if(isNil "ANOMALIES_HOLDER") then {
 }, 5, [] ] call CBA_fnc_addPerFrameHandler;
 
 if(!isNil "ace_interact_menu_fnc_createAction") then {
-	_action = ["anomaly_detector","Enable anomaly detector","",{
+	_action = ["anomaly_detector",(localize "STR_anomaly_enable_detector"),"",{
 		ANOMALY_DETECTOR_ACTIVE = true;
 		[] call anomalyDetector_fnc_detector;
 	},{!ANOMALY_DETECTOR_ACTIVE && [player, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
 	[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
 
-	_action = ["anomaly_detector","Turn off anomaly detector","",{
+	_action = ["anomaly_detector",(localize "STR_anomaly_disable_detector"),"",{
 		ANOMALY_DETECTOR_ACTIVE = false;
 	},{ANOMALY_DETECTOR_ACTIVE},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
@@ -133,11 +133,11 @@ if(!isNil "ace_interact_menu_fnc_createAction") then {
 	};
 	
 } else {
-	[["Enable anomaly detector", {
+	[[(localize "STR_anomaly_enable_detector"), {
 		ANOMALY_DETECTOR_ACTIVE = true;
 		[] call anomalyDetector_fnc_detector;
 	},nil,0,false,true,"","!ANOMALY_DETECTOR_ACTIVE  && [_target, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem && alive _target"]] call CBA_fnc_addPlayerAction;
-	[["Disable anomaly detector", {
+	[[(localize "STR_anomaly_disable_detector"), {
 		ANOMALY_DETECTOR_ACTIVE = false;
 	},nil,0,false,true,"","ANOMALY_DETECTOR_ACTIVE"]]  call CBA_fnc_addPlayerAction;
 	if !(isClass(configFile >> "CfgPatches" >> "diwako_anomalies")) then {

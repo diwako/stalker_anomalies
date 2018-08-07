@@ -46,12 +46,8 @@ _source setPosATL (getPosATL _trg);
 		} else {
 			// Ace medical is not enabled
 			_dam = damage _x;
-			[_x, (_dam + 0.2)] remoteExec ["setDamage",_x];
+			_x setDamage (_dam + 0.2);
 		};
-		// };
-		// else {
-		// 	[_x] remoteExec ["anomaly_fnc_minceCorpse"];
-		// };
 	} else {
 		if(!(_x isKindOf "landvehicle" || _x isKindOf "air")) then {
 			deleteVehicle _x;	

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="diwako_anomalies">
+	<Package name="anomaly">
+        <Key ID="STR_anomaly_empty">
+            <Original></Original>
+            <English></English>
+            <Czech></Czech>
+            <French></French>
+            <German></German>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <!-- <Russian></Russian> -->
+            <Spanish></Spanish>
+            <Korean></Korean>
+            <Japanese></Japanese>
+            <Chinesesimp></Chinesesimp>
+            <Chinese></Chinese>
+        </Key>
+        <Key ID="STR_anomaly_detector">
+            <Original>Anomaly Detector</Original>
+            <English>Anomaly Detector</English>
+            <German>Anomalie Detektor</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_springboard">
+            <Original>Springboard</Original>
+            <English>Springboard</English>
+            <German>Springboard</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_springboard_desc">
+            <Original>Spawn a springboard anomaly at module location</Original>
+            <English>Spawn a springboard anomaly at module location</English>
+            <German>Estellt eine Anomalie des Typs Springboard an der Stelle des Moduls</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_electra">
+            <Original>Electra</Original>
+            <English>Electra</English>
+            <German>Elektra</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_electra_desc">
+            <Original>Spawn an electra anomaly at module location</Original>
+            <English>Spawn an electra anomaly at module location</English>
+            <German>Estellt eine Anomalie des Typs Elektra an der Stelle des Moduls</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_burner">
+            <Original>Burner</Original>
+            <English>Burner</English>
+            <German>Brenner</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_burner_desc">
+            <Original>Spawn a burner anomaly at module location</Original>
+            <English>Spawn a burner anomaly at module location</English>
+            <German>Estellt eine Anomalie des Typs Benner an der Stelle des Moduls</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_meatgrinder">
+            <Original>Meatgrinder</Original>
+            <English>Meatgrinder</English>
+            <German>Fleischwolf</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_meatgrinder_desc">
+            <Original>Spawn a meatgrinder anomaly at module location</Original>
+            <English>Spawn a meatgrinder anomaly at module location</English>
+            <German>Estellt eine Anomalie des Typs Fleischwolf an der Stelle des Moduls</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_teleport">
+            <Original>Teleporter</Original>
+            <English>Teleporter</English>
+            <German>Teleporter</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_teleport_id_desc">
+            <Original>Teleporters need the same ID to work together. It is only allowed to have the same ID twice!</Original>
+            <English>Teleporters need the same ID to work together. It is only allowed to have the same ID twice!</English>
+            <German>Teleporter Anomalien brauchen die selbe ID so dass diese zusammen arbeiten können. Man kann nicht die selbe ID mehr als zwei mal nutzen!</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_teleport_desc">
+            <Original>Spawn a teleport anomaly at module location</Original>
+            <English>Spawn a teleport anomaly at module location</English>
+            <German>Estellt eine Anomalie des Typs Teleporter an der Stelle des Moduls</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_anomaly_field">
+            <Original>Anomaly field</Original>
+            <English>Anomaly field</English>
+            <German>Anomalien Feld</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_anomaly_field_spingboard">
+            <Original>Springboards</Original>
+            <English>Springboards</English>
+            <German>Springboards</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_anomaly_field_spingboard_desc">
+            <Original>How many springboards shall be placed within the zone?</Original>
+            <English>How many springboards shall be placed within the zone?</English>
+            <German>Wie viele Springboards sollen in dem Feld plaziet werden?</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_anomaly_field_meatgrinder">
+            <Original>Meatgrinders</Original>
+            <English>Meatgrinders</English>
+            <German>Fleischwölfe</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_anomaly_field_meatgrinder_desc">
+            <Original>How many meatgrinderss shall be placed within the zone?</Original>
+            <English>How many meatgrinderss shall be placed within the zone?</English>
+            <German>Wie viele Fleischwölfe sollen in dem Feld plaziet werden?</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_anomaly_field_electra">
+            <Original>Electras</Original>
+            <English>Electras</English>
+            <German>Elektras</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_anomaly_field_electra_desc">
+            <Original>How many electras shall be placed within the zone?</Original>
+            <English>How many electras shall be placed within the zone?</English>
+            <German>Wie viele Elektras sollen in dem Feld plaziet werden?</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_anomaly_field_burner">
+            <Original>Burners</Original>
+            <English>Burners</English>
+            <German>Brenner</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_anomaly_field_burner_desc">
+            <Original>How many burners shall be placed within the zone?</Original>
+            <English>How many burners shall be placed within the zone?</English>
+            <German>Wie viele Brenner sollen in dem Feld plaziet werden?</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_anomaly_field_desc">
+            <Original>Spawn an anomaly field at module location</Original>
+            <English>Spawn an anomaly field at module location</English>
+            <German>Estellt ein Feld voller Anomalien an der Stelle des Moduls</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_fog">
+            <Original>Fog field</Original>
+            <English>Fog field</English>
+            <German>Nebel Feld</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_fog_desc">
+            <Original>Spawn a fog anomaly field at module location. Set area size A and B the same! Only size A will be used to set the field size!</Original>
+            <English>Spawn a fog anomaly field at module location. Set area size A and B the same! Only size A will be used to set the field size!</English>
+            <German>Estellt ein Nebel Feld Anomalie an der Stelle des Moduls. Es wird nur die A Größe des Felds als Radius übernommen!</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_fog_desc2">
+            <Original>Set area size A and B the same!</Original>
+            <English>Set area size A and B the same!</English>
+            <German>Setze die Größe A und B gleich!</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_fog_desc3">
+            <Original>Only size A will be used to set the field size!</Original>
+            <English>Only size A will be used to set the field size!</English>
+            <German>Es wird nur die Größe A genutzt um die Größe des Feldes zu setzen!</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_fruitpunch">
+            <Original>Fruit Punch</Original>
+            <English>Fruit Punch</English>
+            <German>Fruit Punch</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_fruitpunch_desc">
+            <Original>Spawn a Fruit Punch anomaly at module location</Original>
+            <English>Spawn a Fruit Punch anomaly at module location</English>
+            <German>Estellt eine Anomalie des Typs Fruit Punch an der Stelle des Moduls</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_enable_detector">
+            <Original>Enable anomaly detector</Original>
+            <English>Enable anomaly detector</English>
+            <German>Anomalien Detektor einschalten</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_disable_detector">
+            <Original>Turn off anomaly detector</Original>
+            <English>Turn off anomaly detector</English>
+            <German>Anomalien Detektor ausschalten</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_disable_detector">
+            <Original>Turn off anomaly detector</Original>
+            <English>Turn off anomaly detector</English>
+            <German>Anomalien Detektor ausschalten</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+	</Package>
+</Project>

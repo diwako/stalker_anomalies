@@ -60,7 +60,7 @@ if(isServer) then {
 						params["_trg","_x"];
 						[_x, getpos _trg, 2, 2] remoteExec ["anomaly_fnc_suckToLocation",_x];
 						sleep 2;
-						[_x,1] remoteExec ["setDamage",_x];
+						_x setDamage 1;
 					};
 				};
 			};
