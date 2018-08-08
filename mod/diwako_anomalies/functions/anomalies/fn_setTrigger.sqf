@@ -6,13 +6,16 @@
 		Made, because when battle eye is enabled it does not allow remoteExec of settrigger commands without cfgremoteexec entry
 
     Parameter:
-        _pos - Position where the anomaly should be (default: [0,0,0]])
+        _trg - Trigger
+        _area - setTriggerArea params
+        _activation - setTriggerActivation params
+        _statements - setTriggerStatements params
 
     Returns:
         nil
 
 	Author:
-	diwako 2018-07-07
+	diwako 2018-08-07
 */
 params["_trg","_area","_activation","_statements"];
 
