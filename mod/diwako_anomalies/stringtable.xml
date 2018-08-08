@@ -314,7 +314,7 @@
         <Key ID="STR_anomaly_settings_gasmasks">
             <Original>Gas masks</Original>
             <English>Gas masks</English>
-            <German>Debugging anschalten</German>
+            <German>Gas Masken</German>
             <!-- <Russian></Russian> -->
         </Key>
         <Key ID="STR_anomaly_settings_gasmasks_desc">
