@@ -2,13 +2,13 @@
 Diwako Stalker Like Anomalies - added functions by Belbo
 */
 
-#define CBA_SETTINGS_CAT "Diwako Stalker Like Anomalies"
+#define CBA_SETTINGS_CAT localize "STR_anomaly_settings_name"
 
 //Enable Diwako Anomalies:
 [
 	"diwako_anomalies_enable"
 	,"CHECKBOX"
-	,["Enable","Enable/Disable Stalker Like Anomalies"]
+	,[(localize "STR_anomaly_settings_enable"),localize "STR_anomaly_settings_enable_desc"]
 	,CBA_SETTINGS_CAT
 	,false
 	,true
@@ -18,7 +18,7 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 [
 	"ANOMALY_DETECTION_RANGE"
 	,"SLIDER"
-	,["Detection Range","Distance to nearest anomaly before detector starts to beep"]
+	,[localize "STR_anomaly_settings_detectionRange", localize "STR_anomaly_settings_detectionRange_desc"]
 	,CBA_SETTINGS_CAT
 	,[10, 50, 20, 0]
 	,true
@@ -28,7 +28,7 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 [
 	"ANOMALY_IDLE_DISTANCE"
 	,"SLIDER"
-	,["Particle Idle Distance","Minimum distance to player for particles to idle"]
+	,[localize "STR_anomaly_settings_particleDistance",localize "STR_anomaly_settings_particleDistance_desc"]
 	,CBA_SETTINGS_CAT
 	,[50, 500, 350, 0]
 	,true
@@ -38,7 +38,7 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 [
 	"ANOMALY_DETECTOR_ITEM"
 	,"EDITBOX"
-	,["Detector Item", "Add classname of detector item - required item to use detector, leave empty for no item - example: AnomalyDetector"]
+	,[localize "STR_anomaly_settings_detectorItem", localize "STR_anomaly_settings_detectorItem_desc"]
 	,CBA_SETTINGS_CAT
 	,"AnomalyDetector"
 	,true
@@ -60,7 +60,7 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 [
 	"ANOMALY_DEBUG"
 	,"CHECKBOX"
-	,["Enable Debugging","Displays a marker were an anomaly has been placed."]
+	,[localize "STR_anomaly_settings_debug",localize "STR_anomaly_settings_debug_desc"]
 	,CBA_SETTINGS_CAT
 	,false
 	,true
@@ -70,7 +70,7 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 [
 	"ANOMALY_GAS_MASKS"
 	,"EDITBOX"
-	,["Gas masks","Write in gasmask class names comma separated, no spaces! Case insensitive!"]
+	,[localize "STR_anomaly_settings_gasmasks",localize "STR_anomaly_settings_gasmasks_desc"]
 	,CBA_SETTINGS_CAT
 	,"GP5_RaspiratorPS,GP5Filter_RaspiratorPS,GP7_RaspiratorPS,GP21_GasmaskPS,SE_S10,G_Respirator_white_F,MASK_M40_OD,MASK_M40,MASK_M50"
 	,true
