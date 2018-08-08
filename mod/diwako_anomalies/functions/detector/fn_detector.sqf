@@ -20,7 +20,7 @@
 	_b = 0.1 - (_m * 5);
 	sleep 1:
 	// small wait so ace interaction window does not gobble up the title text prompt
-	titleText ["Detector has been turned on", "PLAIN DOWN"];
+	titleText [localize "STR_Detector_turned_on", "PLAIN DOWN"];
 	_lastBeep = CBA_missionTime - 10;
 	while {alive player && ANOMALY_DETECTOR_ACTIVE && ([player, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem)} do {
 		_found = false;
@@ -55,5 +55,5 @@
 		sleep 0.05;
 	};
 	ANOMALY_DETECTOR_ACTIVE = false;
-	titleText ["Detector has been turned off", "PLAIN DOWN"];
+	titleText [localize "STR_Detector_turned_off", "PLAIN DOWN"];
 };

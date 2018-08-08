@@ -21,7 +21,7 @@
             <Original>Stalker anomalies</Original>
             <English>Stalker anomalies</English>
             <German>Stalker Anomalien</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Аномалии</Russian>
         </Key>
         <Key ID="STR_anomaly_detector">
             <Original>Anomaly Detector</Original>
@@ -33,19 +33,19 @@
             <Original>Enables detection of anomalies</Original>
             <English>Enables detection of anomalies</English>
             <German>Ermöglicht es Anomlien aufzuspüren</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Позволяет обнаружить аномалии в радиусе действия</Russian>
         </Key>
         <Key ID="STR_anomaly_springboard">
             <Original>Springboard</Original>
             <English>Springboard</English>
             <German>Springboard</German>
-            <Russian>трамплин</Russian>
+            <Russian>Трамплин</Russian>
         </Key>
         <Key ID="STR_anomaly_springboard_desc">
             <Original>Spawn a springboard anomaly at module location</Original>
             <English>Spawn a springboard anomaly at module location</English>
             <German>Estellt eine Anomalie des Typs Springboard an der Stelle des Moduls</German>
-            <Russian>Создать аномалию Трамплин на позиции модуля</Russian>
+            <Russian>Создать аномалию "Трамплин" на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_electra">
             <Original>Electra</Original>
@@ -57,7 +57,7 @@
             <Original>Spawn an electra anomaly at module location</Original>
             <English>Spawn an electra anomaly at module location</English>
             <German>Estellt eine Anomalie des Typs Elektra an der Stelle des Moduls</German>
-            <Russian>Создать аномалию "Жарка" на позиции модуля</Russian>
+            <Russian>Создать аномалию "Электра" на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_burner">
             <Original>Burner</Original>
@@ -81,7 +81,7 @@
             <Original>Spawn a meatgrinder anomaly at module location</Original>
             <English>Spawn a meatgrinder anomaly at module location</English>
             <German>Estellt eine Anomalie des Typs Fleischwolf an der Stelle des Moduls</German>
-            <Russian>Создать аномалию Мясорубка на позиции модуля</Russian>
+            <Russian>Создать аномалию "Мясорубка" на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_teleport">
             <Original>Teleporter</Original>
@@ -233,5 +233,17 @@
             <German>Eine gewöhnliche Schraube</German>
             <Russian>Обычный ржавый болт</Russian>
         </Key>
+        <Key ID="STR_Detector_turned_on">
+            <Original>Detector has been turned on</Original>
+            <English>Detector has been turned on</English>
+            <!-- <German></German> -->
+            <Russian>Детектор Аномалий был включён</Russian>
+        </Key>
+        <Key ID="STR_Detector_turned_off">
+            <Original>Detector has been turned off</Original>
+            <English>Detector has been turned off</English>
+            <!-- <German></German> -->
+            <Russian>Детектор Аномалий был выключен</Russian>
+        </Key>	
 	</Package>
 </Project>
