@@ -96,7 +96,7 @@ if(!(isNull _proxy2)) then {
 
 if(isServer) then {
 	_trg spawn {
-		sleep (10 + random 6);
+		sleep (3 + random 7);
 		_this setVariable ["anomaly_cooldown", false, true];
 	};
 };

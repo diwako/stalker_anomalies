@@ -29,6 +29,12 @@
             <German>Anomalie Detektor</German>
             <Russian>Детектор аномалий</Russian>
         </Key>
+        <Key ID="STR_anomaly_detector_desc">
+            <Original>Enables detection of anomalies</Original>
+            <English>Enables detection of anomalies</English>
+            <German>Ermöglicht es Anomlien aufzuspüren</German>
+            <!-- <Russian></Russian> -->
+        </Key>
         <Key ID="STR_anomaly_springboard">
             <Original>Springboard</Original>
             <English>Springboard</English>
@@ -51,19 +57,19 @@
             <Original>Spawn an electra anomaly at module location</Original>
             <English>Spawn an electra anomaly at module location</English>
             <German>Estellt eine Anomalie des Typs Elektra an der Stelle des Moduls</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Создать аномалию "Жарка" на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_burner">
             <Original>Burner</Original>
             <English>Burner</English>
             <German>Brenner</German>
-            <Russian>Горелка</Russian>
+            <Russian>Жарка</Russian>
         </Key>
         <Key ID="STR_anomaly_burner_desc">
             <Original>Spawn a burner anomaly at module location</Original>
             <English>Spawn a burner anomaly at module location</English>
             <German>Estellt eine Anomalie des Typs Benner an der Stelle des Moduls</German>
-            <Russian>Создать аномалию Горелка на позиции модуля</Russian>
+            <Russian>Создать аномалию "Жарка" на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_meatgrinder">
             <Original>Meatgrinder</Original>
@@ -87,13 +93,13 @@
             <Original>Teleporters need the same ID to work together. It is only allowed to have the same ID twice!</Original>
             <English>Teleporters need the same ID to work together. It is only allowed to have the same ID twice!</English>
             <German>Teleporter Anomalien brauchen die selbe ID so dass diese zusammen arbeiten können. Man kann nicht die selbe ID mehr als zwei mal nutzen!</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Телепортам требуются одинаковые ID для синхронизации. Можно использовать один и тот же ID только в 2-х аномалиях!</Russian>
         </Key>
         <Key ID="STR_anomaly_teleport_desc">
             <Original>Spawn a teleport anomaly at module location</Original>
             <English>Spawn a teleport anomaly at module location</English>
             <German>Estellt eine Anomalie des Typs Teleporter an der Stelle des Moduls</German>
-            <Russian>Создать аномалию Телепорт на позиции модуля</Russian>
+            <Russian>Создать аномалию "Телепорт" на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_anomaly_field">
             <Original>Anomaly field</Original>
@@ -111,49 +117,49 @@
             <Original>How many springboards shall be placed within the zone?</Original>
             <English>How many springboards shall be placed within the zone?</English>
             <German>Wie viele Springboards sollen in dem Feld plaziet werden?</German>
-            <Russian>Сколько Трамплинов должно быть размещено внутри зоны?</Russian>
+            <Russian>Сколько аномалий "Трамплин" должно быть размещено внутри зоны?</Russian>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_meatgrinder">
             <Original>Meatgrinders</Original>
             <English>Meatgrinders</English>
             <German>Fleischwölfe</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Мясорубки</Russian>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_meatgrinder_desc">
             <Original>How many meatgrinderss shall be placed within the zone?</Original>
             <English>How many meatgrinderss shall be placed within the zone?</English>
             <German>Wie viele Fleischwölfe sollen in dem Feld plaziet werden?</German>
-            <Russian>Сколько Мясорубок должно быть размещено внутри зоны?</Russian>
+            <Russian>Сколько аномалий "Мясорубка" должно быть размещено внутри зоны?</Russian>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_electra">
             <Original>Electras</Original>
             <English>Electras</English>
             <German>Elektras</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Электры</Russian>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_electra_desc">
             <Original>How many electras shall be placed within the zone?</Original>
             <English>How many electras shall be placed within the zone?</English>
             <German>Wie viele Elektras sollen in dem Feld plaziet werden?</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Сколько аномалий "Электра" должно быть размещено внутри зоны?</Russian>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_burner">
             <Original>Burners</Original>
             <English>Burners</English>
             <German>Brenner</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Жарки</Russian>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_burner_desc">
             <Original>How many burners shall be placed within the zone?</Original>
             <English>How many burners shall be placed within the zone?</English>
             <German>Wie viele Brenner sollen in dem Feld plaziet werden?</German>
-            <Russian>Сколько Горелок должно быть размещено внутри зоны?</Russian>
+            <Russian>Сколько аномалий "Жарка" должно быть размещено внутри зоны?</Russian>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_desc">
             <Original>Spawn an anomaly field at module location</Original>
             <English>Spawn an anomaly field at module location</English>
             <German>Estellt ein Feld voller Anomalien an der Stelle des Moduls</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Создаёт аномальное поле на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_fog">
             <Original>Fog field</Original>
@@ -165,13 +171,13 @@
             <Original>Spawn a fog anomaly field at module location. Set area size A and B the same! Only size A will be used to set the field size!</Original>
             <English>Spawn a fog anomaly field at module location. Set area size A and B the same! Only size A will be used to set the field size!</English>
             <German>Estellt ein Nebel Feld Anomalie an der Stelle des Moduls. Es wird nur die A Größe des Felds als Radius übernommen!</German>
-            <Russian>Создать аномалию Туманное Поле на позиции модуля. Размеры A и B должны быть одинаковыми! Только размер A будет задавать размер поля!</Russian>
+            <Russian>Создать аномалию "Туманное Поле" на позиции модуля. Размеры A и B (ширина и длина) должны быть одинаковыми! Только размер A будет задавать размер поля!</Russian>
         </Key>
         <Key ID="STR_anomaly_fog_desc2">
             <Original>Set area size A and B the same!</Original>
             <English>Set area size A and B the same!</English>
             <German>Setze die Größe A und B gleich!</German>
-            <Russian>Размеры A и B должны быть одинаковыми!</Russian>
+            <Russian>Размеры A и B (ширина и длина) должны быть одинаковыми!</Russian>
         </Key>
         <Key ID="STR_anomaly_fog_desc3">
             <Original>Only size A will be used to set the field size!</Original>
@@ -183,25 +189,49 @@
             <Original>Fruit Punch</Original>
             <English>Fruit Punch</English>
             <German>Fruit Punch</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Кисель</Russian>
         </Key>
         <Key ID="STR_anomaly_fruitpunch_desc">
             <Original>Spawn a Fruit Punch anomaly at module location</Original>
             <English>Spawn a Fruit Punch anomaly at module location</English>
             <German>Estellt eine Anomalie des Typs Fruit Punch an der Stelle des Moduls</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Спавнит аномалию "Кисель" на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_enable_detector">
             <Original>Enable anomaly detector</Original>
             <English>Enable anomaly detector</English>
             <German>Anomalien Detektor einschalten</German>
-            <Russian>Включить детектор аномалий</Russian>
+            <Russian>Вкл. Детектор Аномалий</Russian>
         </Key>
         <Key ID="STR_anomaly_disable_detector">
             <Original>Turn off anomaly detector</Original>
             <English>Turn off anomaly detector</English>
             <German>Anomalien Detektor ausschalten</German>
-            <Russian>Выключить детектор аномалий</Russian>
+            <Russian>Выкл. Детектор Аномалий</Russian>
+        </Key>
+        <Key ID="STR_anomaly_bolt_bag">
+            <Original>Bag of bolts</Original>
+            <English>Bag of bolts</English>
+            <German>Sack voller Schrauben</German>
+            <Russian>Мешочек с болтами</Russian>
+        </Key>
+        <Key ID="STR_anomaly_bolt_bag_desc">
+            <Original>Just an ordinary run-of-the-mill bag of bolts</Original>
+            <English>Just an ordinary run-of-the-mill bag of bolts</English>
+            <German>Ein gewöhnlicher Sack voller Schrauben</German>
+            <Russian>Вместимость: 20шт</Russian>
+        </Key>
+        <Key ID="STR_anomaly_bolt">
+            <Original>Bolt</Original>
+            <English>Bolt</English>
+            <German>Schraube</German>
+            <Russian>Болт</Russian>
+        </Key>
+        <Key ID="STR_anomaly_bolt_desc">
+            <Original>Just an ordinary run-of-the-mill bolt</Original>
+            <English>Just an ordinary run-of-the-mill bolt</English>
+            <German>Eine gewöhnliche Schraube</German>
+            <Russian>Обычный ржавый болт</Russian>
         </Key>
 	</Package>
 </Project>

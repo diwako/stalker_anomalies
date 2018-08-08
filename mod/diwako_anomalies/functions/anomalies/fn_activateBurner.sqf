@@ -120,7 +120,7 @@ if(!(isNull _light)) then {
 
 if(isServer) then {
 	_trg spawn {
-		sleep (5 + random 21);
+		sleep (5 + random 10);
 		_this setVariable ["anomaly_cooldown", false, true];
 	};
 };

@@ -74,7 +74,7 @@ if(isServer) then {
 	[_trg] spawn {
 		params["_trg"];
 		_trg setVariable ["anomaly_cooldown", true, true];
-		sleep (30 + random 11);
+		sleep (5 + random 30);
 		_trg setVariable ["anomaly_cooldown", false, true];
 	};
 };
