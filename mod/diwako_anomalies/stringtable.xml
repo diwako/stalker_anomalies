@@ -39,7 +39,7 @@
             <Original>Springboard</Original>
             <English>Springboard</English>
             <German>Springboard</German>
-            <Russian>трамплин</Russian>
+            <Russian>Трамплин</Russian>
         </Key>
         <Key ID="STR_anomaly_springboard_desc">
             <Original>Spawn a springboard anomaly at module location</Original>
@@ -57,7 +57,7 @@
             <Original>Spawn an electra anomaly at module location</Original>
             <English>Spawn an electra anomaly at module location</English>
             <German>Estellt eine Anomalie des Typs Elektra an der Stelle des Moduls</German>
-            <Russian>Создать аномалию "Жарка" на позиции модуля</Russian>
+            <Russian>Создать аномалию "Электра" на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_burner">
             <Original>Burner</Original>
@@ -81,7 +81,7 @@
             <Original>Spawn a meatgrinder anomaly at module location</Original>
             <English>Spawn a meatgrinder anomaly at module location</English>
             <German>Estellt eine Anomalie des Typs Fleischwolf an der Stelle des Moduls</German>
-            <Russian>Создать аномалию Мясорубка на позиции модуля</Russian>
+            <Russian>Создать аномалию "Мясорубка" на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_teleport">
             <Original>Teleporter</Original>
