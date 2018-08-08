@@ -29,6 +29,12 @@
             <German>Anomalie Detektor</German>
             <Russian>Детектор аномалий</Russian>
         </Key>
+        <Key ID="STR_anomaly_detector_desc">
+            <Original>Enables detection of anomalies</Original>
+            <English>Enables detection of anomalies</English>
+            <German>Ermöglicht es Anomlien aufzuspüren</German>
+            <!-- <Russian></Russian> -->
+        </Key>
         <Key ID="STR_anomaly_springboard">
             <Original>Springboard</Original>
             <English>Springboard</English>
@@ -202,6 +208,30 @@
             <English>Turn off anomaly detector</English>
             <German>Anomalien Detektor ausschalten</German>
             <Russian>Выключить детектор аномалий</Russian>
+        </Key>
+        <Key ID="STR_anomaly_bolt_bag">
+            <Original>Bag of bolts</Original>
+            <English>Bag of bolts</English>
+            <German>Sack voller Schrauben</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_bolt_bag_desc">
+            <Original>Just an ordinary run-of-the-mill bag of bolts</Original>
+            <English>Just an ordinary run-of-the-mill bag of bolts</English>
+            <German>Ein gewöhnlicher Sack voller Schrauben</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_bolt">
+            <Original>Bolt</Original>
+            <English>Bolt</English>
+            <German>Schraube</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_bolt_desc">
+            <Original>Just an ordinary run-of-the-mill bolt</Original>
+            <English>Just an ordinary run-of-the-mill bolt</English>
+            <German>Eine gewöhnliche Schraube</German>
+            <!-- <Russian></Russian> -->
         </Key>
 	</Package>
 </Project>

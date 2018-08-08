@@ -7,8 +7,8 @@ class cfgWeapons {
 			mass = 10;
 		};
 		scope = 2;
-		displayName = "Anomaly Detector";
-		descriptionShort = "Enables detection of anomalies";
+		displayName = "$STR_anomaly_detector";
+		descriptionShort = "$STR_anomaly_detector_desc";
 		author = "[SeL] Belbo";
 		picture = "\diwako_anomalies\data\ui\AnomalyDetector.paa";
 		model = "\A3\Structures_F\Items\Tools\MultiMeter_F.p3d";
