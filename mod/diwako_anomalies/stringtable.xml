@@ -21,7 +21,7 @@
             <Original>Stalker anomalies</Original>
             <English>Stalker anomalies</English>
             <German>Stalker Anomalien</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Аномалии</Russian>
         </Key>
         <Key ID="STR_anomaly_detector">
             <Original>Anomaly Detector</Original>
@@ -33,7 +33,7 @@
             <Original>Enables detection of anomalies</Original>
             <English>Enables detection of anomalies</English>
             <German>Ermöglicht es Anomlien aufzuspüren</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Позволяет обнаружить аномалии в радиусе действия</Russian>
         </Key>
         <Key ID="STR_anomaly_springboard">
             <Original>Springboard</Original>
@@ -45,7 +45,7 @@
             <Original>Spawn a springboard anomaly at module location</Original>
             <English>Spawn a springboard anomaly at module location</English>
             <German>Estellt eine Anomalie des Typs Springboard an der Stelle des Moduls</German>
-            <Russian>Создать аномалию Трамплин на позиции модуля</Russian>
+            <Russian>Создать аномалию "Трамплин" на позиции модуля</Russian>
         </Key>
         <Key ID="STR_anomaly_electra">
             <Original>Electra</Original>
@@ -232,6 +232,18 @@
             <English>Just an ordinary run-of-the-mill bolt</English>
             <German>Eine gewöhnliche Schraube</German>
             <Russian>Обычный ржавый болт</Russian>
+        </Key>
+        <Key ID="STR_Detector_turned_on">
+            <Original>Detector has been turned on</Original>
+            <English>Detector has been turned on</English>
+            <German>Detektor wurde angeschalten</German>
+            <Russian>Детектор Аномалий был включён</Russian>
+        </Key>
+        <Key ID="STR_Detector_turned_off">
+            <Original>Detector has been turned off</Original>
+            <English>Detector has been turned off</English>
+            <German>Detektor wurde ausgeschalten</German>
+            <Russian>Детектор Аномалий был выключен</Russian>
         </Key>
 	</Package>
 </Project>
