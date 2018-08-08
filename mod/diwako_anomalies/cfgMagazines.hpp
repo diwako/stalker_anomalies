@@ -5,7 +5,7 @@ class cfgMagazines {
 		ammo = "bolt_ammo";
 		scope = 2;
 		count = 9999;
-		mass = 30;
+		mass = 20;
 		descriptionShort = "$STR_anomaly_bolt_bag_desc";
 		displayName = "$STR_anomaly_bolt_bag";
 		displayNameShort = "$STR_anomaly_bolt_bag";

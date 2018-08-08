@@ -75,7 +75,7 @@ if(hasInterface) then {
 
 if(isServer) then {
 	_trg spawn {
-		sleep (30 + random 30);
+		sleep (10 + random 20);
 		_this setVariable ["anomaly_cooldown", false, true];
 	};
 };
