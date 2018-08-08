@@ -20,7 +20,7 @@
 	Author:
 	diwako 2018-08-08
 */
-params["_light",["_brightness",1],["_color",[1,1,1]],["_attenuation",[1,1,1,1,1,1]],["_ambient",[1,1,1]],["_daylight",false],["_flare",false]]
+params["_light",["_brightness",1],["_color",[1,1,1]],["_attenuation",[1,1,1,1,1,1]],["_ambient",[1,1,1]],["_daylight",false],["_flare",false]];
 
 _light setLightBrightness _brightness;
 _light setLightAttenuation _attenuation;
