@@ -67,4 +67,10 @@ if(!isNil "ANOMALY_DEBUG" && {ANOMALY_DEBUG}) then {
 	_trg setVariable ["debug_marker",_marker];
 };
 
+// disable trigger until player is near
+_trg enableDynamicSimulation false;
+_trg enableSimulationGlobal false;
+_trg2 enableDynamicSimulation false;
+_trg2 enableSimulationGlobal false;
+
 _trg
