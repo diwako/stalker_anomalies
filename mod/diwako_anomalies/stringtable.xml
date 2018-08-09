@@ -249,79 +249,78 @@
             <Original>Diwako Stalker Like Anomalies</Original>
             <English>Diwako Stalker Like Anomalies</English>
             <German>Diwako Stalker Anomalien</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Аномалии как в S.T.A.L.K.E.R. от Diwako</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_enable">
             <Original>Enable</Original>
             <English>Enable</English>
             <German>Anschalten</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Включить</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_enable_desc">
             <Original>Enable/Disable Stalker Like Anomalies</Original>
             <English>Enable/Disable Stalker Like Anomalies</English>
             <German>Schalte das das Addon "Stalker like Anomalies" an oder aus</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Включить/Выключить аномалии</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_detectionRange">
             <Original>Detection Range</Original>
             <English>Detection Range</English>
             <German>Detektor Bereich</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Радиус обнаружения детектора</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_detectionRange_desc">
             <Original>Distance to nearest anomaly before detector starts to beep</Original>
             <English>Distance to nearest anomaly before detector starts to beep</English>
             <German>Distanz zur nächsten Anomalie bevor der Detektor anfängt zu beepen</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Дистанция до ближайшей аномалии при которой детектор начинает издавать звуки</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_particleDistance">
             <Original>Particle Idle Distance</Original>
             <English>Particle Idle Distance</English>
             <German>Ruhe Partikel Entfernung</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Дистанция вывода визуальных эффектов в режим ожидания</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_particleDistance_desc">
             <Original>Minimum distance to player for particles to idle</Original>
             <English>Minimum distance to player for particles to idle</English>
             <German>Niedrigster Abstand, ab wann man die Ruhe Partikel von Anomalien sehen kann</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Минимальная дистанция вывода визуальных эффектов в режим ожидания</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_detectorItem">
             <Original>Detector Item</Original>
             <English>Detector Item</English>
             <German>Detektor Gegenstand</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Предмет, являющийся детектором</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_detectorItem_desc">
             <Original>Add classname of detector item - required item to use detector, leave empty for no item - example: AnomalyDetector</Original>
             <English>Add classname of detector item - required item to use detector, leave empty for no item - example: AnomalyDetector</English>
             <German>Gegenstandsklasse des Detektors - benötigter Gegenstand im Inventar um den Detektor nutzen zu können, dies kann leergelassen werden um keinen Gegenstand zu benötigen - Beispiel: AnomalyDetector</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Добавьте classname объекта который вы хотите задать как детектор. Оставьте пустым поле если не нужно задавать предмет детектора. Пример: AnomalyDetector</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_debug">
             <Original>Enable Debugging</Original>
             <English>Enable Debugging</English>
             <German>Debugging anschalten</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Включить режим дебага</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_debug_desc">
             <Original>Displays a marker where an anomaly has been placed</Original>
             <English>Displays a marker where an anomaly has been placed</English>
             <German>Erstelle eine Kartenmarkierung wo eine Anomalie platziert wurde</German>
-            <!-- <Russian></Russian> -->
-        </Key>
+            <Russian>Отображает маркер места на котором была установлена аномалия</Russian>
         <Key ID="STR_anomaly_settings_gasmasks">
             <Original>Gas masks</Original>
             <English>Gas masks</English>
-            <German>Gas Masken</German>
-            <!-- <Russian></Russian> -->
+            <German>Debugging anschalten</German>
+            <Russian>Противогазы</Russian>
         </Key>
         <Key ID="STR_anomaly_settings_gasmasks_desc">
             <Original>Write in gasmask class names comma separated, no spaces! Case insensitive!</Original>
             <English>Write in gasmask class names comma separated, no spaces! Case insensitive!</English>
             <German>Füge hier Klassennamen von Gasmasken hinzu, diese müssen Komma separiert sein und dürfen keine Leerzeichen haben! Groß- und Kleinschreibung muss nicht beachten werden!</German>
-            <!-- <Russian></Russian> -->
+            <Russian>Впишите classname'ы предметов, являющиеся противогазами, без пробелов! Чувствительно к регистру!</Russian>
         </Key>
 	</Package>
 </Project>
