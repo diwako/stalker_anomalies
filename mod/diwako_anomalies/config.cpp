@@ -15,8 +15,8 @@
 			"cba_xeh"
 			,"cba_common"
 		};
-		version = "1.11";
-		versionStr = "1.11";
+		version = "1.15";
+		versionStr = "1.15";
 		author = "diwako";
 		authorUrl = "https://github.com/diwako/stalker_anomalies";
     };
