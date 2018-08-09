@@ -53,7 +53,7 @@ if(isServer) then {
 				if(!(_x isKindOf "landvehicle"  || _x isKindOf "air")) then {
 					_x spawn {
 						sleep 0.5;
-						[_this, 1] remoteExec ["setDamage", _this];
+						_this setDamage 1;
 					};
 				};
 			} else {
@@ -64,7 +64,7 @@ if(isServer) then {
 				} else {
 					// Ace medical is not enabled
 					_dam = damage _x;
-					[_x,(_dam + 0.5)] remoteExec ["setDamage",_x];
+					_x setDamage (_dam + 0.5);
 				};
 			};
 			_mult = 4;
@@ -96,7 +96,7 @@ if(!(isNull _proxy2)) then {
 
 if(isServer) then {
 	_trg spawn {
-		sleep (10 + random 6);
+		sleep (3 + random 7);
 		_this setVariable ["anomaly_cooldown", false, true];
 	};
 };

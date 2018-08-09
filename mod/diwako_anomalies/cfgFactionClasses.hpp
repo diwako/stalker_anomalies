@@ -2,6 +2,6 @@ class CfgFactionClasses {
 	class NO_CATEGORY;
 	class DIW_ANOMALY: NO_CATEGORY
 	{
-		displayName = "Stalker anomalies";
+		displayName = "$STR_anomaly_category";
 	};
 };

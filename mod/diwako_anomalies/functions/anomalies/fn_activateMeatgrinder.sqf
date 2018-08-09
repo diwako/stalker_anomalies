@@ -53,7 +53,7 @@ sleep 5.8;
 {
 	if(_x isKindOf "Man") then {
 		// ace medical not needed, people trapped in this trap are dead
-		[_x, 1] remoteExec ["setDamage",_x];
+		_x setDamage 1;
 		[_x] remoteExec ["anomaly_fnc_minceCorpse"];
 	} else {
 		_curDam = _x getHitPointDamage "hitHull";
@@ -75,7 +75,7 @@ if(hasInterface) then {
 
 if(isServer) then {
 	_trg spawn {
-		sleep (30 + random 30);
+		sleep (10 + random 20);
 		_this setVariable ["anomaly_cooldown", false, true];
 	};
 };

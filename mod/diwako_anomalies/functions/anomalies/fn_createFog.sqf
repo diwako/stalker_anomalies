@@ -45,9 +45,12 @@ _trg setVariable ["anomaly_cooldown", false, true];
 _trg setVariable ["anomaly_type", "fog", true];
 _trg setVariable ["radius", _radius, true];
 _trg setVariable ["angle", _angle, true];
-[_trg, [_radius, _radius, _angle, _isRectangle, 4]] remoteExec ["setTriggerArea",0,_trg];
-[_trg, ["ANY", "PRESENT", true]] remoteExec ["setTriggerActivation",0,_trg];
-[_trg, ["this && {round (cba_missiontime mod 2) == 1}", "[thisTrigger,thisList] spawn anomaly_fnc_activateFog", ""]] remoteExec ["setTriggerStatements",0,_trg];
+[
+	_trg, //trigger
+	[_radius, _radius, _angle, _isRectangle, 4], // area
+	["ANY", "PRESENT", true], // activation
+	["this && {round (cba_missiontime mod 2) == 1}", "[thisTrigger,thisList] spawn anomaly_fnc_activateFog", ""] // statements
+] remoteExec ["anomaly_fnc_setTrigger", 0, _trg];
 
 if(isNil "ANOMALIES_HOLDER") then {
   ANOMALIES_HOLDER = [];
@@ -61,5 +64,6 @@ if(!isNil "ANOMALY_DEBUG" && {ANOMALY_DEBUG}) then {
 	_marker setMarkerShapeLocal "ICON";
 	_marker setMarkerTypeLocal "hd_dot";
 	_marker setMarkerTextLocal (_trg getVariable "anomaly_type");
+	_trg setVariable ["debug_marker",_marker];
 };
 _trg

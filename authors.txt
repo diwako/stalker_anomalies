@@ -7,3 +7,5 @@ diwako
 # CONTRIBUTORS
 [SeL] Belbo
 Mallow
+REALM (Препод)
+Necrossin

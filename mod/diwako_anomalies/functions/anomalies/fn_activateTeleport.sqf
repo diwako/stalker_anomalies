@@ -83,7 +83,7 @@ _trg setVariable ["anomaly_cooldown", true, true];
 	};
 } forEach _men;
 
-sleep (2 + (random 10) );
+sleep (2 + (random 5) );
 
 _trg setVariable ["anomaly_cooldown", false, true];
 _exit setVariable ["anomaly_cooldown", false, true];
