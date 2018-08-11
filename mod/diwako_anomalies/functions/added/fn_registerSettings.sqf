@@ -30,7 +30,17 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 	,"SLIDER"
 	,[localize "STR_anomaly_settings_particleDistance",localize "STR_anomaly_settings_particleDistance_desc"]
 	,CBA_SETTINGS_CAT
-	,[50, 500, 350, 0]
+	,[350, 700, 350, 0]
+	,true
+] call CBA_Settings_fnc_init;
+
+//Trigger activation distance:
+[
+	"ANOMALY_TRIGGER_DISTANCE"
+	,"SLIDER"
+	,[localize "STR_anomaly_settings_triggerDistance",localize "STR_anomaly_settings_triggerDistance_desc"]
+	,CBA_SETTINGS_CAT
+	,[200, 500, 300, 0]
 	,true
 ] call CBA_Settings_fnc_init;
 

@@ -322,5 +322,17 @@
             <German>Füge hier Klassennamen von Gasmasken hinzu, diese müssen Komma separiert sein und dürfen keine Leerzeichen haben! Groß- und Kleinschreibung muss nicht beachten werden!</German>
             <Russian>Впишите classname'ы предметов, являющиеся противогазами, без пробелов! Чувствительно к регистру!</Russian>
         </Key>
+        <Key ID="STR_anomaly_settings_triggerDistance">
+            <Original>Anomaly Distance (Performance)</Original>
+            <English>Anomaly distance (Performance)</English>
+            <German>Anomalie Entfernung (Performance)</German>
+            <!-- <Russian></Russian> -->
+        </Key>
+        <Key ID="STR_anomaly_settings_triggerDistance_desc">
+            <Original>At which distance from anomalies should they be activatable? Higher number can cause client performance issues while a too low number might cause anomalies to not work when an object enters it, especially when going fast in vehicles!</Original>
+            <English>At which distance from anomalies should they be activatable? Higher number can cause client performance issues while a too low number might cause anomalies to not work when an object enters it, especially when going fast in vehicles!</English>
+            <German>Ab welcher Entfernung sollen die Anomalien aktivierbar sein? Eine hohe Zahl kann bei Spielern zu Performance Problemen führen, während eine zu niedrige Zahl dazu führen kann, dass Anomalien nicht rechtzeitig aktiviert werden. Dies kann vorallem mit schnell fahrenden Fahrzeugen passieren!</German>
+            <!-- <Russian></Russian> -->
+        </Key>
 	</Package>
 </Project>
