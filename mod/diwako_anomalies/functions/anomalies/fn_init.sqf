@@ -162,6 +162,11 @@ if(isNil "ANOMALIES_HOLDER") then {
 		if!(isNull _soundTrigger) then {
 			_soundTrigger enableSimulation false;
 		};
+		// if player is not playing in multiplayer disable it here.
+		// in mp the server will disable the trigger
+		if(!isMultiplayer) then {
+			_x enableSimulation false;
+		};
 		false
 	} count _diff;
 	ACTIVE_ANOMALIES = FOUND_ANOMALIES;
