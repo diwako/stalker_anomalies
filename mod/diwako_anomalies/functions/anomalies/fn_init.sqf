@@ -105,7 +105,9 @@ if(isNil "ANOMALIES_HOLDER") then {
 				if(isNull _source) then {
 					// create idle effect
 					private _proxy = "Land_HelipadEmpty_F" createVehicleLocal position _x;
-					_proxy attachTo [_x, [0,0,0]];
+					_proxy enableSimulation false;
+					_proxy setPos (_x modelToWorld [0,0,0]);
+					_proxy setVariable ["anomaly_trigger", _x];
 					_source = "#particlesource" createVehicleLocal getPos _x;
 					_source setPosATL (getPosATL _x);
 					// _source enableSimulation false;

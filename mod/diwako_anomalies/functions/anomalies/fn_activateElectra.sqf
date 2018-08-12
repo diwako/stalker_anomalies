@@ -144,7 +144,8 @@ if(hasInterface) then {
 		waitUntil { sleep 0.2; !(_trg getVariable ["anomaly_cooldown", false])};
 		if(_plr distance _trg < ANOMALY_IDLE_DISTANCE) then {
 			_proxy = "Land_HelipadEmpty_F" createVehicleLocal position _trg;
-			_proxy attachTo [_trg, [0,0,0]];
+			_proxy enableSimulation false;
+			_proxy setPos (_trg modelToWorld [0,0,0]);
 			_source = "#particlesource" createVehicleLocal getPos _trg;
 			[_proxy, _source, "idle"] call anomalyEffect_fnc_electra;
 			_trg setVariable ["anomaly_particle_source", _proxy];

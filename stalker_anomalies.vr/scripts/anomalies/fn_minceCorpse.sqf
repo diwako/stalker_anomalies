@@ -22,7 +22,7 @@ if(isServer) then {
 	_body spawn {
 		private _proxy = "Land_HelipadEmpty_F" createVehicle position _this;
 		_proxy enableSimulationGlobal false;
-		_proxy attachTo [_this, [0,0,0]];
+		_proxy setPos (_this modelToWorld [0,0,0]);
 		[_proxy, "anomaly_body_tear_1"] remoteExec ["say3D"];
 		sleep 15;
 		deleteVehicle _this;

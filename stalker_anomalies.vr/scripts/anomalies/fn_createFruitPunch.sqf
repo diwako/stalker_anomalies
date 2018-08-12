@@ -33,14 +33,11 @@ _trg setTriggerStatements ["this and !(thisTrigger getVariable ['anomaly_cooldow
 
 private _proxy = "Land_HelipadEmpty_F" createVehicle position _trg;
 _proxy enableSimulationGlobal false;
-_proxy attachTo [_trg, [0, 0, 0.5]];
+_proxy setPos (_trg modelToWorld [0,0,0.5]);
 _trg setVariable ["anomaly_sound", _proxy, true];
 
 private _field = createSimpleObject ["BloodPool_01_Large_New_F", _pos];
-// private _field = createVehicle ["BloodPool_01_Large_New_F", _pos, [], 0, "CAN_COLLIDE"];
 _field enableSimulationGlobal false;
-// _field setDir (random 360);
-// _field attachTo [_trg,[0,0,0]];
 _field setPosATL _pos;
 _field setDir (random 360);
 _field setObjectMaterialglobal [0, "a3\characters_f_bootcamp\common\data\vrarmoremmisive.rvmat"];
@@ -62,7 +59,7 @@ _trg2 setPosATL _pos;
 _trg setVariable ["anomaly_idle_sound", _trg2, true];
 _proxy = "Land_HelipadEmpty_F" createVehicle position _trg2;
 _proxy enableSimulationGlobal false;
-_proxy attachTo [_trg2, [0, 0, 0.5]];
+_proxy setPos (_trg2 modelToWorld [0,0,0.5]);
 _trg2 setVariable ["anomaly_idle_sound", _proxy, true];
 [_trg2, [25, 25, 0, false, 2]] remoteExec ["setTriggerArea",0,_trg];
 [_trg2, ["ANY", "PRESENT", true]] remoteExec ["setTriggerActivation",0,_trg];

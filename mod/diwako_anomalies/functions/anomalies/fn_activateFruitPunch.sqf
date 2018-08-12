@@ -25,7 +25,8 @@ private _proxy = _trg getVariable "anomaly_sound";
 _trg setVariable ["anomaly_cooldown", true];
 
 private _proxy = "Land_HelipadEmpty_F" createVehicle position _trg;
-_proxy attachTo [_trg, [0,0,0]];
+_proxy enableSimulationGlobal false;
+_proxy setPos (_trg modelToWorld [0,0,0]);
 private _source = "#particlesource" createVehicle getPos _trg;
 _source setPosATL (getPosATL _trg);
 // _source enableSimulation false;
