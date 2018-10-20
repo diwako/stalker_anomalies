@@ -310,7 +310,7 @@
             <English>Displays a marker where an anomaly has been placed</English>
             <German>Erstelle eine Kartenmarkierung wo eine Anomalie platziert wurde</German>
             <Russian>Отображает маркер места на котором была установлена аномалия</Russian>
-		</Key>
+        </Key>
         <Key ID="STR_anomaly_settings_gasmasks">
             <Original>Gas masks</Original>
             <English>Gas masks</English>
