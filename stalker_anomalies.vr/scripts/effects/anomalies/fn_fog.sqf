@@ -3,8 +3,8 @@ params[["_obj",objNull],["_source",objNull],["_state","idle"]];
 if(isNull _obj || isNull _source) exitWith {};
 switch (_state) do {
 	case "idle": {
-		private _attached = attachedTo _obj;
-		private _area = triggerArea _attached;
+		private _trg = _obj getVariable "anomaly_trigger";
+		private _area = triggerArea _trg;
 		private _radius = (_area#0) - 1;
 		private _angle = _area#2;
 		private _rectangle = _area#3;

@@ -28,7 +28,8 @@ _trg setVariable ["anomaly_cooldown", false, true];
 _trg setVariable ["anomaly_type", "meatgrinder", true];
 private _proxy = "Land_HelipadEmpty_F" createVehicle position _trg;
 _proxy enableSimulationGlobal false;
-_proxy attachTo [_trg, [0, 0, 0.5]];
+_proxy setPos (_trg modelToWorld [0,0,0.5]);
+
 _trg setVariable ["anomaly_sound", _proxy, true];
 [
 	_trg, //trigger
@@ -51,4 +52,9 @@ if(!isNil "ANOMALY_DEBUG" && {ANOMALY_DEBUG}) then {
 	_marker setMarkerTextLocal (_trg getVariable "anomaly_type");
 	_trg setVariable ["debug_marker",_marker];
 };
+
+// disable trigger until player is near
+_trg enableDynamicSimulation false;
+_trg enableSimulationGlobal false;
+
 _trg

@@ -65,7 +65,7 @@ if(hasInterface) then {
 	_source = "#particlesource" createVehicleLocal getPos _trg;
 	private _proxy2 = "Land_HelipadEmpty_F" createVehicle position _trg;
 	_proxy2 enableSimulationGlobal false;
-	_proxy2 attachTo [_trg, [0, 0, 0.5]];
+	_proxy2 setPos (_trg modelToWorld [0,0,0.5]);
 	[_trg, _proxy2, "active"] call anomalyEffect_fnc_springboard;
 	sleep 1;
 	deleteVehicle _proxy2;
