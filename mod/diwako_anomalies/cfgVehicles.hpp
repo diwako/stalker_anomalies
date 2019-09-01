@@ -44,6 +44,7 @@ class cfgVehicles {
         function = "anomaly_fnc_createSpringboard";
         functionPriority = 1;
         scope = 2;  //show in editor
+        scopeCurator = 2; // show in zeus
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
@@ -53,7 +54,7 @@ class cfgVehicles {
             sync[] = {};
         };
     };
-    
+
     class anoamly_moduleElectra: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
@@ -61,6 +62,7 @@ class cfgVehicles {
         function = "anomaly_fnc_createElectra";
         functionPriority = 1;
         scope = 2;  //show in editor
+        scopeCurator = 2; // show in zeus
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
@@ -70,7 +72,7 @@ class cfgVehicles {
             sync[] = {};
         };
     };
-    
+
     class anoamly_moduleBurner: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
@@ -78,6 +80,7 @@ class cfgVehicles {
         function = "anomaly_fnc_createBurner";
         functionPriority = 1;
         scope = 2;  //show in editor
+        scopeCurator = 2; // show in zeus
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
@@ -95,6 +98,7 @@ class cfgVehicles {
         function = "anomaly_fnc_createMeatgrinder";
         functionPriority = 1;
         scope = 2;  //show in editor
+        scopeCurator = 2; // show in zeus
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
@@ -112,6 +116,7 @@ class cfgVehicles {
         function = "anomaly_fnc_createTeleport";
         functionPriority = 1;
         scope = 2;  //show in editor
+        scopeCurator = 2; // show in zeus
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
@@ -139,6 +144,7 @@ class cfgVehicles {
         canSetAreaHeight = 0;
         canSetAreaShape = 1;
         scope = 2;  //show in editor
+        scopeCurator = 2; // show in zeus
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
@@ -184,6 +190,7 @@ class cfgVehicles {
         canSetAreaHeight = 0;
         canSetAreaShape = 1;
         scope = 2;  //show in editor
+        scopeCurator = 2; // show in zeus
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
@@ -202,7 +209,7 @@ class cfgVehicles {
             };
         };
     };
-	
+
 	class anoamly_moduleFruitPunch: Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
@@ -210,6 +217,7 @@ class cfgVehicles {
         function = "anomaly_fnc_createFruitPunch";
         functionPriority = 1;
         scope = 2;  //show in editor
+        scopeCurator = 2; // show in zeus
         isGlobal = 0; //run on server
         isTriggerActivated  = 0; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);

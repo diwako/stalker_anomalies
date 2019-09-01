@@ -1,10 +1,18 @@
-﻿class CfgPatches
+class CfgPatches
 {
     class diwako_anomalies
     {
         units[] = {
 			"AnomalyDetector_Item"
 			,"BagOfBolts_Item"
+            ,"anoamly_moduleSpringboard"
+            ,"anoamly_moduleElectra"
+            ,"anoamly_moduleBurner"
+            ,"anoamly_moduleMeatgrinder"
+            ,"anoamly_moduleTeleport"
+            ,"anoamly_moduleCreateAnomalyField"
+            ,"anoamly_moduleCreateFog"
+            ,"anoamly_moduleFruitPunch"
 		};
         weapons[] = {
 			"AnomalyDetector"
