@@ -3,8 +3,8 @@ class CfgPatches
     class diwako_anomalies
     {
         units[] = {
-			"AnomalyDetector_Item"
-			,"BagOfBolts_Item"
+            "AnomalyDetector_Item"
+            ,"BagOfBolts_Item"
             ,"anoamly_moduleSpringboard"
             ,"anoamly_moduleElectra"
             ,"anoamly_moduleBurner"
@@ -13,20 +13,20 @@ class CfgPatches
             ,"anoamly_moduleCreateAnomalyField"
             ,"anoamly_moduleCreateFog"
             ,"anoamly_moduleFruitPunch"
-		};
+        };
         weapons[] = {
-			"AnomalyDetector"
-			,"BagOfBolts"
-		};
+            "AnomalyDetector"
+            ,"BagOfBolts"
+        };
         requiredVersion = 1.82;
         requiredAddons[] = {
-			"cba_xeh"
-			,"cba_common"
-		};
-		version = "1.15";
-		versionStr = "1.15";
-		author = "diwako";
-		authorUrl = "https://github.com/diwako/stalker_anomalies";
+            "cba_xeh"
+            ,"cba_common"
+        };
+        version = "1.16";
+        versionStr = "1.16";
+        author = "diwako";
+        authorUrl = "https://github.com/diwako/stalker_anomalies";
     };
 };
 
@@ -35,9 +35,9 @@ class CfgPatches
     count = COUNT; \
 }
 class Extended_PreInit_EventHandlers {
-	class anomaly_settings {
-		init = "call anomaly_fnc_registerSettings";
-	};
+    class anomaly_settings {
+        init = "call anomaly_fnc_registerSettings";
+    };
 };
 
 #include "cfgFactionClasses.hpp"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="diwako_anomalies">
-	<Package name="anomaly">
+    <Package name="anomaly">
         <Key ID="STR_anomaly_empty">
             <Original></Original>
             <English></English>
@@ -335,5 +335,5 @@
             <German>Ab welcher Entfernung sollen die Anomalien aktivierbar sein? Eine hohe Zahl kann bei Spielern zu Performance Problemen führen, während eine zu niedrige Zahl dazu führen kann, dass Anomalien nicht rechtzeitig aktiviert werden. Dies kann vorallem mit schnell fahrenden Fahrzeugen passieren!</German>
             <!-- <Russian></Russian> -->
         </Key>
-	</Package>
+    </Package>
 </Project>
