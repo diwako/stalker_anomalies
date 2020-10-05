@@ -117,17 +117,17 @@ if(isNil "ANOMALIES_HOLDER") then {
                     switch (_type) do {
                         case "meatgrinder": {_arr call anomalyEffect_fnc_meatgrinder;};
                         case "springboard": {_arr call anomalyEffect_fnc_springboard;};
-                        case "burner": 		{_arr call anomalyEffect_fnc_burner;};
-                        case "teleport": 	{_arr call anomalyEffect_fnc_teleport;};
-                        case "fog": 		{[_source, "idle", _x] call anomalyEffect_fnc_fog;};
-                        case "electra": 	{
+                        case "burner":      {_arr call anomalyEffect_fnc_burner;};
+                        case "teleport":    {_arr call anomalyEffect_fnc_teleport;};
+                        case "fog":         {[_source, "idle", _x] call anomalyEffect_fnc_fog;};
+                        case "electra":     {
                             if(!(_x getVariable ["anomaly_cooldown", false])) then {
                                 _arr call anomalyEffect_fnc_electra;
                             } else {
                                 deleteVehicle _source;
                             };
                         };
-                        case "fruitpunch": 	{_arr call anomalyEffect_fnc_fruitPunch;};
+                        case "fruitpunch":  {_arr call anomalyEffect_fnc_fruitPunch;};
                         default { };
                     };
                     _x setVariable ["anomaly_particle_source", _source];
