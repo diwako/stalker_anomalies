@@ -1,9 +1,9 @@
 /*
-	Function: anomaly_fnc_setLight
+    Function: anomaly_fnc_setLight
 
-	Description:
+    Description:
         Function which will be remoteExeced to set up lights
-		Made, because when battle eye is enabled it does not allow remoteExec of light commands without cfgremoteexec entry
+        Made, because when battle eye is enabled it does not allow remoteExec of light commands without cfgremoteexec entry
 
     Parameter:
         _light - Light
@@ -17,8 +17,8 @@
     Returns:
         nil
 
-	Author:
-	diwako 2018-08-08
+    Author:
+    diwako 2018-08-08
 */
 params["_light",["_brightness",1],["_color",[1,1,1]],["_attenuation",[1,1,1,1,1,1]],["_ambient",[1,1,1]],["_daylight",false],["_flare",false]];
 

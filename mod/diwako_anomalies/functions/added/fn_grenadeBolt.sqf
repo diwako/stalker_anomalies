@@ -9,10 +9,10 @@ private _obj = createVehicle ["bolt_throw_dummy", getPos _projectile, [], 0, "CA
 _obj attachTo [_projectile]; 
 
 [_obj] spawn {
-	params ["_obj"];
-	sleep 10;
-	detach _obj;
-	deleteVehicle _obj;
+    params ["_obj"];
+    sleep 10;
+    detach _obj;
+    deleteVehicle _obj;
 };
 
 nil
