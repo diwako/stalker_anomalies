@@ -22,7 +22,6 @@ if(typeName _pos != typeName []) then {
     _id = _pos getVariable ["anomalyid",-1];
     _pos = [_pos] call anomaly_fnc_getLocationFromModule;
 };
-systemChat format ["Teleporter ID: %1 | %2", _id, typeName _id];
 
 if(count _pos < 3) then {
     _pos set [2,0];
@@ -42,7 +41,7 @@ if( (count _teleporters) >= 2) exitWith {
     hintC ("Teleport Anomaly with ID " + str(_id) + " cannot be created as there are already 2 anomalies with that id. Affected anomaly at " + str(_pos));
 };
 
-_trg = createTrigger ["EmptyDetector", _pos];
+private _trg = createTrigger ["EmptyDetector", _pos];
 _trg setPosATL _pos;
 _teleporters pushBack _trg;
 [ANOMALY_TELEPORT_IDS, _id, _teleporters] call CBA_fnc_hashSet;

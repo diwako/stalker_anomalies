@@ -48,7 +48,13 @@
                 };
             };
             if( (CBA_missionTime - _lastBeep) >= _sleep) then {
-                playSound "da_2_beep1";
+                switch (ANOMALY_DETECTOR_VOLUME) do {
+                    case 1: { playSound "da_2_beep1_high_1"; };
+                    case 2: { playSound "da_2_beep1_high_2"; };
+                    case -1: { playSound "da_2_beep1_low_1"; };
+                    case -2: { playSound "da_2_beep1_low_2"; };
+                    default { playSound "da_2_beep1"; };
+                };
                 _lastBeep = CBA_missionTime;
             };
         };

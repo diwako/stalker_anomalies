@@ -209,6 +209,16 @@
             <German>Anomalien Detektor ausschalten</German>
             <Russian>Выкл. Детектор Аномалий</Russian>
         </Key>
+        <Key ID="STR_anomaly_detector_increase_volume">
+            <Original>Increase volume</Original>
+            <English>Increase volume</English>
+            <German>Lautstärke erhöhen</German>
+        </Key>
+        <Key ID="STR_anomaly_detector_decrease_volume">
+            <Original>Decrease volume</Original>
+            <English>Decrease volume</English>
+            <German>Lautstärke verringern</German>
+        </Key>
         <Key ID="STR_anomaly_bolt_bag">
             <Original>Bag of bolts</Original>
             <English>Bag of bolts</English>

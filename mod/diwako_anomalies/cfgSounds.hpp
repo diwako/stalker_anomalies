@@ -55,6 +55,30 @@ class cfgSounds {
         sound[] = {"diwako_anomalies\sounds\detector\da-2_beep1.ogg", 1, 1, 20};
         titles[] = {};
     };
+    class da_2_beep1_low_1
+    {
+        name = "da_2_beep1_low_1";
+        sound[] = {"diwako_anomalies\sounds\detector\da-2_beep1.ogg", 0.75, 1, 20};
+        titles[] = {};
+    };
+    class da_2_beep1_low_2
+    {
+        name = "da_2_beep1_low_2";
+        sound[] = {"diwako_anomalies\sounds\detector\da-2_beep1.ogg", 0.5, 1, 20};
+        titles[] = {};
+    };
+    class da_2_beep1_high_1
+    {
+        name = "da_2_beep1_high_1";
+        sound[] = {"diwako_anomalies\sounds\detector\da-2_beep1.ogg", 2, 1, 20};
+        titles[] = {};
+    };
+    class da_2_beep1_high_2
+    {
+        name = "da_2_beep1_high_2";
+        sound[] = {"diwako_anomalies\sounds\detector\da-2_beep1.ogg", 3, 1, 20};
+        titles[] = {};
+    };
     class electra_idle1
     {
         name = "electra_idle1";

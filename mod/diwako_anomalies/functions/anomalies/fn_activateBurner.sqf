@@ -31,7 +31,7 @@ if(hasInterface) then {
     [_source, "active"] call anomalyEffect_fnc_burner;
     [_source2, "active"] call anomalyEffect_fnc_burner;
 
-    private _light = "#lightpoint" createVehicleLocal (getpos _proxy);
+    _light = "#lightpoint" createVehicleLocal (getpos _proxy);
     _light setLightBrightness 2;
     _light setLightAmbient [1, 0.6, 0.6];
     _light setLightColor [1, 0.6, 0.6];

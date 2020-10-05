@@ -80,6 +80,7 @@ ANOMALY_BOLT_ITEM = "";
 /*== DO NOT EDIT Below unless you know what you are doing! ==*/
 ACTIVE_ANOMALIES = [];
 ANOMALY_DETECTOR_ACTIVE = false;
+ANOMALY_DETECTOR_VOLUME = 0;
 ANOMALY_BOLT_THROW_TIME = (time - 1);
 
 enableCamShake true;
@@ -176,14 +177,14 @@ if(isNil "ANOMALIES_HOLDER") then {
 }, 5, [] ] call CBA_fnc_addPerFrameHandler;
 
 if(!isNil "ace_interact_menu_fnc_createAction") then {
-    _action = ["anomaly_detector",(localize "STR_anomaly_enable_detector"),"",{
+    _action = ["anomaly_detector_on",(localize "STR_anomaly_enable_detector"),"",{
         ANOMALY_DETECTOR_ACTIVE = true;
         [] call anomalyDetector_fnc_detector;
     },{!ANOMALY_DETECTOR_ACTIVE && [player, ANOMALY_DETECTOR_ITEM] call anomaly_fnc_hasItem},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
     [typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
 
-    _action = ["anomaly_detector",(localize "STR_anomaly_disable_detector"),"",{
+    _action = ["anomaly_detector_off",(localize "STR_anomaly_disable_detector"),"",{
         ANOMALY_DETECTOR_ACTIVE = false;
     },{ANOMALY_DETECTOR_ACTIVE},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
@@ -211,6 +212,31 @@ if(!isNil "ace_interact_menu_fnc_createAction") then {
         },nil,0,false,true,"","ANOMALY_BOLT_THROW_TIME < time && [_target, ANOMALY_BOLT_ITEM] call anomaly_fnc_hasItem && alive _target"]] call CBA_fnc_addPlayerAction;
     };
 };
+
+[ANOMALY_DETECTOR_ITEM, "CONTAINER", localize "STR_anomaly_enable_detector", nil, nil,
+    [{!ANOMALY_DETECTOR_ACTIVE}, {!ANOMALY_DETECTOR_ACTIVE}], {
+    ANOMALY_DETECTOR_ACTIVE = true;
+    [] call anomalyDetector_fnc_detector;
+    false
+}, false] call CBA_fnc_addItemContextMenuOption;
+
+[ANOMALY_DETECTOR_ITEM, "CONTAINER", localize "STR_anomaly_disable_detector", nil, nil,
+    [{ANOMALY_DETECTOR_ACTIVE}, {ANOMALY_DETECTOR_ACTIVE}], {
+    ANOMALY_DETECTOR_ACTIVE = false;
+    false
+}, false] call CBA_fnc_addItemContextMenuOption;
+
+[ANOMALY_DETECTOR_ITEM, "CONTAINER", localize "STR_anomaly_detector_increase_volume", nil, nil,
+    [{ANOMALY_DETECTOR_VOLUME < 2}, {ANOMALY_DETECTOR_ACTIVE}], {
+    ANOMALY_DETECTOR_VOLUME = ANOMALY_DETECTOR_VOLUME + 1;
+    false
+}, false] call CBA_fnc_addItemContextMenuOption;
+
+[ANOMALY_DETECTOR_ITEM, "CONTAINER", localize "STR_anomaly_detector_decrease_volume", nil, nil,
+    [{ANOMALY_DETECTOR_VOLUME > -2}, {ANOMALY_DETECTOR_ACTIVE}], {
+    ANOMALY_DETECTOR_VOLUME = ANOMALY_DETECTOR_VOLUME - 1;
+    false
+}, false] call CBA_fnc_addItemContextMenuOption;
 
 // add Ares modules for zeus
 if(!isNil "Ares_fnc_RegisterCustomModule") then {
