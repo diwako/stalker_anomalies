@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="diwako_anomalies">
-	<Package name="anomaly">
+    <Package name="anomaly">
         <Key ID="STR_anomaly_empty">
             <Original></Original>
             <English></English>
@@ -209,6 +209,16 @@
             <German>Anomalien Detektor ausschalten</German>
             <Russian>Выкл. Детектор Аномалий</Russian>
         </Key>
+        <Key ID="STR_anomaly_detector_increase_volume">
+            <Original>Increase volume</Original>
+            <English>Increase volume</English>
+            <German>Lautstärke erhöhen</German>
+        </Key>
+        <Key ID="STR_anomaly_detector_decrease_volume">
+            <Original>Decrease volume</Original>
+            <English>Decrease volume</English>
+            <German>Lautstärke verringern</German>
+        </Key>
         <Key ID="STR_anomaly_bolt_bag">
             <Original>Bag of bolts</Original>
             <English>Bag of bolts</English>
@@ -335,5 +345,5 @@
             <German>Ab welcher Entfernung sollen die Anomalien aktivierbar sein? Eine hohe Zahl kann bei Spielern zu Performance Problemen führen, während eine zu niedrige Zahl dazu führen kann, dass Anomalien nicht rechtzeitig aktiviert werden. Dies kann vorallem mit schnell fahrenden Fahrzeugen passieren!</German>
             <!-- <Russian></Russian> -->
         </Key>
-	</Package>
+    </Package>
 </Project>
