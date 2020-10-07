@@ -10,7 +10,7 @@
             "AnomalyDetector",
             "BagOfBolts"
         };
-        requiredVersion = 1.82;
+        requiredVersion = 1.98;
         requiredAddons[] = {
             "cba_xeh",
             "cba_common"
