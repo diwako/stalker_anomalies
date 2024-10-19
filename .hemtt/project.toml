@@ -1,0 +1,27 @@
+name = "Diwako's STALKER-like anomalies"
+prefix = "diwako_anomalies"
+author = "Diwako"
+mainprefix = "z"
+
+[version]
+path = "addons/main/script_version.hpp"
+git_hash = 0
+
+[files]
+include = ["meta.cpp", "mod.cpp", "authors.txt", "license.txt"]
+exclude = ["*.psd", "*.png", "*.tga"]
+
+[hemtt.launch.default]
+workshop = [
+    "450814997",  # CBA_A3's Workshop ID
+    "463939057",  # ACE3
+    "1779063631", # ZEN
+]
+parameters = ["-world=empty"]
+mission = "test.vr"
+
+[hemtt.signing]
+authority = "diwako_anomalies"
+
+[hemtt.release]
+folder = "diwako_anomalies"

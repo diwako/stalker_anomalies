@@ -1,0 +1,79 @@
+#include "\z\diwako_anomalies\addons\main\script_component.hpp"
+/*
+    Function: diwako_anomalies_main_fnc_createBurner
+
+    Description:
+        Creates an anomaly of the type "Burner"
+
+    Parameter:
+        _pos - Position where the anomaly should be (default: [0,0,0]])
+
+    Returns:
+        Anomaly Trigger
+
+    Author:
+    diwako 2017-12-11
+*/
+params[["_pos",[0,0,0]]];
+
+if (!isServer) exitWith {};
+
+_pos = [_pos] call FUNC(getLocationFromModule);
+
+if (count _pos < 3) then {
+    _pos set [2,0];
+};
+private _trg = createTrigger ["EmptyDetector", _pos];
+_trg setPosASL _pos;
+_trg setVariable [QGVAR(cooldown), false, true];
+_trg setVariable [QGVAR(anomalyType), "burner", true];
+private _proxy = "building" createVehicle position _trg;
+_proxy enableSimulationGlobal false;
+_proxy setPos (_trg modelToWorld [0,0,0.5]);
+_trg setVariable [QGVAR(sound), _proxy, true];
+
+[QGVAR(setTrigger), [
+    _trg, //trigger
+    [4, 4, 0, false,4], // area
+    ["ANY", "PRESENT", true], // activation
+    [format ["this and !(thisTrigger getVariable ['%1',false])", QGVAR(cooldown)], format ["[thisTrigger, thisList] call %1", QFUNC(activateBurner)], ""] // statements
+]] call CBA_fnc_globalEventJip;
+
+if (isNil QGVAR(holder)) then {
+    GVAR(holder) = [];
+};
+
+GVAR(holder) pushBack _trg;
+// publicVariable QGVAR(holder);
+
+// set up idle sound speaker;
+_trg2 = createTrigger ["EmptyDetector", _pos];
+_trg2 setPosASL _pos;
+_trg setVariable [QGVAR(idleSound), _trg2, true];
+_proxy = "building" createVehicle position _trg2;
+_proxy enableSimulationGlobal false;
+_proxy setPos (_trg2 modelToWorld [0,0,0.5]);
+_trg2 setVariable [QGVAR(idleSound), _proxy, true];
+
+[QGVAR(setTrigger), [
+    _trg2, //trigger
+    [25, 25, 0, false, 2], // area
+    ["ANY", "PRESENT", true], // activation
+    ["this && {([] call CBA_fnc_currentUnit) in thisList}", format ["[thisTrigger] spawn {params['_thisTrigger']; sleep random 5; while{!isNull _thisTrigger && {triggerActivated _thisTrigger}} do {(_thisTrigger getVariable '%1') say3D 'fire_idle'; sleep 8.272060}}", QGVAR(idleSound)], ""] // statement
+]] call CBA_fnc_globalEventJip;
+
+if (GVAR(debug)) then {
+    _marker = createMarkerLocal [str(_pos),_pos];
+    _marker setMarkerShapeLocal "ICON";
+    _marker setMarkerTypeLocal "hd_dot";
+    _marker setMarkerTextLocal (_trg getVariable QGVAR(anomalyType));
+    _trg setVariable [QGVAR(debugMarker),_marker];
+};
+
+// disable trigger until player is near
+_trg enableDynamicSimulation false;
+_trg enableSimulationGlobal false;
+_trg2 enableDynamicSimulation false;
+_trg2 enableSimulationGlobal false;
+
+_trg

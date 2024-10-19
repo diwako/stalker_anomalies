@@ -1,0 +1,96 @@
+class StageTI
+{
+    texture = "z\diwako_anomalies\addons\main\data\ui\bolt_co.paa";
+};
+ambient[] = {1,1,1,1.0};
+diffuse[] = {1,1,1,1.0};
+forcedDiffuse[] = {0.0,0.0,0.0,0.0};
+emmisive[] = {0.0,0.0,0.0,1.0};
+specular[] = {0.17,0.13,0.11,1.0};
+specularPower = 150.0;
+PixelShaderID = "super";
+VertexShaderID = "super";
+class Stage1
+{
+    texture = "z\diwako_anomalies\addons\main\data\ui\bolt_nohq.paa";
+    uvSource = "tex";
+    class uvTransform
+    {
+        aside[] = {1.0,0.0,0.0};
+        up[] = {0.0,1.0,0.0};
+        dir[] = {0.0,0.0,0.0};
+        pos[] = {0.0,0.0,0.0};
+    };
+};
+class Stage2
+{
+    texture = "a3\weapons_f\data\detailmaps\metal_detail_dt.paa";
+    uvSource = "tex";
+    class uvTransform
+    {
+        aside[] = {5,-4,0};
+        up[] = {8,1.931601,0};
+        dir[] = {0.0,0.0,0.0};
+        pos[] = {0.0,0.0,0.0};
+    };
+};
+class Stage3
+{
+    texture = "#(argb,8,8,3)color(0,0,0,0,MC)";
+    uvSource = "tex";
+    class uvTransform
+    {
+        aside[] = {1.0,0.0,0.0};
+        up[] = {0.0,1.0,0.0};
+        dir[] = {0.0,0.0,0.0};
+        pos[] = {0.0,0.0,0.0};
+    };
+};
+class Stage4
+{
+    texture = "z\diwako_anomalies\addons\main\data\ui\bolt_as.paa";
+    uvSource = "tex";
+    class uvTransform
+    {
+        aside[] = {1.0,0.0,0.0};
+        up[] = {0.0,1.0,0.0};
+        dir[] = {0.0,0.0,0.0};
+        pos[] = {0.0,0.0,0.0};
+    };
+};
+class Stage5
+{
+    texture = "z\diwako_anomalies\addons\main\data\ui\bolt_smdi.paa";
+    uvSource = "tex";
+    class uvTransform
+    {
+        aside[] = {1.0,0.0,0.0};
+        up[] = {0.0,1.0,0.0};
+        dir[] = {0.0,0.0,0.0};
+        pos[] = {0.0,0.0,0.0};
+    };
+};
+class Stage6
+{
+    texture = "#(ai,64,128,1)fresnel(1.5,1.22)";
+    uvSource = "tex";
+    class uvTransform
+    {
+        aside[] = {1.0,0.0,0.0};
+        up[] = {0.0,1.0,0.0};
+        dir[] = {0.0,0.0,0.0};
+        pos[] = {0.0,0.0,0.0};
+    };
+};
+class Stage7
+{
+    texture = "a3\data_f\env_land_co.paa";
+    uvSource = "tex";
+    class uvTransform
+    {
+        aside[] = {1.0,0.0,0.0};
+        up[] = {0.0,1.0,0.0};
+        dir[] = {0.0,0.0,0.0};
+        pos[] = {0.0,0.0,0.0};
+    };
+};
