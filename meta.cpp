@@ -1,3 +1,3 @@
 protocol = 1;
-publishedid = 1383903166;
-name = "Diwako's STALKER-like anomalies";
+publishedid = 3351980695;
+name = "Diwako's STALKER-like anomalies rework";

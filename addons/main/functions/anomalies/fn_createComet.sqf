@@ -17,23 +17,19 @@
     Author:
     diwako 2024-10-18
 */
-params[["_pos", [0,0,0]], ["_marker", ""], ["_speed", 6], ["_smoothCurves", true]];
+params[["_marker", ""], ["_speed", 6], ["_smoothCurves", true]];
+if !(isServer) exitWith {nil};
 
-if (!isServer || _marker isEqualTo "") exitWith {};
-
-if !(_pos isEqualType []) then {
+if !(_marker isEqualType []) then {
     //created via module
-    _marker = _pos getVariable ["marker", ""];
-    _speed = _pos getVariable ["speed", 6];
-    _smoothCurves = _pos getVariable ["smooth", true];
-    _pos = [_pos] call FUNC(getLocationFromModule);
+    private _module = _marker;
+    _marker = _module getVariable ["marker", ""];
+    _speed = _module getVariable ["speed", 6];
+    _smoothCurves = _module getVariable ["smooth", true];
+    deleteVehicle _module;
 };
 
-private _trg = createTrigger ["EmptyDetector", _pos];
-_trg setPosASL _pos;
-_trg setVariable [QGVAR(cooldown), false, true];
-_trg setVariable [QGVAR(anomalyType), "comet", true];
-_trg setTriggerInterval 9999;
+if (_marker isEqualTo "") exitWith {nil};
 
 // find marker num
 private _end = 0;
@@ -42,8 +38,16 @@ while {getMarkerPos format ["%1%2", _marker, _end] isNotEqualTo [0, 0, 0]} do {
 };
 
 if (_end isEqualTo 0) exitWith {
-    hintC format ["Comet anomaly could find path for ""%1"". Make sure to have at least one marker named ""%1\0""", _marker];
+    hintC format ["Comet anomaly could find path for ""%1"". Make sure to have at least one marker named ""%1%2""", _marker, 0];
+    nil
 };
+
+private _pos = getMarkerPos [format ["%1%2", _marker, 0], true];
+private _trg = createTrigger ["EmptyDetector", _pos];
+_trg setPosASL AGLToASL _pos;
+_trg setVariable [QGVAR(cooldown), false, true];
+_trg setVariable [QGVAR(anomalyType), "comet", true];
+_trg setTriggerInterval 9999;
 
 if (isNil QGVAR(holder)) then {
     GVAR(holder) = [];
