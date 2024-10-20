@@ -44,7 +44,6 @@
             <German>Springboard</German>
             <Russian>Трамплин</Russian>
             <Polish>Trampolina</Polish>
-            
         </Key>
         <Key ID="STR_anomaly_springboard_desc">
             <Original>Spawn a springboard anomaly at module location</Original>
