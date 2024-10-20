@@ -41,6 +41,8 @@ if (hasInterface) then {
 
     [QGVAR(deleteParticleSource), {
         _this call FUNC(deleteParticleSource);
+        // delete local only idle sound
+        deleteVehicle (_trg getVariable [QGVAR(soundIdleLocal), objNull]);
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(fruitPunchEffect), {

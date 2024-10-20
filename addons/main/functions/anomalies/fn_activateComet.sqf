@@ -53,7 +53,7 @@ _trg setVariable [QGVAR(cooldown), true];
         if (_curDam >= 1) then {
             _x setDamage 1;
         } else {
-            _x setHitPointDamage ["HitEngine", (_curDam + 0.15)];
+            _x setHitPointDamage ["HitEngine", (_curDam + 0.15), true, _x, _x];
             if !(_x isKindOf "tank") then {
                 _x setHit ["wheel_1_1_steering", 1];
                 _x setHit ["wheel_1_2_steering", 1];

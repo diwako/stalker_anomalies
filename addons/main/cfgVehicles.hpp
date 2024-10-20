@@ -274,9 +274,21 @@ class cfgVehicles {
 
     class GVAR(soundComet): Sound {
         author = "diwako";
-        // _generalMacro = QGVAR(soundComet);
-        // scope = 1;
         sound = QGVAR(soundComet);
-        // displayName = "$STR_DN_STREAM";
+    };
+    class GVAR(soundBurner): GVAR(soundComet) {
+        sound = QGVAR(soundBurner);
+    };
+    class GVAR(soundElectra): GVAR(soundComet) {
+        sound = QGVAR(soundElectra);
+    };
+    class GVAR(soundFruitpunch): GVAR(soundComet) {
+        sound = QGVAR(soundFruitpunch);
+    };
+    class GVAR(soundSpringboard): GVAR(soundComet) {
+        sound = QGVAR(soundSpringboard);
+    };
+    class GVAR(soundTeleport): GVAR(soundComet) {
+        sound = QGVAR(soundTeleport);
     };
 };

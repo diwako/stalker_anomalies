@@ -79,12 +79,6 @@ class cfgSounds {
         sound[] = {QPATHTOF(sounds\detector\da-2_beep1.ogg), 3, 1, 20};
         titles[] = {};
     };
-    class electra_idle1
-    {
-        name = "electra_idle1";
-        sound[] = {QPATHTOF(sounds\anomalies\electra_idle1.ogg), 1, 1, 100};
-        titles[] = {};
-    };
     class electra_blast1
     {
         name = "electra_blast1";
@@ -97,34 +91,10 @@ class cfgSounds {
         sound[] = {QPATHTOF(sounds\anomalies\electra_blast2.ogg), 1, 1, 200};
         titles[] = {};
     };
-    class gravi_idle00
-    {
-        name = "gravi_idle00";
-        sound[] = {QPATHTOF(sounds\anomalies\gravi_idle00.ogg), 1, 1, 50};
-        titles[] = {};
-    };
-    class gravi_idle01
-    {
-        name = "gravi_idle01";
-        sound[] = {QPATHTOF(sounds\anomalies\gravi_idle01.ogg), 1, 1, 50};
-        titles[] = {};
-    };
-    class fire_idle
-    {
-        name = "fire_idle";
-        sound[] = {QPATHTOF(sounds\anomalies\fire_idle.ogg), 1, 1, 50};
-        titles[] = {};
-    };
     class fire2
     {
         name = "fire2";
         sound[] = {QPATHTOF(sounds\anomalies\fire2.ogg), 2, 1, 200};
-        titles[] = {};
-    };
-    class teleport_idle
-    {
-        name = "teleport_idle";
-        sound[] = {QPATHTOF(sounds\anomalies\teleport_idle.ogg), 1, 1, 25};
         titles[] = {};
     };
     class teleport_work_1
@@ -149,12 +119,6 @@ class cfgSounds {
     {
         name = "buzz_hit";
         sound[] = {QPATHTOF(sounds\anomalies\buzz_hit.ogg), 2, 1, 50};
-        titles[] = {};
-    };
-    class buzz_idle
-    {
-        name = "buzz_idle";
-        sound[] = {QPATHTOF(sounds\anomalies\buzz_idle.ogg), 1, 1, 25};
         titles[] = {};
     };
 };

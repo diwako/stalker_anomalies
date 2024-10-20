@@ -74,7 +74,7 @@ if (isServer) then {
                     if (getMass _x <= 10000) then {
                         _mult = _mult * 2;
                         private _curDam = _x getHitPointDamage "HitHull";
-                        [QGVAR(setHitPointDamage), [_x, ["HitHull", (_curDam + 0.45)]], _x] call CBA_fnc_targetEvent;
+                        [QGVAR(setHitPointDamage), [_x, ["HitHull", (_curDam + 0.45), true, _x, _x]], _x] call CBA_fnc_targetEvent;
                     } else {
                         _mult = 1;
                     };

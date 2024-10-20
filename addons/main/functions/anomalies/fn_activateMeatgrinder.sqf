@@ -70,7 +70,7 @@ if (isServer) then {
                 [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
             } else {
                 private _curDam = _x getHitPointDamage "HitHull";
-                [QGVAR(setHitPointDamage), [_x, ["HitHull", (_curDam + 0.45)]], _x] call CBA_fnc_targetEvent;
+                [QGVAR(setHitPointDamage), [_x, ["HitHull", (_curDam + 0.45), true, _x, _x]], _x] call CBA_fnc_targetEvent;
             };
         } forEach _sucked;
         [{

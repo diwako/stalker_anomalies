@@ -43,22 +43,6 @@ if (isNil QGVAR(holder)) then {
 };
 
 GVAR(holder) pushBack _trg;
-// publicVariable QGVAR(holder);
-
-// set up idle sound speaker;
-_trg2 = createTrigger ["EmptyDetector", _pos];
-_trg2 setPosASL _pos;
-_trg setVariable [QGVAR(idleSound), _trg2, true];
-_proxy = "building" createVehicle position _trg2;
-_proxy enableSimulationGlobal false;
-_proxy setPos (_trg2 modelToWorld [0,0,0.5]);
-_trg2 setVariable [QGVAR(idleSound), _proxy, true];
-[QGVAR(setTrigger), [
-    _trg2, //trigger
-    [25, 25, 0, false, 2], // area
-    ["ANY", "PRESENT", true], // activation
-    [format ["this && !(thisTrigger getVariable ['%1',false]) && {([] call CBA_fnc_currentUnit) in thisList}", QGVAR(cooldown)], format ["[thisTrigger] spawn {params['_thisTrigger']; _proxy = _thisTrigger getVariable '%1'; while{!isNull _thisTrigger && {triggerActivated _thisTrigger}} do {_proxy say3D ('gravi_idle0' + str(floor random 2) ); sleep (5 + (random 20) )}}", QGVAR(idleSound)], ""] // statements
-]] call CBA_fnc_globalEventJip;
 
 if (GVAR(debug)) then {
     _marker = createMarkerLocal [str(_pos),_pos];
@@ -71,7 +55,5 @@ if (GVAR(debug)) then {
 // disable trigger until player is near
 _trg enableDynamicSimulation false;
 _trg enableSimulationGlobal false;
-_trg2 enableDynamicSimulation false;
-_trg2 enableSimulationGlobal false;
 
 _trg

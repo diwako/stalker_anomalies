@@ -38,21 +38,20 @@ if (isServer) then {
                 private _curDam = 0;
                 if (_x isKindOf "landvehicle" ) then {
                     _curDam = _x getHit (getText(configOf _x >> "HitPoints" >> "HitEngine" >> "name"));
-                    systemChat "1";
-                    [QGVAR(setHitPointDamage), [_x, ["HitEngine", 1]], _x] call CBA_fnc_targetEvent;
+                    [QGVAR(setHitPointDamage), [_x, ["HitEngine", 1, true, _x, _x]], _x] call CBA_fnc_targetEvent;
                 } else {
                     _curDam = _x getHitPointDamage "HitEngine";
-                    [QGVAR(setHitPointDamage), [_x, ["HitEngine", 1]], _x] call CBA_fnc_targetEvent;
+                    [QGVAR(setHitPointDamage), [_x, ["HitEngine", 1, true, _x, _x]], _x] call CBA_fnc_targetEvent;
                 };
                 private _curDam2 = _x getHitPointDamage "HitHull";
                 [QGVAR(setHitPointDamage), [_x, ["HitHull", (_curDam2 + 0.1)]], _x] call CBA_fnc_targetEvent;
                 [{
                     private ["_veh", "_curDam"];
                     if (_veh isKindOf "landvehicle" ) then {
-                        [QGVAR(setHitPointDamage), [_veh, ["HitEngine", (_curDam + 0.25)]], _x] call CBA_fnc_targetEvent;
+                        [QGVAR(setHitPointDamage), [_veh, ["HitEngine", (_curDam + 0.25)], true, _x, _x], _x] call CBA_fnc_targetEvent;
                     } else {
 
-                        [QGVAR(setHitPointDamage), [_veh, ["HitEngine", (_curDam + 0.25)]], _veh] call CBA_fnc_targetEvent;
+                        [QGVAR(setHitPointDamage), [_veh, ["HitEngine", (_curDam + 0.25), true, _x, _x]], _veh] call CBA_fnc_targetEvent;
                     };
                 }, [_x, _curDam], 5] call CBA_fnc_waitAndExecute;
             } else {
@@ -113,14 +112,13 @@ if (hasInterface) then {
     };
     private _veh = vehicle _plr;
     if (_veh in _list && {_veh isKindOf "landvehicle" && {(driver _veh) isEqualTo _plr}}) then {
-        systemChat "2";
-        [QGVAR(setHitPointDamage), [_veh, ["HitEngine", 1]], _veh] call CBA_fnc_targetEvent;
+        [QGVAR(setHitPointDamage), [_veh, ["HitEngine", 1, true, _x, _x]], _veh] call CBA_fnc_targetEvent;
         private _curDam2 = _veh getHitPointDamage "HitHull";
-        [QGVAR(setHitPointDamage), [_veh, ["HitHull", (_curDam2 + 0.1)]], _veh] call CBA_fnc_targetEvent;
+        [QGVAR(setHitPointDamage), [_veh, ["HitHull", (_curDam2 + 0.1), true, _x, _x]], _veh] call CBA_fnc_targetEvent;
 
         [{
             private _curDam = _this getHit (getText(configOf _this >> "HitPoints" >> "HitEngine" >> "name"));
-            [QGVAR(setHitPointDamage), [_this, ["HitEngine", (_curDam + 0.25)]], _this] call CBA_fnc_targetEvent;
+            [QGVAR(setHitPointDamage), [_this, ["HitEngine", (_curDam + 0.25), true, _x, _x]], _this] call CBA_fnc_targetEvent;
         }, _veh, 5] call CBA_fnc_waitAndExecute;
     };
 
@@ -137,12 +135,10 @@ if (hasInterface) then {
                 _plr setDamage (_dam + 0.5);
             };
         };
-        private _source = _trg getVariable [QGVAR(particleSource), objNull];
-        private _proxy = _trg getVariable [QGVAR(particleSourceProxy), objNull];
 
+        private _source = _trg getVariable [QGVAR(particleSource), objNull];
         if !(isNull _source) then {
             deleteVehicle _source;
-            deleteVehicle _proxy;
             [{
                 !(_this getVariable [QGVAR(cooldown), false])
             }, {

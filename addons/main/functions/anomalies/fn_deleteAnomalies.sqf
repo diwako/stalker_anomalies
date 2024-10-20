@@ -29,11 +29,6 @@ private _type = "";
         };
         [QGVAR(deleteParticleSource), [_x]] call CBA_fnc_globalEvent;
         deleteVehicle (_x getVariable [QGVAR(sound), objNull]);
-        private _trg2 = _x getVariable [QGVAR(idleSound), objNull];
-        if (!(isNull _trg2)) then {
-            deleteVehicle (_trg2 getVariable [QGVAR(idleSound), objNull]);
-            deleteVehicle _trg2;
-        };
         GVAR(holder) = GVAR(holder) - [_x];
         switch (_type) do {
             case "telepot":{

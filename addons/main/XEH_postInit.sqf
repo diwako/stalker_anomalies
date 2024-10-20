@@ -80,6 +80,12 @@ if (isNil QGVAR(holder)) then {
     private _speedmod = ((speed player) / 6) max 1;
     private _triggerActivateDistance = GVAR(triggerDistance) * _speedmod;
     private _idleDistance = GVAR(idleDistance) * _speedmod;
+    private _fnc_addIdleSoundsLocal = {
+        params ["_trg", "_type"];
+        private _sound = createSoundSourceLocal [_type, [0, 0, 0], [], 0];
+        _sound setPosASL (getPosASL _trg);
+        _trg setVariable [QGVAR(soundIdleLocal), _sound];
+    };
 
     // find trigger
     {
@@ -102,9 +108,16 @@ if (isNil QGVAR(holder)) then {
                         _source2 setPosASL (getPosASL _x);
                         [_source, "idle", _source2] call FUNC(springboardEffect);
                         _x setVariable [QGVAR(particleSource2), _source2];
+                        [_x, QGVAR(soundSpringboard)] call _fnc_addIdleSoundsLocal;
                     };
-                    case "burner": {[_source, "idle"] call FUNC(burnerEffect);};
-                    case "teleport": {[_source, "idle"] call FUNC(teleportEffect);};
+                    case "burner": {
+                        [_source, "idle"] call FUNC(burnerEffect);
+                        [_x, QGVAR(soundBurner)] call _fnc_addIdleSoundsLocal;
+                    };
+                    case "teleport": {
+                        [_source, "idle"] call FUNC(teleportEffect);
+                        [_x, QGVAR(soundTeleport)] call _fnc_addIdleSoundsLocal;
+                    };
                     case "fog": {
                         [_source, "idle", _x] call FUNC(fogEffect);
                     };
@@ -112,13 +125,21 @@ if (isNil QGVAR(holder)) then {
                         if !(_x getVariable [QGVAR(cooldown), false]) then {
                             [_source, "idle"] call FUNC(electraEffect);
                         };
+                        [_x, QGVAR(soundElectra)] call _fnc_addIdleSoundsLocal;
                     };
-                    case "fruitpunch": {[_source, "idle"] call FUNC(fruitPunchEffect);};
+                    case "fruitpunch": {
+                        [_source, "idle"] call FUNC(fruitPunchEffect);
+                        [_x, QGVAR(soundFruitpunch)] call _fnc_addIdleSoundsLocal;
+                    };
                     default { };
                 };
                 _x setVariable [QGVAR(particleSource), _source];
             } else {
                 [_x] call FUNC(createCometLocal);
+            };
+            if (GVAR(debug)) then {
+                systemChat format["Particleadd to '%1'",_x getVariable QGVAR(anomalyType)];
+                (_x getVariable [QGVAR(debugMarker),""]) setMarkerColorLocal "ColorGreen";
             };
         };
     } forEach (GVAR(holder) inAreaArray [_pos, _idleDistance, _idleDistance, 0, false, -1]);
@@ -132,12 +153,6 @@ if (isNil QGVAR(holder)) then {
                 (_x getVariable [QGVAR(debugMarker),""]) setMarkerColorLocal "ColorRed";
             };
         };
-
-        // if the anomaly has a sound trigger attached to it, activate it for the player
-        private _soundTrigger = _x getVariable [QGVAR(idleSound), objNull];
-        if (!isNull _soundTrigger && {!simulationEnabled _soundTrigger}) then {
-            _soundTrigger enableSimulation true;
-        };
     } forEach (GVAR(holder) inAreaArray [getPosWorld _curPlayer, _triggerActivateDistance, _triggerActivateDistance, 0, false, -1]);
 
     // tell the server to activate it for everyone
@@ -147,12 +162,8 @@ if (isNil QGVAR(holder)) then {
 
     {
         [_x] call FUNC(deleteParticleSource);
-        deleteVehicle (_x getVariable [QGVAR(particleSourceProxy), objNull]);
-        // if the anomaly has a sound trigger attached to it, deactivate it
-        private _soundTrigger = _x getVariable [QGVAR(idleSound), objNull];
-        if !(isNull _soundTrigger) then {
-            _soundTrigger enableSimulation false;
-        };
+        // delete local only idle sound
+        deleteVehicle (_trg getVariable [QGVAR(soundIdleLocal), objNull]);
         // if player is not playing in multiplayer disable it here.
         // in mp the server will disable the trigger
         if !(isMultiplayer) then {

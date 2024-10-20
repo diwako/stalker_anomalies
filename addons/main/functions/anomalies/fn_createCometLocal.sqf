@@ -16,7 +16,11 @@
     diwako 2024-10-18
 */
 params [["_sourceTrg", objNull]];
-if (isNull _sourceTrg || !simulationEnabled _sourceTrg) exitWith {};
+if (isNull _sourceTrg || !simulationEnabled _sourceTrg) exitWith {
+    if (GVAR(debug)) then {
+        systemChat "Comet did not add source, exit condition early";
+    };
+};
 
 private _pathPoints = _sourceTrg getVariable [QGVAR(pathPoints), []];
 if (_pathPoints isEqualTo []) exitWith {};
@@ -25,9 +29,6 @@ private _pos = getPosASL _sourceTrg;
 private _trg = createTrigger ["EmptyDetector", _pos, false];
 _trg setPosASL _pos;
 _trg setVariable [QGVAR(cooldown), false];
-// private _proxy = "building" createVehicleLocal _pos;
-// _proxy attachTo [_trg, [0,0,1.5]];
-// _trg setVariable [QGVAR(sound), _proxy];
 _trg setVariable [QGVAR(pathPoints), _pathPoints];
 _trg setVariable [QGVAR(sourceTrg), _sourceTrg];
 _trg setVariable [QGVAR(anomalyType), "comet"];
