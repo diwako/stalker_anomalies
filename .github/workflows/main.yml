@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@master
+      - name: Check for BOM
+        uses: arma-actions/bom-check@master
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+      - name: Setup HEMTT
+        uses: arma-actions/hemtt@v1
+      - name: Run HEMTT build
+        run: hemtt release
+      - name: Upload Release
+        uses: actions/upload-artifact@v4
+        with:
+          name: "@diwako_anomalies"
+          path: ".hemttout/release/*"

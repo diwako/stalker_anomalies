@@ -1,5 +1,0 @@
-﻿Copyright 2018 diwako
-
-This work (diwako_anomalies or the like) uses the license Arma Public License Share Alike (APL-SA)
-
-https://www.bohemia.net/community/licenses/arma-public-license-share-alike

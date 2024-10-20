@@ -1,0 +1,14 @@
+name = "Diwako's STALKER-like anomalies {version}";
+picture = "";
+actionName = "";
+action = "";
+logoSmall = "";
+logo = "";
+logoOver = "";
+tooltip = "Diwako's STALKER-like anomalies";
+tooltipOwned = "Diwako's STALKER-like anomalies";
+description = "Diwako's STALKER-like anomalies";
+overview  = "Diwako's STALKER-like anomalies is a mod which adds as the name suggests anomalies found in the Stalker games series.";
+author = "diwako";
+hidePicture = 0;
+hideName = 0;
