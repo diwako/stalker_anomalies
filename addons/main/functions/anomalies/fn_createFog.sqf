@@ -6,7 +6,7 @@
         Creates an anomaly of the type "Fog"
 
     Parameter:
-        _pos - Position where the anomaly should be (default: [0,0,0]])
+        _pos - PositionASL where the anomaly should be (default: [0,0,0]])
         _radius - Radius parameter of area anomaly (default: 10)
         _isRectangle - is this anomaly rectangular shaped (default: true)
 
