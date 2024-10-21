@@ -28,7 +28,12 @@ if !(_marker isEqualType []) then {
     deleteVehicle _module;
 };
 
-if (_marker isEqualTo "") exitWith {nil};
+if (_marker isEqualTo "") exitWith {
+    [{
+        hintC format ["There was no marker path set for the comet anomaly. Make sure to set the ""%1"" field in the module or supply a proper first parameter if you are using the script function!", localize "STR_anomaly_comet_marker"];
+    }, nil, 1] call CBA_fnc_waitAndExecute;
+    nil
+};
 
 // find marker num
 private _end = 0;
@@ -37,7 +42,9 @@ while {getMarkerPos format ["%1%2", _marker, _end] isNotEqualTo [0, 0, 0]} do {
 };
 
 if (_end isEqualTo 0) exitWith {
-    hintC format ["Comet anomaly could find path for ""%1"". Make sure to have at least one marker named ""%1%2""", _marker, 0];
+    [{
+        hintC format ["Comet anomaly could not find a path for ""%1"". Make sure to have at least one marker named ""%1%2""", _marker, 0];
+    }, nil, 1] call CBA_fnc_waitAndExecute;
     nil
 };
 
