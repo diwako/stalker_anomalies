@@ -40,7 +40,8 @@ if (hasInterface) then {
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(deleteParticleSource), {
-        _this call FUNC(deleteParticleSource);
+        params ["_trg"];
+        [_trg] call FUNC(deleteParticleSource);
         // delete local only idle sound
         deleteVehicle (_trg getVariable [QGVAR(soundIdleLocal), objNull]);
     }] call CBA_fnc_addEventHandler;
