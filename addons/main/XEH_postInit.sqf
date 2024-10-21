@@ -3,7 +3,9 @@
 if (
     !GVAR(enable) ||
     missionNamespace getVariable [QGVAR(var_init), false]
-) exitWith {};
+) exitWith {
+    LOG_SYS("INFO","STALKER Anomaly mod has been disabled via setting.");
+};
 
 missionNamespace setVariable [QGVAR(var_init),true];
 
@@ -160,13 +162,14 @@ if (isNil QGVAR(holder)) then {
         [QGVAR(enableAnomaly), [_anomaliesToActivate]] call CBA_fnc_serverEvent;
     };
 
+    private _isNotMp = !isMultiplayer;
     {
         [_x] call FUNC(deleteParticleSource);
         // delete local only idle sound
-        deleteVehicle (_trg getVariable [QGVAR(soundIdleLocal), objNull]);
+        deleteVehicle (_x getVariable [QGVAR(soundIdleLocal), objNull]);
         // if player is not playing in multiplayer disable it here.
         // in mp the server will disable the trigger
-        if !(isMultiplayer) then {
+        if (_isNotMp) then {
             if (_debug) then {
                 (_x getVariable [QGVAR(debugMarker),""]) setMarkerColorLocal "ColorBlack";
             };
