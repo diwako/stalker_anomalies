@@ -177,14 +177,14 @@ if (isNil QGVAR(holder)) then {
 }, 5, [] ] call CBA_fnc_addPerFrameHandler;
 
 if !(isNil "ace_interact_menu_fnc_createAction") then {
-    private _action = ["anomaly_detector",("Turn on anomaly detector"),QPATHTOF(data\ui\AnomalyDetector.paa),{
+    private _action = [QGVAR(anomalyDetectorOn),(localize "STR_anomaly_enable_detector"),QPATHTOF(data\ui\AnomalyDetector.paa),{
         GVAR(detectorActive) = true;
         [] call FUNC(detector);
     },{!GVAR(detectorActive) && [player, GVAR(detectorItem)] call FUNC(hasItem)},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
     [typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
 
-    _action = ["anomaly_detector",("Turn off anomaly detector"),QPATHTOF(data\ui\AnomalyDetector.paa),{
+    _action = [QGVAR(anomalyDetectorOff),(localize "STR_anomaly_disable_detector"),QPATHTOF(data\ui\AnomalyDetector.paa),{
         GVAR(detectorActive) = false;
     },{GVAR(detectorActive)},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
