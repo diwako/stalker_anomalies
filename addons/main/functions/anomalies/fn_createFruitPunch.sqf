@@ -6,7 +6,7 @@
         Creates an anomaly of the type "Fruit Punch"
 
     Parameter:
-        _pos - Position where the anomaly should be (default: [0,0,0]])
+        _pos - PositionASL where the anomaly should be (default: [0,0,0]])
 
     Returns:
         Anomaly Trigger

@@ -6,10 +6,10 @@
         Creates an anomaly of the type "Springboard"
 
     Parameter:
-        _pos - Position where the anomaly should be (default: [0,0,0]])
+        _pos - PositionASL where the anomaly should be (default: [0,0,0]])
 
     Returns:
-        nothing
+        Anomaly Trigger
 
   Author:
   diwako 2017-12-11

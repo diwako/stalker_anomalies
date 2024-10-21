@@ -6,7 +6,6 @@
         Creates an anomaly of the type "Comet"
 
     Parameter:
-        _pos - Position where the anomaly should be (default: [0,0,0]])
         _marker - marker ID of path objects, will be used to move said path (default: "")
         _speed - measured in meters per second (default: 6)
         _smoothCurves - interpolates the path corners using bezier curves (default: true)
