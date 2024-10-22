@@ -16,7 +16,7 @@
     Author:
     diwako 2024-10-18
 */
-params[["_marker", ""], ["_speed", 6], ["_smoothCurves", true]];
+params [["_marker", ""], ["_speed", 6], ["_smoothCurves", true]];
 if !(isServer) exitWith {nil};
 
 if !(_marker isEqualType []) then {

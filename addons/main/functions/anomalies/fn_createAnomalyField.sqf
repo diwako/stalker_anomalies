@@ -19,6 +19,7 @@
     diwako 2018-03-21
 */
 params["_posParams",["_springboard",0],["_burner",0],["_electra",0],["_meatgrinder",0]];
+if !(isServer) exitWith {nil};
 
 if !(_posParams isEqualType []) then {
     //created via module
