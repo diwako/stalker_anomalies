@@ -36,7 +36,7 @@ class cfgVehicles {
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
-        isTriggerActivated  = 0; //Wait for triggers
+        isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
@@ -53,7 +53,7 @@ class cfgVehicles {
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
-        isTriggerActivated  = 0; //Wait for triggers
+        isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
@@ -70,7 +70,7 @@ class cfgVehicles {
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
-        isTriggerActivated  = 0; //Wait for triggers
+        isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
@@ -87,7 +87,7 @@ class cfgVehicles {
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
-        isTriggerActivated  = 0; //Wait for triggers
+        isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
@@ -104,7 +104,7 @@ class cfgVehicles {
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
-        isTriggerActivated  = 0; //Wait for triggers
+        isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {
             class anomalyId {
@@ -131,7 +131,7 @@ class cfgVehicles {
         canSetAreaShape = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
-        isTriggerActivated  = 0; //Wait for triggers
+        isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {
             class springboards {
@@ -180,7 +180,7 @@ class cfgVehicles {
         canSetAreaShape = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
-        isTriggerActivated  = 0; //Wait for triggers
+        isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {
         };
@@ -210,7 +210,7 @@ class cfgVehicles {
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
-        isTriggerActivated  = 0; //Wait for triggers
+        isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
@@ -227,7 +227,7 @@ class cfgVehicles {
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 1; //run on everyone
-        isTriggerActivated  = 0; //Wait for triggers
+        isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {};
         class ModuleDescription: ModuleDescription {
@@ -244,7 +244,7 @@ class cfgVehicles {
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
-        isTriggerActivated  = 0; //Wait for triggers
+        isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class ModuleDescription: ModuleDescription {
             description = "$STR_anomaly_comet_desc";
