@@ -77,9 +77,17 @@ _proxy = _exit getVariable QGVAR(sound);
             if (_doTeleport) then {
                 // [_obj, [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ]] remoteExec ["setPos", _obj];
                 
-                [_trg, _exit, _obj] call _onEnterCode;
+                try {
+                    [_trg, _exit, _obj] call _onEnterCode;
+                } catch {
+                    hintC ("OnEnter code failed to execute. Affected anomaly at " + str (_pos));
+                };
                 _obj setPos [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ];
-                [_trg, _exit, _obj] call _onExitCode;
+                try {
+                    [_trg, _exit, _obj] call _onExitCode;
+                } catch {
+                    hintC ("OnExit code failed to execute. Affected anomaly at " + str (_pos));
+                };
             };
         } else {
             if (!(_obj isKindOf "landvehicle" || _x isKindOf "air")) then {

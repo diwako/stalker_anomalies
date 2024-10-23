@@ -28,13 +28,13 @@ if !(_pos isEqualType []) then {
         _onEnterCode = compile _onEnterCode;
     } catch {
         _onEnterCode = {};
-        hintC ("On Enter Code failed to compile. Affected anomaly at " + str (_pos));
+        hintC ("On Enter Code failed to compile. Affected anomaly at " + str (getPosASL _pos));
     };
     try {
         _onExitCode = compile _onExitCode;
     } catch {
         _onExitCode = {};
-        hintC ("On Exit Code failed to compile. Affected anomaly at " + str (_pos));
+        hintC ("On Exit Code failed to compile. Affected anomaly at " + str (getPosASL _pos));
     };
 
     _pos = [_pos] call FUNC(getLocationFromModule);
