@@ -51,6 +51,8 @@ _proxy = _exit getVariable QGVAR(sound);
             deleteVehicle _x;
         };
     } forEach _list;
+    private _onEnterCode = _trg getVariable ["onEnterCode", {}];
+    private _onExitCode = _exit getVariable ["onExitCode", {}];
     private _exitPos = getPos _exit;
     private _obj = objNull;
     {
@@ -74,7 +76,10 @@ _proxy = _exit getVariable QGVAR(sound);
 
             if (_doTeleport) then {
                 // [_obj, [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ]] remoteExec ["setPos", _obj];
+                
+                [_trg, _exit, _obj] call _onEnterCode;
                 _obj setPos [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ];
+                [_trg, _exit, _obj] call _onExitCode;
             };
         } else {
             if (!(_obj isKindOf "landvehicle" || _x isKindOf "air")) then {

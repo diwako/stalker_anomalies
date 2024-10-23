@@ -15,12 +15,28 @@
     Author:
     diwako 2017-12-14
 */
-params[["_pos",[0,0,0]],["_id",-1]];
+params[["_pos", [0, 0, 0]], ["_id", -1], ["_onEnterCode", {}], ["_onExitCode", {}]];
 if !(isServer) exitWith {};
 
 if !(_pos isEqualType []) then {
     //created via module
-    _id = _pos getVariable ["anomalyid",-1];
+    _id = _pos getVariable ["anomalyId", -1];
+    _onEnterCode = _pos getVariable ["onEnterCode", ""];
+    _onExitCode = _pos getVariable ["onExitCode", ""];
+
+    try {
+        _onEnterCode = compile _onEnterCode;
+    } catch {
+        _onEnterCode = {};
+        hintC ("On Enter Code failed to compile. Affected anomaly at " + str (_pos));
+    };
+    try {
+        _onExitCode = compile _onExitCode;
+    } catch {
+        _onExitCode = {};
+        hintC ("On Exit Code failed to compile. Affected anomaly at " + str (_pos));
+    };
+
     _pos = [_pos] call FUNC(getLocationFromModule);
 };
 
@@ -43,6 +59,8 @@ _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 _trg = createTrigger ["EmptyDetector", _pos];
 _trg setPosASL _pos;
 _teleporters pushBack _trg;
+_trg setVariable ["onEnterCode", _onEnterCode];
+_trg setVariable ["onExitCode", _onExitCode];
 // [GVAR(teleportIDs), _id, _teleporters] call CBA_fnc_hashSet;
 GVAR(teleportIDs) set [_id, _teleporters];
 _trg setVariable [QGVAR(cooldown), false, true];

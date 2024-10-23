@@ -36,11 +36,7 @@ private _type = "";
                 private _id = _x getVariable QGVAR(teleportID);
                 // _teleporters = [GVAR(teleportIDs), _id] call CBA_fnc_hashGet;
                 private _teleporters = GVAR(teleportIDs) get _id;
-                for "_i" from 0 to ((count _teleporters) -1 ) do {
-                    if ( (_teleporters select _i) == _x ) then {
-                        _teleporters = _teleporters - [_x];
-                    };
-                };
+                _teleporters = _teleporters - [_x, objNull];
                 // [GVAR(teleportIDs), _id, _teleporters] call CBA_fnc_hashSet;
                 GVAR(teleportIDs) set [_id, _teleporters];
             };

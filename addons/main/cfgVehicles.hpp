@@ -23,6 +23,14 @@ class cfgVehicles {
 
     class Logic;
     class Module_F: Logic {
+        class AttributesBase {
+            class Default;
+            class Edit;
+            class EditMulti5;
+            class Combo;
+            class Checkbox;
+            class ModuleDescription;
+        };
         class ArgumentsBaseUnits {};
         class ModuleDescription {};
     };
@@ -106,12 +114,40 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Arguments {
-            class anomalyId {
+        // class Arguments {
+        //     class anomalyId {
+        //         displayName = "ID";
+        //         description = "$STR_anomaly_teleport_id_desc";
+        //         typeName = "NUMBER";
+        //         defaultValue = 0;
+        //     };
+        // };
+        class Attributes: AttributesBase {
+            class anomalyId: Edit {
                 displayName = "ID";
-                description = "$STR_anomaly_teleport_id_desc";
-                typeName = "NUMBER";
-                defaultValue = 0;
+                tooltip = "$STR_anomaly_teleport_id_desc";
+                property = "anomaly_teleport_id";
+                defaultValue = "0";
+            };
+
+            class onEnterCode {
+                control = "EditCodeMulti5";
+                displayName = "On Enter Code";
+                property = "anomaly_teleport_enterCode";
+                tooltip = "$STR_anomaly_teleport_onEnter_desc";
+                expression = "_this setVariable ['%s',_value,true];";
+                typeName = "STRING";
+                defaultValue = "";
+            };
+
+            class onExitCode {
+                control = "EditCodeMulti5";
+                displayName = "On Exit Code";
+                property = "anomaly_teleport_exitCode";
+                tooltip = "$STR_anomaly_teleport_onExit_desc";
+                expression = "_this setVariable ['%s',_value,true];";
+                typeName = "STRING";
+                defaultValue = "";
             };
         };
         class ModuleDescription: ModuleDescription {
