@@ -40,10 +40,6 @@ if (isNil QGVAR(teleportIDs)) then {
 // _teleporters = [GVAR(teleportIDs), _id] call CBA_fnc_hashGet;
 _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 
-if ( (count _teleporters) >= 2) exitWith {
-    hintC ("Teleport Anomaly with ID " + str(_id) + " cannot be created as there are already 2 anomalies with that id. Affected anomaly at " + str(_pos));
-};
-
 _trg = createTrigger ["EmptyDetector", _pos];
 _trg setPosASL _pos;
 _teleporters pushBack _trg;

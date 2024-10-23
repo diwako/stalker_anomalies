@@ -30,11 +30,8 @@ if (count _teleporters < 2) exitWith {
 };
 
 private _exit = objNull;
-{
-    if (_trg != _x) then {
-        _exit = _x;
-    };
-} forEach _teleporters;
+_otherTeleporters = _teleporters - [_trg];
+_exit = selectRandom _otherTeleporters;
 
 if (isNull _exit) exitWith {
     hintC ("It was not possible to find an exit for teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + "!")
