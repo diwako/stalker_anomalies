@@ -143,7 +143,7 @@ class cfgVehicles {
             class onExitCode {
                 control = "EditCodeMulti5";
                 displayName = "On Exit Code";
-                property = "anomaly_teleport_exitCode";
+                property = QGVAR(teleport_exitCode);
                 tooltip = "$STR_anomaly_teleport_onExit_desc";
                 expression = "_this setVariable ['%s',_value,true];";
                 typeName = "STRING";
