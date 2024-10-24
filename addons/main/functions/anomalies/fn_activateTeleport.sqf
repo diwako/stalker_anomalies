@@ -36,6 +36,7 @@ if (isNull _exit) exitWith {
     hintC ("It was not possible to find an exit for teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + "!");
     _teleporters = _teleporters - [objNull];
     GVAR(teleportIDs) set [_id, _teleporters];
+    publicVariable QGVAR(teleportIDs);
 };
 
 _trg setVariable [QGVAR(cooldown), true, true];
