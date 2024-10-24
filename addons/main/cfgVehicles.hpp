@@ -114,33 +114,12 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Attributes: AttributesBase {
-            class GVAR(anomalyId): Edit {
+        class Arguments {
+            class GVAR(anomalyId) {
                 displayName = "ID";
-                tooltip = "$STR_anomaly_teleport_id_desc";
-                property = QGVAR(teleport_id);
+                description = "$STR_anomaly_teleport_id_desc";
                 typeName = "NUMBER";
-                defaultValue = "0";
-            };
-
-            class GVAR(onEnterCode) {
-                control = "EditCodeMulti5";
-                displayName = "On Enter Code";
-                property = QGVAR(teleport_enterCode);
-                tooltip = "$STR_anomaly_teleport_onEnter_desc";
-                expression = "_this setVariable ['%s',_value,true];";
-                typeName = "STRING";
-                defaultValue = "";
-            };
-
-            class GVAR(onExitCode) {
-                control = "EditCodeMulti5";
-                displayName = "On Exit Code";
-                property = QGVAR(teleport_exitCode);
-                tooltip = "$STR_anomaly_teleport_onExit_desc";
-                expression = "_this setVariable ['%s',_value,true];";
-                typeName = "STRING";
-                defaultValue = "";
+                defaultValue = 0;
             };
         };
         class ModuleDescription: ModuleDescription {

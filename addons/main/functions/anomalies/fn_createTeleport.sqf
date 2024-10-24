@@ -8,8 +8,6 @@
     Parameter:
         _pos - PositionASL where the anomaly should be (default: [0,0,0]])
         _id - ID which connects teleporters
-        _onEnterCode - code that is executed when a object enters this teleporter
-        _onExitCode - code that is executed when a object exits this teleporter
 
     Returns:
         Anomaly Trigger
@@ -17,27 +15,15 @@
     Author:
     diwako 2017-12-14
 */
-params[["_pos", [0, 0, 0]], ["_id", -1], ["_onEnterCode", {}], ["_onExitCode", {}]];
+params[["_pos", [0, 0, 0]], ["_id", -1]];
 if !(isServer) exitWith {};
 
+private _varName = "";
 if !(_pos isEqualType []) then {
     //created via module
     _id = _pos getVariable [QGVAR(anomalyId), -1];
-    _onEnterCode = _pos getVariable [QGVAR(onEnterCode), ""];
-    _onExitCode = _pos getVariable [QGVAR(onExitCode), ""];
 
-    try {
-        _onEnterCode = compile _onEnterCode;
-    } catch {
-        _onEnterCode = {};
-        hintC ("On Enter Code failed to compile. Affected anomaly at " + str (getPosASL _pos));
-    };
-    try {
-        _onExitCode = compile _onExitCode;
-    } catch {
-        _onExitCode = {};
-        hintC ("On Exit Code failed to compile. Affected anomaly at " + str (getPosASL _pos));
-    };
+    _varName = vehicleVarName _pos;
 
     _pos = [_pos] call FUNC(getLocationFromModule);
 };
@@ -59,10 +45,9 @@ if (isNil QGVAR(teleportIDs)) then {
 _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 
 _trg = createTrigger ["EmptyDetector", _pos];
+if !(_varName isEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
 _trg setPosASL _pos;
 _teleporters pushBack _trg;
-_trg setVariable [QGVAR(onEnterCode), _onEnterCode];
-_trg setVariable [QGVAR(onExitCode), _onExitCode];
 // [GVAR(teleportIDs), _id, _teleporters] call CBA_fnc_hashSet;
 GVAR(teleportIDs) set [_id, _teleporters];
 _trg setVariable [QGVAR(cooldown), false, true];

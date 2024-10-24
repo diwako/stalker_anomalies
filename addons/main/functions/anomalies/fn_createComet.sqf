@@ -19,6 +19,14 @@
 params [["_marker", ""], ["_speed", 6], ["_smoothCurves", true]];
 if !(isServer) exitWith {nil};
 
+// TODO: Add var name transer support. There is a local function that needs to be considered.
+// private _varName = "";
+// if !(_pos isEqualType []) then {
+//     _varName = vehicleVarName _pos;
+//     _pos = [_pos] call FUNC(getLocationFromModule);
+// };
+// if !(_varName isEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
+
 if !(_marker isEqualType []) then {
     //created via module
     private _module = _marker;

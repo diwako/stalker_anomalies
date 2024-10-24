@@ -22,7 +22,9 @@
 params[["_pos",[0,0,0]],["_radius",10],["_isRectangle",true],["_angle",0]];
 if (!isServer) exitWith {};
 
+private _varName = "";
 if !(_pos isEqualType []) then {
+    _varName = vehicleVarName _pos;
     //created via module
     private _area = _pos getVariable "objectarea";
     _radius = _area#0;
@@ -40,6 +42,7 @@ if (count _pos < 3) then {
 
 _pos set [2,(_pos#2) - 2];
 _trg = createTrigger ["EmptyDetector", _pos];
+if !(_varName isEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
 _trg setPosASL _pos;
 _trg setDir _angle;
 _trg setVariable [QGVAR(cooldown), false, true];

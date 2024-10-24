@@ -108,23 +108,6 @@
             <Russian>Телепорты должны иметь одинаковый ID, чтобы работать вместе. Несколько телепортов могут иметь одинаковый ID, но выходной телепорт выбирается случайным образом.</Russian>
             <Polish>Teleporty muszą mieć ten sam identyfikator, aby mogły ze sobą współpracować. Kilka teleporterów może mieć ten sam identyfikator, ale teleporter wyjściowy jest wybierany losowo.</Polish>
         </Key>
-        </Key>
-        <Key ID="STR_anomaly_teleport_onEnter_desc">
-            <Original>Runs this code when a unit enters into this portal. Params: [_unit, _enterTrigger, _exitTrigger]. The code is ran on the server only, and before the player is teleported.</Original>
-            <English>Runs this code when a unit enters into this portal. Params: [_unit, _enterTrigger, _exitTrigger]. The code is ran on the server only, and before the player is teleported.</English>
-            <!-- TODO: Add translations -->
-            <!-- <German></German>
-            <Russian></Russian>
-            <Polish></Polish> -->
-        </Key>
-        <Key ID="STR_anomaly_teleport_onExit_desc">
-            <Original>Runs this code when a unit exits from this portal. Params: [_unit, _enterTrigger, _exitTrigger]. The code is ran on the server only, and after the player is teleported.</Original>
-            <English>Runs this code when a unit exits from this portal. Params: [_unit, _enterTrigger, _exitTrigger]. The code is ran on the server only, and after the player is teleported.</English>
-            <!-- TODO: Add translations -->
-            <!-- <German></German>
-            <Russian></Russian>
-            <Polish></Polish> -->
-        </Key>
         <Key ID="STR_anomaly_teleport_desc">
             <Original>Spawn a teleport anomaly at module location</Original>
             <English>Spawn a teleport anomaly at module location</English>
