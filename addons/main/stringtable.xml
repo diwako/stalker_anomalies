@@ -23,6 +23,7 @@
             <German>Stalker Anomalien</German>
             <Russian>Аномалии</Russian>
             <Polish>Stalker Anomalies</Polish>
+            <French>Stalker anomalies</French>
         </Key>
         <Key ID="STR_anomaly_detector">
             <Original>Anomaly Detector</Original>
@@ -30,6 +31,7 @@
             <German>Anomalie Detektor</German>
             <Russian>Детектор аномалий</Russian>
             <Polish>Detektor anomalii</Polish>
+            <French>Détecteur d'anomalies</French>
         </Key>
         <Key ID="STR_anomaly_detector_desc">
             <Original>Enables detection of anomalies</Original>
@@ -37,6 +39,7 @@
             <German>Ermöglicht es Anomlien aufzuspüren</German>
             <Russian>Позволяет обнаружить аномалии в радиусе действия</Russian>
             <Polish>Pozwala na wykrywanie anomalii</Polish>
+            <French>Permet la détection d'anomalies</French>
         </Key>
         <Key ID="STR_anomaly_springboard">
             <Original>Springboard</Original>
@@ -44,6 +47,7 @@
             <German>Springboard</German>
             <Russian>Трамплин</Russian>
             <Polish>Trampolina</Polish>
+            <French>Tremplin</French>
         </Key>
         <Key ID="STR_anomaly_springboard_desc">
             <Original>Spawn a springboard anomaly at module location</Original>
@@ -51,6 +55,7 @@
             <German>Estellt eine Anomalie des Typs Springboard an der Stelle des Moduls</German>
             <Russian>Создать аномалию "Трамплин" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Trampolina" w miejscu modułu</Polish>
+            <French>Génère une anomalie type "Tremplin" à l'emplacement du module</French>
         </Key>
         <Key ID="STR_anomaly_electra">
             <Original>Electra</Original>
@@ -58,6 +63,7 @@
             <German>Elektra</German>
             <Russian>Электра</Russian>
             <Polish>Elektro</Polish>
+            <French>Électrique</French>
         </Key>
         <Key ID="STR_anomaly_electra_desc">
             <Original>Spawn an electra anomaly at module location</Original>
@@ -65,6 +71,7 @@
             <German>Estellt eine Anomalie des Typs Elektra an der Stelle des Moduls</German>
             <Russian>Создать аномалию "Электра" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Elektro" w miejscu modułu</Polish>
+            <French>Génère une anomalie type "Électrique" à l'emplacement du module</French>
         </Key>
         <Key ID="STR_anomaly_burner">
             <Original>Burner</Original>
@@ -72,6 +79,7 @@
             <German>Brenner</German>
             <Russian>Жарка</Russian>
             <Polish>Spalacz</Polish>
+            <French>Brûleur</French>
         </Key>
         <Key ID="STR_anomaly_burner_desc">
             <Original>Spawn a burner anomaly at module location</Original>
@@ -79,6 +87,7 @@
             <German>Estellt eine Anomalie des Typs Benner an der Stelle des Moduls</German>
             <Russian>Создать аномалию "Жарка" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Spalacz" w miejscu modułu</Polish>
+            <French>Génère une anomalie type "Brûleur" à l'emplacement du module</French>
         </Key>
         <Key ID="STR_anomaly_meatgrinder">
             <Original>Meatgrinder</Original>
@@ -86,6 +95,7 @@
             <German>Fleischwolf</German>
             <Russian>Мясорубка</Russian>
             <Polish>Karuzela</Polish>
+            <French>Hachoir</French>
         </Key>
         <Key ID="STR_anomaly_meatgrinder_desc">
             <Original>Spawn a meatgrinder anomaly at module location</Original>
@@ -93,6 +103,7 @@
             <German>Estellt eine Anomalie des Typs Fleischwolf an der Stelle des Moduls</German>
             <Russian>Создать аномалию "Мясорубка" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Karuzela" w miejscu modułu</Polish>
+            <French>Génère une anomalie type "Hachoir à viande" à l'emplacement du module</French>
         </Key>
         <Key ID="STR_anomaly_teleport">
             <Original>Teleporter</Original>
@@ -100,6 +111,7 @@
             <German>Teleporter</German>
             <Russian>Телепорт</Russian>
             <Polish>Teleport</Polish>
+            <French>Téléporteur</French>
         </Key>
         <Key ID="STR_anomaly_teleport_id_desc">
             <Original>Teleporters need the same ID to work together. It is only allowed to have the same ID twice!</Original>
@@ -107,6 +119,7 @@
             <German>Teleporter Anomalien brauchen die selbe ID so dass diese zusammen arbeiten können. Man kann nicht die selbe ID mehr als zwei mal nutzen!</German>
             <Russian>Телепортам требуются одинаковые ID для синхронизации. Можно использовать один и тот же ID только в 2-х аномалиях!</Russian>
             <Polish>Teleportery potrzebują tego samego ID, by działać. Tylko dwie anomalie mogą mieć to samo ID!</Polish>
+            <French>Les téléporteurs ont besoin du même ID pour fonctionner ensemble. Que deux ID possibles à la fois!</French>
         </Key>
         <Key ID="STR_anomaly_teleport_desc">
             <Original>Spawn a teleport anomaly at module location</Original>
@@ -114,6 +127,7 @@
             <German>Estellt eine Anomalie des Typs Teleporter an der Stelle des Moduls</German>
             <Russian>Создать аномалию "Телепорт" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Teleport" w miejscu modułu</Polish>
+            <French>Génère une anomalie type "Téléportation" à l'emplacement du module</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field">
             <Original>Anomaly field</Original>
@@ -121,6 +135,7 @@
             <German>Anomalien Feld</German>
             <Russian>Аномальное поле</Russian>
             <Polish>Pole anomalii</Polish>
+            <French>Champ d'anomalies</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_spingboard">
             <Original>Springboards</Original>
@@ -128,6 +143,7 @@
             <German>Springboards</German>
             <Russian>Трамплины</Russian>
             <Polish>Trampoliny</Polish>
+            <French>Tremplin</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_spingboard_desc">
             <Original>How many springboards shall be placed within the zone?</Original>
@@ -135,6 +151,7 @@
             <German>Wie viele Springboards sollen in dem Feld plaziet werden?</German>
             <Russian>Сколько аномалий "Трамплин" должно быть размещено внутри зоны?</Russian>
             <Polish>Ile "Trampolin" zostanie umieszczonych wewnątrz obszaru?</Polish>
+            <French>Combien de type "Tremplins" doivent être placés dans la zone?</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_meatgrinder">
             <Original>Meatgrinders</Original>
@@ -142,6 +159,7 @@
             <German>Fleischwölfe</German>
             <Russian>Мясорубки</Russian>
             <Polish>Karuzele</Polish>
+            <French>Hachoir</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_meatgrinder_desc">
             <Original>How many meatgrinderss shall be placed within the zone?</Original>
@@ -149,6 +167,7 @@
             <German>Wie viele Fleischwölfe sollen in dem Feld plaziet werden?</German>
             <Russian>Сколько аномалий "Мясорубка" должно быть размещено внутри зоны?</Russian>
             <Polish>Ile "Karuzel" zostanie umieszczonych wewnątrz obszaru?</Polish>
+            <French>Combien de type "Hachoir à viande" doivent être placés dans la zone?</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_electra">
             <Original>Electras</Original>
@@ -156,6 +175,7 @@
             <German>Elektras</German>
             <Russian>Электры</Russian>
             <Polish>Elektry</Polish>
+            <French>Électrique</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_electra_desc">
             <Original>How many electras shall be placed within the zone?</Original>
@@ -163,6 +183,7 @@
             <German>Wie viele Elektras sollen in dem Feld plaziet werden?</German>
             <Russian>Сколько аномалий "Электра" должно быть размещено внутри зоны?</Russian>
             <Polish>Ile "Elektr" zostanie umieszczonych wewnątrz obszaru?</Polish>
+            <French>Combien de type "Électrique" doivent être placés dans la zone?</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_burner">
             <Original>Burners</Original>
@@ -170,6 +191,7 @@
             <German>Brenner</German>
             <Russian>Жарки</Russian>
             <Polish>Spalacze</Polish>
+            <French>Brûleur</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_burner_desc">
             <Original>How many burners shall be placed within the zone?</Original>
@@ -177,6 +199,7 @@
             <German>Wie viele Brenner sollen in dem Feld plaziet werden?</German>
             <Russian>Сколько аномалий "Жарка" должно быть размещено внутри зоны?</Russian>
             <Polish>Ile "Spalaczy" zostanie umieszczonych wewnątrz obszaru?</Polish>
+            <French>Combien de type "Brûleur" doivent être placés dans la zone?</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field_desc">
             <Original>Spawn an anomaly field at module location</Original>
@@ -184,6 +207,7 @@
             <German>Estellt ein Feld voller Anomalien an der Stelle des Moduls</German>
             <Russian>Создаёт аномальное поле на позиции модуля</Russian>
             <Polish>Tworzy pole anomalii w miejscu modułu</Polish>
+            <French>Génère un champ d'anomalie à l'emplacement du module</French>
         </Key>
         <Key ID="STR_anomaly_fog">
             <Original>Fog field</Original>
@@ -191,6 +215,7 @@
             <German>Nebel Feld</German>
             <Russian>Туманное поле</Russian>
             <Polish>Mgła</Polish>
+            <French>Brouillard</French>
         </Key>
         <Key ID="STR_anomaly_fog_desc">
             <Original>Spawn a fog anomaly field at module location. Set area size A and B the same! Only size A will be used to set the field size!</Original>
@@ -198,6 +223,7 @@
             <German>Estellt ein Nebel Feld Anomalie an der Stelle des Moduls. Es wird nur die A Größe des Felds als Radius übernommen!</German>
             <Russian>Создать аномалию "Туманное Поле" на позиции модуля. Размеры A и B (ширина и длина) должны быть одинаковыми! Только размер A будет задавать размер поля!</Russian>
             <Polish>Tworzy anomalię "Mgła" w miejscu modułu. Wielkości A i B muszą być takie same! Tylko wielkość A zostanie użyta do określenia wielkości obszaru Mgły!</Polish>
+            <French>Génère une zone de brouillard à l'emplacement du module. Définissez la même taille de zone A et B! Seule la taille A sera utilisée pour définir la taille de la zone!</French>
         </Key>
         <Key ID="STR_anomaly_fog_desc2">
             <Original>Set area size A and B the same!</Original>
@@ -205,6 +231,7 @@
             <German>Setze die Größe A und B gleich!</German>
             <Russian>Размеры A и B (ширина и длина) должны быть одинаковыми!</Russian>
             <Polish>Wielkości A i B muszą być takie same!</Polish>
+            <French>Définissez la même taille de zone A et B!</French>
         </Key>
         <Key ID="STR_anomaly_fog_desc3">
             <Original>Only size A will be used to set the field size!</Original>
@@ -212,6 +239,7 @@
             <German>Es wird nur die Größe A genutzt um die Größe des Feldes zu setzen!</German>
             <Russian>Только размер A будет задавать размер поля!</Russian>
             <Polish>Tylko wielkość A zostanie użyta do określenia wielkości obszaru Mgły!</Polish>
+            <French>Seule la taille A sera utilisée pour définir la taille de la zone!</French>
         </Key>
         <Key ID="STR_anomaly_fruitpunch">
             <Original>Fruit Punch</Original>
@@ -219,6 +247,7 @@
             <German>Fruit Punch</German>
             <Russian>Кисель</Russian>
             <Polish>Galareta</Polish>
+            <French>Flaque chimique</French>
         </Key>
         <Key ID="STR_anomaly_fruitpunch_desc">
             <Original>Spawn a Fruit Punch anomaly at module location</Original>
@@ -226,56 +255,67 @@
             <German>Estellt eine Anomalie des Typs Fruit Punch an der Stelle des Moduls</German>
             <Russian>Спавнит аномалию "Кисель" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Galareta" w miejscu modułu</Polish>
+            <French>Génère une anomalie type "Flaque chimique" à l'emplacement du module</French>
         </Key>
         <Key ID="STR_anomaly_psy_discharge">
             <Original>Psy Discharge</Original>
             <English>Psy Discharge</English>
             <Polish>Emisja</Polish>
+            <French>Décharge Psy</French>
         </Key>
         <Key ID="STR_anomaly_psy_discharge_desc">
             <Original>Spawn a Psy Discharge anomaly at the module location. This anomaly will immidiately activate unless you sync it up with something to prevent this!</Original>
             <English>Spawn a Psy Discharge anomaly at the module location. This anomaly will immidiately activate unless you sync it up with something to prevent this!</English>
             <Polish>Towrzy anomalię "Emisja" w miejscu modułu. Ta anomalia aktywuje się od razu, jeśli nie zostanie zsynchronizowana z czymś innym, by ją opóźnić!</Polish>
+            <French>Génère une anomalie type "Décharge Psy" à l'emplacement du module. Cette anomalie s'activera immédiatement à moins que vous ne la synchronisiez avec quelque chose pour l'en empêcher!</French>
         </Key>
         <Key ID="STR_anomaly_comet">
             <Original>Comet</Original>
             <English>Comet</English>
             <Polish>Kometa</Polish>
+            <French>Comète</French>
         </Key>
         <Key ID="STR_anomaly_comet_desc">
             <Original>Flying flaming ball, which sets anything or anyone on fire.</Original>
             <English>Flying flaming ball, which sets anything or anyone on fire.</English>
             <Polish>Latająca kula ognia, która podpala wszystko na swojej drodze</Polish>
+            <French>Boule volante enflammée qui met le feu à tout ou à n'importe qui.</French>
         </Key>
         <Key ID="STR_anomaly_comet_marker">
             <Original>Marker Path</Original>
             <English>Marker Path</English>
             <Polish>Ścieżka markerów</Polish>
+            <French>Chemin de Marqueur</French>
         </Key>
         <Key ID="STR_anomaly_comet_marker_desc">
             <Original>Uses markers with the same name and running number as path creation. This will loop! Example &quot;marker_&quot; for all markers like &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; and so on.</Original>
             <English>Uses markers with the same name and running number as path creation. This will loop! Example &quot;marker_&quot; for all markers like &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; and so on.</English>
             <Polish>Wykorzystuje markery z tą samą nazwą i kolejnymi numerami do stworzenia ścieżki. Ścieżka będzie zapętlona! Przykład: &quot;marker_&quot; dla wszystkich markerów, np. &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; i tak dalej.</Polish>
+            <French>Utilise des marqueurs avec le même nom et le même numéro d'exécution que la création du chemin. Éxécution en boucle! Exemple &quot;marker_&quot; pour tous les marqueurs comme &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; ainsi de suite.</French>
         </Key>
         <Key ID="STR_anomaly_comet_speed">
             <Original>Speed</Original>
             <English>Speed</English>
             <Polish>Szybkość</Polish>
+            <French>Vitesse</French>
         </Key>
         <Key ID="STR_anomaly_comet_speed_desc">
             <Original>Speed in meters per second. Be aware that high values can cause issues such as the anomaly rendering too late or the hit deteciton not working properly</Original>
             <English>Speed in meters per second. Be aware that high values can cause issues such as the anomaly rendering too late or the hit deteciton not working properly</English>
             <Polish>Szybkość w metrach na sekundę. Miej na uwadze, że wysokie wartości mogą powodować problemy, na przykład opóźnione renderowanie anomalii lub niecelny system detekcji obrażeń</Polish>
+            <French>Vitesse en m/s. Sachez que des valeurs élevées peuvent entraîner des problèmes tels qu'un rendu d'anomalie trop tardif ou une détection d'impact qui ne fonctionne pas correctement</French>
         </Key>
         <Key ID="STR_anomaly_comet_smooth">
             <Original>Smooth path</Original>
             <English>Smooth path</English>
             <Polish>Wygładzenie ściezki</Polish>
+            <French>Cheminement fluide</French>
         </Key>
         <Key ID="STR_anomaly_comet_smooth_desc">
             <Original>Smooths the path the anomaly is following using bezier curves. If you need high precision, set this to false</Original>
             <English>Smooths the path the anomaly is following using bezier curves. If you need high precision, set this to false</English>
             <Polish>Wygładza ścieżkę anomalii przy użyciu krzywych Beziera. Jeśli potrzebujesz wysokiej precyzji, ustaw to jako false</Polish>
+            <French>Lisse le chemin suivi par l'anomalie à l'aide de courbes de Bézier. Si vous avez besoin d'une grande précision, définissez cette option sur Désact.</French>
         </Key>
         <Key ID="STR_anomaly_enable_detector">
             <Original>Enable anomaly detector</Original>
@@ -283,6 +323,7 @@
             <German>Anomalien Detektor einschalten</German>
             <Russian>Вкл. Детектор Аномалий</Russian>
             <Polish>Włącz detektor anomalii</Polish>
+            <French>Activer le détecteur d'anomalies</French>
         </Key>
         <Key ID="STR_anomaly_disable_detector">
             <Original>Turn off anomaly detector</Original>
@@ -290,18 +331,21 @@
             <German>Anomalien Detektor ausschalten</German>
             <Russian>Выкл. Детектор Аномалий</Russian>
             <Polish>Wyłącz detektor anomalii</Polish>
+            <French>Désactiver le détecteur d'anomalie</French>
         </Key>
         <Key ID="STR_anomaly_detector_increase_volume">
             <Original>Increase volume</Original>
             <English>Increase volume</English>
             <German>Lautstärke erhöhen</German>
             <Polish>Zwiększ głośność</Polish>
+            <French>Augmenter le volume</French>
         </Key>
         <Key ID="STR_anomaly_detector_decrease_volume">
             <Original>Decrease volume</Original>
             <English>Decrease volume</English>
             <German>Lautstärke verringern</German>
             <Polish>Zmniejsz głośność</Polish>
+            <French>Diminuer le volume</French>
         </Key>
         <Key ID="STR_anomaly_bolt_bag">
             <Original>Bag of bolts</Original>
@@ -309,6 +353,7 @@
             <German>Sack voller Schrauben</German>
             <Russian>Мешочек с болтами</Russian>
             <Polish>Torba śrub</Polish>
+            <French>Sac de boulons</French>
         </Key>
         <Key ID="STR_anomaly_bolt_bag_desc">
             <Original>Just an ordinary run-of-the-mill bag of bolts</Original>
@@ -316,6 +361,7 @@
             <German>Ein gewöhnlicher Sack voller Schrauben</German>
             <Russian>Вместимость: 20шт</Russian>
             <Polish>Zwyczajna torba pełna metalowych śrub</Polish>
+            <French>Juste un sac de boulons ordinaire</French>
         </Key>
         <Key ID="STR_anomaly_bolt">
             <Original>Bolt</Original>
@@ -323,6 +369,7 @@
             <German>Schraube</German>
             <Russian>Болт</Russian>
             <Polish>Śruba</Polish>
+            <French>Boulons</French>
         </Key>
         <Key ID="STR_anomaly_bolt_desc">
             <Original>Just an ordinary run-of-the-mill bolt</Original>
@@ -330,6 +377,7 @@
             <German>Eine gewöhnliche Schraube</German>
             <Russian>Обычный ржавый болт</Russian>
             <Polish>Zwyczajna metalowa śruba</Polish>
+            <French>Juste un boulon ordinaire</French>
         </Key>
         <Key ID="STR_Detector_turned_on">
             <Original>Detector has been turned on</Original>
@@ -337,6 +385,7 @@
             <German>Detektor wurde angeschalten</German>
             <Russian>Детектор Аномалий был включён</Russian>
             <Polish>Detektor został włączony</Polish>
+            <French>Détecteur allumé</French>
         </Key>
         <Key ID="STR_Detector_turned_off">
             <Original>Detector has been turned off</Original>
@@ -344,6 +393,7 @@
             <German>Detektor wurde ausgeschalten</German>
             <Russian>Детектор Аномалий был выключен</Russian>
             <Polish>Detektor został wyłączony</Polish>
+            <French>Détecteur éteint</French>
         </Key>
         <Key ID="STR_anomaly_settings_name">
             <Original>Diwako Stalker Like Anomalies</Original>
@@ -351,6 +401,7 @@
             <German>Diwako Stalker Anomalien</German>
             <Russian>Аномалии как в S.T.A.L.K.E.R. от Diwako</Russian>
             <Polish>Diwako Stalker Like Anomalies</Polish>
+            <French>Diwako Stalker Like Anomalies</French>
         </Key>
         <Key ID="STR_anomaly_settings_enable">
             <Original>Enable</Original>
@@ -358,6 +409,7 @@
             <German>Anschalten</German>
             <Russian>Включить</Russian>
             <Polish>Włącz</Polish>
+            <French>Activer</French>
         </Key>
         <Key ID="STR_anomaly_settings_enable_desc">
             <Original>Enable/Disable Stalker Like Anomalies</Original>
@@ -365,6 +417,7 @@
             <German>Schalte das das Addon "Stalker like Anomalies" an oder aus</German>
             <Russian>Включить/Выключить аномалии</Russian>
             <Polish>Włącz/wyłącz system anomalii</Polish>
+            <French>Active/Désactive Stalker Like Anomalies</French>
         </Key>
         <Key ID="STR_anomaly_settings_detectionRange">
             <Original>Detection Range</Original>
@@ -372,6 +425,7 @@
             <German>Detektor Bereich</German>
             <Russian>Радиус обнаружения детектора</Russian>
             <Polish>Zasięg wykrywania</Polish>
+            <French>Portée de détection</French>
         </Key>
         <Key ID="STR_anomaly_settings_detectionRange_desc">
             <Original>Distance to nearest anomaly before detector starts to beep</Original>
@@ -379,6 +433,7 @@
             <German>Distanz zur nächsten Anomalie bevor der Detektor anfängt zu beepen</German>
             <Russian>Дистанция до ближайшей аномалии при которой детектор начинает издавать звуки</Russian>
             <Polish>Dystans do najbliższej anomalii, w którym detektor zacznie brzęczeć</Polish>
+            <French>Distance de détection avant que le détecteur ne commence à émettre un bip</French>
         </Key>
         <Key ID="STR_anomaly_settings_particleDistance">
             <Original>Particle Idle Distance</Original>
@@ -386,6 +441,7 @@
             <German>Ruhe Partikel Entfernung</German>
             <Russian>Дистанция вывода визуальных эффектов в режим ожидания</Russian>
             <Polish>Odległość statycznych cząsteczek</Polish>
+            <French>Distance des particules</French>
         </Key>
         <Key ID="STR_anomaly_settings_particleDistance_desc">
             <Original>Minimum distance to player for particles to idle</Original>
@@ -393,6 +449,7 @@
             <German>Niedrigster Abstand, ab wann man die Ruhe Partikel von Anomalien sehen kann</German>
             <Russian>Минимальная дистанция вывода визуальных эффектов в режим ожидания</Russian>
             <Polish>Minimalny dystans od gracza, w którym cząsteczki będą nieruchome</Polish>
+            <French>Distance minimale par rapport au joueur pour simuler les particules</French>
         </Key>
         <Key ID="STR_anomaly_settings_detectorItem">
             <Original>Detector Item</Original>
@@ -400,6 +457,7 @@
             <German>Detektor Gegenstand</German>
             <Russian>Предмет, являющийся детектором</Russian>
             <Polish>Detektor anomalii</Polish>
+            <French>Item Détecteur</French>
         </Key>
         <Key ID="STR_anomaly_settings_detectorItem_desc">
             <Original>Add classname of detector item - required item to use detector, leave empty for no item - example: AnomalyDetector</Original>
@@ -407,26 +465,31 @@
             <German>Gegenstandsklasse des Detektors - benötigter Gegenstand im Inventar um den Detektor nutzen zu können, dies kann leergelassen werden um keinen Gegenstand zu benötigen - Beispiel: AnomalyDetector</German>
             <Russian>Добавьте classname объекта который вы хотите задать как детектор. Оставьте пустым поле если не нужно задавать предмет детектора. Пример: AnomalyDetector</Russian>
             <Polish>Dodaj klasę obiektu - wymaganego przedmiotu do używania detektora, zostaw puste, by przedmiot nie był potrzebny. Przykładowa klasa: AnomalyDetector</Polish>
+            <French>Ajoutez le classname de l'item qui fera Détecteur - requis pour utiliser le Détecteur, laissez vide s'il n'y a pas d'item - example: AnomalyDetector</French>
         </Key>
         <Key ID="STR_anomaly_settings_detector3DSound">
             <Original>Detector 3D multiplayer sound</Original>
             <English>Detector 3D multiplayer sound</English>
             <Polish>Dźwięk 3D detektora w grze wieloos.</Polish>
+            <French>Son 3D multijoueur du Détecteur</French>
         </Key>
         <Key ID="STR_anomaly_settings_detector3DSound_desc">
             <Original>Plays the detector sound in 3D space and synced over network in MP. WARNING! This can tank FPS or cause higher network load! USE CAREFULLY, LEAVE OFF IF YOU DO NOT KNOW WHAT THIS MEANS!</Original>
             <English>Plays the detector sound in 3D space and synced over network in MP. WARNING! This can tank FPS or cause higher network load! USE CAREFULLY, LEAVE OFF IF YOU DO NOT KNOW WHAT THIS MEANS!</English>
             <Polish>Odtwarza dźwięk detektora w przestrzeni 3D i synchronizuje go w sieci w grze MP. OSTRZEŻENIE! Opcja ta może zmniejszyć liczbę FPS lub obciążyć sieć! UŻYWAJ OSTROŻNIE, ZOSTAW WYŁĄCZONE JEŚLI NIE WIESZ, CO TO OZNACZA!</Polish>
+            <French>Joue le son du Détecteur en 3D et synchronisé sur le réseau en MP. AVERTISSEMENT! Cela peut réduire le nombre de FPS ou entraîner une charge réseau plus élevée! À UTILISER AVEC PRÉCAUTION, LAISSEZ DÉSACTIVER SI VOUS NE SAVEZ PAS CE QUE CELA SIGNIFIE!</French>
         </Key>
         <Key ID="STR_anomaly_settings_detectorSensesCooldown">
             <Original>Detector can detect cooldown</Original>
             <English>Detector can detect cooldown</English>
             <Polish>Detektor wykrywa opóźnienie</Polish>
+            <French>Détection du cooldown des anomalies</French>
         </Key>
         <Key ID="STR_anomaly_settings_detectorSensesCooldown_desc">
             <Original>When enabled, the anomaly detector will know if an anomaly is active or in cooldown</Original>
             <English>When enabled, the anomaly detector will know if an anomaly is active or in cooldown</English>
             <Polish>Jeśli włączone, detektor anomalii będzie wiedział, czy anomalia jest aktywna, lub opóźniona</Polish>
+            <French>Lorsqu'il est activé, le Détecteur d'anomalie saura si une anomalie est active ou inerte</French>
         </Key>
         <Key ID="STR_anomaly_settings_debug">
             <Original>Enable Debugging</Original>
@@ -434,6 +497,7 @@
             <German>Debugging anschalten</German>
             <Russian>Включить режим дебага</Russian>
             <Polish>Włącz debugowanie</Polish>
+            <French>Activer Debug</French>
         </Key>
         <Key ID="STR_anomaly_settings_debug_desc">
             <Original>Displays a marker where an anomaly has been placed</Original>
@@ -441,6 +505,7 @@
             <German>Erstelle eine Kartenmarkierung wo eine Anomalie platziert wurde</German>
             <Russian>Отображает маркер места на котором была установлена аномалия</Russian>
             <Polish>Wyświetla marker w miejscu, gdzie umieszczono anomalię</Polish>
+            <French>Affiche un marqueur où une anomalie a été placée</French>
         </Key>
         <Key ID="STR_anomaly_settings_gasmasks">
             <Original>Gas masks</Original>
@@ -448,6 +513,7 @@
             <German>Debugging anschalten</German>
             <Russian>Противогазы</Russian>
             <Polish>Maski przeciwgazowe</Polish>
+            <French>Masques à gaz</French>
         </Key>
         <Key ID="STR_anomaly_settings_gasmasks_desc">
             <Original>Write in gasmask class names comma separated, no spaces! Case insensitive!</Original>
@@ -455,6 +521,7 @@
             <German>Füge hier Klassennamen von Gasmasken hinzu, diese müssen Komma separiert sein und dürfen keine Leerzeichen haben! Groß- und Kleinschreibung muss nicht beachten werden!</German>
             <Russian>Впишите classname'ы предметов, являющиеся противогазами, без пробелов! Чувствительно к регистру!</Russian>
             <Polish>Lista klas obiektów będących maskami przeciwgazowymi, oddzielone przecinkiem i bez spacji! Wielkość liter nie ma znaczenia!</Polish>
+            <French>Écrivez les classname de masque à gaz séparés par des virgules, sans espaces! (utile pour le module Brouillard)</French>
         </Key>
         <Key ID="STR_anomaly_settings_triggerDistance">
             <Original>Anomaly Distance (Performance)</Original>
@@ -462,6 +529,7 @@
             <German>Anomalie Entfernung (Performance)</German>
             <!-- <Russian></Russian> -->
             <Polish>Odległość anomalii (wydajność)</Polish>
+            <French>Distance d'anomalie (Performance)</French>
         </Key>
         <Key ID="STR_anomaly_settings_triggerDistance_desc">
             <Original>At which distance from anomalies should they be activatable? Higher number can cause client performance issues while a too low number might cause anomalies to not work when an object enters it, especially when going fast in vehicles!</Original>
@@ -469,46 +537,55 @@
             <German>Ab welcher Entfernung sollen die Anomalien aktivierbar sein? Eine hohe Zahl kann bei Spielern zu Performance Problemen führen, während eine zu niedrige Zahl dazu führen kann, dass Anomalien nicht rechtzeitig aktiviert werden. Dies kann vorallem mit schnell fahrenden Fahrzeugen passieren!</German>
             <!-- <Russian></Russian> -->
             <Polish>Z jakiej odległości anomalie powinny się aktywować? Wyższa wartość może powodować problemy z wydajnością gry, natomiast zbyt niska może sprawić, że anomalia się nie uruchomi, gdy obiekt się do niej zbliży, w szczególności szybki pojazd!</Polish>
+            <French>À quelle distance les anomalies doivent-elles être activables? Un nombre plus élevé peut entraîner des problèmes de performances du client tandis qu'un nombre trop faible peut empêcher les anomalies de fonctionner lorsqu'un objet y pénètre, en particulier lorsque l'on roule vite dans des véhicules !</French>
         </Key>
         <Key ID="STR_anomaly_settings_generalSettingCategory">
             <Original>General</Original>
             <English>General</English>
             <Polish>Ogólne</Polish>
+            <French>Generale</French>
         </Key>
         <Key ID="STR_anomaly_settings_anomalySettingCategory">
             <Original>Anomalies</Original>
             <English>Anomalies</English>
             <Polish>Anomalie</Polish>
+            <French>Anomalies</French>
         </Key>
         <Key ID="STR_anomaly_settings_minCooldown">
             <Original>Minimum Cooldown:</Original>
             <English>Minimum Cooldown:</English>
             <Polish>Min. czas odnowienia:</Polish>
+            <French>Cooldown minimum:</French>
         </Key>
         <Key ID="STR_anomaly_settings_minCooldown_desc">
             <Original>Minimum possible cooldown before the anomaly is active again. In seconds!</Original>
             <English>Minimum possible cooldown before the anomaly is active again. In seconds!</English>
             <Polish>Minimalny czas odnowienia, zanim anomalia się znów aktywuje. W sekundach!</Polish>
+            <French>Temps de recharge minimum possible avant que l'anomalie ne soit à nouveau active. En secondes!</French>
         </Key>
         <Key ID="STR_anomaly_settings_randCooldown">
             <Original>Random Cooldown:</Original>
             <English>Random Cooldown:</English>
             <Polish>Losowy czas odnowienia:</Polish>
+            <French>Cooldown aléatoire:</French>
         </Key>
         <Key ID="STR_anomaly_settings_randCooldown_desc">
             <Original>Random interval between 0 and chosen value added to the minimum cooldown. In seconds!:</Original>
             <English>Random interval between 0 and chosen value added to the minimum cooldown. In seconds!</English>
             <Polish>Losowy interwał między 0 a wybraną wartością dodany do minimalnego czasu odnowienia. W sekundach!</Polish>
+            <French>Intervalle aléatoire entre 0 et la valeur choisie ajouté au temps de recharge minimum. En secondes!:</French>
         </Key>
         <Key ID="STR_anomaly_settings_psyRange">
             <Original>Psy Discharge Range</Original>
             <English>Psy Discharge Range</English>
             <Polish>Zasięg emisji</Polish>
+            <French>Portée Décharge Psy</French>
         </Key>
         <Key ID="STR_anomaly_settings_psyRange_desc">
             <Original>Radius in meters</Original>
             <English>Radius in meters</English>
             <Polish>Obszar w metrach</Polish>
+            <French>Rayon en mètres</French>
         </Key>
     </Package>
 </Project>
