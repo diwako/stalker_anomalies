@@ -126,7 +126,7 @@ class cfgVehicles {
             class anomalyId: Edit {
                 displayName = "ID";
                 tooltip = "$STR_anomaly_teleport_id_desc";
-                property = "anomaly_teleport_id";
+                property = QGVAR(teleport_id);
                 defaultValue = "0";
             };
 
