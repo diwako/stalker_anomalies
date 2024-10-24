@@ -27,6 +27,18 @@ if (isServer) then {
     [QGVAR(deleteAnomalies), {
         _this call FUNC(deleteAnomalies);
     }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(teleportOnEnter),{
+        params ["_unit", "_enterTrigger", "_exitTrigger"];
+
+        [_unit, _enterTrigger, _exitTrigger] call (_enterTrigger getVariable [QGVAR(onEnterCode), {}]);
+    }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(teleportOnExit),{
+        params ["_unit", "_enterTrigger", "_exitTrigger"];
+
+        [_unit, _enterTrigger, _exitTrigger] call (_exitTrigger getVariable [QGVAR(onExitCode), {}]);
+    }] call CBA_fnc_addEventHandler;
 };
 
 if (hasInterface) then {

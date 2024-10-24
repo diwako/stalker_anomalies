@@ -33,7 +33,9 @@ private _exit = objNull;
 _exit = selectRandom (_teleporters - [_trg]);
 
 if (isNull _exit) exitWith {
-    hintC ("It was not possible to find an exit for teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + "!")
+    hintC ("It was not possible to find an exit for teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + "!");
+    _teleporters = _teleporters - [objNull];
+    GVAR(teleportIDs) set [_id, _teleporters];
 };
 
 _trg setVariable [QGVAR(cooldown), true, true];
@@ -50,8 +52,6 @@ _proxy = _exit getVariable QGVAR(sound);
             deleteVehicle _x;
         };
     } forEach _list;
-    private _onEnterCode = _trg getVariable ["onEnterCode", {}];
-    private _onExitCode = _exit getVariable ["onExitCode", {}];
     private _exitPos = getPos _exit;
     private _obj = objNull;
     {
@@ -76,17 +76,9 @@ _proxy = _exit getVariable QGVAR(sound);
             if (_doTeleport) then {
                 // [_obj, [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ]] remoteExec ["setPos", _obj];
                 
-                try {
-                    [_trg, _exit, _obj] call _onEnterCode;
-                } catch {
-                    hintC ("OnEnter code failed to execute. Affected anomaly at " + str (_pos));
-                };
+                [QGVAR(teleportOnEnter), [_obj, _trg, _exit]] call CBA_fnc_localEvent;
                 _obj setPos [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ];
-                try {
-                    [_trg, _exit, _obj] call _onExitCode;
-                } catch {
-                    hintC ("OnExit code failed to execute. Affected anomaly at " + str (_pos));
-                };
+                [QGVAR(teleportOnExit), [_obj, _trg, _exit]] call CBA_fnc_localEvent;
             };
         } else {
             if (!(_obj isKindOf "landvehicle" || _x isKindOf "air")) then {

@@ -8,6 +8,8 @@
     Parameter:
         _pos - PositionASL where the anomaly should be (default: [0,0,0]])
         _id - ID which connects teleporters
+        _onEnterCode - code that is executed when a object enters this teleporter
+        _onExitCode - code that is executed when a object exits this teleporter
 
     Returns:
         Anomaly Trigger
@@ -20,9 +22,9 @@ if !(isServer) exitWith {};
 
 if !(_pos isEqualType []) then {
     //created via module
-    _id = _pos getVariable ["anomalyId", -1];
-    _onEnterCode = _pos getVariable ["onEnterCode", ""];
-    _onExitCode = _pos getVariable ["onExitCode", ""];
+    _id = _pos getVariable [QGVAR(anomalyId), -1];
+    _onEnterCode = _pos getVariable [QGVAR(onEnterCode), ""];
+    _onExitCode = _pos getVariable [QGVAR(onExitCode), ""];
 
     try {
         _onEnterCode = compile _onEnterCode;
@@ -59,8 +61,8 @@ _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 _trg = createTrigger ["EmptyDetector", _pos];
 _trg setPosASL _pos;
 _teleporters pushBack _trg;
-_trg setVariable ["onEnterCode", _onEnterCode];
-_trg setVariable ["onExitCode", _onExitCode];
+_trg setVariable [QGVAR(onEnterCode), _onEnterCode];
+_trg setVariable [QGVAR(onExitCode), _onExitCode];
 // [GVAR(teleportIDs), _id, _teleporters] call CBA_fnc_hashSet;
 GVAR(teleportIDs) set [_id, _teleporters];
 _trg setVariable [QGVAR(cooldown), false, true];

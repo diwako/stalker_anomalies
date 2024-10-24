@@ -29,7 +29,7 @@ if (!isNil "zen_custom_modules_fnc_register") then {
                         case 3: { [QGVAR(createAnomaly), [[_pos], "springboard"]] call CBA_fnc_serverEvent; };
                         case 4: {
                             ["Teleport ID (Number)", [
-                                    ["SLIDER", "ID", [1, 50, 1, 0]]
+                                    ["SLIDER", "ID", [0, 50, 0, 0]]
                                 ],
                                 {
                                     params ["_dialog", "_args"];
