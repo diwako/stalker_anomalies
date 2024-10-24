@@ -133,7 +133,7 @@ class cfgVehicles {
             class onEnterCode {
                 control = "EditCodeMulti5";
                 displayName = "On Enter Code";
-                property = "anomaly_teleport_enterCode";
+                property = QGVAR(teleport_enterCode);
                 tooltip = "$STR_anomaly_teleport_onEnter_desc";
                 expression = "_this setVariable ['%s',_value,true];";
                 typeName = "STRING";
