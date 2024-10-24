@@ -25,3 +25,6 @@ authority = "diwako_anomalies"
 
 [hemtt.release]
 folder = "diwako_anomalies"
+
+[lints.stringtables.sorted]
+enabled = false

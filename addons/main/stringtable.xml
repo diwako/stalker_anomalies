@@ -255,7 +255,7 @@
         <Key ID="STR_anomaly_comet_marker_desc">
             <Original>Uses markers with the same name and running number as path creation. This will loop! Example &quot;marker_&quot; for all markers like &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; and so on.</Original>
             <English>Uses markers with the same name and running number as path creation. This will loop! Example &quot;marker_&quot; for all markers like &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; and so on.</English>
-            <Polish>Wykorzystuje markery z tą samą nazwą i kolejnymi numerami do stworzenia ścieżki. Ścieżka będzie zapętlona! Przykład: &quot;marker_&quot_; dla wszystkich markerów, np. &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; i tak dalej.</Polish>
+            <Polish>Wykorzystuje markery z tą samą nazwą i kolejnymi numerami do stworzenia ścieżki. Ścieżka będzie zapętlona! Przykład: &quot;marker_&quot; dla wszystkich markerów, np. &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; i tak dalej.</Polish>
         </Key>
         <Key ID="STR_anomaly_comet_speed">
             <Original>Speed</Original>
