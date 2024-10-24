@@ -39,7 +39,7 @@ if (isNull _exit) then {
 
     _exit = selectRandom (_teleporters - [_trg]);
 
-    if (isNil "_exit" or { isNull _exit }) exitWith {
+    if (isNil "_exit" or { isNull "_exit" }) exitWith {
         hintC ("It was not possible to find an exit for teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + "!");
     };
 };
