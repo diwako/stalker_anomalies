@@ -133,6 +133,7 @@
             <Original>Teleport ID</Original>
             <English>Teleport ID</English>
             <Polish>ID Teleportu</Polish>
+            <French>ID Téléporteur</French>
         </Key>
         <Key ID="STR_anomaly_teleport_id_desc">
             <Original>Teleporters need the same ID to work together. Several teleporters can have the same ID, but the exit teleporter is randomly selected.</Original>
@@ -140,6 +141,7 @@
             <German>Teleporter müssen die gleiche ID haben, um zusammenzuarbeiten. Mehrere Teleporter können die gleiche ID haben, aber der Ausgangsteleporter wird zufällig ausgewählt.</German>
             <Russian>Телепорты должны иметь одинаковый ID, чтобы работать вместе. Несколько телепортов могут иметь одинаковый ID, но выходной телепорт выбирается случайным образом.</Russian>
             <Polish>Teleporty muszą mieć ten sam identyfikator, aby mogły ze sobą współpracować. Kilka teleporterów może mieć ten sam identyfikator, ale teleporter wyjściowy jest wybierany losowo.</Polish>
+            <French>Les Téléporteurs doivent avoir le même ID pour fonctionner ensemble. Si plus de deux Téléporteurs ont même ID, alors, le téléporteur de sortie sera sélectionné au hasard.</French>
         </Key>
         <Key ID="STR_anomaly_anomaly_field">
             <Original>Anomaly field</Original>
@@ -333,11 +335,13 @@
             <Original>Blowout</Original>
             <English>Blowout</English>
             <Polish>Emisja</Polish>
+            <French>Émission</French>
         </Key>
         <Key ID="STR_anomaly_blowout_desc">
             <Original>A blowout, also known as an emission, is a map wide event. It will send a wave of psy energy across the map after a specified time. The weather drastically changes with strong winds, thunderstorms and psy waves in the air. Mission makers need to look out for these weather changes, as these can clash with the mission’s design!</Original>
             <English>A blowout, also known as an emission, is a map wide event. It will send a wave of psy energy across the map after a specified time. The weather drastically changes with strong winds, thunderstorms and psy waves in the air. Mission makers need to look out for these weather changes, as these can clash with the mission’s design!</English>
             <Polish>Emisja, nazywana czasem Zwarciem, wpływa na całą mapę. Powoduje stworzenie fali energii Psi, która przetacza się przez cały teren po wyznaczonym czasie. Pogoda drastycznie się zmienia - silne wiatry, burze i fale Psi w powietrzu. Twórcy misji muszą mieć na uwadze te zmiany pogody, gdyż mogą zmienić wybrane warunki środowiskowe scenariusza!</Polish>
+            <French>Une Émission, est un événement qui se produit sur toute la carte. Il envoie une vague d'énergie psy sur toute la carte après un temps déterminé. La météo change radicalement avec des vents forts, des orages et des ondes psy dans l'air. Attention aux créateurs de missions, ces changements de météo peuvent entrer en conflit avec la conception de la mission !</French>
         </Key>
         <Key ID="STR_anomaly_enable_detector">
             <Original>Enable anomaly detector</Original>
@@ -565,7 +569,7 @@
             <Original>General</Original>
             <English>General</English>
             <Polish>Ogólne</Polish>
-            <French>Generale</French>
+            <French>General</French>
         </Key>
         <Key ID="STR_anomaly_settings_anomalySettingCategory">
             <Original>Anomalies</Original>
@@ -613,51 +617,61 @@
             <Original>Spawn Anomaly</Original>
             <English>Spawn Anomaly</English>
             <Polish>Stwórz anomalię</Polish>
+            <French>Apparition d'Anomalie</French>
         </Key>
         <Key ID="STR_anomaly_zeus_delete_anomalies">
             <Original>Delete Anomalies</Original>
             <English>Delete Anomalies</English>
             <Polish>Usuń anomalie</Polish>
+            <French>Suppression d'anomalie</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_stop_blowout">
             <Original>Start/Stop Blowout</Original>
             <English>Start/Stop Blowout</English>
             <Polish>Rozpocznij/zatrzymaj Emisję</Polish>
+            <French>Start/Stop Émission</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout">
             <Original>Start Blowout</Original>
             <English>Start Blowout</English>
             <Polish>Rozpocznij Emisję</Polish>
+            <French>Start Émission</French>
         </Key>
         <Key ID="STR_anomaly_zeus_stop_blowout">
             <Original>Stop Blowout</Original>
             <English>Stop Blowout</English>
             <Polish>Zatrzymaj Emisję</Polish>
+            <French>Stop Émission</French>
         </Key>
         <Key ID="STR_anomaly_zeus_stop_blowout_desc">
             <Original>When answered yes, this will stop the blowout and sets it to stage 0, same as the blowout having concluded.</Original>
             <English>When answered yes, this will stop the blowout and sets it to stage 0, same as the blowout having concluded.</English>
             <Polish>Jeśli wybrano 'tak', emisja zostanie zatrzymana, a jej poziom ustawiony na 0, jak gdyby się już zakończyła.</Polish>
+            <French>Si oui, cela arrêtera l'Émission et la ramènera à l'étape 0, comme si l'Émission était terminé.</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_hint">
             <Original>Blowout has been started and will last %1 minutes and %2 seconds.</Original>
             <English>Blowout has been started and will last %1 minutes and %2 seconds.</English>
             <Polish>Emisja się rozpoczęła i będzie trwać %1 min. %2 sek..</Polish>
+            <French>L'Émission a commencé et durera %1 mins et %2 secs.</French>
         </Key>
         <Key ID="STR_anomaly_zeus_stop_blowout_hint">
             <Original>Blowout has been stopped</Original>
             <English>Blowout has been stopped</English>
             <Polish>Emisja została zatrzymana</Polish>
+            <French>L'Émission a été stoppée</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_time">
             <Original>Time till blowout wave</Original>
             <English>Time till blowout wave</English>
             <Polish>Czas do fali Emisji</Polish>
+            <French>Temps jusqu'à la vague d'Émission</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_time_desc">
             <Original>Time in seconds until the deadly blowout wave reaches the players. Minimum value is 102, anything lower will be rejected!</Original>
             <English>Time in seconds until the deadly blowout wave reaches the players. Minimum value is 102, anything lower will be rejected!</English>
             <Polish>Czas w sekundach, po którym śmiertelna fala emisji sięgnie graczy. Minimalna wartość to 102, wartości poniżej są odrzucane!</Polish>
+            <French>Temps en secondes avant que la vague d'Émission n'atteigne les joueurs. La valeur minimale est de 102, toute valeur inférieure sera rejetée!</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_direction">
             <original>Direction</original>
@@ -668,7 +682,7 @@
             <polish>Kierunek</polish>
             <italian>Direzione</italian>
             <spanish>Dirección</spanish>
-            <french>Direction </french>
+            <french>Direction</french>
             <chinese>方向</chinese>
             <japanese>方向</japanese>
             <korean>방</korean>
@@ -680,26 +694,31 @@
             <original>From which direction in bearing numbering should the wave arrive from?</original>
             <english>From which direction in bearing numbering should the wave arrive from?</english>
             <Polish>Z którego kierunku (w stopniach) nadejdzie fala?</Polish>
+            <French>Depuis quelle direction (en numéro d'azimut) l'onde devrait-elle arriver?</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_sirens">
             <original>Add siren sound effect</original>
             <english>Add siren sound effect</english>
             <Polish>Dodaj dźwięk syren</Polish>
+            <French>Ajouter un son de sirène</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_sirens_desc">
             <original>When active, will sound air raid sirens in random locations during the blowout</original>
             <english>When active, will sound air raid sirens in random locations during the blowout</english>
             <Polish>Gdy włączone, podczas Emisji odtworzony zostanie dźwięk syren alarmowych w losowych miejscach.</Polish>
+            <French>Si activé, des sirènes d'alerte aérienne retentiront à des endroits aléatoires pendant l'Émission.</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_only_players">
             <original>Only affect players</original>
             <english>Only affect players</english>
             <Polish>Wpływa tylko na graczy</Polish>
+            <French>Affecte uniquement les joueurs</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_only_players_desc">
             <original>When enabled, the psy wave will only kill players, when disabled all units found in the "allUnits" command will be affected. Potentital performance warning!</original>
             <english>When enabled, the psy wave will only kill players, when disabled all units found in the "allUnits" command will be affected. Potentital performance warning!</english>
             <Polish>Gdy włączone, fala Emisji zabije jedynie graczy. Jeśli wyłączone, wszystkie jednostki zwracane przez funkcję "allUnits" zostaną zabite. Możliwy spadek wydajności!</Polish>
+            <French>Si activé, la vague d'Émission psy ne tuera que les joueurs. Si désactivé, toutes les unités trouvées depuis la commande "allUnits" seront affectées. Potentiel impact sur les performances!</French>
         </Key>
     </Package>
 </Project>
