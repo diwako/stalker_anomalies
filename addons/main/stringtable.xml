@@ -104,7 +104,7 @@
         <Key ID="STR_anomaly_teleport_id_desc">
             <Original>Teleporters need the same ID to work together. Several teleporters can have the same ID, but the exit teleporter is randomly selected.</Original>
             <English>Teleporters need the same ID to work together. Several teleporters can have the same ID, but the exit teleporter is randomly selected.</English>
-            <German>Teleporter Anomalien brauchen die selbe ID so dass diese zusammen arbeiten können. Man kann nicht die selbe ID mehr als zwei mal nutzen!</German>
+            <German>Teleporter müssen die gleiche ID haben, um zusammenzuarbeiten. Mehrere Teleporter können die gleiche ID haben, aber der Ausgangsteleporter wird zufällig ausgewählt.</German>
             <Russian>Телепортам требуются одинаковые ID для синхронизации. Можно использовать один и тот же ID только в 2-х аномалиях!</Russian>
             <Polish>Teleportery potrzebują tego samego ID, by działać. Tylko dwie anomalie mogą mieć to samo ID!</Polish>
         </Key>
