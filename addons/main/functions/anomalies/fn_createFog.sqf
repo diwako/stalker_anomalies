@@ -42,7 +42,7 @@ if (count _pos < 3) then {
 
 _pos set [2,(_pos#2) - 2];
 _trg = createTrigger ["EmptyDetector", _pos];
-if !(_varName isEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
+if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
 _trg setPosASL _pos;
 _trg setDir _angle;
 _trg setVariable [QGVAR(cooldown), false, true];

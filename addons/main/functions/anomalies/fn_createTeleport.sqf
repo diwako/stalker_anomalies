@@ -24,9 +24,8 @@ if !(_pos isEqualType []) then {
     _id = _pos getVariable [QGVAR(anomalyId), -1];
 
     _varName = vehicleVarName _pos;
-
-    _pos = [_pos] call FUNC(getLocationFromModule);
 };
+_pos = [_pos] call FUNC(getLocationFromModule);
 
 if (count _pos < 3) then {
     _pos set [2,0];
@@ -45,7 +44,7 @@ if (isNil QGVAR(teleportIDs)) then {
 _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 
 _trg = createTrigger ["EmptyDetector", _pos];
-if !(_varName isEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
+if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
 _trg setPosASL _pos;
 _teleporters pushBack _trg;
 // [GVAR(teleportIDs), _id, _teleporters] call CBA_fnc_hashSet;

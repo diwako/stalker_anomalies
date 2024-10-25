@@ -29,8 +29,7 @@ if (count _teleporters < 2) exitWith {
     hintC ("Teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + " does not have an exit anomaly!")
 };
 
-private _exit = objNull;
-_exit = selectRandom (_teleporters - [_trg]);
+private _exit = selectRandom (_teleporters - [_trg]);
 
 if (isNull _exit) then {
     _teleporters = _teleporters - [objNull];
@@ -38,10 +37,10 @@ if (isNull _exit) then {
     publicVariable QGVAR(teleportIDs);
 
     _exit = selectRandom (_teleporters - [_trg]);
+};
 
-    if (isNil "_exit" or { isNull "_exit" }) exitWith {
-        hintC ("It was not possible to find an exit for teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + "!");
-    };
+if (isNil "_exit") exitWith {
+    hintC ("It was not possible to find an exit for teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + "!");
 };
 
 _trg setVariable [QGVAR(cooldown), true, true];
