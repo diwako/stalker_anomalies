@@ -18,6 +18,14 @@
 #define DISCHARGE_TIME 5
 params[["_pos", [0,0,0]]];
 
+// TODO: Add var name transfer support
+// private _varName = "";
+// if !(_pos isEqualType []) then {
+//     _varName = vehicleVarName _pos;
+//     _pos = [_pos] call FUNC(getLocationFromModule);
+// };
+// if !(_varName isEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
+
 _pos = [_pos] call FUNC(getLocationFromModule);
 _pos = (AGLToASL ([ASLToAGL _pos] call CBA_fnc_getPos)) vectorAdd [0, 0, 50];
 
