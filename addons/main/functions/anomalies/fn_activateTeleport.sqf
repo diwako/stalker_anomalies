@@ -29,15 +29,18 @@ if (count _teleporters < 2) exitWith {
     hintC ("Teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + " does not have an exit anomaly!")
 };
 
-private _exit = objNull;
-{
-    if (_trg != _x) then {
-        _exit = _x;
-    };
-} forEach _teleporters;
+private _exit = selectRandom (_teleporters - [_trg]);
 
-if (isNull _exit) exitWith {
-    hintC ("It was not possible to find an exit for teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + "!")
+if (isNull _exit) then {
+    _teleporters = _teleporters - [objNull];
+    GVAR(teleportIDs) set [_id, _teleporters];
+    publicVariable QGVAR(teleportIDs);
+
+    _exit = selectRandom (_teleporters - [_trg]);
+};
+
+if (isNil "_exit") exitWith {
+    hintC ("It was not possible to find an exit for teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + "!");
 };
 
 _trg setVariable [QGVAR(cooldown), true, true];
@@ -77,7 +80,10 @@ _proxy = _exit getVariable QGVAR(sound);
 
             if (_doTeleport) then {
                 // [_obj, [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ]] remoteExec ["setPos", _obj];
+                
+                [QGVAR(teleportOnEnter), [_obj, _trg, _exit]] call CBA_fnc_localEvent;
                 _obj setPos [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ];
+                [QGVAR(teleportOnExit), [_obj, _trg, _exit]] call CBA_fnc_localEvent;
             };
         } else {
             if (!(_obj isKindOf "landvehicle" || _x isKindOf "air")) then {

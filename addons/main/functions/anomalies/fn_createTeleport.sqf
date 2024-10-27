@@ -15,14 +15,17 @@
     Author:
     diwako 2017-12-14
 */
-params[["_pos",[0,0,0]],["_id",-1]];
+params[["_pos", [0, 0, 0]], ["_id", -1]];
 if !(isServer) exitWith {};
 
+private _varName = "";
 if !(_pos isEqualType []) then {
     //created via module
-    _id = _pos getVariable ["anomalyid",-1];
-    _pos = [_pos] call FUNC(getLocationFromModule);
+    _id = _pos getVariable [QGVAR(anomalyId), -1];
+
+    _varName = vehicleVarName _pos;
 };
+_pos = [_pos] call FUNC(getLocationFromModule);
 
 if (count _pos < 3) then {
     _pos set [2,0];
@@ -40,11 +43,8 @@ if (isNil QGVAR(teleportIDs)) then {
 // _teleporters = [GVAR(teleportIDs), _id] call CBA_fnc_hashGet;
 _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 
-if ( (count _teleporters) >= 2) exitWith {
-    hintC ("Teleport Anomaly with ID " + str(_id) + " cannot be created as there are already 2 anomalies with that id. Affected anomaly at " + str(_pos));
-};
-
 _trg = createTrigger ["EmptyDetector", _pos];
+if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
 _trg setPosASL _pos;
 _teleporters pushBack _trg;
 // [GVAR(teleportIDs), _id, _teleporters] call CBA_fnc_hashSet;

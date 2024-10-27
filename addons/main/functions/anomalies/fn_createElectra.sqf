@@ -18,6 +18,10 @@ params[["_pos",[0,0,0]]];
 
 if (!isServer) exitWith {};
 
+private _varName = "";
+if !(_pos isEqualType []) then {
+    _varName = vehicleVarName _pos;
+};
 _pos = [_pos] call FUNC(getLocationFromModule);
 
 if (count _pos < 3) then {
@@ -25,6 +29,7 @@ if (count _pos < 3) then {
 };
 
 private _trg = createTrigger ["EmptyDetector", _pos];
+if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
 _trg setPosASL _pos;
 _trg setVariable [QGVAR(cooldown), false, true];
 _trg setVariable [QGVAR(anomalyType), "electra", true];

@@ -19,9 +19,11 @@
 params [["_marker", ""], ["_speed", 6], ["_smoothCurves", true]];
 if !(isServer) exitWith {nil};
 
+private _varName = "";
 if !(_marker isEqualType []) then {
     //created via module
     private _module = _marker;
+    _varName = vehicleVarName _module;
     _marker = _module getVariable ["marker", ""];
     _speed = _module getVariable ["speed", 6];
     _smoothCurves = _module getVariable ["smooth", true];
@@ -50,6 +52,7 @@ if (_end isEqualTo 0) exitWith {
 
 private _pos = getMarkerPos [format ["%1%2", _marker, 0], true];
 private _trg = createTrigger ["EmptyDetector", _pos];
+if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
 _trg setPosASL AGLToASL _pos;
 _trg setVariable [QGVAR(cooldown), false, true];
 _trg setVariable [QGVAR(anomalyType), "comet", true];

@@ -23,6 +23,14 @@ class cfgVehicles {
 
     class Logic;
     class Module_F: Logic {
+        class AttributesBase {
+            class Default;
+            class Edit;
+            class EditMulti5;
+            class Combo;
+            class Checkbox;
+            class ModuleDescription;
+        };
         class ArgumentsBaseUnits {};
         class ModuleDescription {};
     };
@@ -107,7 +115,7 @@ class cfgVehicles {
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {
-            class anomalyId {
+            class GVAR(anomalyId) {
                 displayName = "ID";
                 description = "$STR_anomaly_teleport_id_desc";
                 typeName = "NUMBER";
