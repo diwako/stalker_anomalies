@@ -25,8 +25,8 @@ private _men = nearestObjects [getPos _trg,  ["Man","landvehicle"], 2];
 private _id = _trg getVariable QGVAR(teleportID);
 private _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 
-if (count _teleporters < 2) exitWith {
-    hintC ("Teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + " does not have an exit anomaly!")
+if (count _teleporters <= 1) exitWith {
+    hintC format ["There is no other teleporter with ID %2 for the one at %1!", getPos _trg, _id];
 };
 
 private _exit = selectRandom (_teleporters - [_trg]);
@@ -40,7 +40,7 @@ if (isNull _exit) then {
 };
 
 if (isNil "_exit") exitWith {
-    hintC ("It was not possible to find an exit for teleport anomaly at " + str(getPos _trg) + " with id " + str(_id) + "!");
+    hintC format ["It was not possible to find an exit for teleport anomaly at %1 with id %2!", getPos _trg, _id];
 };
 
 _trg setVariable [QGVAR(cooldown), true, true];
@@ -80,7 +80,7 @@ _proxy = _exit getVariable QGVAR(sound);
 
             if (_doTeleport) then {
                 // [_obj, [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ]] remoteExec ["setPos", _obj];
-                
+
                 [QGVAR(teleportOnEnter), [_obj, _trg, _exit]] call CBA_fnc_localEvent;
                 _obj setPos [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ];
                 [QGVAR(teleportOnExit), [_obj, _trg, _exit]] call CBA_fnc_localEvent;

@@ -98,6 +98,7 @@ if (isServer) then {
                     };
                 };
             };
+            [QGVAR(burnerOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
         } else {
             if !(_x isKindOf "landvehicle" || _x isKindOf "air") then {
                 [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;

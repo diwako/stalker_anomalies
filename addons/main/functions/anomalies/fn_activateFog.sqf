@@ -68,6 +68,7 @@ if (_trg getVariable [QGVAR(anomalyType),""] != "fog") exitWith {};
                 private _dam = damage _x;
                 _x setDamage (_dam + 0.05);
             };
+            [QGVAR(fogOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
         };
     };
     false

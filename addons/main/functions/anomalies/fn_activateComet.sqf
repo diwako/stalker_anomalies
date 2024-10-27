@@ -66,6 +66,7 @@ _trg setVariable [QGVAR(cooldown), true];
             };
         };
     };
+    [QGVAR(cometOnDamage), [_x, _trg getVariable QGVAR(sourceTrg)]] call CBA_fnc_localEvent;
 } forEach _local;
 
 [{

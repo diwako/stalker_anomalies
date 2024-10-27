@@ -81,6 +81,7 @@ if (isServer) then {
                 };
                 // [_x, [_a*_mult, _b*_mult, _mult + (5 / (1 + (abs _a) + (abs _b)))]] remoteExec ["setVelocity", _x];
                 [QGVAR(setVelocity), [_x, [_a*_mult, _b*_mult, _mult + (5 / (1 + (abs _a) + (abs _b)))]], _x] call CBA_fnc_targetEvent;
+                [QGVAR(springboardOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
             } else {
                 if !(_x isKindOf "landvehicle" || _x isKindOf "air") then {
                     [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;

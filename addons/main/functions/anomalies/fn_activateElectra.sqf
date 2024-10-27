@@ -60,6 +60,7 @@ if (isServer) then {
                     _this setDamage 1;
                 }, _x, 2] call CBA_fnc_waitAndExecute;
             };
+            [QGVAR(electraOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
         } else {
             if (!(_x isKindOf "landvehicle" || _x isKindOf "air") ) then {
                 [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
