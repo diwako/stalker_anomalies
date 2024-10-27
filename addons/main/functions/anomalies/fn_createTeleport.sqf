@@ -36,11 +36,9 @@ if (_id < 0) exitWith {
 };
 
 if (isNil QGVAR(teleportIDs)) then {
-//   GVAR(teleportIDs) = [[], []] call CBA_fnc_hashCreate;
   GVAR(teleportIDs) = createHashMap;
 };
 
-// _teleporters = [GVAR(teleportIDs), _id] call CBA_fnc_hashGet;
 _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 
 _trg = createTrigger ["EmptyDetector", _pos];

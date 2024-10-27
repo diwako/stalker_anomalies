@@ -34,10 +34,8 @@ private _type = "";
             case "telepot":{
                 // handle teleport anomalies
                 private _id = _x getVariable QGVAR(teleportID);
-                // _teleporters = [GVAR(teleportIDs), _id] call CBA_fnc_hashGet;
                 private _teleporters = GVAR(teleportIDs) get _id;
                 _teleporters = _teleporters - [_x, objNull];
-                // [GVAR(teleportIDs), _id, _teleporters] call CBA_fnc_hashSet;
                 GVAR(teleportIDs) set [_id, _teleporters];
             };
             case "fruitpunch": {
@@ -55,5 +53,4 @@ private _type = "";
     };
 } forEach _anomalies;
 // publish updated arrays
-// publicVariable QGVAR(holder);
 publicVariable QGVAR(teleportIDs);

@@ -46,8 +46,9 @@ _source setPosASL (getPosASL _trg);
             _dam = damage _x;
             _x setDamage (_dam + 0.2);
         };
+        [QGVAR(fruitpunchOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
     } else {
-        if (!(_x isKindOf "landvehicle" || _x isKindOf "air")) then {
+        if !(_x isKindOf "landvehicle" || _x isKindOf "air") then {
             deleteVehicle _x;
         };
     };

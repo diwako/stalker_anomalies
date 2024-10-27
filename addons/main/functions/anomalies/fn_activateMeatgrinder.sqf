@@ -72,6 +72,7 @@ if (isServer) then {
                 private _curDam = _x getHitPointDamage "HitHull";
                 [QGVAR(setHitPointDamage), [_x, ["HitHull", (_curDam + 0.45), true, _x, _x]], _x] call CBA_fnc_targetEvent;
             };
+            [QGVAR(meatgrinderOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
         } forEach _sucked;
         [{
             _this setVariable [QGVAR(cooldown), false, true];
