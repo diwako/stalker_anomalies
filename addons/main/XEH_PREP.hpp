@@ -43,3 +43,17 @@ SUBPREP(detector,detector);
 
 // bolt
 SUBPREP(bolt,grenadeBolt);
+
+// blowout
+if (isServer) then {
+    SUBPREP(blowout,blowout);
+};
+if (hasInterface) then {
+    SUBPREP(blowout,blowoutRumble);
+    SUBPREP(blowout,blowoutSirens);
+    SUBPREP(blowout,blowoutWave);
+    SUBPREP(blowout,chromatic);
+    SUBPREP(blowout,createLocalLightningBolt);
+    SUBPREP(blowout,psyEffect);
+    SUBPREP(blowout,showPsyWavesInSky);
+};

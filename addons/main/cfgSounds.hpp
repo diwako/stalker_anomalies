@@ -121,4 +121,70 @@ class cfgSounds {
         sound[] = {QPATHTOF(sounds\anomalies\buzz_hit.ogg), 2, 1, 50};
         titles[] = {};
     };
+    class blowout_wave_1
+    {
+        name = "blowout_wave_1";
+        sound[] = {QPATHTOF(sounds\blowout\blowout_wave_1.ogg), 2, 1, 50};
+        titles[] = {};
+    };
+    class blowout_wave_2
+    {
+        name = "blowout_wave_2";
+        sound[] = {QPATHTOF(sounds\blowout\blowout_wave_2.ogg), 2, 1, 50};
+        titles[] = {};
+    };
+    class blowout_wave_3
+    {
+        name = "blowout_wave_3";
+        sound[] = {QPATHTOF(sounds\blowout\blowout_wave_3.ogg), 2, 1, 50};
+        titles[] = {};
+    };
+    class blowout_rumble
+    {
+        name = "blowout_rumble";
+        sound[] = {QPATHTOF(sounds\blowout\blowout_rumble.ogg), 2, 1, 50};
+        titles[] = {};
+    };
+    class siren1
+    {
+        name = "siren1";
+        sound[] = {QPATHTOF(sounds\blowout\siren1.ogg), 2, 1, 4500};
+        titles[] = {};
+    };
+    class siren2
+    {
+        name = "siren2";
+        sound[] = {QPATHTOF(sounds\blowout\siren2.ogg), 2, 1, 4500};
+        titles[] = {};
+    };
+    class psy_voices_1
+    {
+        name = "psy_voices_1";
+        sound[] = {QPATHTOF(sounds\blowout\psy_voices.ogg), 0.25, 1, 50};
+        titles[] = {};
+    };
+    class psy_voices_2
+    {
+        name = "psy_voices_2";
+        sound[] = {QPATHTOF(sounds\blowout\psy_voices.ogg), 0.75, 1, 50};
+        titles[] = {};
+    };
+    class psy_voices_3
+    {
+        name = "psy_voices_3";
+        sound[] = {QPATHTOF(sounds\blowout\psy_voices.ogg), 2, 1, 50};
+        titles[] = {};
+    };
+    class blowout_begin
+    {
+        name = "blowout_begin";
+        sound[] = {QPATHTOF(sounds\blowout\blowout_begin.ogg), 2, 1, 50};
+        titles[] = {};
+    };
+    class blowout
+    {
+        name = "blowout";
+        sound[] = {QPATHTOF(sounds\blowout\blowout.ogg), 2, 1, 50};
+        titles[] = {};
+    };
 };

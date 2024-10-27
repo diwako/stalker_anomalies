@@ -27,6 +27,42 @@ if (isServer) then {
     [QGVAR(deleteAnomalies), {
         _this call FUNC(deleteAnomalies);
     }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(startBlowout), {
+        if (missionNamespace getVariable [QGVAR(blowoutInProgress), false]) exitWith {
+            LOG_SYS("INFO","Blowout not started via event. Already in progress!");
+        };
+        params [["_time", 400, [0]], ["_direction", 0, [0]]];
+        private _stage1Time = 60;
+        private _stage3Time = 30;
+        private _stage4Time = 10;
+
+        private _stage2Time = _time - _stage1Time - _stage3Time - _stage4Time;
+        if (_stage2Time <= 1) exitWith {
+            private _text = format ["Blowout canceled, stage 2 time is one second or below! -> Time given: %1", _time];
+            LOG_SYS("WARNING",_text);
+        };
+
+        if !([1, _direction] call FUNC(blowout)) exitWith {
+            private _text = "Could not start blowout. Function returned false for stage 1.";
+            LOG_SYS("INFO",_text);
+        };
+
+        [{
+            if !(QGVAR(blowoutInProgress)) exitWith {};
+            [2] call FUNC(blowout);
+        }, nil, _stage1Time] call CBA_fnc_waitAndExecute;
+
+        [{
+            if !(QGVAR(blowoutInProgress)) exitWith {};
+            [3] call FUNC(blowout);
+        }, nil, _stage1Time + _stage2Time] call CBA_fnc_waitAndExecute;
+
+        [{
+            if !(QGVAR(blowoutInProgress)) exitWith {};
+            [4] call FUNC(blowout);
+        }, nil, _stage1Time + _stage2Time + _stage3Time] call CBA_fnc_waitAndExecute;
+    }] call CBA_fnc_addEventHandler;
 };
 
 if (hasInterface) then {
@@ -89,6 +125,116 @@ if (hasInterface) then {
 [QGVAR(setVelocity), {
     params ["_obj", "_args"];
     _obj setVelocity _args;
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(blowOutStage), {
+    params ["_stage", ["_args", []]];
+    if (!GVAR(blowoutInProgress) && _stage > 0) exitWith {};
+    if (GVAR(debug)) then {
+        systemChat format ["EVENT Blowout entered stage: %1 | args: %2", _stage, _args];
+    };
+    switch (_stage) do {
+        case 0: {
+            enableEnvironment true;
+            if (hasInterface) then {
+                30 fadeEnvironment 1;
+                [0] call FUNC(psyEffect);
+                [false] call FUNC(showPsyWavesInSky);
+                private _fnc_lightning = {
+                    if (time >= (_this select 1)) exitWith {};
+                    [] call FUNC(createLocalLightningBolt);
+                    [{
+                        _this call (_this select 0);
+                    }, _this, 3 + random 4] call CBA_fnc_waitAndExecute;
+                };
+
+                [_fnc_lightning, time + 60] call _fnc_lightning;
+            };
+        };
+        case 1: {
+            _args params ["_time"];
+            60 setOvercast 1;
+            if (hasInterface) then {
+                _time fadeEnvironment 0;
+            };
+            [{
+                if !(GVAR(blowoutInProgress)) exitWith {};
+                enableEnvironment false;
+                if (GVAR(debug)) then {
+                    systemChat "Environment disabled";
+                };
+            }, nil, _time] call CBA_fnc_waitAndExecute;
+            if (hasInterface) then {
+                [{
+                    if !(GVAR(blowoutInProgress)) exitWith {};
+                    private _pos = AGLToASL (([] call CBA_fnc_currentUnit) getPos [5000, GVAR(blowoutDirection)]);
+                    private _obj = QGVAR(boltThrowDummy) createVehicleLocal _pos;
+                    _obj setPosASL _pos;
+                    _obj say3D ["blowout_begin", 50000, 1];
+                    [{
+                        deleteVehicle _this;
+                    }, _obj, 30] call CBA_fnc_waitAndExecute;
+                    [] call FUNC(chromatic);
+                    [{
+                        if !(GVAR(blowoutInProgress)) exitWith {};
+                        playSound "blowout_wave_1";
+                        [] call FUNC(chromatic);
+                        // [1] call FUNC(psyEffect);
+                    }, nil, 15] call CBA_fnc_waitAndExecute;
+                    [{
+                        if !(GVAR(blowoutInProgress)) exitWith {};
+                        [] call FUNC(blowoutSirens);
+                    }, nil, 18 + random 10] call CBA_fnc_waitAndExecute;
+                }, nil, 60 - _time] call CBA_fnc_waitAndExecute;
+            };
+        };
+        case 2: {
+            if !(hasInterface) exitWith {};
+            playSound "blowout_wave_2";
+            [] call FUNC(chromatic);
+            [1] call FUNC(psyEffect);
+            [] call FUNC(blowoutRumble);
+            [true] call FUNC(showPsyWavesInSky);
+        };
+        case 3: {
+            if !(hasInterface) exitWith {};
+            playSound "blowout_wave_3";
+            [10] call FUNC(blowoutWave);
+            [{
+                [] call FUNC(chromatic);
+                playSound "blowout_wave_2";
+            }, nil, 10] call CBA_fnc_waitAndExecute;
+            [] call FUNC(chromatic);
+            [2] call FUNC(psyEffect);
+        };
+        case 4: {
+            if !(hasInterface) exitWith {};
+            [] call FUNC(blowoutWave);
+
+            [{
+                if !(GVAR(blowoutInProgress)) exitWith {};
+                playSound "blowout_wave_3";
+                [] call FUNC(chromatic);
+                private _player = [] call CBA_fnc_currentUnit;
+                if !(_player getVariable["blowout_safe", false] || {_player getVariable["anomaly_ignore", false]}) then {
+                    private _position = _player selectionPosition selectRandom ["spine","spine1","spine2","spine3","head","leftshoulder","leftarm","leftarmroll","leftforearm","leftforearmroll","lefthand","rightshoulder","rightarm","rightarmroll","rightforearm","rightforearmroll","righthand","pelvis","leftupleg","leftuplegroll","leftleg","leftlegroll","leftfoot","rightupleg","rightuplegroll","rightleg","rightlegroll","rightfoot"];
+                    _player addForce [(vectorNormalized velocity _player) vectorMultiply (100 + random 200), _position, false];
+                };
+            }, nil, 7] call CBA_fnc_waitAndExecute;
+
+            [{
+                if !(GVAR(blowoutInProgress)) exitWith {};
+                playSound "blowout";
+                private _unit = [] call CBA_fnc_currentUnit;
+                [] call FUNC(chromatic);
+                if !(_unit getVariable["blowout_safe", false] || {_unit getVariable["anomaly_ignore", false]}) then {
+                    _unit setDamage 1;
+                };
+            }, nil, 10] call CBA_fnc_waitAndExecute;
+        };
+        default {
+        };
+    };
 }] call CBA_fnc_addEventHandler;
 
 ADDON = true;
