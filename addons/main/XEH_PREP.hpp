@@ -57,3 +57,4 @@ if (hasInterface) then {
     SUBPREP(blowout,psyEffect);
     SUBPREP(blowout,showPsyWavesInSky);
 };
+SUBPREP(blowout,isInShelter);

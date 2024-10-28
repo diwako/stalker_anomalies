@@ -25,6 +25,14 @@
             <Polish>Stalker Anomalies</Polish>
             <French>Stalker anomalies</French>
         </Key>
+        <Key ID="STR_anomaly_singular">
+            <Original>Anomaly</Original>
+            <English>Anomaly</English>
+            <German>Anomalie</German>
+            <Russian>Аномалия</Russian>
+            <Polish>Anomalia</Polish>
+            <French>Anomalie</French>
+        </Key>
         <Key ID="STR_anomaly_detector">
             <Original>Anomaly Detector</Original>
             <English>Anomaly Detector</English>
@@ -113,13 +121,6 @@
             <Polish>Teleport</Polish>
             <French>Téléporteur</French>
         </Key>
-        <Key ID="STR_anomaly_teleport_id_desc">
-            <Original>Teleporters need the same ID to work together. Several teleporters can have the same ID, but the exit teleporter is randomly selected.</Original>
-            <English>Teleporters need the same ID to work together. Several teleporters can have the same ID, but the exit teleporter is randomly selected.</English>
-            <German>Teleporter müssen die gleiche ID haben, um zusammenzuarbeiten. Mehrere Teleporter können die gleiche ID haben, aber der Ausgangsteleporter wird zufällig ausgewählt.</German>
-            <Russian>Телепорты должны иметь одинаковый ID, чтобы работать вместе. Несколько телепортов могут иметь одинаковый ID, но выходной телепорт выбирается случайным образом.</Russian>
-            <Polish>Teleporty muszą mieć ten sam identyfikator, aby mogły ze sobą współpracować. Kilka teleporterów może mieć ten sam identyfikator, ale teleporter wyjściowy jest wybierany losowo.</Polish>
-        </Key>
         <Key ID="STR_anomaly_teleport_desc">
             <Original>Spawn a teleport anomaly at module location</Original>
             <English>Spawn a teleport anomaly at module location</English>
@@ -127,6 +128,17 @@
             <Russian>Создать аномалию "Телепорт" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Teleport" w miejscu modułu</Polish>
             <French>Génère une anomalie type "Téléportation" à l'emplacement du module</French>
+        </Key>
+        <Key ID="STR_anomaly_teleport_id">
+            <Original>Teleport ID</Original>
+            <English>Teleport ID</English>
+        </Key>
+        <Key ID="STR_anomaly_teleport_id_desc">
+            <Original>Teleporters need the same ID to work together. Several teleporters can have the same ID, but the exit teleporter is randomly selected.</Original>
+            <English>Teleporters need the same ID to work together. Several teleporters can have the same ID, but the exit teleporter is randomly selected.</English>
+            <German>Teleporter müssen die gleiche ID haben, um zusammenzuarbeiten. Mehrere Teleporter können die gleiche ID haben, aber der Ausgangsteleporter wird zufällig ausgewählt.</German>
+            <Russian>Телепорты должны иметь одинаковый ID, чтобы работать вместе. Несколько телепортов могут иметь одинаковый ID, но выходной телепорт выбирается случайным образом.</Russian>
+            <Polish>Teleporty muszą mieć ten sam identyfikator, aby mogły ze sobą współpracować. Kilka teleporterów może mieć ten sam identyfikator, ale teleporter wyjściowy jest wybierany losowo.</Polish>
         </Key>
         <Key ID="STR_anomaly_anomaly_field">
             <Original>Anomaly field</Original>
@@ -585,6 +597,67 @@
             <English>Radius in meters</English>
             <Polish>Obszar w metrach</Polish>
             <French>Rayon en mètres</French>
+        </Key>
+        <Key ID="STR_anomaly_zeus_spawn_anomaly">
+            <Original>Spawn Anomaly</Original>
+            <English>Spawn Anomaly</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_delete_anomalies">
+            <Original>Delete Anomalies</Original>
+            <English>Delete Anomalies</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_stop_blowout">
+            <Original>Start/Stop Blowout</Original>
+            <English>Start/Stop Blowout</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout">
+            <Original>Start Blowout</Original>
+            <English>Start Blowout</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_stop_blowout">
+            <Original>Stop Blowout</Original>
+            <English>Stop Blowout</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_stop_blowout_desc">
+            <Original>When answered yes, this will stop the blowout and sets it to stage 0, same as the blowout having concluded.</Original>
+            <English>When answered yes, this will stop the blowout and sets it to stage 0, same as the blowout having concluded.</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_hint">
+            <Original>Blowout has been started and will last %1 minutes and %2 seconds.</Original>
+            <English>Blowout has been started and will last %1 minutes and %2 seconds.</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_stop_blowout_hint">
+            <Original>Blowout has been stopped</Original>
+            <English>Blowout has been stopped</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_time">
+            <Original>Time till blowout wave</Original>
+            <English>Time till blowout wave</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_time_desc">
+            <Original>Time in seconds until the deadly blowout wave reaches the players.</Original>
+            <English>Time in seconds until the deadly blowout wave reaches the players.</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_direction">
+            <original>Direction</original>
+            <english>Direction</english>
+            <czech>Směr</czech>
+            <german>Richtung</german>
+            <russian>Направление</russian>
+            <polish>Kierunek</polish>
+            <italian>Direzione</italian>
+            <spanish>Dirección</spanish>
+            <french>Direction </french>
+            <chinese>方向</chinese>
+            <japanese>方向</japanese>
+            <korean>방</korean>
+            <portuguese>Direção</portuguese>
+            <chinesesimp>方向</chinesesimp>
+            <turkish>Yön</turkish>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_direction_desc">
+            <original>From which direction in bearing numbering should the wave arrive from?</original>
+            <english>From which direction in bearing numbering should the wave arrive from?</english>
         </Key>
     </Package>
 </Project>

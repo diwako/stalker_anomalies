@@ -28,6 +28,11 @@ if (isServer) then {
         _this call FUNC(deleteAnomalies);
     }] call CBA_fnc_addEventHandler;
 
+    [QGVAR(stopBlowout), {
+        if !(missionNamespace getVariable [QGVAR(blowoutInProgress), false]) exitWith {};
+        [0] call FUNC(blowout);
+    }] call CBA_fnc_addEventHandler;
+
     [QGVAR(startBlowout), {
         if (missionNamespace getVariable [QGVAR(blowoutInProgress), false]) exitWith {
             LOG_SYS("INFO","Blowout not started via event. Already in progress!");
@@ -49,17 +54,17 @@ if (isServer) then {
         };
 
         [{
-            if !(QGVAR(blowoutInProgress)) exitWith {};
+            if !(GVAR(blowoutInProgress)) exitWith {};
             [2] call FUNC(blowout);
         }, nil, _stage1Time] call CBA_fnc_waitAndExecute;
 
         [{
-            if !(QGVAR(blowoutInProgress)) exitWith {};
+            if !(GVAR(blowoutInProgress)) exitWith {};
             [3] call FUNC(blowout);
         }, nil, _stage1Time + _stage2Time] call CBA_fnc_waitAndExecute;
 
         [{
-            if !(QGVAR(blowoutInProgress)) exitWith {};
+            if !(GVAR(blowoutInProgress)) exitWith {};
             [4] call FUNC(blowout);
         }, nil, _stage1Time + _stage2Time + _stage3Time] call CBA_fnc_waitAndExecute;
     }] call CBA_fnc_addEventHandler;
@@ -216,7 +221,7 @@ if (hasInterface) then {
                 playSound "blowout_wave_3";
                 [] call FUNC(chromatic);
                 private _player = [] call CBA_fnc_currentUnit;
-                if !(_player getVariable["blowout_safe", false] || {_player getVariable["anomaly_ignore", false]}) then {
+                if !([_player] call FUNC(isInShelter)) then {
                     private _position = _player selectionPosition selectRandom ["spine","spine1","spine2","spine3","head","leftshoulder","leftarm","leftarmroll","leftforearm","leftforearmroll","lefthand","rightshoulder","rightarm","rightarmroll","rightforearm","rightforearmroll","righthand","pelvis","leftupleg","leftuplegroll","leftleg","leftlegroll","leftfoot","rightupleg","rightuplegroll","rightleg","rightlegroll","rightfoot"];
                     _player addForce [(vectorNormalized velocity _player) vectorMultiply (100 + random 200), _position, false];
                 };
@@ -225,10 +230,10 @@ if (hasInterface) then {
             [{
                 if !(GVAR(blowoutInProgress)) exitWith {};
                 playSound "blowout";
-                private _unit = [] call CBA_fnc_currentUnit;
+                private _player = [] call CBA_fnc_currentUnit;
                 [] call FUNC(chromatic);
-                if !(_unit getVariable["blowout_safe", false] || {_unit getVariable["anomaly_ignore", false]}) then {
-                    _unit setDamage 1;
+                if !([_player] call FUNC(isInShelter)) then {
+                    _player setDamage 1;
                 };
             }, nil, 10] call CBA_fnc_waitAndExecute;
         };

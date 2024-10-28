@@ -116,7 +116,7 @@ class cfgVehicles {
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Arguments {
             class GVAR(anomalyId) {
-                displayName = "ID";
+                displayName = "$STR_anomaly_teleport_id";
                 description = "$STR_anomaly_teleport_id_desc";
                 typeName = "NUMBER";
                 defaultValue = 0;
