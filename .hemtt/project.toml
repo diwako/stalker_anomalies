@@ -17,7 +17,7 @@ workshop = [
     "463939057",  # ACE3
     "1779063631", # ZEN
 ]
-parameters = ["-world=empty"]
+parameters = ["-world=empty", "-noPause"]
 mission = "test.vr"
 
 [hemtt.signing]
