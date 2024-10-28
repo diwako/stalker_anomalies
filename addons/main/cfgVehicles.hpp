@@ -123,7 +123,7 @@ class cfgVehicles {
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
-            class GVAR(anomalyId): Edit {
+            class anomalyId: Edit {
                 displayName = "$STR_anomaly_teleport_id";
                 tooltip = "$STR_anomaly_teleport_id_desc";
                 typeName = "NUMBER";
@@ -159,7 +159,7 @@ class cfgVehicles {
                 typeName = "NUMBER";
                 validate = "number";
                 defaultValue = 20;
-                // property = "springboards";
+                property = QGVAR(moduleCreateAnomalyField_springboards);
             };
             class meatgrinders: Edit {
                 displayName = "$STR_anomaly_anomaly_field_meatgrinder";
@@ -167,7 +167,7 @@ class cfgVehicles {
                 typeName = "NUMBER";
                 validate = "number";
                 defaultValue = 10;
-                // property = "meatgrinders";
+                property = QGVAR(moduleCreateAnomalyField_meatgrinders);
             };
             class electras: Edit {
                 displayName = "$STR_anomaly_anomaly_field_electra";
@@ -175,7 +175,7 @@ class cfgVehicles {
                 typeName = "NUMBER";
                 validate = "number";
                 defaultValue = 0;
-                // property = "electras";
+                property = QGVAR(moduleCreateAnomalyField_electras);
             };
             class burners: Edit {
                 displayName = "$STR_anomaly_anomaly_field_burner";
@@ -183,7 +183,7 @@ class cfgVehicles {
                 typeName = "NUMBER";
                 validate = "number";
                 defaultValue = 0;
-                // property = "burners";
+                property = QGVAR(moduleCreateAnomalyField_burners);
             };
         };
         class AttributeValues {
@@ -279,27 +279,27 @@ class cfgVehicles {
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
-            class Marker: Edit {
+            class marker: Edit {
                 displayName = "$STR_anomaly_comet_marker";
                 tooltip = "$STR_anomaly_comet_marker_desc";
                 typeName = "STRING";
                 defaultValue = "";
-                // property = QGVAR(moduleComet_marker);
+                property = QGVAR(moduleComet_marker);
             };
-            class Speed: Edit {
+            class speed: Edit {
                 displayName = "$STR_anomaly_comet_speed";
                 tooltip = "$STR_anomaly_comet_speed_desc";
                 typeName = "NUMBER";
                 validate = "number";
                 defaultValue = 6;
-                // property = QGVAR(speed);
+                property = QGVAR(moduleComet_speed);
             };
-            class Smooth: Checkbox {
+            class smooth: Checkbox {
                 displayName = "$STR_anomaly_comet_smooth";
                 tooltip = "$STR_anomaly_comet_smooth_desc";
                 typeName = "BOOL";
                 defaultValue = 1;
-                // property = QGVAR(smooth);
+                property = QGVAR(moduleComet_smooth);
             };
             class ModuleDescription: ModuleDescription {};
         };
