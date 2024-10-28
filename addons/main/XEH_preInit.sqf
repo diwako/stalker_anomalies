@@ -181,7 +181,21 @@ if (hasInterface) then {
             [2] call FUNC(psyEffect);
         };
         case 4: {
-            if !(hasInterface) exitWith {};
+            if !(hasInterface) exitWith {
+                [{
+                    if (!GVAR(blowoutInProgress) || GVAR(blowoutAffectPlayersOnly)) exitWith {};
+                    private _units = allUnits;
+                    if !(isServer) then {
+                        // maybe headless client should not kill itself
+                        _units = _units - [player];
+                    };
+                    {
+                        if (local _x && {alive _x} && {isDamageAllowed _x} && {!([_x] call FUNC(isInShelter))}) then {
+                            _x setDamage [1, true, _x, _x];
+                        };
+                    } forEach _units;
+                }, nil, 10] call CBA_fnc_waitAndExecute;
+            };
             [] call FUNC(blowoutWave);
 
             [{
@@ -200,8 +214,15 @@ if (hasInterface) then {
                 playSound "blowout";
                 private _player = [] call CBA_fnc_currentUnit;
                 [] call FUNC(chromatic);
-                if !([_player] call FUNC(isInShelter)) then {
-                    _player setDamage 1;
+                if (isDamageAllowed _player && {!([_player] call FUNC(isInShelter))}) then {
+                    _player setDamage [1, true, _player, _player];
+                };
+                if !(GVAR(blowoutAffectPlayersOnly)) then {
+                    {
+                        if (local _x && {!isNull _x && {alive _x && {isDamageAllowed _x && {!([_x] call FUNC(isInShelter))}}}}) then {
+                            _x setDamage [1, true, _x, _x];
+                        };
+                    } forEach (allUnits - [player, _player]);
                 };
             }, nil, 10] call CBA_fnc_waitAndExecute;
         };

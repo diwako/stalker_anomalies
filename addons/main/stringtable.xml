@@ -672,8 +672,16 @@
             <english>Add siren sound effect</english>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_sirens_desc">
-            <original>When active will sound air raid sirens in random locations during the blowout</original>
-            <english>When active will sound air raid sirens in random locations during the blowout</english>
+            <original>When active, will sound air raid sirens in random locations during the blowout</original>
+            <english>When active, will sound air raid sirens in random locations during the blowout</english>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_only_players">
+            <original>Only affect players</original>
+            <english>Only affect players</english>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_only_players_desc">
+            <original>When enabled, the psy wave will only kill players, when distabled all units found in the "allUnits" command will be affected. Potentital performance warning!</original>
+            <english>When enabled, the psy wave will only kill players, when distabled all units found in the "allUnits" command will be affected. Potentital performance warning!</english>
         </Key>
     </Package>
 </Project>

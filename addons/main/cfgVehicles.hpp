@@ -343,6 +343,13 @@ class cfgVehicles {
                 typeName = "BOOL";
                 property = QGVAR(sirens);
             };
+            class onlyPlayers: Checkbox {
+                displayName = "$STR_anomaly_zeus_start_blowout_only_players";
+                tooltip = "$STR_anomaly_zeus_start_blowout_only_players_desc";
+                defaultValue = "true";
+                typeName = "BOOL";
+                property = QGVAR(onlyPlayers);
+            };
             class ModuleDescription: ModuleDescription {};
         };
         class ModuleDescription: ModuleDescription {

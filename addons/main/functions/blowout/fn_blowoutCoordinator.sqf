@@ -7,7 +7,7 @@ if (missionNamespace getVariable [QGVAR(blowoutInProgress), false]) exitWith {
     LOG_SYS("INFO",_text);
 };
 
-params [["_time", 400, [0, objNull]], ["_direction", 0, [0, []]], ["_useSirens", true, [true]]];
+params [["_time", 400, [0, objNull]], ["_direction", 0, [0, []]], ["_useSirens", true, [true]], ["_onlyPlayers", true, [true]]];
 
 if (_time isEqualType objNull) then {
     //created via module
@@ -15,10 +15,12 @@ if (_time isEqualType objNull) then {
     _time = _module getVariable "wavetime";
     _direction = _module getVariable "direction";
     _useSirens = _module getVariable "sirens";
+    _onlyPlayers = _module getVariable "onlyPlayers";
     deleteVehicle _module;
 };
 
 missionNamespace setVariable [QGVAR(blowoutUseSirens), _useSirens, true];
+missionNamespace setVariable [QGVAR(blowoutAffectPlayersOnly), _onlyPlayers, true];
 
 
 private _stage2Time = _time - STAGE_1_TIME - STAGE_3_TIME - STAGE_4_TIME;
