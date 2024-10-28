@@ -49,13 +49,12 @@ if (isServer) then {
     SUBPREP(blowout,blowout);
     SUBPREP(blowout,blowoutCoordinator);
 };
-if (hasInterface) then {
-    SUBPREP(blowout,blowoutRumble);
-    SUBPREP(blowout,blowoutSirens);
-    SUBPREP(blowout,blowoutWave);
-    SUBPREP(blowout,chromatic);
-    SUBPREP(blowout,createLocalLightningBolt);
-    SUBPREP(blowout,psyEffect);
-    SUBPREP(blowout,showPsyWavesInSky);
-};
+
+SUBPREP(blowout,blowoutRumble);
+SUBPREP(blowout,blowoutSirens);
+SUBPREP(blowout,blowoutWave);
+SUBPREP(blowout,chromatic);
+SUBPREP(blowout,createLocalLightningBolt);
+SUBPREP(blowout,psyEffect);
+SUBPREP(blowout,showPsyWavesInSky);
 SUBPREP(blowout,isInShelter);
