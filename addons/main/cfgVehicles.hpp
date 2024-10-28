@@ -320,28 +320,28 @@ class cfgVehicles {
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
-            class WaveTime: Edit {
+            class wavetime: Edit {
                 displayName = "$STR_anomaly_zeus_start_blowout_time";
                 tooltip = "$STR_anomaly_zeus_start_blowout_time_desc";
                 typeName = "NUMBER";
                 validate = "number";
                 defaultValue = 400;
-                property = "wavetime";
+                property = QGVAR(wavetime);
             };
-            class Direction: Edit {
+            class direction: Edit {
                 displayName = "$STR_anomaly_zeus_start_blowout_direction";
                 tooltip = "$STR_anomaly_zeus_start_blowout_direction_desc";
                 typeName = "NUMBER";
                 validate = "number";
                 defaultValue = 0;
-                property = "direction";
+                property = QGVAR(direction);
             };
-            class Sirens: Checkbox {
+            class sirens: Checkbox {
                 displayName = "$STR_anomaly_zeus_start_blowout_sirens";
                 tooltip = "$STR_anomaly_zeus_start_blowout_sirens_desc";
                 defaultValue = "true";
                 typeName = "BOOL";
-                property = "sirens";
+                property = QGVAR(sirens);
             };
             class ModuleDescription: ModuleDescription {};
         };

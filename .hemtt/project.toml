@@ -28,4 +28,4 @@ folder = "diwako_anomalies"
 
 [lints.stringtables.sorted]
 enabled = false
-# options.only-lang = true TODO without new hemtt version
+# options.only-lang = true TODO with new hemtt version

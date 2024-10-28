@@ -14,6 +14,7 @@ if (_time isEqualType objNull) then {
     private _module = _time;
     _time = _module getVariable "wavetime";
     _direction = _module getVariable "direction";
+    _useSirens = _module getVariable "sirens";
     deleteVehicle _module;
 };
 
