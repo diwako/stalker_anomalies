@@ -34,39 +34,7 @@ if (isServer) then {
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(startBlowout), {
-        if (missionNamespace getVariable [QGVAR(blowoutInProgress), false]) exitWith {
-            LOG_SYS("INFO","Blowout not started via event. Already in progress!");
-        };
-        params [["_time", 400, [0]], ["_direction", 0, [0]]];
-        private _stage1Time = 60;
-        private _stage3Time = 30;
-        private _stage4Time = 10;
-
-        private _stage2Time = _time - _stage1Time - _stage3Time - _stage4Time;
-        if (_stage2Time <= 1) exitWith {
-            private _text = format ["Blowout canceled, stage 2 time is one second or below! -> Time given: %1", _time];
-            LOG_SYS("WARNING",_text);
-        };
-
-        if !([1, _direction] call FUNC(blowout)) exitWith {
-            private _text = "Could not start blowout. Function returned false for stage 1.";
-            LOG_SYS("INFO",_text);
-        };
-
-        [{
-            if !(GVAR(blowoutInProgress)) exitWith {};
-            [2] call FUNC(blowout);
-        }, nil, _stage1Time] call CBA_fnc_waitAndExecute;
-
-        [{
-            if !(GVAR(blowoutInProgress)) exitWith {};
-            [3] call FUNC(blowout);
-        }, nil, _stage1Time + _stage2Time] call CBA_fnc_waitAndExecute;
-
-        [{
-            if !(GVAR(blowoutInProgress)) exitWith {};
-            [4] call FUNC(blowout);
-        }, nil, _stage1Time + _stage2Time + _stage3Time] call CBA_fnc_waitAndExecute;
+        _this call FUNC(blowoutCoordinator);
     }] call CBA_fnc_addEventHandler;
 };
 

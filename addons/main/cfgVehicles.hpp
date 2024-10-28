@@ -46,7 +46,9 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Arguments {};
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+        };
         class ModuleDescription: ModuleDescription {
             description = "$STR_anomaly_springboard_desc";
             sync[] = {};
@@ -63,7 +65,9 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Arguments {};
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+        };
         class ModuleDescription: ModuleDescription {
             description = "$STR_anomaly_electra_desc";
             sync[] = {};
@@ -80,7 +84,9 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Arguments {};
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+        };
         class ModuleDescription: ModuleDescription {
             description = "$STR_anomaly_burner_desc";
             sync[] = {};
@@ -97,7 +103,9 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Arguments {};
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+        };
         class ModuleDescription: ModuleDescription {
             description = "$STR_anomaly_meatgrinder_desc";
             sync[] = {};
@@ -114,13 +122,16 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Arguments {
-            class GVAR(anomalyId) {
+        class Attributes: AttributesBase {
+            class GVAR(anomalyId): Edit {
                 displayName = "$STR_anomaly_teleport_id";
-                description = "$STR_anomaly_teleport_id_desc";
+                tooltip = "$STR_anomaly_teleport_id_desc";
                 typeName = "NUMBER";
+                validate = "number";
+                property = QGVAR(moduleTeleport_anomalyId);
                 defaultValue = 0;
             };
+            class ModuleDescription: ModuleDescription {};
         };
         class ModuleDescription: ModuleDescription {
             description = "$STR_anomaly_teleport_desc";
@@ -141,30 +152,38 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Arguments {
-            class springboards {
+        class Attributes: AttributesBase {
+            class springboards: Edit {
                 displayName = "$STR_anomaly_anomaly_field_spingboard";
-                description = "$STR_anomaly_anomaly_field_spingboard_desc";
+                tooltip = "$STR_anomaly_anomaly_field_spingboard_desc";
                 typeName = "NUMBER";
+                validate = "number";
                 defaultValue = 20;
+                // property = "springboards";
             };
-            class meatgrinders {
+            class meatgrinders: Edit {
                 displayName = "$STR_anomaly_anomaly_field_meatgrinder";
-                description = "$STR_anomaly_anomaly_field_meatgrinder_desc";
+                tooltip = "$STR_anomaly_anomaly_field_meatgrinder_desc";
                 typeName = "NUMBER";
+                validate = "number";
                 defaultValue = 10;
+                // property = "meatgrinders";
             };
-            class electras {
+            class electras: Edit {
                 displayName = "$STR_anomaly_anomaly_field_electra";
-                description = "$STR_anomaly_anomaly_field_electra_desc";
+                tooltip = "$STR_anomaly_anomaly_field_electra_desc";
                 typeName = "NUMBER";
+                validate = "number";
                 defaultValue = 0;
+                // property = "electras";
             };
-            class burners {
+            class burners: Edit {
                 displayName = "$STR_anomaly_anomaly_field_burner";
-                description = "$STR_anomaly_anomaly_field_burner_desc";
+                tooltip = "$STR_anomaly_anomaly_field_burner_desc";
                 typeName = "NUMBER";
+                validate = "number";
                 defaultValue = 0;
+                // property = "burners";
             };
         };
         class AttributeValues {
@@ -190,7 +209,8 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Arguments {
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
         };
         class AttributeValues {
             size3[] = {10, 10, -1};
@@ -220,7 +240,9 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Arguments {};
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+        };
         class ModuleDescription: ModuleDescription {
             description = "$STR_anomaly_fruitpunch_desc";
             sync[] = {};
@@ -237,7 +259,9 @@ class cfgVehicles {
         isGlobal = 1; //run on everyone
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
-        class Arguments {};
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+        };
         class ModuleDescription: ModuleDescription {
             description = "$STR_anomaly_psy_discharge_desc";
             sync[] = {};
@@ -254,29 +278,76 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
+        class Attributes: AttributesBase {
+            class Marker: Edit {
+                displayName = "$STR_anomaly_comet_marker";
+                tooltip = "$STR_anomaly_comet_marker_desc";
+                typeName = "STRING";
+                defaultValue = "";
+                // property = QGVAR(moduleComet_marker);
+            };
+            class Speed: Edit {
+                displayName = "$STR_anomaly_comet_speed";
+                tooltip = "$STR_anomaly_comet_speed_desc";
+                typeName = "NUMBER";
+                validate = "number";
+                defaultValue = 6;
+                // property = QGVAR(speed);
+            };
+            class Smooth: Checkbox {
+                displayName = "$STR_anomaly_comet_smooth";
+                tooltip = "$STR_anomaly_comet_smooth_desc";
+                typeName = "BOOL";
+                defaultValue = 1;
+                // property = QGVAR(smooth);
+            };
+            class ModuleDescription: ModuleDescription {};
+        };
         class ModuleDescription: ModuleDescription {
             description = "$STR_anomaly_comet_desc";
             sync[] = {};
         };
-        class Arguments {
-            class marker {
-                displayName = "$STR_anomaly_comet_marker";
-                description = "$STR_anomaly_comet_marker_desc";
-				typeName="STRING";
-				defaultValue="";
-            };
-            class speed {
-                displayName = "$STR_anomaly_comet_speed";
-                description = "$STR_anomaly_comet_speed_desc";
+    };
+
+    class GVAR(moduleBlowout): Module_F {
+        author = "diwako";
+        category = "DIW_ANOMALY";
+        displayName = "$STR_anomaly_blowout";
+        function = QFUNC(blowoutCoordinator);
+        functionPriority = 1;
+        scope = 2;  //show in editor
+        isGlobal = 0; //run on server
+        isTriggerActivated = 1; //Wait for triggers
+        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
+        class Attributes: AttributesBase {
+            class WaveTime: Edit {
+                displayName = "$STR_anomaly_zeus_start_blowout_time";
+                tooltip = "$STR_anomaly_zeus_start_blowout_time_desc";
                 typeName = "NUMBER";
-                defaultValue = 6;
+                validate = "number";
+                defaultValue = 400;
+                property = "wavetime";
             };
-            class smooth {
-                displayName = "$STR_anomaly_comet_smooth";
-                description = "$STR_anomaly_comet_smooth_desc";
+            class Direction: Edit {
+                displayName = "$STR_anomaly_zeus_start_blowout_direction";
+                tooltip = "$STR_anomaly_zeus_start_blowout_direction_desc";
+                typeName = "NUMBER";
+                validate = "number";
+                defaultValue = 0;
+                property = "direction";
+            };
+            class Sirens: Checkbox {
+                displayName = "$STR_anomaly_zeus_start_blowout_sirens";
+                tooltip = "$STR_anomaly_zeus_start_blowout_sirens_desc";
+                defaultValue = "true";
                 typeName = "BOOL";
-                defaultValue = 1;
+                property = "sirens";
             };
+            class ModuleDescription: ModuleDescription {};
+        };
+        class ModuleDescription: ModuleDescription {
+            description = "$STR_anomaly_blowout_desc";
+            sync[] = {};
         };
     };
 

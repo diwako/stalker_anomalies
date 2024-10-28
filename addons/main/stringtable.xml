@@ -328,6 +328,14 @@
             <Polish>Wygładza ścieżkę anomalii przy użyciu krzywych Beziera. Jeśli potrzebujesz wysokiej precyzji, ustaw to jako false</Polish>
             <French>Lisse le chemin suivi par l'anomalie à l'aide de courbes de Bézier. Si vous avez besoin d'une grande précision, définissez cette option sur Désact.</French>
         </Key>
+        <Key ID="STR_anomaly_blowout">
+            <Original>Blowout</Original>
+            <English>Blowout</English>
+        </Key>
+        <Key ID="STR_anomaly_blowout_desc">
+            <Original>A blowout, also known as an emission, is a map wide event. It will send a wave of psy energy across the map after a specified time. The weather drastically changes with strong winds, thunderstorms and psy waves in the air. Mission makers need to look out for these weather changes, as these can clash with the mission’s design!</Original>
+            <English>A blowout, also known as an emission, is a map wide event. It will send a wave of psy energy across the map after a specified time. The weather drastically changes with strong winds, thunderstorms and psy waves in the air. Mission makers need to look out for these weather changes, as these can clash with the mission’s design!</English>
+        </Key>
         <Key ID="STR_anomaly_enable_detector">
             <Original>Enable anomaly detector</Original>
             <English>Enable anomaly detector</English>
@@ -635,8 +643,8 @@
             <English>Time till blowout wave</English>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_time_desc">
-            <Original>Time in seconds until the deadly blowout wave reaches the players.</Original>
-            <English>Time in seconds until the deadly blowout wave reaches the players.</English>
+            <Original>Time in seconds until the deadly blowout wave reaches the players. Minimum value is 102, anything lower will be rejected!</Original>
+            <English>Time in seconds until the deadly blowout wave reaches the players. Minimum value is 102, anything lower will be rejected!</English>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_direction">
             <original>Direction</original>
@@ -658,6 +666,14 @@
         <Key ID="STR_anomaly_zeus_start_blowout_direction_desc">
             <original>From which direction in bearing numbering should the wave arrive from?</original>
             <english>From which direction in bearing numbering should the wave arrive from?</english>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_sirens">
+            <original>Add siren sound effect</original>
+            <english>Add siren sound effect</english>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_sirens_desc">
+            <original>When active will sound air raid sirens in random locations during the blowout</original>
+            <english>When active will sound air raid sirens in random locations during the blowout</english>
         </Key>
     </Package>
 </Project>

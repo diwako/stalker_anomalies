@@ -47,6 +47,7 @@ SUBPREP(bolt,grenadeBolt);
 // blowout
 if (isServer) then {
     SUBPREP(blowout,blowout);
+    SUBPREP(blowout,blowoutCoordinator);
 };
 if (hasInterface) then {
     SUBPREP(blowout,blowoutRumble);

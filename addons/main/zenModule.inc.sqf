@@ -99,12 +99,13 @@ if !(isNil "zen_custom_modules_fnc_register") then {
             } else {
                 [localize "STR_anomaly_zeus_start_blowout", [
                         ["SLIDER", [localize "STR_anomaly_zeus_start_blowout_time", localize "STR_anomaly_zeus_start_blowout_time_desc"], [102, 999, 400, 0]],
-                        ["SLIDER", [localize "STR_anomaly_zeus_start_blowout_direction", localize "STR_anomaly_zeus_start_blowout_direction_desc"], [0, 359, 0, 0]]
+                        ["SLIDER", [localize "STR_anomaly_zeus_start_blowout_direction", localize "STR_anomaly_zeus_start_blowout_direction_desc"], [0, 359, 0, 0]],
+                        ["CHECKBOX", [localize "STR_anomaly_zeus_start_blowout_sirens", localize "STR_anomaly_zeus_start_blowout_sirens_desc"], [true]]
                     ],
                     {
                         params ["_dialog"];
-                        _dialog params ["_time", "_direction"];
-                        [QGVAR(startBlowout), [floor _time, floor _direction]] call CBA_fnc_serverEvent;
+                        _dialog params ["_time", "_direction", "_useSirens"];
+                        [QGVAR(startBlowout), [floor _time, floor _direction, _useSirens]] call CBA_fnc_serverEvent;
                         [format [localize "STR_anomaly_zeus_start_blowout_hint", floor ((floor _time) / 60), (floor _time) mod 60]] call zen_common_fnc_showMessage;
                     }, {}, []
                 ] call zen_dialog_fnc_create;

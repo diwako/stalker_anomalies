@@ -20,4 +20,4 @@ keys/*
 *.dll
 
 .vscode/*
-/.hemtt/missions/*
+# /.hemtt/missions/*
