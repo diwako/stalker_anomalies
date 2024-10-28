@@ -63,4 +63,13 @@ class CfgSFX {
             QPATHTOF(sounds\anomalies\gravi_idle01.ogg), 2, 1, 50, 1, 5, 15, 25
         };
     };
+    class GVAR(blowoutWave): GVAR(base) {
+        sounds[] = {
+            "blowout_particle_wave"
+        };
+        // {soundPath, soundVolume, soundPitch, maxDistance, probability, minDelay, midDelay, maxDelay}
+        blowout_particle_wave[] = {
+            QPATHTOF(sounds\blowout\blowout_particle_wave.ogg), 20, 1, 2500, 1, 1, 1, 0
+        };
+    };
 };

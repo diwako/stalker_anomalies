@@ -159,6 +159,15 @@ if (hasInterface) then {
                         [] call FUNC(blowoutSirens);
                     }, nil, 18 + random 10] call CBA_fnc_waitAndExecute;
                 }, nil, 60 - _time] call CBA_fnc_waitAndExecute;
+                [{
+                    private _pos = AGLToASL (([] call CBA_fnc_currentUnit) getPos [5000, GVAR(blowoutDirection)]);
+                    private _obj = QGVAR(boltThrowDummy) createVehicleLocal _pos;
+                    _obj setPosASL _pos;
+                    _obj say3D [selectRandom ["blowout_begin_01", "blowout_begin_02"], 50000, 1];
+                    [{
+                        deleteVehicle _this;
+                    }, _obj, 40] call CBA_fnc_waitAndExecute;
+                }, nil, 25] call CBA_fnc_waitAndExecute;
             };
         };
         case 2: {

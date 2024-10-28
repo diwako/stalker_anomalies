@@ -377,4 +377,7 @@ class cfgVehicles {
     class GVAR(soundTeleport): GVAR(soundComet) {
         sound = QGVAR(soundTeleport);
     };
+    class GVAR(blowoutWave): GVAR(soundComet) {
+        sound = QGVAR(blowoutWave);
+    };
 };
