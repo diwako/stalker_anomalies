@@ -178,7 +178,7 @@ class cfgSounds {
     class blowout_begin
     {
         name = "blowout_begin";
-        sound[] = {QPATHTOF(sounds\blowout\blowout_begin.ogg), 2, 1, 50};
+        sound[] = {QPATHTOF(sounds\blowout\blowout_begin.ogg), 2, 1, 50000};
         titles[] = {};
     };
     class blowout

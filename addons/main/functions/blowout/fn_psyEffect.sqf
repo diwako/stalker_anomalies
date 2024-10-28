@@ -39,18 +39,18 @@ if !(GVAR(psyActive)) then {
             };
         };
         GVAR(ppeColorCorrections) ppEffectEnable true;
-        if(isNil QGVAR(ppeFilmGrain)) then {
-            private _name = "filmGrain";
-            private _priority = 400;
-            GVAR(ppeFilmGrain) = ppEffectCreate [_name, _priority];
-            while {
-                GVAR(ppeFilmGrain) < 0
-            } do {
-                _priority = _priority + 1;
-                GVAR(ppeFilmGrain) = ppEffectCreate [_name, _priority];
-            };
-        };
-        GVAR(ppeFilmGrain) ppEffectEnable true;
+        // if(isNil QGVAR(ppeFilmGrain)) then {
+        //     private _name = "filmGrain";
+        //     private _priority = 400;
+        //     GVAR(ppeFilmGrain) = ppEffectCreate [_name, _priority];
+        //     while {
+        //         GVAR(ppeFilmGrain) < 0
+        //     } do {
+        //         _priority = _priority + 1;
+        //         GVAR(ppeFilmGrain) = ppEffectCreate [_name, _priority];
+        //     };
+        // };
+        // GVAR(ppeFilmGrain) ppEffectEnable true;
         private _curStrength = -1;
         private _modGrain = 1;
         private _modPissFilter = 1;
@@ -86,8 +86,8 @@ if !(GVAR(psyActive)) then {
                 };
                 GVAR(ppeColorCorrections) ppEffectAdjust [1, 1, -0.002, [0.0, 0.0, 0.0, 0.0], [1, 0.9, 0.6, (1 * _modPissFilter)],  [0.5, 0.5, 1, 0]];
                 GVAR(ppeColorCorrections) ppEffectCommit 10;
-                GVAR(ppeFilmGrain) ppEffectAdjust [(0.1 * _modGrain), 2, 0.1, 0.1, 2, true];
-                GVAR(ppeFilmGrain) ppEffectCommit 10;
+                // GVAR(ppeFilmGrain) ppEffectAdjust [(0.1 * _modGrain), 2, 0.1, 0.1, 2, true];
+                // GVAR(ppeFilmGrain) ppEffectCommit 10;
             };
             if (isNil QGVAR(blowoutInProgress) || {!(GVAR(blowoutInProgress))}) then {
                 addCamShake [_wiggleStrength, 15.9*2, _wiggleFrequency];
@@ -99,11 +99,11 @@ if !(GVAR(psyActive)) then {
         };
         GVAR(ppeColorCorrections) ppEffectAdjust [1, 1, -0.002, [0.0, 0.0, 0.0, 0.0], [1, 0.9, 0.6, 1],  [0.5, 0.5, 1, 0]];
         GVAR(ppeColorCorrections) ppEffectCommit 10;
-        GVAR(ppeFilmGrain) ppEffectAdjust [0.1, 2, 0.1, 0.1, 2, true];
-        GVAR(ppeFilmGrain) ppEffectCommit 10;
+        // GVAR(ppeFilmGrain) ppEffectAdjust [0.1, 2, 0.1, 0.1, 2, true];
+        // GVAR(ppeFilmGrain) ppEffectCommit 10;
         GVAR(psyActive) = false;
         sleep 11;
         GVAR(ppeColorCorrections) ppEffectEnable false;
-        GVAR(ppeFilmGrain) ppEffectEnable false;
+        // GVAR(ppeFilmGrain) ppEffectEnable false;
     };
 };
