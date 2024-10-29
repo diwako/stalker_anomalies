@@ -9,7 +9,7 @@ This project aims to be compatible with addons CBA and ACE. It works in single a
 
 Additionally, some items have been added and this mod uses the CBA settings framework.
 
-[Steam workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1383903166) \
+[Steam workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3351980695) \
 Also check out [BI forums thread](https://forums.bistudio.com/forums/topic/212324-release-stalker-like-anomalies/).
 
 Currently in:
@@ -25,6 +25,7 @@ Currently in:
   - Springboard
   - Teleport
 - Anomaly detector
+- Blowout/Emission event
 - It is possible to throw bolts with a custom model
 - System to show anomalies only around players to safe those scarce FPS
 - Zeus Enhanced support
