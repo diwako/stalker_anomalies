@@ -132,6 +132,7 @@
         <Key ID="STR_anomaly_teleport_id">
             <Original>Teleport ID</Original>
             <English>Teleport ID</English>
+            <Polish>ID Teleportu</Polish>
         </Key>
         <Key ID="STR_anomaly_teleport_id_desc">
             <Original>Teleporters need the same ID to work together. Several teleporters can have the same ID, but the exit teleporter is randomly selected.</Original>
@@ -271,13 +272,13 @@
         <Key ID="STR_anomaly_psy_discharge">
             <Original>Psy Discharge</Original>
             <English>Psy Discharge</English>
-            <Polish>Emisja</Polish>
+            <Polish>Wyładowanie Psi</Polish>
             <French>Décharge Psy</French>
         </Key>
         <Key ID="STR_anomaly_psy_discharge_desc">
             <Original>Spawn a Psy Discharge anomaly at the module location. This anomaly will immidiately activate unless you sync it up with something to prevent this!</Original>
             <English>Spawn a Psy Discharge anomaly at the module location. This anomaly will immidiately activate unless you sync it up with something to prevent this!</English>
-            <Polish>Towrzy anomalię "Emisja" w miejscu modułu. Ta anomalia aktywuje się od razu, jeśli nie zostanie zsynchronizowana z czymś innym, by ją opóźnić!</Polish>
+            <Polish>Towrzy anomalię "Wyładowanie Psi" w miejscu modułu. Ta anomalia aktywuje się od razu, jeśli nie zostanie zsynchronizowana z czymś innym, by ją opóźnić!</Polish>
             <French>Génère une anomalie type "Décharge Psy" à l'emplacement du module. Cette anomalie s'activera immédiatement à moins que vous ne la synchronisiez avec quelque chose pour l'en empêcher!</French>
         </Key>
         <Key ID="STR_anomaly_comet">
@@ -331,11 +332,13 @@
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
             <English>Blowout</English>
+            <Polish>Emisja</Polish>
         </Key>
         <Key ID="STR_anomaly_blowout_desc">
             <Original>A blowout, also known as an emission, is a map wide event. It will send a wave of psy energy across the map after a specified time. The weather drastically changes with strong winds, thunderstorms and psy waves in the air. Mission makers need to look out for these weather changes, as these can clash with the mission’s design!</Original>
             <English>A blowout, also known as an emission, is a map wide event. It will send a wave of psy energy across the map after a specified time. The weather drastically changes with strong winds, thunderstorms and psy waves in the air. Mission makers need to look out for these weather changes, as these can clash with the mission’s design!</English>
         </Key>
+        <Polish>Emisja, nazywana czasem Zwarciem, wpływa na całą mapę. Powoduje stworzenie fali energii Psi, która przetacza się przez cały teren po wyznaczonym czasie. Pogoda drastycznie się zmienia - silne wiatry, burze i fale Psi w powietrzu. Twórcy misji muszą mieć na uwadze te zmiany pogody, gdyż mogą zmienić wybrane warunki środowiskowe scenariusza!</Polish>
         <Key ID="STR_anomaly_enable_detector">
             <Original>Enable anomaly detector</Original>
             <English>Enable anomaly detector</English>
@@ -597,7 +600,7 @@
         <Key ID="STR_anomaly_settings_psyRange">
             <Original>Psy Discharge Range</Original>
             <English>Psy Discharge Range</English>
-            <Polish>Zasięg emisji</Polish>
+            <Polish>Zasięg Wyładowania Psi</Polish>
             <French>Portée Décharge Psy</French>
         </Key>
         <Key ID="STR_anomaly_settings_psyRange_desc">
@@ -609,42 +612,52 @@
         <Key ID="STR_anomaly_zeus_spawn_anomaly">
             <Original>Spawn Anomaly</Original>
             <English>Spawn Anomaly</English>
+            <Polish>Stwórz anomalię</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_delete_anomalies">
             <Original>Delete Anomalies</Original>
             <English>Delete Anomalies</English>
+            <Polish>Usuń anomalie</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_stop_blowout">
             <Original>Start/Stop Blowout</Original>
             <English>Start/Stop Blowout</English>
+            <Polish>Rozpocznij/zatrzymaj Emisję</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout">
             <Original>Start Blowout</Original>
             <English>Start Blowout</English>
+            <Polish>Rozpocznij Emisję</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_stop_blowout">
             <Original>Stop Blowout</Original>
             <English>Stop Blowout</English>
+            <Polish>Zatrzymaj Emisję</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_stop_blowout_desc">
             <Original>When answered yes, this will stop the blowout and sets it to stage 0, same as the blowout having concluded.</Original>
             <English>When answered yes, this will stop the blowout and sets it to stage 0, same as the blowout having concluded.</English>
+            <Polish>Jeśli wybrano 'tak', emisja zostanie zatrzymana, a jej poziom ustawiony na 0, jak gdyby się już zakończyła.</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_hint">
             <Original>Blowout has been started and will last %1 minutes and %2 seconds.</Original>
             <English>Blowout has been started and will last %1 minutes and %2 seconds.</English>
+            <Polish>Emisja się rozpoczęła i będzie trwać %1 min. %2 sek..</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_stop_blowout_hint">
             <Original>Blowout has been stopped</Original>
             <English>Blowout has been stopped</English>
+            <Polish>Emisja została zatrzymana</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_time">
             <Original>Time till blowout wave</Original>
             <English>Time till blowout wave</English>
+            <Polish>Czas do fali Emisji</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_time_desc">
             <Original>Time in seconds until the deadly blowout wave reaches the players. Minimum value is 102, anything lower will be rejected!</Original>
             <English>Time in seconds until the deadly blowout wave reaches the players. Minimum value is 102, anything lower will be rejected!</English>
+            <Polish>Czas w sekundach, po którym śmiertelna fala emisji sięgnie graczy. Minimalna wartość to 102, wartości poniżej są odrzucane!</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_direction">
             <original>Direction</original>
@@ -666,22 +679,27 @@
         <Key ID="STR_anomaly_zeus_start_blowout_direction_desc">
             <original>From which direction in bearing numbering should the wave arrive from?</original>
             <english>From which direction in bearing numbering should the wave arrive from?</english>
+            <Polish>Z którego kierunku (w stopniach) nadejdzie fala?</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_sirens">
             <original>Add siren sound effect</original>
             <english>Add siren sound effect</english>
+            <Polish>Dodaj dźwięk syren</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_sirens_desc">
             <original>When active, will sound air raid sirens in random locations during the blowout</original>
             <english>When active, will sound air raid sirens in random locations during the blowout</english>
+            <Polish>Gdy włączone, podczas Emisji odtworzony zostanie dźwięk syren alarmowych w losowych miejscach.</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_only_players">
             <original>Only affect players</original>
             <english>Only affect players</english>
+            <Polish>Wpływa tylko na graczy</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_only_players_desc">
-            <original>When enabled, the psy wave will only kill players, when distabled all units found in the "allUnits" command will be affected. Potentital performance warning!</original>
-            <english>When enabled, the psy wave will only kill players, when distabled all units found in the "allUnits" command will be affected. Potentital performance warning!</english>
+            <original>When enabled, the psy wave will only kill players, when disabled all units found in the "allUnits" command will be affected. Potentital performance warning!</original>
+            <english>When enabled, the psy wave will only kill players, when disabled all units found in the "allUnits" command will be affected. Potentital performance warning!</english>
+            <Polish>Gdy włączone, fala Emisji zabije jedynie graczy. Jeśli wyłączone, wszystkie jednostki zwracane przez funkcję "allUnits" zostaną zabite. Możliwy spadek wydajności!</Polish>
         </Key>
     </Package>
 </Project>
