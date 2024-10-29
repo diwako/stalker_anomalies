@@ -21,7 +21,7 @@ if !(isServer) exitWith {};
 private _varName = "";
 if !(_pos isEqualType []) then {
     //created via module
-    _id = _pos getVariable [QGVAR(anomalyId), -1];
+    _id = _pos getVariable ["anomalyId", -1];
 
     _varName = vehicleVarName _pos;
 };

@@ -9,7 +9,7 @@ git_hash = 0
 
 [files]
 include = ["meta.cpp", "mod.cpp", "authors.txt", "license.txt"]
-exclude = ["*.psd", "*.png", "*.tga"]
+exclude = ["*.psd", "*.png", "*.tga", "/**/cfg*.hpp"]
 
 [hemtt.launch.default]
 workshop = [
