@@ -1,17 +1,20 @@
 #include "\z\diwako_anomalies\addons\main\script_component.hpp"
+#define SPACING 80
 if !(hasInterface) exitWith {};
 params [["_time", 10]];
 if (isNil QGVAR(blowoutDirection)) then {
     GVAR(blowoutDirection) = random 360;
 };
 
-#define SPACING 80
+private _sound = createSoundSourceLocal [QGVAR(blowoutWave), [0, 0, 0], [], 0];
+
 [{
     if (isGamePaused) exitWith {};
-    params ["_startTime", "_endTime", "_fullEndTime", "_horizon"];
+    params ["_startTime", "_endTime", "_fullEndTime", "_horizon", "_sound"];
     private _time = time;
 
     private _pos = ([] call CBA_fnc_currentUnit) getPos [linearConversion [_startTime, _endTime, _time, _horizon, 0, false], GVAR(blowoutDirection)];
+    _sound setPosASL AGLToASL _pos;
     _pos set [2, 0];
     for "_i" from -10 to 10 do {
         private _size = random 40;
@@ -41,4 +44,7 @@ if (isNil QGVAR(blowoutDirection)) then {
     };
 
     _time >= _fullEndTime
-},{}, [time, time + _time, time + _time + _time, viewDistance]] call CBA_fnc_waitUntilAndExecute;
+},{
+    params ["", "", "", "", "_sound"];
+    deleteVehicle _sound;
+}, [time, time + _time, time + _time + _time, viewDistance, _sound]] call CBA_fnc_waitUntilAndExecute;
