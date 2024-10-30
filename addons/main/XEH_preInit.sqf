@@ -17,7 +17,7 @@ if (isServer) then {
             case "fog":          { _args call FUNC(createFog) };
             case "electra":      { _args call FUNC(createElectra) };
             case "fruitpunch":   { _args call FUNC(createFruitpunch) };
-            case "psyDischarge": { _args call FUNC(createPsyDischarge) };
+            case "psyDischarge": { /* Handled in global eventhandler */ };
             default {
                 hintC ( format ["Unknown type: %1", _type]);
             };
@@ -60,6 +60,13 @@ if (hasInterface) then {
         [_this, "active"] call FUNC(fruitPunchEffect);
     }] call CBA_fnc_addEventHandler;
 };
+
+[QGVAR(createAnomaly), {
+    params ["_args", "_type"];
+    if (_type isEqualTo "psyDischarge") then {
+        _args call FUNC(createPsyDischarge)
+    };
+}] call CBA_fnc_addEventHandler;
 
 [QGVAR(setLight), {
     params [["_light", objNull]];
