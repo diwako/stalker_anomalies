@@ -54,7 +54,7 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                             ] call zen_dialog_fnc_create;
                         };
                         case 6: { [QGVAR(createAnomaly), [[_pos], "fruitpunch"]] call CBA_fnc_serverEvent; };
-                        case 7: { [QGVAR(createAnomaly), [[_pos], "psyDischarge"]] call CBA_fnc_serverEvent;};
+                        case 7: { [QGVAR(createAnomaly), [[_pos], "psyDischarge"]] call CBA_fnc_globalEvent;};
                         default { };
                     };
                 }, {}, [_pos, _anomalies]

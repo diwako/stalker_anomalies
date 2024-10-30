@@ -18,7 +18,14 @@
 #define DISCHARGE_TIME 5
 params[["_pos", [0,0,0]]];
 
-_pos = [_pos] call FUNC(getLocationFromModule);
+if (_pos isEqualType objNull) then {
+    if (isServer) then {
+        [{
+            deleteVehicle _this;
+        }, _pos, 10] call CBA_fnc_waitAndExecute;
+    };
+    _pos = getPosASL _pos;
+};
 _pos = (AGLToASL ([ASLToAGL _pos] call CBA_fnc_getPos)) vectorAdd [0, 0, 50];
 
 if (hasInterface && {((AGLToASL positionCameraToWorld [0,0,0]) distance _pos) < (getObjectViewDistance select 0)}) then {
