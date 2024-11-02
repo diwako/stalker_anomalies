@@ -60,7 +60,7 @@
         <Key ID="STR_anomaly_springboard_desc">
             <Original>Spawn a springboard anomaly at module location</Original>
             <English>Spawn a springboard anomaly at module location</English>
-            <German>Estellt eine Anomalie des Typs Springboard an der Stelle des Moduls</German>
+            <German>Erstellt eine Anomalie des Typs Springboard an der Stelle des Moduls</German>
             <Russian>Создать аномалию "Трамплин" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Trampolina" w miejscu modułu</Polish>
             <French>Génère une anomalie type "Tremplin" à l'emplacement du module</French>
@@ -76,7 +76,7 @@
         <Key ID="STR_anomaly_electra_desc">
             <Original>Spawn an electra anomaly at module location</Original>
             <English>Spawn an electra anomaly at module location</English>
-            <German>Estellt eine Anomalie des Typs Elektra an der Stelle des Moduls</German>
+            <German>Erstellt eine Anomalie des Typs Elektra an der Stelle des Moduls</German>
             <Russian>Создать аномалию "Электра" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Elektro" w miejscu modułu</Polish>
             <French>Génère une anomalie type "Électrique" à l'emplacement du module</French>
@@ -92,7 +92,7 @@
         <Key ID="STR_anomaly_burner_desc">
             <Original>Spawn a burner anomaly at module location</Original>
             <English>Spawn a burner anomaly at module location</English>
-            <German>Estellt eine Anomalie des Typs Benner an der Stelle des Moduls</German>
+            <German>Erstellt eine Anomalie des Typs Benner an der Stelle des Moduls</German>
             <Russian>Создать аномалию "Жарка" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Spalacz" w miejscu modułu</Polish>
             <French>Génère une anomalie type "Brûleur" à l'emplacement du module</French>
@@ -108,7 +108,7 @@
         <Key ID="STR_anomaly_meatgrinder_desc">
             <Original>Spawn a meatgrinder anomaly at module location</Original>
             <English>Spawn a meatgrinder anomaly at module location</English>
-            <German>Estellt eine Anomalie des Typs Fleischwolf an der Stelle des Moduls</German>
+            <German>Erstellt eine Anomalie des Typs Fleischwolf an der Stelle des Moduls</German>
             <Russian>Создать аномалию "Мясорубка" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Karuzela" w miejscu modułu</Polish>
             <French>Génère une anomalie type "Hachoir à viande" à l'emplacement du module</French>
@@ -124,7 +124,7 @@
         <Key ID="STR_anomaly_teleport_desc">
             <Original>Spawn a teleport anomaly at module location</Original>
             <English>Spawn a teleport anomaly at module location</English>
-            <German>Estellt eine Anomalie des Typs Teleporter an der Stelle des Moduls</German>
+            <German>Erstellt eine Anomalie des Typs Teleporter an der Stelle des Moduls</German>
             <Russian>Создать аномалию "Телепорт" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Teleport" w miejscu modułu</Polish>
             <French>Génère une anomalie type "Téléportation" à l'emplacement du module</French>
@@ -264,7 +264,7 @@
         <Key ID="STR_anomaly_fruitpunch_desc">
             <Original>Spawn a Fruit Punch anomaly at module location</Original>
             <English>Spawn a Fruit Punch anomaly at module location</English>
-            <German>Estellt eine Anomalie des Typs Fruit Punch an der Stelle des Moduls</German>
+            <German>Erstellt eine Anomalie des Typs Fruit Punch an der Stelle des Moduls</German>
             <Russian>Спавнит аномалию "Кисель" на позиции модуля</Russian>
             <Polish>Tworzy anomalię "Galareta" w miejscu modułu</Polish>
             <French>Génère une anomalie type "Flaque chimique" à l'emplacement du module</French>
@@ -278,8 +278,8 @@
         <Key ID="STR_anomaly_psy_discharge_desc">
             <Original>Spawn a Psy Discharge anomaly at the module location. This anomaly will immidiately activate unless you sync it up with something to prevent this!</Original>
             <English>Spawn a Psy Discharge anomaly at the module location. This anomaly will immidiately activate unless you sync it up with something to prevent this!</English>
-            <Polish>Towrzy anomalię "Wyładowanie Psi" w miejscu modułu. Ta anomalia aktywuje się od razu, jeśli nie zostanie zsynchronizowana z czymś innym, by ją opóźnić!</Polish>
-            <French>Génère une anomalie type "Décharge Psy" à l'emplacement du module. Cette anomalie s'activera immédiatement à moins que vous ne la synchronisiez avec quelque chose pour l'en empêcher!</French>
+            <Polish>Towrzy anomalię &quot;Wyładowanie Psi&quot; w miejscu modułu. Ta anomalia aktywuje się od razu, jeśli nie zostanie zsynchronizowana z czymś innym, by ją opóźnić!</Polish>
+            <French>Génère une anomalie type &quot;Décharge Psy&quot; à l'emplacement du module. Cette anomalie s'activera immédiatement à moins que vous ne la synchronisiez avec quelque chose pour l'en empêcher!</French>
         </Key>
         <Key ID="STR_anomaly_comet">
             <Original>Comet</Original>
@@ -337,8 +337,8 @@
         <Key ID="STR_anomaly_blowout_desc">
             <Original>A blowout, also known as an emission, is a map wide event. It will send a wave of psy energy across the map after a specified time. The weather drastically changes with strong winds, thunderstorms and psy waves in the air. Mission makers need to look out for these weather changes, as these can clash with the mission’s design!</Original>
             <English>A blowout, also known as an emission, is a map wide event. It will send a wave of psy energy across the map after a specified time. The weather drastically changes with strong winds, thunderstorms and psy waves in the air. Mission makers need to look out for these weather changes, as these can clash with the mission’s design!</English>
+            <Polish>Emisja, nazywana czasem Zwarciem, wpływa na całą mapę. Powoduje stworzenie fali energii Psi, która przetacza się przez cały teren po wyznaczonym czasie. Pogoda drastycznie się zmienia - silne wiatry, burze i fale Psi w powietrzu. Twórcy misji muszą mieć na uwadze te zmiany pogody, gdyż mogą zmienić wybrane warunki środowiskowe scenariusza!</Polish>
         </Key>
-        <Polish>Emisja, nazywana czasem Zwarciem, wpływa na całą mapę. Powoduje stworzenie fali energii Psi, która przetacza się przez cały teren po wyznaczonym czasie. Pogoda drastycznie się zmienia - silne wiatry, burze i fale Psi w powietrzu. Twórcy misji muszą mieć na uwadze te zmiany pogody, gdyż mogą zmienić wybrane warunki środowiskowe scenariusza!</Polish>
         <Key ID="STR_anomaly_enable_detector">
             <Original>Enable anomaly detector</Original>
             <English>Enable anomaly detector</English>
@@ -660,21 +660,21 @@
             <Polish>Czas w sekundach, po którym śmiertelna fala emisji sięgnie graczy. Minimalna wartość to 102, wartości poniżej są odrzucane!</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_direction">
-            <original>Direction</original>
-            <english>Direction</english>
-            <czech>Směr</czech>
-            <german>Richtung</german>
-            <russian>Направление</russian>
-            <polish>Kierunek</polish>
-            <italian>Direzione</italian>
-            <spanish>Dirección</spanish>
-            <french>Direction </french>
-            <chinese>方向</chinese>
-            <japanese>方向</japanese>
-            <korean>방</korean>
-            <portuguese>Direção</portuguese>
-            <chinesesimp>方向</chinesesimp>
-            <turkish>Yön</turkish>
+            <Original>Direction</Original>
+            <English>Direction</English>
+            <Czech>Směr</Czech>
+            <German>Richtung</German>
+            <Russian>Направление</Russian>
+            <Polish>Kierunek</Polish>
+            <Italian>Direzione</Italian>
+            <Spanish>Dirección</Spanish>
+            <French>Direction </French>
+            <Chinese>方向</Chinese>
+            <Japanese>方向</Japanese>
+            <Korean>방</Korean>
+            <Portuguese>Direção</Portuguese>
+            <Chinesesimp>方向</Chinesesimp>
+            <Turkish>Yön</Turkish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_direction_desc">
             <original>From which direction in bearing numbering should the wave arrive from?</original>
