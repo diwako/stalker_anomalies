@@ -39,7 +39,7 @@ _trg setVariable [QGVAR(sound), _proxy, true];
 
 [QGVAR(setTrigger), [
     _trg, //trigger
-    [4, 4, 0, false,4], // area
+    [4, 4, 0, false, 4], // area
     ["ANY", "PRESENT", true], // activation
     [format ["this and !(thisTrigger getVariable ['%1',false])", QGVAR(cooldown)], format ["[thisTrigger, thisList] call %1", QFUNC(activateBurner)], ""] // statements
 ]] call CBA_fnc_globalEventJip;

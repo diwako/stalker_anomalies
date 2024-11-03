@@ -53,21 +53,7 @@ if (_trg getVariable [QGVAR(anomalyType),""] != "fog") exitWith {};
                 }, [_x], (random 2)] call CBA_fnc_waitAndExecute;
                 _x setVariable[QGVAR(cough),cba_missiontime];
             };
-            if (!isNil "ace_medical_fnc_addDamageToUnit") then {
-                // Ace medical is enabled
-                private _dam = 1;
-                if (isPlayer _x) then {
-                    _dam = (missionNamespace getVariable ["ace_medical_playerDamageThreshold", 1]) / 20;
-                } else {
-                    _res = _x getVariable ["ace_medical_unitDamageThreshold", [1, 1, 1]];
-                    _dam = ((_res#0 + _res#1 + _res#2) / 3) / 6;
-                };
-                [_x, _dam, "body", "punch", _x] call ace_medical_fnc_addDamageToUnit;
-            } else {
-                // Ace medical is not enabled
-                private _dam = damage _x;
-                _x setDamage (_dam + 0.05);
-            };
+            ["fog", _x] call FUNC(addUnitDamage);
             [QGVAR(fogOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
         };
     };

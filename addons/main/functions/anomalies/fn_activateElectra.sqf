@@ -57,7 +57,7 @@ if (isServer) then {
             } else {
                 // [_x, getPos _trg, 2, 2] remoteExec [QFUNC(suckToLocation),_x];
                 [{
-                    _this setDamage 1;
+                    ["electra", _this] call FUNC(addUnitDamage);
                 }, _x, 2] call CBA_fnc_waitAndExecute;
             };
             [QGVAR(electraOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
@@ -126,15 +126,7 @@ if (hasInterface) then {
     [{
         params ["_plr", "_in", "_trg"];
         if (_in) then {
-            if !(isNil "ace_medical_fnc_addDamageToUnit") then {
-                // Ace medical is enabled
-                private _dam = (missionNamespace getVariable ["ace_medical_playerDamageThreshold", 1]);
-                [_plr, _dam, selectRandom ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "stab", _plr] call ace_medical_fnc_addDamageToUnit;
-            } else {
-                // Ace medical is not enabled
-                private _dam = damage _plr;
-                _plr setDamage (_dam + 0.5);
-            };
+            ["electra", _plr] call FUNC(addUnitDamage);
         };
 
         private _source = _trg getVariable [QGVAR(particleSource), objNull];

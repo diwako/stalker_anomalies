@@ -4,6 +4,51 @@ ADDON = false;
 
 #include "settings.inc.sqf"
 
+/*
+Valid values:
+- vanilla
+- ace_medical
+- aps
+- custom
+*/
+GVAR(medicalSystem) = call {
+    if (isClass(configFile >> "CfgPatches" >> "ace_medical_engine")) exitWith {"ace_medical"};
+    if (isClass(configFile >> "CfgPatches" >> "diw_armor_plates_main")) exitWith {"aps"};
+    "vanilla"
+};
+
+GVAR(medicalSystemMap) = createHashMap;
+GVAR(medicalSystemMap) set ["vanilla", createHashMapFromArray [
+    // [anomaly_type, [player_damage, ai_damage]]
+    ["burner", [0.5, 1]],
+    ["comet", [0.5, 1]],
+    ["electra", [0.5, 1]],
+    ["fog", [0.05, 0.05]],
+    ["fruitpunch", [0.2, 0.2]],
+    ["springboard", [0.5, 1]],
+    ["psydischarge", [{0.35 + random 75}, {0.35 + random 75}]]]
+];
+GVAR(medicalSystemMap) set ["ace_medical", createHashMapFromArray [
+    // [anomaly_type, [[multiplier_player, ai], body_part_array, damage_type]]
+    ["burner", [[0.9, 10], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "burn"]],
+    ["comet", [[0.9, 10], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "burn"]],
+    ["electra", [[1, 10], ["head", "body"], "stab"]],
+    ["fog", [[0.05, 0.2], ["body"], "punch"]],
+    ["fruitpunch", [[0.2, 0.333], ["leg_l", "leg_r"], "stab"]],
+    ["springboard", [[1.5, 10], ["leg_l", "leg_r"], "stab"]],
+    ["psydischarge", [[0.9, 0.9], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]]]
+];
+GVAR(medicalSystemMap) set ["aps", createHashMapFromArray [
+    // [anomaly_type, [[multiplier_player, ai], body_part_array, bullet_type]]
+    ["burner", [[0.9, 2], ["head", "pelvis", "hands", "legs"], "B_65x39_Caseless"]],
+    ["comet", [[0.9, 2], ["head", "pelvis", "hands", "legs"], "B_65x39_Caseless"]],
+    ["electra", [[1, 2], ["head", "pelvis", "hands", "legs"], "B_45ACP_Ball"]],
+    ["fog", [[0.05, 0.2], ["pelvis"], "B_9x21_Ball"]],
+    ["fruitpunch", [[0.2, 0.333], ["legs"], "B_9x21_Ball"]],
+    ["springboard", [[1.5, 2], ["legs"], "B_45ACP_Ball"]],
+    ["psydischarge", [[0.9, 0.9], ["head", "pelvis", "hands", "legs"], "B_9x21_Ball"]]]
+];
+
 if (isServer) then {
     GVAR(movingAnomalyPFH) = -1;
     GVAR(movingAnomalyHolder) = [];
@@ -88,8 +133,8 @@ if (hasInterface) then {
     _this call FUNC(setTrigger);
 }] call CBA_fnc_addEventHandler;
 
-[QGVAR(aceDamage), {
-    _this call ace_medical_fnc_addDamageToUnit;
+[QGVAR(addUnitDamage), {
+    _this call FUNC(addUnitDamage);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(setHit), {

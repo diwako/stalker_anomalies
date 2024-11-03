@@ -30,22 +30,7 @@ _source setPosASL (getPosASL _trg);
 [QGVAR(fruitPunchEffect), _source] call CBA_fnc_globalEvent;
 {
     if (_x isKindOf "Man") then {
-        // if (alive _x) then {
-        if (!isNil "ace_medical_fnc_addDamageToUnit") then {
-            // Ace medical is enabled
-            private _dam = 1;
-            if (isPlayer _x) then {
-                _dam = (missionNamespace getVariable ["ace_medical_playerDamageThreshold", 1]) / 5;
-            } else {
-                _res = _x getVariable ["ace_medical_unitDamageThreshold", [1, 1, 1]];
-                _dam = ((_res#0 + _res#1 + _res#2) / 3) / 3;
-            };
-            [QGVAR(aceDamage), [_x, _dam, selectRandom ["leg_l", "leg_r"], "stab", _x] , _x] call CBA_fnc_targetEvent;
-        } else {
-            // Ace medical is not enabled
-            _dam = damage _x;
-            _x setDamage (_dam + 0.2);
-        };
+        ["fruitpunch", _x] call FUNC(addUnitDamage);
         [QGVAR(fruitpunchOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
     } else {
         if !(_x isKindOf "landvehicle" || _x isKindOf "air") then {

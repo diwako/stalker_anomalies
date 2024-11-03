@@ -15,6 +15,7 @@ exclude = ["*.psd", "*.png", "*.tga", "/**/cfg*.hpp"]
 workshop = [
     "450814997",  # CBA_A3's Workshop ID
     "463939057",  # ACE3
+    # "2523439183",  # APS
     "1779063631", # ZEN
 ]
 parameters = ["-world=empty", "-noPause"]

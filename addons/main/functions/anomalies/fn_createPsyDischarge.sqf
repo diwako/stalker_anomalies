@@ -96,22 +96,11 @@ if (hasInterface && {((AGLToASL positionCameraToWorld [0,0,0]) distance _pos) < 
 [{
     params ["_pos"];
     private _units = (allUnits select {local _x && {isNull objectParent _x && {!(_x getVariable ["anomaly_ignore", false])}}}) inAreaArray [ASLToAGL _pos, GVAR(anomalySettingPsyRange), GVAR(anomalySettingPsyRange), 0, false, -1];
-    private _damage = (missionNamespace getVariable ["ace_medical_playerDamageThreshold", 1]) / 1.1;
-    private _fnc = if !(isNil "ace_medical_fnc_addDamageToUnit") then {
-        {
-            [_x, _damage, selectRandom ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast", _x] call ace_medical_fnc_addDamageToUnit;
-        }
-    } else {
-        {
-            _dam = damage _x;
-            _x setDamage (_dam + 0.35 + random 75);
-        }
-    };
 
     {
         if ((lineIntersectsSurfaces [getPosASL _x, _pos, _x, objNull, true, 1, "FIRE", "GEOM"]) isEqualTo []) then {
             // ouch
-            call _fnc;
+            ["psydischarge", _x] call FUNC(addUnitDamage);
         };
     } forEach _units;
 }, [_pos], DISCHARGE_TIME] call CBA_fnc_waitAndExecute;

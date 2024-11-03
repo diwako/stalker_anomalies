@@ -337,8 +337,8 @@
         <Key ID="STR_anomaly_blowout_desc">
             <Original>A blowout, also known as an emission, is a map wide event. It will send a wave of psy energy across the map after a specified time. The weather drastically changes with strong winds, thunderstorms and psy waves in the air. Mission makers need to look out for these weather changes, as these can clash with the mission’s design!</Original>
             <English>A blowout, also known as an emission, is a map wide event. It will send a wave of psy energy across the map after a specified time. The weather drastically changes with strong winds, thunderstorms and psy waves in the air. Mission makers need to look out for these weather changes, as these can clash with the mission’s design!</English>
+            <Polish>Emisja, nazywana czasem Zwarciem, wpływa na całą mapę. Powoduje stworzenie fali energii Psi, która przetacza się przez cały teren po wyznaczonym czasie. Pogoda drastycznie się zmienia - silne wiatry, burze i fale Psi w powietrzu. Twórcy misji muszą mieć na uwadze te zmiany pogody, gdyż mogą zmienić wybrane warunki środowiskowe scenariusza!</Polish>
         </Key>
-        <Polish>Emisja, nazywana czasem Zwarciem, wpływa na całą mapę. Powoduje stworzenie fali energii Psi, która przetacza się przez cały teren po wyznaczonym czasie. Pogoda drastycznie się zmienia - silne wiatry, burze i fale Psi w powietrzu. Twórcy misji muszą mieć na uwadze te zmiany pogody, gdyż mogą zmienić wybrane warunki środowiskowe scenariusza!</Polish>
         <Key ID="STR_anomaly_enable_detector">
             <Original>Enable anomaly detector</Original>
             <English>Enable anomaly detector</English>
