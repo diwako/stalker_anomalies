@@ -43,7 +43,7 @@ Diwako Stalker Like Anomalies - added functions by Belbo
     ,"EDITBOX"
     ,[localize "STR_anomaly_settings_gasmasks", localize "STR_anomaly_settings_gasmasks_desc"]
     ,[CBA_SETTINGS_CAT, SUB_CAT_GENERAL]
-    ,"GP5_RaspiratorPS,GP5Filter_RaspiratorPS,GP7_RaspiratorPS,GP21_GasmaskPS,SE_S10,G_Respirator_white_F,MASK_M40_OD,MASK_M40,MASK_M50"
+    ,"G_AirPurifyingRespirator_02_black_F,G_AirPurifyingRespirator_02_olive_F,G_AirPurifyingRespirator_02_sand_F,G_AirPurifyingRespirator_01_F,G_RegulatorMask_F,GP5_RaspiratorPS,GP5Filter_RaspiratorPS,GP7_RaspiratorPS,GP21_GasmaskPS,SE_S10,G_Respirator_white_F,MASK_M40_OD,MASK_M40,MASK_M50"
     ,true
     ,{
         params ["_value"];
