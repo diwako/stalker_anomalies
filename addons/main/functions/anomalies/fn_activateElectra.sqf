@@ -125,7 +125,7 @@ if (hasInterface) then {
 
     [{
         params ["_plr", "_in", "_trg"];
-        if (_in) then {
+        if (_in && !(_plr getVariable ["anomaly_ignore", false])) then {
             ["electra", _plr] call FUNC(addUnitDamage);
         };
 
