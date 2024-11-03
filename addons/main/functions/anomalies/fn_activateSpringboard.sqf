@@ -55,19 +55,11 @@ if (isServer) then {
                 if !(isPlayer _x) then {
                     if !(_x isKindOf "landvehicle"  || _x isKindOf "air") then {
                         [{
-                            _this setDamage 1;
+                            ["springboard", _this] call FUNC(addUnitDamage);
                         }, _x, 0.5] call CBA_fnc_waitAndExecute;
                     };
                 } else {
-                    if !(isNil "ace_medical_fnc_addDamageToUnit") then {
-                        // Ace medical is enabled
-                        private _dam = (missionNamespace getVariable ["ace_medical_playerDamageThreshold", 1]) * 1.5;
-                        [QGVAR(aceDamage), [_x, _dam, selectRandom ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "stab", _x] , _x] call CBA_fnc_targetEvent;
-                    } else {
-                        // Ace medical is not enabled
-                        private_dam = damage _x;
-                        _x setDamage (_dam + 0.5);
-                    };
+                    ["springboard", _x] call FUNC(addUnitDamage);
                 };
                 private _mult = 4;
                 if (_x isKindOf "landvehicle" || _x isKindOf "air") then {

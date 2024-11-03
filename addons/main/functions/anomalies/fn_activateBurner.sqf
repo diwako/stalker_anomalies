@@ -62,20 +62,12 @@ if (isServer) then {
                 if !(isNil "ace_fire_fnc_burn") then {
                     [_x, 4] call ace_fire_fnc_burn;
                 };
-                if !(isPlayer _x) then {
-                    [{
-                        _this setDamage 1;
-                    }, _x, 0.5] call CBA_fnc_waitAndExecute;
+                if (isPlayer _x) then {
+                    ["burner", _x] call FUNC(addUnitDamage);
                 } else {
-                    if !(isNil "ace_medical_fnc_addDamageToUnit") then {
-                        // Ace medical is enabled
-                        private _dam = (missionNamespace getVariable ["ace_medical_playerDamageThreshold", 1]) / 1.1;
-                        [QGVAR(aceDamage), [_x, _dam, selectRandom ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "burn", _x], _x] call CBA_fnc_targetEvent;
-                    } else {
-                        // Ace medical is not enabled
-                        private _dam = damage _x;
-                        _x setDamage (_dam + 0.5);
-                    };
+                    [{
+                        ["burner", _this] call FUNC(addUnitDamage);
+                    }, _x, 0.5] call CBA_fnc_waitAndExecute;
                 };
             } else {
                 private _curDam = _x getHitPointDamage "HitEngine";

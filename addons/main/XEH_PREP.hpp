@@ -29,6 +29,8 @@ SUBPREP(anomalies,movementTick);
 SUBPREP(anomalies,createCometLocal);
 SUBPREP(anomalies,activateComet);
 
+SUBPREP(anomalies,addUnitDamage);
+
 // effects
 SUBPREP(effects,springboardEffect);
 SUBPREP(effects,meatgrinderEffect);
