@@ -1,14 +1,43 @@
 #include "\z\diwako_anomalies\addons\main\script_component.hpp"
-params ["_anomalyType", "_unit"];
+/*
+    Function: diwako_anomalies_main_fnc_addUnitDamage
+
+    Description:
+        Adds damage to an object inheriting from the "Man" or "CAManBase" class
+        supports multiple medical systems
+        Will direct damage to none local units as well
+
+    Parameters:
+        _anomalyType - the anomaly type (default: "")
+                    valid values:
+                    - burner
+                    - comet
+                    - electra
+                    - fog
+                    - fruitpunch
+                    - springboard
+                    - psydischarge
+        _unit - unit to damage (default: objNull)
+
+    Returns:
+        nothing
+
+    Author:
+    diwako 2024-11-02
+*/
+params [["_anomalyType", "", [""]], ["_unit", objNull, [objNull]]];
+
+if !(alive _unit) exitWith {nil};
 
 if !(local _unit) exitWith {
     [QGVAR(addUnitDamage), _this, _unit] call CBA_fnc_targetEvent;
+    nil
 };
 
 switch (GVAR(medicalSystem)) do {
     case "vanilla": {
         private _medicalInfo = GVAR(medicalSystemMap) getOrDefault [GVAR(medicalSystem), []];
-        private _inflictDamage = (_medicalInfo get _anomalyType) select !(isPlayer _unit);
+        private _inflictDamage = (_medicalInfo getOrDefault [_anomalyType, [0.5, 1]]) select !(isPlayer _unit);
         if (_inflictDamage isEqualType {}) then {
             _inflictDamage = _this call _inflictDamage;
         };
@@ -40,3 +69,5 @@ switch (GVAR(medicalSystem)) do {
         hintC format ["Medical system ""%1"" is not supported!", GVAR(medicalSystem)];
     };
 };
+
+nil

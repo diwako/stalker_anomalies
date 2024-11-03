@@ -31,7 +31,7 @@ GVAR(medicalSystemMap) set ["vanilla", createHashMapFromArray [
 GVAR(medicalSystemMap) set ["ace_medical", createHashMapFromArray [
     // [anomaly_type, [[multiplier_player, ai], body_part_array, damage_type]]
     ["burner", [[0.9, 10], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "burn"]],
-    ["comet", [[0.9, 10], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "burn"]],
+    ["comet", [[0.9, 10], ["head", "body"], "burn"]],
     ["electra", [[1, 10], ["head", "body"], "stab"]],
     ["fog", [[0.05, 0.2], ["body"], "punch"]],
     ["fruitpunch", [[0.2, 0.333], ["leg_l", "leg_r"], "stab"]],
