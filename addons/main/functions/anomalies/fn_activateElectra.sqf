@@ -29,24 +29,13 @@ if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "ele
     if (alive _x) then {
         if (_x isKindOf "landvehicle" || _x isKindOf "air") then {
             // switch of the engine
-            private _curDam = 0;
-            if (_x isKindOf "landvehicle" ) then {
-                _curDam = _x getHit (getText(configOf _x >> "HitPoints" >> "HitEngine" >> "name"));
-                [QGVAR(setHitPointDamage), [_x, ["HitEngine", 1, true, _x, _x]], _x] call CBA_fnc_targetEvent;
-            } else {
-                _curDam = _x getHitPointDamage "HitEngine";
-                [QGVAR(setHitPointDamage), [_x, ["HitEngine", 1, true, _x, _x]], _x] call CBA_fnc_targetEvent;
-            };
+            private _curDam = _x getHitPointDamage "HitEngine";
+            [QGVAR(setHitPointDamage), [_x, ["HitEngine", 1, true, _x, _x]], _x] call CBA_fnc_targetEvent;
             private _curDam2 = _x getHitPointDamage "HitHull";
-            [QGVAR(setHitPointDamage), [_x, ["HitHull", (_curDam2 + 0.1)]], _x] call CBA_fnc_targetEvent;
+            [QGVAR(setHitPointDamage), [_x, ["HitHull", _curDam2 + 0.1, true, _x, _x]], _x] call CBA_fnc_targetEvent;
             [{
-                private ["_veh", "_curDam"];
-                if (_veh isKindOf "landvehicle" ) then {
-                    [QGVAR(setHitPointDamage), [_veh, ["HitEngine", (_curDam + 0.25)], true, _x, _x], _x] call CBA_fnc_targetEvent;
-                } else {
-
-                    [QGVAR(setHitPointDamage), [_veh, ["HitEngine", (_curDam + 0.25), true, _x, _x]], _veh] call CBA_fnc_targetEvent;
-                };
+                params ["_veh", "_curDam"];
+                [QGVAR(setHitPointDamage), [_veh, ["HitEngine", _curDam + 0.25, true, _veh, _veh]], _veh] call CBA_fnc_targetEvent;
             }, [_x, _curDam], 5] call CBA_fnc_waitAndExecute;
         } else {
             // [_x, getPos _trg, 2, 2] remoteExec [QFUNC(suckToLocation),_x];
