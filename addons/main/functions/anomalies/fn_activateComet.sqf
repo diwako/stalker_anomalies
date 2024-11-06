@@ -15,7 +15,7 @@
     Author:
     diwako 2024-10-19
 */
-params[["_trg",objNull], ["_list",[]]];
+params [["_trg" ,objNull], ["_list", []]];
 if (isNull _trg || _trg getVariable [QGVAR(anomalyType),""] != "comet") exitWith {};
 
 private _local = _list select {local _x && {!(_x getVariable ["anomaly_ignore", false])}};
@@ -24,8 +24,13 @@ private _local = _list select {local _x && {!(_x getVariable ["anomaly_ignore", 
 if (_local isEqualTo []) exitWith {};
 
 _trg setVariable [QGVAR(cooldown), true];
+private _trgPos = getPosASL _trg;
 {
     if (_x isKindOf "Man") then {
+        if ((lineIntersectsSurfaces [ASLToAGL (_x modelToWorld (_x selectionPosition "pelvis")), _trgPos, _x, _trg, true, 1, "FIRE", "GEOM"]) isNotEqualTo []) then {
+            // ignore unit in case there is a wall between them and the fireball
+            continue;
+        };
         if !(isNil "ace_fire_fnc_burn") then {
             [_x, 4] call ace_fire_fnc_burn;
         };
@@ -33,23 +38,25 @@ _trg setVariable [QGVAR(cooldown), true];
             ["comet", _this] call FUNC(addUnitDamage);
         }, _x, [0.5, 0] select (isPlayer _x)] call CBA_fnc_waitAndExecute;
     } else {
-        private _curDam = _x getHitPointDamage "HitEngine";
-        if (isNil "_curDam") then {
-            _curDam = 0;
-        };
-        if (_curDam >= 1) then {
-            _x setDamage [1, true, _x, _x];
-        } else {
-            _x setHitPointDamage ["HitEngine", (_curDam + 0.15), false, _x, _x];
-            if !(_x isKindOf "tank") then {
-                _x setHit ["wheel_1_1_steering", 1];
-                _x setHit ["wheel_1_2_steering", 1];
-                _x setHit ["wheel_1_3_steering", 1];
-                _x setHit ["wheel_1_4_steering", 1];
-                _x setHit ["wheel_2_1_steering", 1];
-                _x setHit ["wheel_2_2_steering", 1];
-                _x setHit ["wheel_2_3_steering", 1];
-                _x setHit ["wheel_2_4_steering", 1];
+        if (_x isKindOf "LandVehicle" || _x isKindOf "Air") then {
+            private _curDam = _x getHitPointDamage "HitEngine";
+            if (isNil "_curDam") then {
+                _curDam = 0;
+            };
+            if (_curDam >= 1) then {
+                _x setDamage [1, true, _x, _x];
+            } else {
+                _x setHitPointDamage ["HitEngine", (_curDam + 0.15), false, _x, _x];
+                if !(_x isKindOf "tank") then {
+                    _x setHit ["wheel_1_1_steering", 1];
+                    _x setHit ["wheel_1_2_steering", 1];
+                    _x setHit ["wheel_1_3_steering", 1];
+                    _x setHit ["wheel_1_4_steering", 1];
+                    _x setHit ["wheel_2_1_steering", 1];
+                    _x setHit ["wheel_2_2_steering", 1];
+                    _x setHit ["wheel_2_3_steering", 1];
+                    _x setHit ["wheel_2_4_steering", 1];
+                };
             };
         };
     };
