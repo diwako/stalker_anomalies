@@ -15,19 +15,12 @@
     Author:
     diwako 2018-06-10
 */
-if !(isServer) exitWith {};
-params [["_trg",objNull], ["_list",[]]];
+params [["_trg", objNull], ["_list",[]]];
+if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "fruitpunch") exitWith {};
 
-if (isNull _trg) exitWith {};
-if (_trg getVariable [QGVAR(anomalyType),""] != "fruitpunch") exitWith {};
-
-private _proxy = _trg getVariable QGVAR(sound);
-[QGVAR(say3D), [_proxy, selectRandom ["bfuzz_hit","buzz_hit"]]] call CBA_fnc_globalEvent;
 _trg setVariable [QGVAR(cooldown), true];
 
-private _source = "#particlesource" createVehicle getPos _trg;
-_source setPosASL (getPosASL _trg);
-[QGVAR(fruitPunchEffect), _source] call CBA_fnc_globalEvent;
+[QGVAR(fruitPunchEffect), [_trg]] call CBA_fnc_globalEvent;
 {
     if (_x isKindOf "Man") then {
         ["fruitpunch", _x] call FUNC(addUnitDamage);
@@ -37,13 +30,8 @@ _source setPosASL (getPosASL _trg);
             deleteVehicle _x;
         };
     };
-    false
-} count (_list select {!(_x getVariable ["anomaly_ignore", false])});
+} forEach (_list select {!(_x getVariable ["anomaly_ignore", false])});
+
 [{
-    deleteVehicle _this;
-}, _source, 0.33] call CBA_fnc_waitAndExecute;
-[{
-    params ["_trg", "_source"];
-    deleteVehicle _source;
-    _trg setVariable [QGVAR(cooldown), false];
-}, [_trg, _source], 2] call CBA_fnc_waitAndExecute;
+    _this setVariable [QGVAR(cooldown), false];
+}, _trg, 2] call CBA_fnc_waitAndExecute;

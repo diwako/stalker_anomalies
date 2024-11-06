@@ -16,12 +16,9 @@
     diwako 2017-12-14
 */
 params[["_trg",objNull],["_list",[]]];
+if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "teleport") exitWith {};
 
-if !(isServer) exitWith {};
-if (isNull _trg) exitWith {};
-if (_trg getVariable [QGVAR(anomalyType),""] != "teleport") exitWith {};
-
-private _men = nearestObjects [getPos _trg,  ["Man","landvehicle"], 2];
+private _men = nearestObjects [getPos _trg,  ["Man", "landvehicle"], 2];
 private _id = _trg getVariable QGVAR(teleportID);
 private _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 

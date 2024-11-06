@@ -100,10 +100,7 @@ if (hasInterface) then {
         deleteVehicle (_trg getVariable [QGVAR(soundIdleLocal), objNull]);
     }] call CBA_fnc_addEventHandler;
 
-    [QGVAR(fruitPunchEffect), {
-        if (isNull _this) exitWith {};
-        [_this, "active"] call FUNC(fruitPunchEffect);
-    }] call CBA_fnc_addEventHandler;
+    #include "anomalyFXEvents.inc.sqf"
 };
 
 [QGVAR(createAnomaly), {

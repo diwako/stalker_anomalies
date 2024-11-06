@@ -16,9 +16,8 @@
     diwako 2024-10-19
 */
 params[["_trg",objNull], ["_list",[]]];
+if (isNull _trg || _trg getVariable [QGVAR(anomalyType),""] != "comet") exitWith {};
 
-if (isNull _trg) exitWith {};
-if (_trg getVariable [QGVAR(anomalyType),""] != "comet") exitWith {};
 private _local = _list select {local _x && {!(_x getVariable ["anomaly_ignore", false])}};
 
 // no need to do anything here, nothing local to handle
