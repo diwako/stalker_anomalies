@@ -18,7 +18,7 @@
 params[["_trg",objNull],["_list",[]]];
 if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "teleport") exitWith {};
 
-private _men = nearestObjects [getPos _trg,  ["Man", "landvehicle"], 2];
+private _men = nearestObjects [getPos _trg,  ["Man", "LandVehicle", "Air"], 2.5];
 private _id = _trg getVariable QGVAR(teleportID);
 private _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 
@@ -40,8 +40,10 @@ if (isNil "_exit") exitWith {
     hintC format ["It was not possible to find an exit for teleport anomaly at %1 with id %2!", getPos _trg, _id];
 };
 
-_trg setVariable [QGVAR(cooldown), true, true];
-_exit setVariable [QGVAR(cooldown), true, true];
+{
+    _x setVariable [QGVAR(cooldown), true, true];
+} forEach _teleporters;
+
 private _proxy = _trg getVariable QGVAR(sound);
 [QGVAR(say3D), [_proxy, "teleport_work_" + str((floor random 2) + 1)]] call CBA_fnc_globalEvent;
 _proxy = _exit getVariable QGVAR(sound);
@@ -50,48 +52,47 @@ _proxy = _exit getVariable QGVAR(sound);
 [{
     params["_trg", "_list", "_exit", "_men"];
     {
-        if (!(_x isKindOf "Man" || _x isKindOf "landvehicle" || _x isKindOf "air"))  then {
+        if !(_x isKindOf "Man" || _x isKindOf "LandVehicle" || _x isKindOf "Air")  then {
             deleteVehicle _x;
         };
     } forEach _list;
     private _exitPos = getPos _exit;
-    private _obj = objNull;
     {
-        _obj = _x;
-        if (alive _obj) then {
+        if (alive _x) then {
             private _doTeleport = false;
             if (_x isKindOf "Man") then {
                 _doTeleport = true;
-                if (isPlayer _obj) then {
-                    [QGVAR(teleportFlash), nil, _obj] call CBA_fnc_targetEvent;
+                if (isPlayer _x) then {
+                    [QGVAR(teleportFlash), nil, _x] call CBA_fnc_targetEvent;
                 };
             };
-            if ((_obj isKindOf "landvehicle"  || _x isKindOf "air") && {getMass _obj < 10000}) then {
+            if ((_x isKindOf "LandVehicle" || _x isKindOf "Air") && {getMass _x < 10000}) then {
                 _doTeleport = true;
                 {
                     if (isPlayer _x) then {
                         [QGVAR(teleportFlash), nil, _x] call CBA_fnc_targetEvent;
                     };
-                } forEach crew _obj;
+                } forEach crew _x;
             };
 
             if (_doTeleport) then {
-                // [_obj, [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ]] remoteExec ["setPos", _obj];
-
-                [QGVAR(teleportOnEnter), [_obj, _trg, _exit]] call CBA_fnc_localEvent;
-                _obj setPos [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ];
-                [QGVAR(teleportOnExit), [_obj, _trg, _exit]] call CBA_fnc_localEvent;
+                [QGVAR(teleportOnEnter), [_x, _trg, _exit]] call CBA_fnc_localEvent;
+                _x setPos [((_exitPos select 0) + (random 4) - 2), ((_exitPos select 1) + (random 4) - 2), (_exitPos select 2) ];
+                [QGVAR(teleportOnExit), [_x, _trg, _exit]] call CBA_fnc_localEvent;
             };
         } else {
-            if (!(_obj isKindOf "landvehicle" || _x isKindOf "air")) then {
-                [QGVAR(minceCorpse), [_obj]] call CBA_fnc_globalEvent;
+            if !(_x isKindOf "LandVehicle" || _x isKindOf "Air") then {
+                [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
             };
         };
     } forEach _men;
 
     [{
-        params["_trg", "_exit"];
-        _trg setVariable [QGVAR(cooldown), false, true];
-        _exit setVariable [QGVAR(cooldown), false, true];
-    }, [_trg, _exit], GVAR(anomalySettingTeleportCooldownMin) - TELEPORT_MIN_COOL_DOWN + (random GVAR(anomalySettingTeleportCooldownRand))] call CBA_fnc_waitAndExecute;
+        params ["_trg"];
+        private _id = _trg getVariable QGVAR(teleportID);
+        private _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
+        {
+            _x setVariable [QGVAR(cooldown), false, true];
+        } forEach _teleporters;
+    }, [_trg], GVAR(anomalySettingTeleportCooldownMin) - TELEPORT_MIN_COOL_DOWN + (random GVAR(anomalySettingTeleportCooldownRand))] call CBA_fnc_waitAndExecute;
 }, [_trg, _list, _exit, _men], TELEPORT_MIN_COOL_DOWN] call CBA_fnc_waitAndExecute;

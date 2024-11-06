@@ -29,22 +29,18 @@ _trg setVariable [QGVAR(cooldown), true];
         if !(isNil "ace_fire_fnc_burn") then {
             [_x, 4] call ace_fire_fnc_burn;
         };
-        if (isPlayer _x) then {
-            ["comet", _x] call FUNC(addUnitDamage);
-        } else {
-            [{
-                ["comet", _this] call FUNC(addUnitDamage);
-            }, _x, 0.5] call CBA_fnc_waitAndExecute;
-        };
+        [{
+            ["comet", _this] call FUNC(addUnitDamage);
+        }, _x, [0.5, 0] select (isPlayer _x)] call CBA_fnc_waitAndExecute;
     } else {
         private _curDam = _x getHitPointDamage "HitEngine";
         if (isNil "_curDam") then {
             _curDam = 0;
         };
         if (_curDam >= 1) then {
-            _x setDamage 1;
+            _x setDamage [1, true, _x, _x];
         } else {
-            _x setHitPointDamage ["HitEngine", (_curDam + 0.15), true, _x, _x];
+            _x setHitPointDamage ["HitEngine", (_curDam + 0.15), false, _x, _x];
             if !(_x isKindOf "tank") then {
                 _x setHit ["wheel_1_1_steering", 1];
                 _x setHit ["wheel_1_2_steering", 1];

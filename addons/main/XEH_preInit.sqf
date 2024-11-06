@@ -33,7 +33,7 @@ GVAR(medicalSystemMap) set ["ace_medical", createHashMapFromArray [
     ["burner", [[0.9, 10], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "burn"]],
     ["comet", [[0.9, 10], ["head", "body"], "burn"]],
     ["electra", [[1, 10], ["head", "body"], "stab"]],
-    ["fog", [[0.05, 0.2], ["body"], "punch"]],
+    ["fog", [[0.2, 0.2], ["body"], "punch"]],
     ["fruitpunch", [[0.2, 0.333], ["leg_l", "leg_r"], "stab"]],
     ["springboard", [[1.5, 10], ["leg_l", "leg_r"], "stab"]],
     ["psydischarge", [[0.9, 0.9], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]]]

@@ -30,7 +30,7 @@ if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "ele
         if (_x isKindOf "landvehicle" || _x isKindOf "air") then {
             // switch of the engine
             private _curDam = _x getHitPointDamage "HitEngine";
-            [QGVAR(setHitPointDamage), [_x, ["HitEngine", 1, true, _x, _x]], _x] call CBA_fnc_targetEvent;
+            [QGVAR(setHitPointDamage), [_x, ["HitEngine", 1, false, _x, _x]], _x] call CBA_fnc_targetEvent;
             private _curDam2 = _x getHitPointDamage "HitHull";
             [QGVAR(setHitPointDamage), [_x, ["HitHull", _curDam2 + 0.1, true, _x, _x]], _x] call CBA_fnc_targetEvent;
             [{

@@ -54,12 +54,10 @@ private _proxy = "building" createVehicle position _trg;
 _proxy enableSimulationGlobal false;
 _proxy setPos (_trg modelToWorld [0,0,0.5]);
 _trg setVariable [QGVAR(sound), _proxy, true];
-[QGVAR(setTrigger), [
-    _trg, //trigger
-    [2, 2, 0, false,4], // area
-    ["ANY", "PRESENT", true], // activation
-    [format ["this and !(thisTrigger getVariable ['%1',false])", QGVAR(cooldown)], format ["[thisTrigger,thisList] call %1", QFUNC(activateTeleport)], ""] // statements
-]] call CBA_fnc_globalEventJip;
+
+_trg setTriggerArea [2, 2, 0, false, 4];
+_trg setTriggerActivation ["ANY", "PRESENT", true];
+_trg setTriggerStatements [format ["this and !(thisTrigger getVariable ['%1',false])", QGVAR(cooldown)], format ["[thisTrigger,thisList] call %1", QFUNC(activateTeleport)], ""];
 
 if (isNil QGVAR(holder)) then {
     GVAR(holder) = [];

@@ -44,9 +44,9 @@ private _men = nearestObjects [getPos _trg,  ["Man","landvehicle","air"], 5] sel
                 _curDam = 0;
             };
             if (_curDam >= 1) then {
-                _x setDamage 1;
+                _x setDamage [1, true, _x, _x];
             } else {
-                [QGVAR(setHitPointDamage), [_x, ["HitEngine", (_curDam + 0.15)]], _x] call CBA_fnc_targetEvent;
+                [QGVAR(setHitPointDamage), [_x, ["HitEngine", _curDam + 0.15, false]], _x] call CBA_fnc_targetEvent;
                 if !(_x isKindOf "tank") then {
                     [QGVAR(setHit), [_x, ["wheel_1_1_steering", 1]], _x] call CBA_fnc_targetEvent;
                     [QGVAR(setHit), [_x, ["wheel_1_2_steering", 1]], _x] call CBA_fnc_targetEvent;
@@ -61,7 +61,7 @@ private _men = nearestObjects [getPos _trg,  ["Man","landvehicle","air"], 5] sel
         };
         [QGVAR(burnerOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
     } else {
-        if !(_x isKindOf "landvehicle" || _x isKindOf "air") then {
+        if !(_x isKindOf "LandVehicle" || _x isKindOf "Air") then {
             [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
         };
     };

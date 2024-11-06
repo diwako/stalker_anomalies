@@ -25,7 +25,7 @@ private _units = _list select {local _x && {!(_x getVariable ["anomaly_ignore", 
             _units pushBack _x
         };
     } forEach crew _x;
-} forEach (_list select {_x isKindOf "LandVehicle" && {!(_x getVariable ["anomaly_ignore", false])}});
+} forEach (_list select {(_x isKindOf "LandVehicle" || _x isKindOf "Air") && {!(_x getVariable ["anomaly_ignore", false])}});
 
 {
     if !(toUpper(goggles _x) in GVAR(gasMasks)) then {
