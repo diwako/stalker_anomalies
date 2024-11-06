@@ -16,66 +16,53 @@
     diwako 2017-12-11
 */
 
-params[["_trg",objNull],["_list",[]]];
+params[["_trg",objNull], ["_list",[]]];
+if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "meatgrinder") exitWith {};
 
-if (isNull _trg) exitWith {};
-if (_trg getVariable [QGVAR(anomalyType),""] != "meatgrinder") exitWith {};
+_trg setVariable [QGVAR(cooldown), true, true];
 
+{
+    if (!(_x isKindOf "Man" || _x isKindOf "LandVehicle" || _x isKindOf "Air")) then {
+        deleteVehicle _x;
+    };
+} forEach _list;
+
+private _men = (nearestObjects [getPos _trg,  ["Man", "LandVehicle" ,"Air"], 5]) select {!(_x getVariable ["anomaly_ignore", false])};
 private _sucked = [];
-if (isServer) then {
-    _trg setVariable [QGVAR(cooldown), true, true];
-    _men = (nearestObjects [getPos _trg,  ["Man","landvehicle","air"], 5]) select {!(_x getVariable ["anomaly_ignore", false])};
-    private _proxy = _trg getVariable QGVAR(sound);
-    [QGVAR(say3D), [_proxy, "anomaly_mincer_blowout"]] call CBA_fnc_globalEvent;
-    {
-        if (!(_x isKindOf "Man" || _x isKindOf "landvehicle" || _x isKindOf "air")) then {
-            deleteVehicle _x;
-        };
-    } forEach _list;
-    {
-        if (alive _x) then {
-            if (_x isKindOf "landvehicle" || _x isKindOf "air") then {
-                if (getMass _x <= 10000) then {
-                    [QGVAR(suckToLocation), [_x, getPos _trg, 1, 5.8], _x] call CBA_fnc_targetEvent;
-                    _sucked pushBackUnique _x;
-                };
-            } else {
-                _sucked pushBackUnique _x;
-                [QGVAR(suckToLocation), [_x, getPos _trg, 2], _x] call CBA_fnc_targetEvent;
+{
+    if (alive _x) then {
+        if (_x isKindOf "LandVehicle" || _x isKindOf "Air") then {
+            if (getMass _x <= 10000) then {
+                [QGVAR(suckToLocation), [_x, getPos _trg, 1, 5.8], _x] call CBA_fnc_targetEvent;
+                _sucked pushBack _x;
             };
         } else {
-            if (!(_x isKindOf "landvehicle") || _x isKindOf "air") then {
-                [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
-            };
+            _sucked pushBack _x;
+            [QGVAR(suckToLocation), [_x, getPos _trg, 2], _x] call CBA_fnc_targetEvent;
         };
-    } forEach _men;
-};
+    } else {
+        if !(_x isKindOf "LandVehicle" || _x isKindOf "Air") then {
+            [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
+        };
+    };
+} forEach _men;
+
+[QGVAR(meatgrinderEffect), [_trg]] call CBA_fnc_globalEvent;
 
 [{
     params ["_trg", "_sucked"];
-    if (hasInterface) then {
-        private _source = "#particlesource" createVehicleLocal getPos _trg;
-        _source setPosASL (getPosASL _trg);
-        [_source, "active"] call FUNC(springboardEffect);
-        [{
-            deleteVehicle _this;
-        }, _source, 1] call CBA_fnc_waitAndExecute;
-    };
-
-    if (isServer) then {
-        {
-            if (_x isKindOf "Man") then {
-                // ace medical not needed, people trapped in this trap are dead
-                _x setDamage 1;
-                [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
-            } else {
-                private _curDam = _x getHitPointDamage "HitHull";
-                [QGVAR(setHitPointDamage), [_x, ["HitHull", (_curDam + 0.45), true, _x, _x]], _x] call CBA_fnc_targetEvent;
-            };
-            [QGVAR(meatgrinderOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
-        } forEach _sucked;
-        [{
-            _this setVariable [QGVAR(cooldown), false, true];
-        }, _trg, anomalySettingMeatgrinderCooldownMin - MEATGRINDER_MIN_COOL_DOWN + random anomalySettingMeatgrinderCooldownRand] call CBA_fnc_waitAndExecute;
-    };
+    {
+        if (_x isKindOf "Man") then {
+            // ace medical not needed, people trapped in this trap are dead
+            _x setDamage [1, true, _x, _x];
+            [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
+        } else {
+            private _curDam = _x getHitPointDamage "HitHull";
+            [QGVAR(setHitPointDamage), [_x, ["HitHull", (_curDam + 0.45), true, _x, _x]], _x] call CBA_fnc_targetEvent;
+        };
+        [QGVAR(meatgrinderOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
+    } forEach _sucked;
+    [{
+        _this setVariable [QGVAR(cooldown), false, true];
+    }, _trg, anomalySettingMeatgrinderCooldownMin - MEATGRINDER_MIN_COOL_DOWN + random anomalySettingMeatgrinderCooldownRand] call CBA_fnc_waitAndExecute;
 }, [_trg, _sucked], MEATGRINDER_MIN_COOL_DOWN] call CBA_fnc_waitAndExecute;
