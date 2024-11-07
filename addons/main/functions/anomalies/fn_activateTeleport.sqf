@@ -90,6 +90,7 @@ _proxy = _exit getVariable QGVAR(sound);
     [{
         params ["_trg"];
         private _id = _trg getVariable QGVAR(teleportID);
+        if (isNil "_id") exitWith {}; // was deleted during cooldown
         private _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
         {
             _x setVariable [QGVAR(cooldown), false, true];
