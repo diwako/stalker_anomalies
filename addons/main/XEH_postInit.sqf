@@ -59,6 +59,16 @@ if (isServer && {isMultiplayer}) then {
     }, 5, [0] ] call CBA_fnc_addPerFrameHandler;
 };
 
+if (isServer) then {
+    ["CAManBase", "Fired", {
+        // params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_mag", "_projectile"];
+        params ["", "", "", "", "_ammo", "", "_projectile"];
+        if (_ammo == QGVAR(boltAmmo)) then {
+            [_projectile] call FUNC(grenadeBolt);
+        };
+    }, true] call CBA_fnc_addClassEventHandler;
+};
+
 if !(hasInterface) exitWith {};
 
 /*== DO NOT EDIT Below unless you know what you are doing! ==*/
@@ -84,6 +94,7 @@ if (isNil QGVAR(holder)) then {
     private _idleDistance = GVAR(idleDistance) * _speedmod;
     private _fnc_addIdleSoundsLocal = {
         params ["_trg", "_type"];
+        if !(isNull (_trg getVariable [QGVAR(soundIdleLocal), objNull])) exitWith {};
         private _sound = createSoundSourceLocal [_type, [0, 0, 0], [], 0];
         _sound setPosASL (getPosASL _trg);
         _trg setVariable [QGVAR(soundIdleLocal), _sound];
@@ -228,23 +239,20 @@ if !(isNil "ace_interact_menu_fnc_createAction") then {
 }, false] call CBA_fnc_addItemContextMenuOption;
 
 if (isClass(configFile >> "CfgPatches" >> "ace_advanced_throwing")) then {
-    ["ace_firedPlayer", {
-        params ["_unit","_weapon","_muzzle","_mode","_ammo","_mag","_projectile"];
-        if (_ammo == QGVAR(boltAmmo)) then {
-            if (_mag == "bolts_infinite") then {
-                _unit addMagazine _mag;
-                _unit selectThrowable _mag;
-            };
-            [_projectile] call FUNC(grenadeBolt);
+    ["ace_advanced_throwing_throwFiredXEH", {
+        params ["_unit", "", "", "", "", "_mag"];
+        if (local _unit) then {
+            _unit setVariable [QGVAR(lastGrenadeMag), _mag];
         };
     }] call CBA_fnc_addEventHandler;
-} else {
-    player addEventHandler ["Fired",{
-        params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_mag", "_projectile"];
-        if (_ammo == QGVAR(boltAmmo)) then {
-            [_projectile] call FUNC(grenadeBolt);
+    ["ace_throwableThrown", {
+        params ["_unit", "_activeThrowable"];
+        if (typeOf _activeThrowable == QGVAR(boltAmmo) && _unit getVariable [QGVAR(lastGrenadeMag), ""] == "bolts_infinite") then {
+            _unit addMagazine "bolts_infinite";
+            _unit selectThrowable "bolts_infinite";
         };
-    }];
+        _unit setVariable [QGVAR(lastGrenadeMag), nil]
+    }] call CBA_fnc_addEventHandler;
 };
 
 // add Zen modules for zeus
