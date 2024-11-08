@@ -46,6 +46,7 @@ if (_show) then {
             if (isGamePaused) exitWith {};
             params ["_psySky", "_display"];
             _psySky setPosWorld (player modelToWorldWorld [0, 0, 200]);
+            (_display getVariable [QGVAR(texture), controlNull]) ctrlSetAngle [(cba_missionTime % 7200) / 20, 0.5, 0.5];
             displayUpdate _display;
 
             isNull _psySky
