@@ -127,6 +127,28 @@
     _proxy say3D "anomaly_mincer_blowout";
 
     [{
+        params ["_trg", "_stopTime", "_nextDropTime"];
+        private _time = time;
+        if (_time > _nextDropTime) then {
+            private _dropPos = _trg getPos [random 5.5, random 360];
+            private _velocity = ((_dropPos vectorFromTo (getPos _trg)) vectorMultiply 3) vectorAdd [0, 0, 0.1];
+            private _size = 2 + random 0.5;
+            drop [["\A3\data_f\cl_leaf", 1, 0, 1], "", "SpaceObject", 1,
+                2, //lifetime
+                _dropPos, // position
+                _velocity, // velocity
+                0,
+                7, // weight
+                7.9, 0.075,
+                [_size, _size, 0.01], // size
+                [[0.1, 0.1, 0.1, 1], [0.25, 0.25, 0.25, 0.5], [0.5, 0.5, 0.5, 0]], [6, 5, 5], 1, 0, "", "", ""];
+            _this set [2, _time + 0.02];
+        };
+
+        _time >= _stopTime
+    }, {}, [_trg, time + MEATGRINDER_MIN_COOL_DOWN, -10]] call cba_fnc_waitUntilAndExecute;
+
+    [{
         params ["_trg"];
         if (isNull _trg) exitWith {};
         private _source = "#particlesource" createVehicleLocal getPos _trg;
