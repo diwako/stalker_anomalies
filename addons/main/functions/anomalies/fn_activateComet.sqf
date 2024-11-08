@@ -27,12 +27,12 @@ _trg setVariable [QGVAR(cooldown), true];
 private _trgPos = getPosASL _trg;
 {
     if (_x isKindOf "Man") then {
-        if ((lineIntersectsSurfaces [ASLToAGL (_x modelToWorld (_x selectionPosition "pelvis")), _trgPos, _x, _trg, true, 1, "FIRE", "GEOM"]) isNotEqualTo []) then {
+        if ((lineIntersectsSurfaces [AGLToASL (_x modelToWorld (_x selectionPosition "pelvis")), _trgPos, _x, _trg, true, 1, "FIRE", "GEOM"]) isNotEqualTo []) then {
             // ignore unit in case there is a wall between them and the fireball
             continue;
         };
-        if !(isNil "ace_fire_fnc_burn") then {
-            [_x, 4] call ace_fire_fnc_burn;
+        if (!isNil "ace_fire_enabled" && {ace_fire_enabled}) then {
+            ["ace_fire_burn", [_x, 4]] call CBA_fnc_localEvent;
         };
         [{
             ["comet", _this] call FUNC(addUnitDamage);
