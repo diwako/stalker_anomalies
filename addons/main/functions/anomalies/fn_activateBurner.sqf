@@ -32,8 +32,8 @@ private _men = nearestObjects [getPos _trg,  ["Man","landvehicle","air"], 5] sel
 {
     if (alive _x) then {
         if (_x isKindOf "Man") then {
-            if !(isNil "ace_fire_fnc_burn") then {
-                [_x, 4] call ace_fire_fnc_burn;
+            if (!isNil "ace_fire_enabled" && {ace_fire_enabled}) then {
+                ["ace_fire_burn", [_x, 4], _x] call CBA_fnc_targetEvent;
             };
             [{
                 ["burner", _this] call FUNC(addUnitDamage);
