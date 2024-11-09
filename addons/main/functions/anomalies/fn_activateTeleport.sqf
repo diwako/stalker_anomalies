@@ -44,10 +44,7 @@ if (isNil "_exit") exitWith {
     _x setVariable [QGVAR(cooldown), true, true];
 } forEach _teleporters;
 
-private _proxy = _trg getVariable QGVAR(sound);
-[QGVAR(say3D), [_proxy, "teleport_work_" + str((floor random 2) + 1)]] call CBA_fnc_globalEvent;
-_proxy = _exit getVariable QGVAR(sound);
-[QGVAR(say3D), [_proxy, "teleport_work_" + str((floor random 2) + 1)]] call CBA_fnc_globalEvent;
+[QGVAR(teleportEffect), [_trg, _exit]] call CBA_fnc_globalEvent;
 
 [{
     params["_trg", "_list", "_exit", "_men"];

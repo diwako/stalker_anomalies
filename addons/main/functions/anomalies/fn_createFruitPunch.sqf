@@ -37,11 +37,6 @@ _trg setTriggerArea [_radius, _radius, 0, false, 2];
 _trg setTriggerActivation ["ANY", "PRESENT", true];
 _trg setTriggerStatements [format ["this && {!(thisTrigger getVariable ['%1', false])}", QGVAR(cooldown)], format ["[thisTrigger, thisList] call %1", QFUNC(activateFruitPunch)], ""];
 
-private _proxy = "building" createVehicle position _trg;
-_proxy enableSimulationGlobal false;
-_proxy setPos (_trg modelToWorld [0,0,0.5]);
-_trg setVariable [QGVAR(sound), _proxy, true];
-
 private _field = createSimpleObject ["BloodPool_01_Large_New_F", _pos];
 _field enableSimulationGlobal false;
 _field setPosASL _pos;

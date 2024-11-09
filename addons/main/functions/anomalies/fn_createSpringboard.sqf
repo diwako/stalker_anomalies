@@ -32,10 +32,6 @@ if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _tr
 _trg setPosASL _pos;
 _trg setVariable [QGVAR(cooldown), false, true];
 _trg setVariable [QGVAR(anomalyType), "springboard", true];
-private _proxy = "building" createVehicle position _trg;
-_proxy enableSimulationGlobal false;
-_proxy setPos (_trg modelToWorld [0,0,0.5]);
-_trg setVariable [QGVAR(sound), _proxy, true];
 
 _trg setTriggerArea [4, 4, 0, false, 4];
 _trg setTriggerActivation ["ANY", "PRESENT", true];
