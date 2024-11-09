@@ -32,6 +32,7 @@ _trg setVariable [QGVAR(cooldown), false];
 _trg setVariable [QGVAR(pathPoints), _pathPoints];
 _trg setVariable [QGVAR(sourceTrg), _sourceTrg];
 _trg setVariable [QGVAR(anomalyType), "comet"];
+_trg setTriggerInterval 0.1;
 
 [
     _trg,
