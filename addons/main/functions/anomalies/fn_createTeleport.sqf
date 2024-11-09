@@ -50,10 +50,6 @@ GVAR(teleportIDs) set [_id, _teleporters];
 _trg setVariable [QGVAR(cooldown), false, true];
 _trg setVariable [QGVAR(teleportID), _id, true];
 _trg setVariable [QGVAR(anomalyType), "teleport", true];
-private _proxy = "building" createVehicle position _trg;
-_proxy enableSimulationGlobal false;
-_proxy setPos (_trg modelToWorld [0,0,0.5]);
-_trg setVariable [QGVAR(sound), _proxy, true];
 
 _trg setTriggerArea [2, 2, 0, false, 4];
 _trg setTriggerActivation ["ANY", "PRESENT", true];

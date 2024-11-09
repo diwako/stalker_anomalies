@@ -1,8 +1,27 @@
+DFUNC(playLocalAnomalyActivationSound) = {
+    params ["_trg", "_sound"];
+    private _proxy = _trg getVariable [QGVAR(sound), objNull];
+    if (isNull _proxy) then {
+        _proxy = "building" createVehicleLocal getPos _trg;
+        _proxy setPosASL ((getPosASL _trg) vectorAdd [0,0,0.5]);
+        _proxy enableSimulation false;
+        _trg setVariable [QGVAR(sound), _proxy];
+    };
+    private _time = time;
+    _proxy setVariable [QGVAR(time), _time];
+    _proxy say3D _sound;
+    [{
+        params ["_proxy", "_time"];
+        if (_time isEqualTo (_proxy getVariable [QGVAR(time), 0])) then {
+            deleteVehicle _proxy;
+        };
+    }, [_proxy, _time], 10] call CBA_fnc_waitAndExecute;
+};
+
 [QGVAR(fruitPunchEffect), {
     params ["_trg"];
     if (isNull _trg) exitWith {};
-    private _proxy = _trg getVariable QGVAR(sound);
-    _proxy say3D (selectRandom ["bfuzz_hit","buzz_hit"]);
+    [_trg, selectRandom ["bfuzz_hit","buzz_hit"]] call DFUNC(playLocalAnomalyActivationSound);
     private _source = "#particlesource" createVehicleLocal getPos _trg;
     _source setPosASL (getPosASL _trg);
 
@@ -15,8 +34,7 @@
 [QGVAR(burnerEffect), {
     params ["_trg"];
     if (isNull _trg) exitWith {};
-    private _proxy = _trg getVariable QGVAR(sound);
-    _proxy say3D "fire2";
+    [_trg, "fire2"] call DFUNC(playLocalAnomalyActivationSound);
 
     private _pos = getPos _trg;
     private _source = "#particlesource" createVehicleLocal getPos _trg;
@@ -26,7 +44,7 @@
     [_source, "active"] call FUNC(burnerEffect);
     [_source2, "active"] call FUNC(burnerEffect);
 
-    private _light = "#lightpoint" createVehicleLocal (getPos _proxy);
+    private _light = "#lightpoint" createVehicleLocal ((getPos _trg) vectorAdd [0, 0, 0.5]);
     _light setLightBrightness 2;
     _light setLightAmbient [1, 0.6, 0.6];
     _light setLightColor [1, 0.6, 0.6];
@@ -45,8 +63,7 @@
 [QGVAR(springboardEffect), {
     params ["_trg"];
     if (isNull _trg) exitWith {};
-    private _proxy = _trg getVariable QGVAR(sound);
-    _proxy say3D format ["gravi_blowout%1", (floor random 6) + 1];
+    [_trg, format ["gravi_blowout%1", (floor random 6) + 1]] call DFUNC(playLocalAnomalyActivationSound);
 
     [{
         params ["_trg"];
@@ -62,10 +79,9 @@
 [QGVAR(electraEffect), {
     params ["_trg", "_list"];
     if (isNull _trg) exitWith {};
-    private _proxy = _trg getVariable QGVAR(sound);
-    _proxy say3D format ["electra_blast%1", (floor random 2) + 1];
+    [_trg, format ["electra_blast%1", (floor random 2) + 1]] call DFUNC(playLocalAnomalyActivationSound);
 
-    private _light = "#lightpoint" createVehicleLocal (getPos (_trg getVariable QGVAR(sound)));
+    private _light = "#lightpoint" createVehicleLocal ((getPos _trg) vectorAdd [0, 0, 0.5]);
     _light setLightBrightness 10;
     _light setLightAmbient [0.6, 0.6, 1];
     _light setLightColor [0.6, 0.6, 1];
@@ -123,8 +139,7 @@
 [QGVAR(meatgrinderEffect), {
     params ["_trg"];
     if (isNull _trg) exitWith {};
-    private _proxy = _trg getVariable QGVAR(sound);
-    _proxy say3D "anomaly_mincer_blowout";
+    [_trg, "anomaly_mincer_blowout"] call DFUNC(playLocalAnomalyActivationSound);
 
     [{
         params ["_trg", "_stopTime", "_nextDropTime"];
@@ -158,4 +173,11 @@
             deleteVehicle _this;
         }, _source, 1] call CBA_fnc_waitAndExecute;
     }, [_trg], MEATGRINDER_MIN_COOL_DOWN] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(teleportEffect), {
+    params ["_trg", "_exit"];
+    if (isNull _trg || isNull _exit) exitWith {};
+    [_trg, format ["teleport_work_%1", (floor random 2) + 1]] call DFUNC(playLocalAnomalyActivationSound);
+    [_exit, format ["teleport_work_%1", (floor random 2) + 1]] call DFUNC(playLocalAnomalyActivationSound);
 }] call CBA_fnc_addEventHandler;
