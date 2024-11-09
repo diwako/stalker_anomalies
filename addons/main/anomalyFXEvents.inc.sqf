@@ -12,7 +12,7 @@ DFUNC(playLocalAnomalyActivationSound) = {
     _proxy say3D _sound;
     [{
         params ["_proxy", "_time"];
-        if (_time isEqualto (_proxy getVariable [QGVAR(time), 0])) then {
+        if (_time isEqualTo (_proxy getVariable [QGVAR(time), 0])) then {
             deleteVehicle _proxy;
         };
     }, [_proxy, _time], 10] call CBA_fnc_waitAndExecute;
