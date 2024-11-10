@@ -7,6 +7,7 @@
 
     Parameter:
         _marker - marker ID of path objects, will be used to move said path (default: "")
+                - array of objects, makers, positionASL used to create a path from, order of entries is used for path
         _speed - measured in meters per second (default: 6)
         _smoothCurves - interpolates the path corners using bezier curves (default: true)
 
@@ -16,11 +17,11 @@
     Author:
     diwako 2024-10-18
 */
-params [["_marker", ""], ["_speed", 6], ["_smoothCurves", true]];
+params [["_marker", "", ["", [], objNull]], ["_speed", 6], ["_smoothCurves", true]];
 if !(isServer) exitWith {nil};
 
 private _varName = "";
-if !(_marker isEqualType []) then {
+if (_marker isEqualType objNull) then {
     //created via module
     private _module = _marker;
     _varName = vehicleVarName _module;
@@ -30,17 +31,33 @@ if !(_marker isEqualType []) then {
     deleteVehicle _module;
 };
 
-if (_marker isEqualTo "") exitWith {
+private _useMarkerPath = _marker isEqualType "";
+if (_useMarkerPath && {_marker isEqualTo ""}) exitWith {
     [{
         hintC format ["There was no marker path set for the comet anomaly. Make sure to set the ""%1"" field in the module or supply a proper first parameter if you are using the script function!", localize "STR_anomaly_comet_marker"];
     }, nil, 1] call CBA_fnc_waitAndExecute;
     nil
 };
 
+if !(_useMarkerPath) then {
+    _marker = _marker - [objNull];
+};
+
+if (!_useMarkerPath && {_marker isEqualTo []}) exitWith {
+    [{
+        hintC "There were no objects given to form a path for the comet anomaly. Make sure to give an array with the objects you want to use as the first parameter into the function! Do mind the order of the objects inside the array is important!";
+    }, nil, 1] call CBA_fnc_waitAndExecute;
+    nil
+};
+
 // find marker num
 private _end = 0;
-while {getMarkerPos format ["%1%2", _marker, _end] isNotEqualTo [0, 0, 0]} do {
-    _end = _end + 1;
+if (_useMarkerPath) then {
+    while {getMarkerPos format ["%1%2", _marker, _end] isNotEqualTo [0, 0, 0]} do {
+        _end = _end + 1;
+    };
+} else {
+    _end = count _marker;
 };
 
 if (_end isEqualTo 0) exitWith {
@@ -73,12 +90,34 @@ if (GVAR(debug)) then {
 
 _end = _end - 1;
 private _totalLength = 0;
+private _fnc_getPos = {
+    params [["_num", 0]];
+    if (_useMarkerPath) then {
+        AGLToASL getMarkerPos [format ["%1%2", _marker, _num], true]
+    } else {
+        private _entry = _marker select _num;
+        switch (typeName _entry) do {
+            case "OBJECT": {
+                getPosASL _entry
+            };
+            case "GROUP": {
+                getPosASL (leader _entry)
+            };
+            case "STRING": {
+                AGLToASL getMarkerPos [_entry, true]
+            };
+            case "ARRAY": {
+                + _entry
+            };
+        };
+    };
+};
 private _fnc_generatePoint = {
     params ["_marker", "_num", "_speed", "_end"];
     _end = _end + 1;
     _num = _num + _end;
-    private _m1 = AGLToASL getMarkerPos [format ["%1%2", _marker, _num mod _end], true];
-    private _m2 = AGLToASL getMarkerPos [format ["%1%2", _marker, (_num + 1) mod _end], true];
+    private _m1 = [_num mod _end] call _fnc_getPos;
+    private _m2 = [(_num + 1) mod _end] call _fnc_getPos;
     private _dist = _m1 distance _m2;
     _totalLength = _totalLength + _dist;
 
@@ -87,8 +126,8 @@ private _fnc_generatePoint = {
         _m2 vectorAdd [0, 0, 1.5]
     ];
     if (_smoothCurves) then {
-        private _m0 = AGLToASL getMarkerPos [format ["%1%2", _marker, (_num - 1) mod _end], true];
-        private _m3 = AGLToASL getMarkerPos [format ["%1%2", _marker, (_num + 2) mod _end], true];
+        private _m0 = [(_num - 1) mod _end] call _fnc_getPos;
+        private _m3 = [(_num + 2) mod _end] call _fnc_getPos;
         private _vecNormalPrev = _m0 vectorFromTo _m1;
         private _vecNormalNext = _m3 vectorFromTo _m2;
         _arr pushBack (_m1 vectorAdd (_vecNormalPrev vectorMultiply (_dist / 3)) vectorAdd [0, 0, 1.5]);
