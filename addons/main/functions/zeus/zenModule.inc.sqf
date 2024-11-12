@@ -59,7 +59,8 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                     };
                 }, {}, [_pos, _anomalies]
             ] call zen_dialog_fnc_create;
-        }
+        },
+        QPATHTOF(data\ui\modules\burner_ca.paa)
     ] call zen_custom_modules_fnc_register;
 
     [localize "STR_anomaly_category", localize "STR_anomaly_zeus_delete_anomalies",
@@ -111,6 +112,7 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                     }, {}, []
                 ] call zen_dialog_fnc_create;
             };
-        }
+        },
+        QPATHTOF(data\ui\modules\blowout_ca.paa)
     ] call zen_custom_modules_fnc_register;
 };

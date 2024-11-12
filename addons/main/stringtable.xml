@@ -613,6 +613,14 @@
             <Polish>Obszar w metrach</Polish>
             <French>Rayon en mètres</French>
         </Key>
+        <Key ID="STR_anomaly_settings_zeus_show_anomalies">
+            <original>Show anomalies in Zeus interface</original>
+            <english>Show anomalies in Zeus interface</english>
+        </Key>
+        <Key ID="STR_anomaly_settings_zeus_show_anomalies_desc">
+            <original>Shows an icon for each anomaly within idle distance. Requires Zeus Enhanced</original>
+            <english>Shows an icon for each anomaly within idle distance. Requires Zeus Enhanced</english>
+        </Key>
         <Key ID="STR_anomaly_zeus_spawn_anomaly">
             <Original>Spawn Anomaly</Original>
             <English>Spawn Anomaly</English>

@@ -256,4 +256,18 @@ if (isClass(configFile >> "CfgPatches" >> "ace_advanced_throwing")) then {
 };
 
 // add Zen modules for zeus
-#include "zenModule.inc.sqf"
+#include "functions\zeus\zenModule.inc.sqf"
+
+GVAR(zeusIconHandle) = -1;
+["zen_curatorDisplayLoaded", {
+    if (!GVAR(zeusShowAnomalies) || GVAR(zeusIconHandle) isNotEqualTo -1) exitWith {};
+    GVAR(zeusIconHandle) = addMissionEventHandler ["Draw3D", {
+        call FUNC(zeusDraw3D);
+    }];
+}] call CBA_fnc_addEventHandler;
+["zen_curatorDisplayUnloaded", {
+    if (GVAR(zeusIconHandle) >= 0) then {
+        removeMissionEventHandler ["Draw3D", GVAR(zeusIconHandle)];
+        GVAR(zeusIconHandle) = -1;
+    };
+}] call CBA_fnc_addEventHandler;
