@@ -46,7 +46,8 @@ _field setObjectTextureGlobal [0, QPATHTOF(data\textures\fruitpunch) + str (floo
 _trg setVariable ["field",_field];
 
 private _light = "#lightpoint" createVehicle _pos;
-[QGVAR(setLight), [_light, 0.25,[0.4, 0.6, 0.1],[0.5, 1, 1, 4, 0.5, 5],[0.4, 0.6, 0.1],true,false]] call CBA_fnc_globalEventJip;
+private _jipID = [QGVAR(setLight), [_light, 0.25,[0.4, 0.6, 0.1],[0.5, 1, 1, 4, 0.5, 5],[0.4, 0.6, 0.1],true,false]] call CBA_fnc_globalEventJip;
+[_jipID, _light] call CBA_fnc_removeGlobalEventJIP;
 
 _trg setVariable ["light",_light];
 

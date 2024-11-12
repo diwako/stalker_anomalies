@@ -50,12 +50,13 @@ _trg setVariable [QGVAR(anomalyType), "fog", true];
 _trg setVariable [QGVAR(radius), _radius, true];
 _trg setVariable [QGVAR(angle), _angle, true];
 _trg setVariable [QGVAR(rectangle), _isRectangle, true];
-[QGVAR(setTrigger), [
+private _jipID = [QGVAR(setTrigger), [
     _trg, //trigger
     [_radius, _radius, _angle, _isRectangle, 4], // area
     ["ANY", "PRESENT", true], // activation
     ["this && {round (cba_missiontime mod 2) == 1}", format ["[thisTrigger, thisList] call %1", QFUNC(activateFog)], ""] // statements
 ]] call CBA_fnc_globalEventJip;
+[_jipID, _trg] call CBA_fnc_removeGlobalEventJIP;
 
 if (isNil QGVAR(holder)) then {
   GVAR(holder) = [];
