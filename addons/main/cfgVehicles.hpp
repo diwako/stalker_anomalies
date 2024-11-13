@@ -40,12 +40,13 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_springboard";
+        icon=QPATHTOF(data\ui\modules\springboard_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\springboard_ca.paa);
         function = QFUNC(createSpringboard);
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class ModuleDescription: ModuleDescription {};
         };
@@ -59,12 +60,13 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_electra";
+        icon=QPATHTOF(data\ui\modules\electra_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\electra_ca.paa);
         function = QFUNC(createElectra);
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class ModuleDescription: ModuleDescription {};
         };
@@ -78,12 +80,13 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_burner";
+        icon=QPATHTOF(data\ui\modules\burner_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\burner_ca.paa);
         function = QFUNC(createBurner);
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class ModuleDescription: ModuleDescription {};
         };
@@ -97,12 +100,13 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_meatgrinder";
+        icon=QPATHTOF(data\ui\modules\meatgrinder_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\meatgrinder_ca.paa);
         function = QFUNC(createMeatgrinder);
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class ModuleDescription: ModuleDescription {};
         };
@@ -116,12 +120,13 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_teleport";
+        icon=QPATHTOF(data\ui\modules\teleport_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\teleport_ca.paa);
         function = QFUNC(createTeleport);
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class anomalyId: Edit {
                 displayName = "$STR_anomaly_teleport_id";
@@ -151,7 +156,6 @@ class cfgVehicles {
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class springboards: Edit {
                 displayName = "$STR_anomaly_anomaly_field_spingboard";
@@ -200,6 +204,8 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_fog";
+        icon=QPATHTOF(data\ui\modules\fog_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\fog_ca.paa);
         function = QFUNC(createFog);
         functionPriority = 1;
         canSetArea = 1;
@@ -208,7 +214,6 @@ class cfgVehicles {
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class ModuleDescription: ModuleDescription {};
         };
@@ -234,12 +239,13 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_fruitpunch";
+        icon=QPATHTOF(data\ui\modules\fruitpunch_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\fruitpunch_ca.paa);
         function = QFUNC(createFruitPunch);
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class ModuleDescription: ModuleDescription {};
         };
@@ -253,12 +259,13 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_psy_discharge";
+        icon=QPATHTOF(data\ui\modules\psydischarge_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\psydischarge_ca.paa);
         function = QFUNC(createPsyDischarge);
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 1; //run on everyone
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class ModuleDescription: ModuleDescription {};
         };
@@ -272,12 +279,13 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_comet";
+        icon=QPATHTOF(data\ui\modules\comet_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\comet_ca.paa);
         function = QFUNC(createComet);
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class marker: Edit {
                 displayName = "$STR_anomaly_comet_marker";
@@ -313,12 +321,13 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_blowout";
+        icon=QPATHTOF(data\ui\modules\blowout_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\blowout_ca.paa);
         function = QFUNC(blowoutCoordinator);
         functionPriority = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
-        //icon = QPATHTOF(UI\Icon_Module_Make_Unit_Handcuffed_ca.paa);
         class Attributes: AttributesBase {
             class wavetime: Edit {
                 displayName = "$STR_anomaly_zeus_start_blowout_time";

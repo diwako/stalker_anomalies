@@ -55,6 +55,15 @@ Diwako Stalker Like Anomalies - added functions by Belbo
     }
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(zeusShowAnomalies)
+    ,"CHECKBOX"
+    ,[(localize "STR_anomaly_settings_zeus_show_anomalies"), localize "STR_anomaly_settings_zeus_show_anomalies_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_GENERAL]
+    ,true
+    ,false
+] call CBA_fnc_addSetting;
+
 //Enable Debugging:
 [
     QGVAR(debug)

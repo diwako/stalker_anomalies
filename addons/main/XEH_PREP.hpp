@@ -60,3 +60,6 @@ SUBPREP(blowout,createLocalLightningBolt);
 SUBPREP(blowout,psyEffect);
 SUBPREP(blowout,showPsyWavesInSky);
 SUBPREP(blowout,isInShelter);
+
+// zeus
+SUBPREP(zeus,zeusDraw3D);
