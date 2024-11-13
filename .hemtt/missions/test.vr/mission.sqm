@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=50;
+		nextID=77;
 	};
 	class MarkerIDProvider
 	{
@@ -36,13 +36,14 @@ addons[]=
 	"A3_Weapons_F_Items",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Structures_F_Enoch_Ruins",
-	"A3_Ui_F"
+	"A3_Ui_F",
+	"cba_ai"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			className="diwako_anomalies_main";
@@ -84,6 +85,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item6
+		{
+			className="cba_ai";
+			name="Community Base Addons - Artificial Intelligence";
+			author="CBA Team";
+			url="https://www.github.com/CBATeam/CBA_A3";
+		};
 	};
 };
 dlcs[]=
@@ -118,7 +126,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=34;
+		items=52;
 		class Item0
 		{
 			dataType="Logic";
@@ -1017,6 +1025,337 @@ class Mission
 				};
 				nAttributes=3;
 			};
+		};
+		class Item34
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7766.0781,8.7768908,2925.7976};
+						angles[]={0,3.9334786,-0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=53;
+					type="B_officer_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=52;
+		};
+		class Item35
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7767.877,5.3409524,2925.0645};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=54;
+					type="B_Soldier_F";
+					atlOffset=0.0048894882;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=55;
+			atlOffset=0.0048894882;
+		};
+		class Item36
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7761.7744,8.7867661,2927.4753};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=57;
+					type="B_Soldier_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=56;
+		};
+		class Item37
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7761.1606,9.7658138,2958.0796};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=60;
+			type="Land_HouseRuin_Big_02_F";
+		};
+		class Item38
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7770.6333,5.0399094,2968.3027};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_1";
+			};
+			id=61;
+			type="CBA_BuildingPos";
+		};
+		class Item39
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7766.6416,5.0399094,2971.5662};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_2";
+			};
+			id=62;
+			type="CBA_BuildingPos";
+		};
+		class Item40
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7761.0513,5.0399094,2971.5063};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_3";
+			};
+			id=63;
+			type="CBA_BuildingPos";
+		};
+		class Item41
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7761.3442,5.3806629,2961.9143};
+				angles[]={0.0075565549,0,0.0010918301};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_4";
+			};
+			id=64;
+			type="CBA_BuildingPos";
+		};
+		class Item42
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7757.9473,5.4358082,2960.5674};
+				angles[]={0.27038488,0,5.8871155};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_5";
+			};
+			id=65;
+			type="CBA_BuildingPos";
+		};
+		class Item43
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7758.2637,5.3672557,2956.3374};
+				angles[]={-0,0,0.0067393556};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_6";
+			};
+			id=66;
+			type="CBA_BuildingPos";
+		};
+		class Item44
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7766.6138,6.0640388,2953.6899};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_7";
+			};
+			id=67;
+			type="CBA_BuildingPos";
+		};
+		class Item45
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7767.0366,6.0640388,2953.6909};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_8";
+			};
+			id=68;
+			type="CBA_BuildingPos";
+		};
+		class Item46
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7767.0625,8.8287773,2958.3677};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_9";
+			};
+			id=69;
+			type="CBA_BuildingPos";
+		};
+		class Item47
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7767.0703,8.8287773,2958.6709};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_10";
+			};
+			id=70;
+			type="CBA_BuildingPos";
+		};
+		class Item48
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7760.9072,8.8252745,2958.666};
+				angles[]={6.2818046,0,0.00069053395};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_11";
+			};
+			id=73;
+			type="CBA_BuildingPos";
+		};
+		class Item49
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7760.333,8.8324165,2962.4844};
+				angles[]={0.0026067093,0,0.001035801};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_12";
+			};
+			id=74;
+			type="CBA_BuildingPos";
+		};
+		class Item50
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7763.2988,9.5570583,2962.6555};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="objPos_13";
+			};
+			id=75;
+			type="CBA_BuildingPos";
+		};
+		class Item51
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7769.9043,6.2371101,2963.5928};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="objPos_14";
+			};
+			id=76;
+			type="CBA_BuildingPos";
+			atlOffset=1.1972008;
 		};
 	};
 };

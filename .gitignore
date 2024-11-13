@@ -21,3 +21,4 @@ keys/*
 
 .vscode/*
 /.hemtt/missions/*
+*.sqm
