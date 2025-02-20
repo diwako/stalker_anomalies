@@ -235,6 +235,38 @@ class cfgVehicles {
         };
     };
 
+    class GVAR(moduleClicker): Module_F {
+        author = "diwako";
+        category = "DIW_ANOMALY";
+        displayName = "$STR_anomaly_clicker";
+        icon=QPATHTOF(data\ui\modules\fog_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\fog_ca.paa);
+        function = QFUNC(createClicker);
+        functionPriority = 1;
+        canSetArea = 1;
+        canSetAreaHeight = 0;
+        canSetAreaShape = 1;
+        scope = 2;  //show in editor
+        isGlobal = 0; //run on server
+        isTriggerActivated = 1; //Wait for triggers
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+        };
+        class AttributeValues {
+            size3[] = {10, 10, -1};
+            isRectangle = 0;
+        };
+        class ModuleDescription : ModuleDescription{
+            description = "$STR_anomaly_clicker_desc";
+            direction = 1;
+            sync[] = {"LocationArea_F"};
+            class LocationArea_F {
+                optional = 1;
+                synced[] = {"Any"};
+            };
+        };
+    };
+
     class GVAR(moduleFruitPunch): Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";

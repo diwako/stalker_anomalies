@@ -28,6 +28,8 @@ SUBPREP(anomalies,createComet);
 SUBPREP(anomalies,movementTick);
 SUBPREP(anomalies,createCometLocal);
 SUBPREP(anomalies,activateComet);
+SUBPREP(anomalies,createClicker);
+SUBPREP(anomalies,activateClicker);
 
 SUBPREP(anomalies,addUnitDamage);
 

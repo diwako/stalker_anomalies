@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=77;
+		nextID=81;
 	};
 	class MarkerIDProvider
 	{
@@ -30,10 +30,18 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Weapons_F_Rifles_MX",
 	"A3_Weapons_F_Acc",
+	"ace_realisticnames",
+	"ace_scopes",
+	"ace_laserpointer",
 	"A3_Weapons_F",
+	"ace_smallarms",
+	"ace_ballistics",
 	"A3_Weapons_F_Pistols_P07",
 	"A3_Characters_F_Heads",
+	"ace_goggles",
+	"ace_nightvision",
 	"A3_Weapons_F_Items",
+	"ace_medical_treatment",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Structures_F_Enoch_Ruins",
 	"A3_Ui_F",
@@ -43,7 +51,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=14;
 		class Item0
 		{
 			className="diwako_anomalies_main";
@@ -66,26 +74,75 @@ class AddonsMetaData
 		};
 		class Item3
 		{
+			className="ace_scopes";
+			name="ACE3 - Scopes";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item4
+		{
+			className="ace_laserpointer";
+			name="ACE3 - Laser Pointer";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item5
+		{
+			className="ace_smallarms";
+			name="ACE3 - Small Arms";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item6
+		{
+			className="ace_ballistics";
+			name="ACE3 - Ballistics";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item7
+		{
+			className="ace_goggles";
+			name="ACE3 - Goggles";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item8
+		{
+			className="ace_nightvision";
+			name="ACE3 - Night Vision";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item9
+		{
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item10
+		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item4
+		class Item11
 		{
 			className="A3_Structures_F_Enoch";
 			name="Arma 3 Contact Platform - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item5
+		class Item12
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item13
 		{
 			className="cba_ai";
 			name="Community Base Addons - Artificial Intelligence";
@@ -126,7 +183,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=52;
+		items=54;
 		class Item0
 		{
 			dataType="Logic";
@@ -800,7 +857,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7868.5078,5,2975.1631};
+				position[]={7899.5098,5,2962.2532};
 			};
 			id=35;
 			type="ModuleCurator_F";
@@ -1039,7 +1096,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={7766.0781,8.7768908,2925.7976};
-						angles[]={0,3.9334786,-0};
+						angles[]={0,3.9334786,0};
 					};
 					side="West";
 					flags=7;
@@ -1216,7 +1273,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7758.2637,5.3672557,2956.3374};
-				angles[]={-0,0,0.0067393556};
+				angles[]={0,0,0.0067393556};
 			};
 			side="Empty";
 			flags=4;
@@ -1356,6 +1413,61 @@ class Mission
 			id=76;
 			type="CBA_BuildingPos";
 			atlOffset=1.1972008;
+		};
+		class Item52
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7855.9883,5,2960.103};
+				angles[]={-0,3.925683,0};
+			};
+			areaSize[]={10,-1,10};
+			areaIsRectangle=1;
+			flags=1;
+			id=77;
+			type="diwako_anomalies_main_moduleClicker";
+		};
+		class Item53
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7855.9697,5.0014391,2939.5134};
+						angles[]={0,6.2824154,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=79;
+					type="B_Soldier_F";
+				};
+				class Item1
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={7856.0771,5,2979.3281};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=80;
+					type="Move";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=78;
 		};
 	};
 };

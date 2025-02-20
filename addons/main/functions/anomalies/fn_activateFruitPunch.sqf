@@ -26,7 +26,7 @@ _trg setVariable [QGVAR(cooldown), true];
         ["fruitpunch", _x] call FUNC(addUnitDamage);
         [QGVAR(fruitpunchOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
     } else {
-        if !(_x isKindOf "landvehicle" || _x isKindOf "air") then {
+        if !(_x isKindOf "LandVehicle" || _x isKindOf "air") then {
             deleteVehicle _x;
         };
     };

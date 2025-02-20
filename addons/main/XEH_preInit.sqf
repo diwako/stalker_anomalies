@@ -26,8 +26,9 @@ GVAR(medicalSystemMap) set ["vanilla", createHashMapFromArray [
     ["fog", [0.05, 0.05]],
     ["fruitpunch", [0.2, 0.2]],
     ["springboard", [0.5, 1]],
-    ["psydischarge", [{0.35 + random 75}, {0.35 + random 75}]]]
-];
+    ["psydischarge", [{0.35 + random 0.75}, {0.5 + random 0.75}]],
+    ["clicker", [{0.1 + random 0.5}, {0.5 + random 0.5}]]
+]];
 GVAR(medicalSystemMap) set ["ace_medical", createHashMapFromArray [
     // [anomaly_type, [[multiplier_player, ai], body_part_array, damage_type]]
     ["burner", [[0.9, 10], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "burn"]],
@@ -36,8 +37,9 @@ GVAR(medicalSystemMap) set ["ace_medical", createHashMapFromArray [
     ["fog", [[0.2, 0.2], ["body"], "punch"]],
     ["fruitpunch", [[0.2, 0.333], ["leg_l", "leg_r"], "stab"]],
     ["springboard", [[1.5, 10], ["leg_l", "leg_r"], "stab"]],
-    ["psydischarge", [[0.9, 0.9], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]]]
-];
+    ["psydischarge", [[0.9, 0.9], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]],
+    ["clicker", [[1.5, 3], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]]
+]];
 GVAR(medicalSystemMap) set ["aps", createHashMapFromArray [
     // [anomaly_type, [[multiplier_player, ai], body_part_array, bullet_type]]
     ["burner", [[0.9, 2], ["head", "pelvis", "hands", "legs"], "B_65x39_Caseless"]],
@@ -46,8 +48,9 @@ GVAR(medicalSystemMap) set ["aps", createHashMapFromArray [
     ["fog", [[0.05, 0.2], ["pelvis"], "B_9x21_Ball"]],
     ["fruitpunch", [[0.2, 0.333], ["legs"], "B_9x21_Ball"]],
     ["springboard", [[1.5, 2], ["legs"], "B_45ACP_Ball"]],
-    ["psydischarge", [[0.9, 0.9], ["head", "pelvis", "hands", "legs"], "B_9x21_Ball"]]]
-];
+    ["psydischarge", [[0.9, 0.9], ["head", "pelvis", "hands", "legs"], "B_9x21_Ball"]],
+    ["clicker", [[1.5, 2], ["head", "pelvis", "hands", "legs"], "B_45ACP_Ball"]]
+]];
 
 if (isServer) then {
     GVAR(movingAnomalyPFH) = -1;
@@ -63,6 +66,7 @@ if (isServer) then {
             case "electra":      { _args call FUNC(createElectra) };
             case "fruitpunch":   { _args call FUNC(createFruitpunch) };
             case "psyDischarge": { /* Handled in global eventhandler */ };
+            case "clicker":      { _args call FUNC(createClicker) };
             default {
                 hintC ( format ["Unknown type: %1", _type]);
             };
