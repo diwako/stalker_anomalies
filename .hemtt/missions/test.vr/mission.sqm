@@ -30,18 +30,10 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Weapons_F_Rifles_MX",
 	"A3_Weapons_F_Acc",
-	"ace_realisticnames",
-	"ace_scopes",
-	"ace_laserpointer",
 	"A3_Weapons_F",
-	"ace_smallarms",
-	"ace_ballistics",
 	"A3_Weapons_F_Pistols_P07",
 	"A3_Characters_F_Heads",
-	"ace_goggles",
-	"ace_nightvision",
 	"A3_Weapons_F_Items",
-	"ace_medical_treatment",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Structures_F_Enoch_Ruins",
 	"A3_Ui_F",
@@ -51,7 +43,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=14;
+		items=7;
 		class Item0
 		{
 			className="diwako_anomalies_main";
@@ -74,75 +66,26 @@ class AddonsMetaData
 		};
 		class Item3
 		{
-			className="ace_scopes";
-			name="ACE3 - Scopes";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item4
-		{
-			className="ace_laserpointer";
-			name="ACE3 - Laser Pointer";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item5
-		{
-			className="ace_smallarms";
-			name="ACE3 - Small Arms";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item6
-		{
-			className="ace_ballistics";
-			name="ACE3 - Ballistics";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item7
-		{
-			className="ace_goggles";
-			name="ACE3 - Goggles";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item8
-		{
-			className="ace_nightvision";
-			name="ACE3 - Night Vision";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item9
-		{
-			className="ace_medical_treatment";
-			name="ACE3 - Medical Treatment";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item10
-		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item4
 		{
 			className="A3_Structures_F_Enoch";
 			name="Arma 3 Contact Platform - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item5
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item6
 		{
 			className="cba_ai";
 			name="Community Base Addons - Artificial Intelligence";
