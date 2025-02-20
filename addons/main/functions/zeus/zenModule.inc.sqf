@@ -60,14 +60,15 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                             [localize "STR_anomaly_clicker", [
                                     ["SLIDER", format ["%1 A", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 250, 1]],
                                     ["SLIDER", format ["%1 B", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 250, 1]],
+                                    ["SLIDER", localize "str_a3_cfgvehicles_modulestrategicmapimage_f_arguments_height_0", [1, 250, 1]],
                                     ["CHECKBOX", localize "str_disp_arcmark_rect", [false]],
                                     ["SLIDER", localize "str_a3_cfgvehicles_modulepositioning_f_arguments_rotation_0", [0, 359]]
                                 ],
                                 {
                                     params ["_dialog", "_args"];
-                                    _dialog params ["_radiusA", "_radiusB", "_rectangle", "_angle"];
+                                    _dialog params ["_radiusA", "_radiusB", "_height", "_rectangle", "_angle"];
                                     _args params ["_pos"];
-                                    [QGVAR(createAnomaly), [[_pos, _radiusA, _radiusB, _rectangle, _angle], "clicker"]] call CBA_fnc_serverEvent;
+                                    [QGVAR(createAnomaly), [[_pos, _radiusA, _radiusB, _rectangle, _angle, _height], "clicker"]] call CBA_fnc_serverEvent;
                                 }, {}, [_pos]
                             ] call zen_dialog_fnc_create;
                         };

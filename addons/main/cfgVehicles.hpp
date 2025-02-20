@@ -244,7 +244,7 @@ class cfgVehicles {
         function = QFUNC(createClicker);
         functionPriority = 1;
         canSetArea = 1;
-        canSetAreaHeight = 0;
+        canSetAreaHeight = 1;
         canSetAreaShape = 1;
         scope = 2;  //show in editor
         isGlobal = 0; //run on server
@@ -253,7 +253,7 @@ class cfgVehicles {
             class ModuleDescription: ModuleDescription {};
         };
         class AttributeValues {
-            size3[] = {10, 10, -1};
+            size3[] = {10, 10, 8};
             isRectangle = 0;
         };
         class ModuleDescription : ModuleDescription{

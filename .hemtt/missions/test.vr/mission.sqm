@@ -8,7 +8,7 @@ class EditorData
 	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=81;
+		nextID=82;
 	};
 	class MarkerIDProvider
 	{
@@ -1419,10 +1419,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7855.9883,5,2960.103};
-				angles[]={-0,3.925683,0};
+				position[]={7855.9878,5,2960.103};
+				angles[]={0,3.9256818,0};
 			};
-			areaSize[]={10,-1,10};
+			areaSize[]={10,8,10};
 			areaIsRectangle=1;
 			flags=1;
 			id=77;

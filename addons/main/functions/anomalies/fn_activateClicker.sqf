@@ -15,7 +15,7 @@
     Author:
     diwako 2025-02-20
 */
-params[["_trg",objNull], ["_list",[]]];
+params[["_trg", objNull], ["_list", []]];
 if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "clicker") exitWith {};
 
 private _targets = _list select {alive _x && {lifeState _x != "INCAPACITATED" && {!(_x getVariable [QGVAR(isGettingClicked), false]) && {!(_x getVariable ["anomaly_ignore", false])}}}};
@@ -41,7 +41,7 @@ private _velocity = vectorNormalized velocity _target;
 private _flashBandPos = getPosASL _target vectorAdd (_velocity vectorMultiply ((speed _target) * 5/18 * (CLICKER_EXPLODE_TIME + 0.5))) vectorAdd [0, 0, 1.25];
 
 private _pelvisPos = AGLToASL (_target modelToWorld (_target selectionPosition "pelvis"));
-private _intersect = lineIntersectsSurfaces [_pelvisPos, _flashBandPos, _target, objNull, true, 10, "FIRE", "GEOM"];
+private _intersect = lineIntersectsSurfaces [_pelvisPos, _flashBandPos, _target, objNull, true, -1, "FIRE", "GEOM"];
 // move flashbang infront of a blocking wall or terrain
 if (_intersect isNotEqualTo []) then {
     {
@@ -55,7 +55,7 @@ if (_intersect isNotEqualTo []) then {
 
 [QGVAR(clickerEffect), [_flashBandPos]] call CBA_fnc_globalEvent;
 [{
-    params ["_pos", "_list"];
+    params ["_pos", "_list", "_trg"];
     private _targets = nearestObjects [ASLToAGL _pos, ["Man", "LandVehicle", "air"], 3] select {
         alive _x && {
         !(_x getVariable ["anomaly_ignore", false]) && {
@@ -91,6 +91,7 @@ if (_intersect isNotEqualTo []) then {
                 };
             };
         };
+        [QGVAR(clickerOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
     } forEach _targets;
 
     {
@@ -98,4 +99,4 @@ if (_intersect isNotEqualTo []) then {
             deleteVehicle _x;
         };
     } forEach _list;
-}, [_flashBandPos, _list], CLICKER_EXPLODE_TIME] call CBA_fnc_waitAndExecute;
+}, [_flashBandPos, _list, _trg], CLICKER_EXPLODE_TIME] call CBA_fnc_waitAndExecute;
