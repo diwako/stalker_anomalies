@@ -215,7 +215,7 @@ DFUNC(playLocalAnomalyActivationSound) = {
     _light setLightAmbient [1, 1, 1];
     _light setLightColor [1, 1, 1];
     _light setLightUseFlare true;
-    _light setLightFlareMaxDistance 100;
+    _light setLightFlareMaxDistance 500;
     _light setLightDayLight true;
     _light setLightFlareSize 5;
 
@@ -230,10 +230,10 @@ DFUNC(playLocalAnomalyActivationSound) = {
     };
     [_light, _fnc_flicker] call _fnc_flicker;
 
-    playSound3D [format ["%1_%2.ogg", QPATHTOF(sounds\anomalies\clicker_charge_hum), floor random 3], objNull, false, _pos, 5, 1, 110, 3 - CLICKER_EXPLODE_TIME, true];
+    playSound3D [format ["%1_%2.ogg", QPATHTOF(sounds\anomalies\clicker_charge_hum), floor random 3], objNull, false, _pos, 5, 1, 75, 3 - CLICKER_EXPLODE_TIME, true];
     [{
         params ["_pos"];
-        playSound3D [format ["%1_%2.ogg", QPATHTOF(sounds\anomalies\clicker_charge), floor random 4], objNull, false, _pos, 5, 1, 110, 0, true];
+        playSound3D [format ["%1_%2.ogg", QPATHTOF(sounds\anomalies\clicker_charge), floor random 4], objNull, false, _pos, 5, 1, 75, 0, true];
     }, [_pos], 0.1] call CBA_fnc_waitAndExecute;
 
     [{
@@ -248,7 +248,7 @@ DFUNC(playLocalAnomalyActivationSound) = {
         _light setLightDayLight true;
         _light setLightFlareSize 8;
 
-        playSound3D [format ["%1_%2.ogg", QPATHTOF(sounds\anomalies\clicker_impact), floor random 8], objNull, false, _pos, 5, 1, 300, 0, true];
+        playSound3D [format ["%1_%2.ogg", QPATHTOF(sounds\anomalies\clicker_impact), floor random 8], objNull, false, _pos, 5, 1, 350, 0, true];
 
         [{
             params ["_light"];

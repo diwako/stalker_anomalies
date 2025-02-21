@@ -239,8 +239,8 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_clicker";
-        icon=QPATHTOF(data\ui\modules\fog_ca.paa);
-        portrait=QPATHTOF(data\ui\modules\fog_ca.paa);
+        icon=QPATHTOF(data\ui\modules\clicker_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\clicker_ca.paa);
         function = QFUNC(createClicker);
         functionPriority = 1;
         canSetArea = 1;
