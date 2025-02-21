@@ -34,7 +34,7 @@ DFUNC(playLocalAnomalyActivationSound) = {
 [QGVAR(burnerEffect), {
     params ["_trg"];
     if (isNull _trg) exitWith {};
-    [_trg, "fire2"] call DFUNC(playLocalAnomalyActivationSound);
+    [_trg, selectRandom ["fire2", "fire_loop"]] call DFUNC(playLocalAnomalyActivationSound);
 
     private _pos = getPos _trg;
     private _source = "#particlesource" createVehicleLocal getPos _trg;
@@ -54,6 +54,31 @@ DFUNC(playLocalAnomalyActivationSound) = {
     _light setLightDayLight true;
 
     [{
+        params ["_source", "_time"];
+        if (_time < time) then {
+            private _dropPos = getPos _source;
+            for "_" from 0 to 50 do {
+                private _velocity = (_dropPos vectorFromTo (_source getPos [10, random 360])) vectorMultiply (2 + random 5);
+                drop [["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 13, 0], "", "Billboard", 1,
+                    0.1 + random 0.5, //lifetime
+                    _dropPos, // position
+                    _velocity, // velocity
+                    1 + random 20, // rotationVelocity
+                    900, // weight
+                    50, // volume
+                    0.075, // rubbing
+                    [0.1, 2], // size
+                    [[0.08,0.067,0.052,0],[0.6,0.5,0.4,0.5],[0.6,0.5,0.4,0.4],[0.6,0.5,0.4,0.3],[0.6,0.5,0.4,0.15],[0.6,0.5,0.4,0]], // color
+                    [1000], // animation phase
+                    0.05, 0.1, "", "", "", 0, false, 1];
+            };
+            _this set [1, time + 0.2];
+        };
+
+        isNull _source
+    }, {}, [_source, time]] call CBA_fnc_waitUntilAndExecute;
+
+    [{
         {
             deleteVehicle _x;
         } forEach _this;
@@ -63,7 +88,7 @@ DFUNC(playLocalAnomalyActivationSound) = {
 [QGVAR(springboardEffect), {
     params ["_trg"];
     if (isNull _trg) exitWith {};
-    [_trg, format ["gravi_blowout%1", (floor random 6) + 1]] call DFUNC(playLocalAnomalyActivationSound);
+    [_trg, format ["gravi_blowout%1", (floor random 10) + 1]] call DFUNC(playLocalAnomalyActivationSound);
 
     [{
         params ["_trg"];

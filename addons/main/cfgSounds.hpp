@@ -37,6 +37,30 @@ class cfgSounds {
         sound[] = {QPATHTOF(sounds\anomalies\gravi_blowout6.ogg), 1, 1, 180};
         titles[] = {};
     };
+    class gravi_blowout7
+    {
+        name = "gravi_blowout7";
+        sound[] = {QPATHTOF(sounds\anomalies\gravi_blowout7.ogg), 2, 1, 180};
+        titles[] = {};
+    };
+    class gravi_blowout8
+    {
+        name = "gravi_blowout8";
+        sound[] = {QPATHTOF(sounds\anomalies\gravi_blowout8.ogg), 2, 1, 180};
+        titles[] = {};
+    };
+    class gravi_blowout9
+    {
+        name = "gravi_blowout9";
+        sound[] = {QPATHTOF(sounds\anomalies\gravi_blowout9.ogg), 2, 1, 180};
+        titles[] = {};
+    };
+    class gravi_blowout10
+    {
+        name = "gravi_blowout10";
+        sound[] = {QPATHTOF(sounds\anomalies\gravi_blowout10.ogg), 2, 1, 180};
+        titles[] = {};
+    };
     class anomaly_body_tear_1
     {
         name = "anomaly_body_tear_1";
@@ -95,6 +119,12 @@ class cfgSounds {
     {
         name = "fire2";
         sound[] = {QPATHTOF(sounds\anomalies\fire2.ogg), 2, 1, 200};
+        titles[] = {};
+    };
+    class fire_loop
+    {
+        name = "fire_loop";
+        sound[] = {QPATHTOF(sounds\anomalies\fire_loop.ogg), 4, 1, 200};
         titles[] = {};
     };
     class teleport_work_1
