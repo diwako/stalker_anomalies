@@ -194,23 +194,44 @@ if !(isNil "ace_interact_menu_fnc_createAction") then {
     private _action = [QGVAR(anomalyDetectorOn),(localize "STR_anomaly_enable_detector"),QPATHTOF(data\ui\AnomalyDetector.paa),{
         GVAR(detectorActive) = true;
         [] call FUNC(detector);
-    },{!GVAR(detectorActive) && [player, GVAR(detectorItem)] call FUNC(hasItem)},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
+    },{!GVAR(detectorActive) && [ace_player, GVAR(detectorItem)] call FUNC(hasItem)},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
-    [typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+    ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
     _action = [QGVAR(anomalyDetectorOff),(localize "STR_anomaly_disable_detector"),QPATHTOF(data\ui\AnomalyDetector.paa),{
         GVAR(detectorActive) = false;
     },{GVAR(detectorActive)},{},[], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
 
-    [typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+    ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+
+    _action = [QGVAR(blowoutCheck), localize "STR_anomaly_blowout_safe_check_name", QPATHTOF(data\ui\modules\blowout_ca.paa), {
+        if ([ace_player] call FUNC(isInShelter)) then {
+            titleText [localize "STR_anomaly_blowout_safe_check_safe", "PLAIN DOWN"];
+        } else {
+            titleText [localize "STR_anomaly_blowout_safe_check_not_safe", "PLAIN DOWN"];
+        };
+    },{
+        missionNamespace getVariable [QGVAR(blowoutStage), 0] > 1
+    }] call ace_interact_menu_fnc_createAction;
+
+    ["CAManBase", 1, ["ACE_SelfActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 } else {
-    [[(localize "STR_anomaly_enable_detector"), {
+    [[localize "STR_anomaly_enable_detector", {
         GVAR(detectorActive) = true;
         [] call FUNC(detector);
     },nil,0,false,true,"", format ["!%1  && [_target, %2] call %3 && alive _target", QGVAR(detectorActive), QGVAR(detectorItem), QFUNC(hasItem)]]] call CBA_fnc_addPlayerAction;
     [[(localize "STR_anomaly_disable_detector"), {
         GVAR(detectorActive) = false;
     },nil,0,false,true,"",format ["%1", QGVAR(detectorActive)]]]  call CBA_fnc_addPlayerAction;
+
+    [[localize "STR_anomaly_blowout_safe_check_name", {
+        params ["_target"];
+        if ([_target] call FUNC(isInShelter)) then {
+            titleText [localize "STR_anomaly_blowout_safe_check_safe", "PLAIN DOWN"];
+        } else {
+            titleText [localize "STR_anomaly_blowout_safe_check_not_safe", "PLAIN DOWN"];
+        };
+    },nil,0,false,true,"",format ["missionNamespace getVariable ['%1', 0] > 1", QGVAR(blowoutStage)]]]  call CBA_fnc_addPlayerAction;
 };
 
 [GVAR(detectorItem), "CONTAINER", "Activate Anomaly Detector", nil, nil,
