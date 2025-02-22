@@ -391,6 +391,13 @@ class cfgVehicles {
                 typeName = "BOOL";
                 property = QGVAR(onlyPlayers);
             };
+            class environmentParticleEffects: Checkbox {
+                displayName = "$STR_anomaly_zeus_start_blowout_env_particle_effect";
+                tooltip = "$STR_anomaly_zeus_start_blowout_env_particle_effect_desc";
+                defaultValue = "true";
+                typeName = "BOOL";
+                property = QGVAR(environmentParticleEffects);
+            };
             class ModuleDescription: ModuleDescription {};
         };
         class ModuleDescription: ModuleDescription {

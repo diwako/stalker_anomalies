@@ -230,6 +230,130 @@ if (hasInterface) then {
             [1] call FUNC(psyEffect);
             [] call FUNC(blowoutRumble);
             [true] call FUNC(showPsyWavesInSky);
+
+            if !(GVAR(blowoutEnvironmentParticleEffects)) exitWith {};
+            private _leaves = "#particlesource" createVehicleLocal [0, 0, 0];
+            _leaves setParticleRandom [0, [25, 25, 25], [1, 1, 0], 3, 0.75, [0, 1, 0, 0.5], 1, 1];
+            _leaves setDropInterval 0.005;
+
+            private _fnc_leaves = {
+                params ["_source", "_fnc", "_oldWind"];
+                if (GVAR(blowoutStage) < 2) exitWith {
+                    deleteVehicle _source;
+                };
+
+                private _player = [] call CBA_fnc_currentUnit;
+                _source setPosASL AGLToASL (positionCameraToWorld  [0, 0, 0]);
+                private _wind = wind;
+
+                if (_wind isNotEqualTo _oldWind) then {
+                    _source setParticleParams [
+                        // ["a3\data_f\ParticleEffects\Hit_Leaves\Leaves.p3d", 1, 1, 1],
+                        ["\A3\data_f\cl_leaf", 1, 1, 1],
+                        "",
+                        "SpaceObject",
+                        1,
+                        8,
+                        vectorNormalized _wind vectorMultiply -20, // position
+                        [0, 0, 0], // velocity
+                        2,0.000001,
+                        0.0, // volume
+                        1, // rubbing
+                        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0.1], // size
+                        [[0.68,0.68,0.68,1]], // color
+                        [1.5,1],13,13,"","",vehicle _player,0,
+                        true,
+                        0.2,
+                        [[0, 0, 0, 0]]
+                    ];
+                };
+                _source enableSimulation (vectorMagnitude _wind > 5 && {insideBuilding _player isNotEqualTo 1});
+
+                [_fnc, [_source, _fnc, _wind], 2] call CBA_fnc_waitAndExecute;
+            };
+            [_leaves, _fnc_leaves, []] call _fnc_leaves;
+
+            private _fnc_dust = {
+                params ["_fnc"];
+                if (GVAR(blowoutStage) < 2) exitWith {};
+
+                private _wind = wind;
+                if (vectorMagnitude _wind > 8 && {insideBuilding ([] call CBA_fnc_currentUnit) isNotEqualTo 1}) then {
+                    // private _pos = positionCameraToWorld [0,0,0];
+                    private _pos = positionCameraToWorld [0,0,0] vectorAdd (_wind vectorMultiply -5);
+                    private _right = _wind select 0 * 2;
+                    private _forward = _wind select 1 * 2;
+
+                    private _radius = 0;
+                    private _lifetime = 0;
+                    private _randomdir = 0;
+                    private _size = 0;
+                    private _color = [];
+                    private _randomColor = 0;
+                    for "_i" from 1 to 15 do {
+                        _radius= 10 + random (80 - 10);
+                        _randomdir = random 360;
+                        _lifetime = 8 + random (15 - 8);
+                        _size = 0.75 + random (3 - 0.75);
+                        _randomColor = -0.5 + random 0.7;
+                        _color = [0.69, 0.616, 0.498, 0.3] vectorAdd [_randomColor, _randomColor, _randomColor];
+                        drop [
+                            "\A3\data_f\cl_basic",
+                            "", "Billboard",
+                            0,
+                            _lifetime,
+                            [(_pos select 0) + _radius * sin _randomdir, (_pos select 1) + _radius * cos _randomdir, 0.13],
+                            [_right, _forward, 0],
+                            _lifetime / 5,
+                            0.2, // weight
+                            0.075, // volume
+                            0.01, // rubbing
+                            [0.001, _size, _size, _size, _size,  0.001],
+                            [[0.69, 0.616, 0.498, 0], _color, _color, _color, _color, _color, _color, [0.69, 0.616, 0.498, 0]], [0], 0, 0, "",  "", "", 0, true, 0.75
+                        ];
+                    };
+                };
+
+                [_fnc, [_fnc], 0.25] call CBA_fnc_waitAndExecute;
+            };
+            [_fnc_dust] call _fnc_dust;
+
+
+            private _sticks  = "#particlesource" createVehicleLocal [0, 0, 0];
+            _sticks setParticleRandom [0, [20, 20, 10], [1, 1, 2], 1.5, 0.2, [0, 0, 0, 0.5], 1, 1, 0, 0.3];
+            _sticks setDropInterval 0.2;
+
+            private _fnc_sticks = {
+                params ["_source", "_fnc", "_oldWind"];
+                if (GVAR(blowoutStage) < 2) exitWith {
+                    deleteVehicle _source;
+                };
+
+                private _player = [] call CBA_fnc_currentUnit;
+                _source setPosASL AGLToASL (positionCameraToWorld  [0, 0, 0]);
+                private _wind = wind;
+
+                if (_wind isNotEqualTo _oldWind) then {
+                    _source setParticleParams [
+                        ["\A3\data_f\ParticleEffects\Hit_Leaves\Sticks", 1, 1, 1],
+                        "", "SpaceObject", 1,
+                        10,
+                        [0,0,0],
+                        [_wind select 0, _wind select 1, 7],
+                        2, // weight
+                        0.000001, // volume
+                        0.0, 0.4, // rubbing
+                        [0.9], // size
+                        [[0.68,0.68,0.68,1]],
+                        [0], 13, 13, "", "", vehicle _player, 0, true , 1, [[0,0,0,0]]
+                    ];
+                };
+                _source enableSimulation (vectorMagnitude _wind > 5 && {insideBuilding _player isNotEqualTo 1});
+
+                [_fnc, [_source, _fnc, _wind], 2] call CBA_fnc_waitAndExecute;
+            };
+            [_sticks, _fnc_sticks, []] call _fnc_sticks;
+
         };
         case 3: {
             if !(hasInterface) exitWith {};
