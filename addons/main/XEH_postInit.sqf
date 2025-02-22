@@ -144,7 +144,9 @@ if (isNil QGVAR(holder)) then {
                         [_source, "idle"] call FUNC(fruitPunchEffect);
                         [_x, QGVAR(soundFruitpunch)] call _fnc_addIdleSoundsLocal;
                     };
-                    default { };
+                    default {
+                        _source enableSimulation false;
+                    };
                 };
                 _x setVariable [QGVAR(particleSource), _source];
             } else {

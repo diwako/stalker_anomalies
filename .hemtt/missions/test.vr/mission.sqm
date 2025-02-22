@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=77;
+		nextID=82;
 	};
 	class MarkerIDProvider
 	{
@@ -126,7 +126,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=52;
+		items=54;
 		class Item0
 		{
 			dataType="Logic";
@@ -800,7 +800,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7868.5078,5,2975.1631};
+				position[]={7899.5098,5,2962.2532};
 			};
 			id=35;
 			type="ModuleCurator_F";
@@ -1039,7 +1039,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={7766.0781,8.7768908,2925.7976};
-						angles[]={0,3.9334786,-0};
+						angles[]={0,3.9334786,0};
 					};
 					side="West";
 					flags=7;
@@ -1216,7 +1216,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7758.2637,5.3672557,2956.3374};
-				angles[]={-0,0,0.0067393556};
+				angles[]={0,0,0.0067393556};
 			};
 			side="Empty";
 			flags=4;
@@ -1356,6 +1356,61 @@ class Mission
 			id=76;
 			type="CBA_BuildingPos";
 			atlOffset=1.1972008;
+		};
+		class Item52
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7855.9878,5,2960.103};
+				angles[]={0,3.9256818,0};
+			};
+			areaSize[]={10,8,10};
+			areaIsRectangle=1;
+			flags=1;
+			id=77;
+			type="diwako_anomalies_main_moduleClicker";
+		};
+		class Item53
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7855.9697,5.0014391,2939.5134};
+						angles[]={0,6.2824154,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=79;
+					type="B_Soldier_F";
+				};
+				class Item1
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={7856.0771,5,2979.3281};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=80;
+					type="Move";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=78;
 		};
 	};
 };

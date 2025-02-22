@@ -206,3 +206,88 @@ DFUNC(playLocalAnomalyActivationSound) = {
     [_trg, format ["teleport_work_%1", (floor random 2) + 1]] call DFUNC(playLocalAnomalyActivationSound);
     [_exit, format ["teleport_work_%1", (floor random 2) + 1]] call DFUNC(playLocalAnomalyActivationSound);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(clickerEffect), {
+    params ["_pos"];
+
+    private _light = "#lightpoint" createVehicleLocal ASLToAGL _pos;
+    _light setLightBrightness 1;
+    _light setLightAmbient [1, 1, 1];
+    _light setLightColor [1, 1, 1];
+    _light setLightUseFlare true;
+    _light setLightFlareMaxDistance 500;
+    _light setLightDayLight true;
+    _light setLightFlareSize 5;
+
+    private _fnc_flicker = {
+        params ["_light", "_fnc"];
+        if (isNull _light) exitWith {};
+        private _rand = 0.9 + random 0.25;
+        _light setLightBrightness _rand;
+        _light setLightFlareSize (linearConversion [0.9, 1.15, _rand, 4.5, 5.2]);
+
+        [_fnc, _this] call CBA_fnc_execNextFrame;
+    };
+    [_light, _fnc_flicker] call _fnc_flicker;
+
+    playSound3D [format ["%1_%2.ogg", QPATHTOF(sounds\anomalies\clicker_charge_hum), floor random 3], objNull, false, _pos, 5, 1, 75, 3 - CLICKER_EXPLODE_TIME, true];
+    [{
+        params ["_pos"];
+        playSound3D [format ["%1_%2.ogg", QPATHTOF(sounds\anomalies\clicker_charge), floor random 4], objNull, false, _pos, 5, 1, 75, 0, true];
+    }, [_pos], 0.1] call CBA_fnc_waitAndExecute;
+
+    [{
+        params ["_pos", "_light"];
+        deleteVehicle _light;
+        _light = "#lightpoint" createVehicleLocal ASLToAGL _pos;
+        _light setLightBrightness 5;
+        _light setLightAmbient [1, 1, 1];
+        _light setLightColor [1, 1, 1];
+        _light setLightUseFlare true;
+        _light setLightFlareMaxDistance 200;
+        _light setLightDayLight true;
+        _light setLightFlareSize 8;
+
+        playSound3D [format ["%1_%2.ogg", QPATHTOF(sounds\anomalies\clicker_impact), floor random 8], objNull, false, _pos, 5, 1, 350, 0, true];
+
+        [{
+            params ["_light"];
+            deleteVehicle _light;
+        }, [_light], 0.1] call CBA_fnc_waitAndExecute;
+
+        private _intersect = lineIntersectsSurfaces [_pos, _pos vectorAdd [0, 0, -4], objNull, objNull, true, -1, "FIRE", "GEOM"];
+        if (_intersect isNotEqualTo []) then {
+            private _intesected = false;
+            private _groundPos = [];
+            private _distance = 4;
+            {
+                private _obj = _x select 2;
+                if (isNull _obj || _obj isKindOf "House_F") exitWith {
+                    _distance = _pos distance (_x select 0);
+                    _groundPos = ASLToAGL (_x select 0);
+                    _intesected = true;
+                };
+            } forEach _intersect;
+
+            if (_intesected) then {
+                private _strength = linearConversion [0, 4, _distance, 1, 0, true];
+                for "_" from 0 to 100 do {
+                    private _velocity = (_groundPos vectorFromTo (_groundPos getPos [10, random 360])) vectorMultiply ((10 * _strength) + random (10 * _strength));
+                    _velocity set [2, 0.15];
+                    drop [["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 13, 0], "", "Billboard", 1,
+                        0.1 + random 0.5, //lifetime
+                        _groundPos, // position
+                        _velocity, // velocity
+                        1 + random 20, // rotationVelocity
+                        900, // weight
+                        50, // volume
+                        0.075, // rubbing
+                        [0.5 * _strength, 2.6 * _strength], // size
+                        [[0.08,0.067,0.052,0],[0.6,0.5,0.4,0.5],[0.6,0.5,0.4,0.4],[0.6,0.5,0.4,0.3],[0.6,0.5,0.4,0.15],[0.6,0.5,0.4,0]], // color
+                        [1000], // animation phase
+                        0.05, 0.1, "", "", "", 0, false, 1];
+                };
+            };
+        };
+    }, [_pos, _light], CLICKER_EXPLODE_TIME] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;

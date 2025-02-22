@@ -21,13 +21,13 @@ if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "ele
 [QGVAR(electraEffect), [_trg, _list]] call CBA_fnc_globalEvent;
 
 {
-    if !(_x isKindOf "Man" || _x isKindOf "landvehicle" || _x isKindOf "air") then {
+    if !(_x isKindOf "Man" || _x isKindOf "LandVehicle" || _x isKindOf "air") then {
         deleteVehicle _x;
     };
 } forEach _list;
 {
     if (alive _x) then {
-        if (_x isKindOf "landvehicle" || _x isKindOf "air") then {
+        if (_x isKindOf "LandVehicle" || _x isKindOf "air") then {
             // switch of the engine
             private _curDam = _x getHitPointDamage "HitEngine";
             [QGVAR(setHitPointDamage), [_x, ["HitEngine", 1, false, _x, _x]], _x] call CBA_fnc_targetEvent;
@@ -45,11 +45,11 @@ if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "ele
         };
         [QGVAR(electraOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
     } else {
-        if (!(_x isKindOf "landvehicle" || _x isKindOf "air") ) then {
+        if (!(_x isKindOf "LandVehicle" || _x isKindOf "air") ) then {
             [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
         };
     };
-} forEach ((nearestObjects [getPos _trg,  ["Man", "landvehicle", "air"], 5]) select {!(_x getVariable ["anomaly_ignore", false])});
+} forEach ((nearestObjects [getPos _trg,  ["Man", "LandVehicle", "air"], 5]) select {!(_x getVariable ["anomaly_ignore", false])});
 
 _trg setVariable [QGVAR(cooldown), true, true];
 [{

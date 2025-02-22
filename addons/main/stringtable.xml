@@ -331,6 +331,14 @@
             <French>Lisse le chemin suivi par l'anomalie à l'aide de courbes de Bézier. Si vous avez besoin d'une grande précision, définissez cette option sur Désact.</French>
             <Polish>Wygładza ścieżkę anomalii przy użyciu krzywych Beziera. Jeśli potrzebujesz wysokiej precyzji, ustaw to jako false</Polish>
         </Key>
+        <Key ID="STR_anomaly_clicker">
+            <Original>Clicker</Original>
+            <English>Clicker</English>
+        </Key>
+        <Key ID="STR_anomaly_clicker_desc">
+            <Original>Spawn a clicker anomaly at module location. The activation area will be the area of the module</Original>
+            <English>Spawn a clicker anomaly at module location. The activation area will be the area of the module</English>
+        </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
             <English>Blowout</English>

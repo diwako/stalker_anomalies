@@ -11,7 +11,8 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                 localize "STR_anomaly_teleport",
                 localize "STR_anomaly_fog",
                 localize "STR_anomaly_fruitpunch",
-                localize "STR_anomaly_psy_discharge"
+                localize "STR_anomaly_psy_discharge",
+                localize "STR_anomaly_clicker"
             ];
 
             [localize "STR_anomaly_zeus_spawn_anomaly", [
@@ -55,12 +56,28 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                         };
                         case 6: { [QGVAR(createAnomaly), [[_pos], "fruitpunch"]] call CBA_fnc_serverEvent; };
                         case 7: { [QGVAR(createAnomaly), [[_pos], "psyDischarge"]] call CBA_fnc_globalEvent;};
+                        case 8: {
+                            [localize "STR_anomaly_clicker", [
+                                    ["SLIDER", format ["%1 A", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 250, 1]],
+                                    ["SLIDER", format ["%1 B", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 250, 1]],
+                                    ["SLIDER", localize "str_a3_cfgvehicles_modulestrategicmapimage_f_arguments_height_0", [1, 250, 1]],
+                                    ["CHECKBOX", localize "str_disp_arcmark_rect", [false]],
+                                    ["SLIDER", localize "str_a3_cfgvehicles_modulepositioning_f_arguments_rotation_0", [0, 359]]
+                                ],
+                                {
+                                    params ["_dialog", "_args"];
+                                    _dialog params ["_radiusA", "_radiusB", "_height", "_rectangle", "_angle"];
+                                    _args params ["_pos"];
+                                    [QGVAR(createAnomaly), [[_pos, _radiusA, _radiusB, _rectangle, _angle, _height], "clicker"]] call CBA_fnc_serverEvent;
+                                }, {}, [_pos]
+                            ] call zen_dialog_fnc_create;
+                        };
                         default { };
                     };
                 }, {}, [_pos, _anomalies]
             ] call zen_dialog_fnc_create;
         },
-        QPATHTOF(data\ui\modules\burner_ca.paa)
+        QPATHTOF(data\ui\icon.paa)
     ] call zen_custom_modules_fnc_register;
 
     [localize "STR_anomaly_category", localize "STR_anomaly_zeus_delete_anomalies",

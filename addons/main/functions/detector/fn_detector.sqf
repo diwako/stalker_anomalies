@@ -34,7 +34,9 @@
         {
             _type = _x getVariable [QGVAR(anomalyType), nil];
             // only accept triggers that are anomalies
-            if (!isNil "_type" && {!GVAR(detectorSensesCooldown) || !(_x getVariable QGVAR(cooldown))}) then {
+            if (!isNil "_type" &&
+                {!GVAR(detectorSensesCooldown) || !(_x getVariable QGVAR(cooldown))} &&
+                {_x getVariable [QGVAR(detectable), true]}) then {
                 _found = true;
                 private _tmp = _x distance _plr;
                 if (_tmp < _min) then {
