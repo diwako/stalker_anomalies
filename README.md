@@ -16,6 +16,7 @@ Currently in:
 
 - Anomalies:
   - Burner
+  - Clicker
   - Comet
   - Electra
   - Fog
@@ -30,3 +31,4 @@ Currently in:
 - System to show anomalies only around players to safe those scarce FPS
 - Zeus Enhanced support
 - Support for ACE Medical
+- Support for APS
