@@ -12,6 +12,7 @@ params [
     ["_direction", 0, [0, []]],
     ["_useSirens", true, [true]],
     ["_onlyPlayers", true, [true]],
+    ["_isLethal", true, [true]],
     ["_environmentParticleEffects", true, [true]]
 ];
 
@@ -22,12 +23,14 @@ if (_time isEqualType objNull) then {
     _direction = _module getVariable "direction";
     _useSirens = _module getVariable "sirens";
     _onlyPlayers = _module getVariable "onlyPlayers";
+    _isLethal = _module getVariable "isLethal";
     _environmentParticleEffects = _module getVariable "environmentParticleEffects";
     deleteVehicle _module;
 };
 
 missionNamespace setVariable [QGVAR(blowoutUseSirens), _useSirens, true];
 missionNamespace setVariable [QGVAR(blowoutAffectPlayersOnly), _onlyPlayers, true];
+missionNamespace setVariable [QGVAR(blowoutIsLethal), _isLethal, true];
 missionNamespace setVariable [QGVAR(blowoutEnvironmentParticleEffects), _environmentParticleEffects, true];
 
 

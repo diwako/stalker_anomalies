@@ -391,6 +391,13 @@ class cfgVehicles {
                 typeName = "BOOL";
                 property = QGVAR(onlyPlayers);
             };
+            class isLethal: Checkbox {
+                displayName = "$STR_anomaly_zeus_start_blowout_is_lethal";
+                tooltip = "$STR_anomaly_zeus_start_blowout_is_lethal_desc";
+                defaultValue = "true";
+                typeName = "BOOL";
+                property = QGVAR(isLethal);
+            };
             class environmentParticleEffects: Checkbox {
                 displayName = "$STR_anomaly_zeus_start_blowout_env_particle_effect";
                 tooltip = "$STR_anomaly_zeus_start_blowout_env_particle_effect_desc";
