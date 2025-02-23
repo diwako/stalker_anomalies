@@ -54,14 +54,14 @@ switch (GVAR(blowoutStage)) do {
             [{
                 if !(GVAR(blowoutInProgress)) exitWith {};
                 forceWeatherChange;
-                private _wind = (([0, 0, 0] getPos [1, GVAR(blowoutDirection)]) vectorFromTo [0, 0, 0]) vectorMultiply 10;
+                private _wind = (vectorNormalized [-(sin GVAR(blowoutDirection)), -(cos GVAR(blowoutDirection))]) vectorMultiply 10;
                 setWind [_wind select 0, _wind select 1, true];
             }, nil, 15] call CBA_fnc_waitAndExecute;
         }, nil, 60 - _time] call CBA_fnc_waitAndExecute;
     };
     case 2: {
         if !(GVAR(blowoutInProgress)) exitWith {};
-        private _wind = (([0, 0, 0] getPos [1, GVAR(blowoutDirection)]) vectorFromTo [0, 0, 0]) vectorMultiply 20;
+        private _wind = (vectorNormalized [-(sin GVAR(blowoutDirection)), -(cos GVAR(blowoutDirection))]) vectorMultiply 20;
         setWind [_wind select 0, _wind select 1, true];
         [QGVAR(blowOutStage), [2]] call CBA_fnc_globalEvent;
     };
