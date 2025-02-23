@@ -736,6 +736,14 @@
             <French>Si activé, la vague d'Émission psy ne tuera que les joueurs. Si désactivé, toutes les unités trouvées depuis la commande "allUnits" seront affectées. Potentiel impact sur les performances!</French>
             <Polish>Gdy włączone, fala Emisji zabije jedynie graczy. Jeśli wyłączone, wszystkie jednostki zwracane przez funkcję "allUnits" zostaną zabite. Możliwy spadek wydajności!</Polish>
         </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_is_lethal">
+            <Original>Lethal</Original>
+            <English>Lethal</English>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_is_lethal_desc">
+            <Original>The final blowout wave is lethal and kills those that are not in cover</Original>
+            <English>The final blowout wave is lethal and kills those that are not in cover</English>
+        </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_env_particle_effect">
             <Original>Environment particle effects</Original>
             <English>Environment particle effects</English>

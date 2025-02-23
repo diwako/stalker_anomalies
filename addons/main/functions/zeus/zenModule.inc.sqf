@@ -120,12 +120,13 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                         ["SLIDER", [localize "STR_anomaly_zeus_start_blowout_direction", localize "STR_anomaly_zeus_start_blowout_direction_desc"], [0, 359, 0, 0]],
                         ["CHECKBOX", [localize "STR_anomaly_zeus_start_blowout_sirens", localize "STR_anomaly_zeus_start_blowout_sirens_desc"], [true]],
                         ["CHECKBOX", [localize "STR_anomaly_zeus_start_blowout_only_players", localize "STR_anomaly_zeus_start_blowout_only_players_desc"], [true]],
+                        ["CHECKBOX", [localize "STR_anomaly_zeus_start_blowout_is_lethal", localize "STR_anomaly_zeus_start_blowout_is_lethal_desc"], [true]],
                         ["CHECKBOX", [localize "STR_anomaly_zeus_start_blowout_env_particle_effect", localize "STR_anomaly_zeus_start_blowout_env_particle_effect_desc"], [true]]
                     ],
                     {
                         params ["_dialog"];
-                        _dialog params ["_time", "_direction", "_useSirens", "_onlyPlayers", "_environmentParticleEffects"];
-                        [QGVAR(startBlowout), [floor _time, floor _direction, _useSirens, _onlyPlayers, _environmentParticleEffects]] call CBA_fnc_serverEvent;
+                        _dialog params ["_time", "_direction", "_useSirens", "_onlyPlayers", "_isLethal", "_environmentParticleEffects"];
+                        [QGVAR(startBlowout), [floor _time, floor _direction, _useSirens, _onlyPlayers, _isLethal, _environmentParticleEffects]] call CBA_fnc_serverEvent;
                         [format [localize "STR_anomaly_zeus_start_blowout_hint", floor ((floor _time) / 60), (floor _time) mod 60]] call zen_common_fnc_showMessage;
                     }, {}, []
                 ] call zen_dialog_fnc_create;
