@@ -749,8 +749,8 @@
             <English>Environment particle effects</English>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_env_particle_effect_desc">
-            <Original>Enabled leaves blowing in the wind, dust being kicked up and some other things</Original>
-            <English>Enabled leaves blowing in the wind, dust being kicked up and some other things</English>
+            <Original>When enabled causes leaves blowing in the wind, dust being kicked up and some other things</Original>
+            <English>When enabled causes leaves blowing in the wind, dust being kicked up and some other things</English>
         </Key>
         <Key ID="STR_anomaly_blowout_safe_check_name">
             <Original>Am I safe from the blowout?</Original>

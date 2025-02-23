@@ -401,7 +401,7 @@ if (hasInterface) then {
                 private _player = [] call CBA_fnc_currentUnit;
                 [] call FUNC(chromatic);
                 if (GVAR(blowoutIsLethal)) then {
-                    if ({isDamageAllowed _player && {!([_player] call FUNC(isInShelter))}}) then {
+                    if (isDamageAllowed _player && {!([_player] call FUNC(isInShelter))}) then {
                         _player setDamage [1, true, _player, _player];
                     };
                     if !(GVAR(blowoutAffectPlayersOnly)) then {
