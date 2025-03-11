@@ -334,10 +334,12 @@
         <Key ID="STR_anomaly_clicker">
             <Original>Clicker</Original>
             <English>Clicker</English>
+            <French>Clicker</French>
         </Key>
         <Key ID="STR_anomaly_clicker_desc">
             <Original>Spawn a clicker anomaly at module location. The activation area will be the area of the module</Original>
             <English>Spawn a clicker anomaly at module location. The activation area will be the area of the module</English>
+            <French>Créer une anomalie de clicker à l'emplacement du module. La zone d'activation sera la zone du module.</French>
         </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
@@ -624,10 +626,12 @@
         <Key ID="STR_anomaly_settings_zeus_show_anomalies">
             <Original>Show anomalies in Zeus interface</Original>
             <English>Show anomalies in Zeus interface</English>
+            <French>Afficher les anomalies dans l'interface de Zeus</French>
         </Key>
         <Key ID="STR_anomaly_settings_zeus_show_anomalies_desc">
             <Original>Shows an icon for each anomaly within idle distance. Requires Zeus Enhanced</Original>
             <English>Shows an icon for each anomaly within idle distance. Requires Zeus Enhanced</English>
+            <French>Affiche une icône pour chaque anomalie se trouvant à distance de marche à vide. Nécessite Zeus Enhanced</French>
         </Key>
         <Key ID="STR_anomaly_zeus_spawn_anomaly">
             <Original>Spawn Anomaly</Original>
@@ -739,30 +743,37 @@
         <Key ID="STR_anomaly_zeus_start_blowout_is_lethal">
             <Original>Lethal</Original>
             <English>Lethal</English>
+            <French>Létal</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_is_lethal_desc">
             <Original>The final blowout wave is lethal and kills those that are not in cover</Original>
             <English>The final blowout wave is lethal and kills those that are not in cover</English>
+            <French>La vague finale de l'explosion est mortelle et tue ceux qui ne sont pas à couvert.</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_env_particle_effect">
             <Original>Environment particle effects</Original>
             <English>Environment particle effects</English>
+            <French>Effets des particules sur l'environnement</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_env_particle_effect_desc">
             <Original>When enabled causes leaves blowing in the wind, dust being kicked up and some other things</Original>
             <English>When enabled causes leaves blowing in the wind, dust being kicked up and some other things</English>
+            <French>Lorsqu'il est activé, le vent souffle sur les feuilles, la poussière est soulevée et d'autres choses encore.</French>
         </Key>
         <Key ID="STR_anomaly_blowout_safe_check_name">
             <Original>Am I safe from the blowout?</Original>
             <English>Am I safe from the blowout?</English>
+            <French>Suis-je à l'abri de la déflagration?</French>
         </Key>
         <Key ID="STR_anomaly_blowout_safe_check_safe">
             <Original>You feel safe at this spot from the blowout</Original>
             <English>You feel safe at this spot from the blowout</English>
+            <French>Vous vous sentez à l'abri à cet endroit de la déflagration.</French>
         </Key>
         <Key ID="STR_anomaly_blowout_safe_check_not_safe">
             <Original>You do not feel safe here</Original>
             <English>You do not feel safe here</English>
+            <French>Vous ne vous sentez pas en sécurité ici</French>
         </Key>
     </Package>
 </Project>
