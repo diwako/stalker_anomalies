@@ -334,10 +334,13 @@
         <Key ID="STR_anomaly_clicker">
             <Original>Clicker</Original>
             <English>Clicker</English>
+            <French>Clicker</French>
+        </Key>
         </Key>
         <Key ID="STR_anomaly_clicker_desc">
             <Original>Spawn a clicker anomaly at module location. The activation area will be the area of the module</Original>
             <English>Spawn a clicker anomaly at module location. The activation area will be the area of the module</English>
+            <Polish>Wygładzenie ściezki</Polish>
         </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
@@ -625,6 +628,7 @@
             <Original>Show anomalies in Zeus interface</Original>
             <English>Show anomalies in Zeus interface</English>
         </Key>
+        </Key>
         <Key ID="STR_anomaly_settings_zeus_show_anomalies_desc">
             <Original>Shows an icon for each anomaly within idle distance. Requires Zeus Enhanced</Original>
             <English>Shows an icon for each anomaly within idle distance. Requires Zeus Enhanced</English>
@@ -745,6 +749,7 @@
         <Key ID="STR_anomaly_zeus_start_blowout_is_lethal_desc">
             <Original>The final blowout wave is lethal and kills those that are not in cover</Original>
             <English>The final blowout wave is lethal and kills those that are not in cover</English>
+            <Polish>Wpływa tylko na graczy</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_env_particle_effect">
             <Original>Environment particle effects</Original>
