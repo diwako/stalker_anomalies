@@ -628,6 +628,7 @@
         <Key ID="STR_anomaly_settings_zeus_show_anomalies_desc">
             <Original>Shows an icon for each anomaly within idle distance. Requires Zeus Enhanced</Original>
             <English>Shows an icon for each anomaly within idle distance. Requires Zeus Enhanced</English>
+            <Polish>Zasięg Wyładowania Psi</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_spawn_anomaly">
             <Original>Spawn Anomaly</Original>
@@ -740,6 +741,7 @@
             <Original>Lethal</Original>
             <English>Lethal</English>
         </Key>
+        </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_is_lethal_desc">
             <Original>The final blowout wave is lethal and kills those that are not in cover</Original>
             <English>The final blowout wave is lethal and kills those that are not in cover</English>
@@ -747,22 +749,27 @@
         <Key ID="STR_anomaly_zeus_start_blowout_env_particle_effect">
             <Original>Environment particle effects</Original>
             <English>Environment particle effects</English>
+            <French>Si activé, la vague d'Émission psy ne tuera que les joueurs. Si désactivé, toutes les unités trouvées depuis la commande "allUnits" seront affectées. Potentiel impact sur les performances!</French>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_env_particle_effect_desc">
             <Original>When enabled causes leaves blowing in the wind, dust being kicked up and some other things</Original>
             <English>When enabled causes leaves blowing in the wind, dust being kicked up and some other things</English>
+            <English>Lethal</English>
         </Key>
         <Key ID="STR_anomaly_blowout_safe_check_name">
             <Original>Am I safe from the blowout?</Original>
             <English>Am I safe from the blowout?</English>
+            <English>The final blowout wave is lethal and kills those that are not in cover</English>
         </Key>
         <Key ID="STR_anomaly_blowout_safe_check_safe">
             <Original>You feel safe at this spot from the blowout</Original>
             <English>You feel safe at this spot from the blowout</English>
+            <English>Environment particle effects</English>
         </Key>
         <Key ID="STR_anomaly_blowout_safe_check_not_safe">
             <Original>You do not feel safe here</Original>
             <English>You do not feel safe here</English>
+            <English>When enabled causes leaves blowing in the wind, dust being kicked up and some other things</English>
         </Key>
     </Package>
 </Project>
