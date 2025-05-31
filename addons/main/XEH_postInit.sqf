@@ -73,7 +73,7 @@ if (isServer) then {
     };
     [QGVAR(blowOutStage), {
         params ["_stage"];
-        if (_stage isEqualTo 4 && {GVAR(procedrualEnable)} && {!(isNil QGVAR(proceduralGrids))}) then {
+        if (_stage isEqualTo 4 && {GVAR(procedrualResetOnEmission)} && {GVAR(procedrualEnable)} && {!(isNil QGVAR(proceduralGrids))}) then {
             [{
                 {
                     _x params ["", "", "", "", "_spawnedAnomalies"];

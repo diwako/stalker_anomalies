@@ -44,12 +44,16 @@ if (_cachedAnomalies isEqualTo []) then {
         private _pos = locationPosition _x;
         private _size = size _x;
         _pos = [[_pos, _size select 0, _size select 1, 0, true]] call CBA_fnc_randPosArea;
-        _type = selectRandomWeighted ["springboard", 10, "burner", 4, "electra", 3, "meatgrinder", 1];
-        private _newArea = [_pos, 15, 15, 0, false];
-        for "_j" from 1 to (1 + (floor random 6)) do {
-            _pos = [_newArea] call CBA_fnc_randPosArea;
-            if ([_pos] call _fnc_cond) then {
-                _cachedAnomalies pushBack [AGLToASL _pos, _type];
+        _type = selectRandomWeighted ["springboard", 10, "burner", 4, "electra", 3, "meatgrinder", 1, "fruitpunch", 2, "clicker", 0.5, "fog", 1];
+        if (_type in ["clicker", "fog"]) then {
+            _cachedAnomalies pushBack [AGLToASL _pos, _type, _size];
+        } else {
+            private _newArea = [_pos, 15, 15, 0, false];
+            for "_j" from 1 to (1 + (floor random 6)) do {
+                _pos = [_newArea] call CBA_fnc_randPosArea;
+                if ([_pos] call _fnc_cond) then {
+                    _cachedAnomalies pushBack [AGLToASL _pos, _type];
+                };
             };
         };
     } forEach ((nearestLocations [_posArea, [], _radius]) select {random 1 < _clusterChance});
@@ -68,7 +72,7 @@ private _newStatus = GRID_ACTIVE;
         _newStatus = GRID_PARTIAL;
         break;
     };
-    _x params ["_pos", "_type"];
+    _x params ["_pos", "_type", ["_size", [25, 25]]];
 
     GVAR(prodecuralAnomalyCount) = GVAR(prodecuralAnomalyCount) + 1;
     private _anomaly = switch (_type) do {
@@ -76,7 +80,10 @@ private _newStatus = GRID_ACTIVE;
         case "burner": {[_pos] call FUNC(createBurner)};
         case "electra": {[_pos] call FUNC(createElectra)};
         case "meatgrinder": {[_pos] call FUNC(createMeatgrinder)};
-        default {};
+        case "fruitpunch": {[_pos] call FUNC(createFruitPunch)};
+        case "clicker": {[_pos, (_size select 0) max (33 + random 33), (_size select 1) max (33 + random 33)] call FUNC(createClicker)};
+        case "fog": {[_pos, (_size select 0) max (_size select 1) max 25] call FUNC(createFog)};
+        default {objNull};
     };
     _anomalies pushBack _anomaly;
 } forEach _cachedAnomalies;

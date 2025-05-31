@@ -7,7 +7,7 @@ if !(isServer) exitWith {};
 
 if !(GVAR(procedrualEnable)) exitWith {};
 
-private _players = ([] call CBA_fnc_players) select {alive _x && {_x isKindOf "CAManBase"}};
+private _players = ([] call CBA_fnc_players) select {alive _x && {!(_x getVariable ["anomaly_ignore", false])} && {_x isKindOf "CAManBase"}};
 // private _players = allunits select {alive _x && {_x isKindOf "CAManBase"}};
 private _timePerGrid = GVAR(procedrualScanInterval) / GVAR(proceduralGridCount);
 
@@ -16,7 +16,12 @@ private _timePerGrid = GVAR(procedrualScanInterval) / GVAR(proceduralGridCount);
         params ["_players", "_gridData", "_index"];
         _gridData params ["_area", "_scanArea", "_status", "_cachedAnomalies", "_spawnedAnomalies"];
         private _hasPlayers = (_players inAreaArray _scanArea) isNotEqualTo [];
-        // private _hasPlayers = (_players inAreaArray _area) isNotEqualTo [];
+        private _fnc_delete = {
+            GVAR(prodecuralAnomalyCount) = GVAR(prodecuralAnomalyCount) - (count _spawnedAnomalies);
+            [_spawnedAnomalies] call FUNC(deleteAnomalies);
+            GVAR(proceduralGrids) select _index set [2, GRID_INACTIVE];
+            GVAR(proceduralGrids) select _index set [4, []];
+        };
         switch (_status) do {
             case GRID_INACTIVE: {
                 if (_hasPlayers) then {
@@ -25,20 +30,14 @@ private _timePerGrid = GVAR(procedrualScanInterval) / GVAR(proceduralGridCount);
             };
             case GRID_ACTIVE: {
                 if !(_hasPlayers) then {
-                    GVAR(prodecuralAnomalyCount) = GVAR(prodecuralAnomalyCount) - (count _spawnedAnomalies);
-                    [_spawnedAnomalies] call FUNC(deleteAnomalies);
-                    GVAR(proceduralGrids) select _index set [2, GRID_INACTIVE];
-                    GVAR(proceduralGrids) select _index set [4, []];
+                    call _fnc_delete;
                 };
             };
             case GRID_PARTIAL: {
                 if (_hasPlayers) then {
                     [_gridData, _index] call FUNC(proceduralActivateCell);
                 } else {
-                    GVAR(prodecuralAnomalyCount) = GVAR(prodecuralAnomalyCount) - (count _spawnedAnomalies);
-                    [_spawnedAnomalies] call FUNC(deleteAnomalies);
-                    GVAR(proceduralGrids) select _index set [2, GRID_INACTIVE];
-                    GVAR(proceduralGrids) select _index set [4, []];
+                    call _fnc_delete;
                 };
             };
         };
