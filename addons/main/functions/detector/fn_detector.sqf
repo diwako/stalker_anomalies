@@ -21,7 +21,7 @@
     // private _b = 0.1 - (_m * 5);
     sleep 1;
     // small wait so ace interaction window does not gobble up the title text prompt
-    titleText ["Detector has been turned on", "PLAIN DOWN"];
+    titleText [localize "STR_Detector_turned_on", "PLAIN DOWN"];
     private _lastBeep = CBA_missionTime - 10;
     private _player = [] call CBA_fnc_currentUnit;
     private _type = "";
@@ -72,5 +72,5 @@
         sleep 0.05;
     };
     GVAR(detectorActive) = false;
-    titleText ["Detector has been turned off", "PLAIN DOWN"];
+    titleText [localize "STR_Detector_turned_off", "PLAIN DOWN"];
 };

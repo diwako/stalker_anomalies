@@ -236,26 +236,26 @@ if !(isNil "ace_interact_menu_fnc_createAction") then {
     },nil,0,false,true,"",format ["missionNamespace getVariable ['%1', 0] > 1", QGVAR(blowoutStage)]]]  call CBA_fnc_addPlayerAction;
 };
 
-[GVAR(detectorItem), "CONTAINER", "Activate Anomaly Detector", nil, nil,
+[GVAR(detectorItem), "CONTAINER", localize "STR_anomaly_enable_detector", nil, nil,
     [{!GVAR(detectorActive)}, {!GVAR(detectorActive)}], {
     GVAR(detectorActive) = true;
     [] call FUNC(detector);
     false
 }, false] call CBA_fnc_addItemContextMenuOption;
 
-[GVAR(detectorItem), "CONTAINER", "Deactivate Anomaly Detector", nil, nil,
+[GVAR(detectorItem), "CONTAINER", localize "STR_anomaly_disable_detector", nil, nil,
     [{GVAR(detectorActive)}, {GVAR(detectorActive)}], {
     GVAR(detectorActive) = false;
     false
 }, false] call CBA_fnc_addItemContextMenuOption;
 
-[GVAR(detectorItem), "CONTAINER", "Increase Volume", nil, nil,
+[GVAR(detectorItem), "CONTAINER", localize "STR_anomaly_detector_increase_volume", nil, nil,
     [{GVAR(detectorVolume) < 2}, {GVAR(detectorActive)}], {
     GVAR(detectorVolume) = GVAR(detectorVolume) + 1;
     false
 }, false] call CBA_fnc_addItemContextMenuOption;
 
-[GVAR(detectorItem), "CONTAINER", "Decrease Volume", nil, nil,
+[GVAR(detectorItem), "CONTAINER", localize "STR_anomaly_detector_decrease_volume", nil, nil,
     [{GVAR(detectorVolume) > -2}, {GVAR(detectorActive)}], {
     GVAR(detectorVolume) = GVAR(detectorVolume) - 1;
     false
