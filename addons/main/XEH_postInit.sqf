@@ -67,6 +67,25 @@ if (isServer) then {
             [_projectile] call FUNC(grenadeBolt);
         };
     }, true] call CBA_fnc_addClassEventHandler;
+
+    if (GVAR(procedrualEnable)) then {
+        [] call FUNC(proceduralInit);
+    };
+    [QGVAR(blowOutStage), {
+        params ["_stage"];
+        if (_stage isEqualTo 4 && {GVAR(procedrualEnable)} && {!(isNil QGVAR(proceduralGrids))}) then {
+            [{
+                {
+                    _x params ["", "", "", "", "_spawnedAnomalies"];
+                    [_spawnedAnomalies] call FUNC(deleteAnomalies);
+                    GVAR(proceduralGrids) select _forEachIndex set [2, GRID_INACTIVE];
+                    GVAR(proceduralGrids) select _forEachIndex set [3, []];
+                    GVAR(proceduralGrids) select _forEachIndex set [4, []];
+                } forEach GVAR(proceduralGrids);
+                GVAR(prodecuralAnomalyCount) = 0;
+            }, nil, 15] call CBA_fnc_waitAndExecute;
+        };
+    }] call CBA_fnc_addEventHandler;
 };
 
 if !(hasInterface) exitWith {};
