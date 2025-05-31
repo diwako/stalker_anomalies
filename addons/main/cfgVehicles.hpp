@@ -413,6 +413,88 @@ class cfgVehicles {
         };
     };
 
+    class GVAR(moduleBlowoutSystem): GVAR(moduleBlowout) {
+        displayName = "$STR_anomaly_blowoutSystem";
+        function = QFUNC(blowoutSystem);
+
+        class Attributes: AttributesBase {
+            class minimalDelay: Edit {
+                displayName = "$STR_anomaly_blowoutSystem_minimumDelay";
+                tooltip = "$STR_anomaly_blowoutSystem_minimumDelay_desc";
+                typeName = "NUMBER";
+                validate = "number";
+                defaultValue = 30;
+                property = QGVAR(minimalDelay);
+            };
+            class maximumDelay: Edit {
+                displayName = "$STR_anomaly_blowoutSystem_maximumDelay";
+                tooltip = "$STR_anomaly_blowoutSystem_maximumDelay_desc";
+                typeName = "NUMBER";
+                validate = "number";
+                defaultValue = 60;
+                property = QGVAR(maximumDelay);
+            };
+            class condition: Edit {
+                displayName = "$STR_a3_modules_modulepatrolarea_f_attributes_condition0";
+                tooltip = "$STR_anomaly_blowoutSystem_condition_desc";
+                defaultValue = """true""";
+                typeName = "STRING";
+                property = QGVAR(condition);
+                control = "EditCodeMulti3";
+            };
+
+            class wavetime: Edit {
+                displayName = "$STR_anomaly_zeus_start_blowout_time";
+                tooltip = "$STR_anomaly_zeus_start_blowout_time_desc";
+                typeName = "NUMBER";
+                validate = "number";
+                defaultValue = 400;
+                property = QGVAR(wavetime);
+            };
+            class direction: Edit {
+                displayName = "$STR_anomaly_zeus_start_blowout_direction";
+                tooltip = "$STR_anomaly_zeus_start_blowout_direction_desc";
+                typeName = "NUMBER";
+                validate = "number";
+                defaultValue = 0;
+                property = QGVAR(direction);
+            };
+            class sirens: Checkbox {
+                displayName = "$STR_anomaly_zeus_start_blowout_sirens";
+                tooltip = "$STR_anomaly_zeus_start_blowout_sirens_desc";
+                defaultValue = "true";
+                typeName = "BOOL";
+                property = QGVAR(sirens);
+            };
+            class onlyPlayers: Checkbox {
+                displayName = "$STR_anomaly_zeus_start_blowout_only_players";
+                tooltip = "$STR_anomaly_zeus_start_blowout_only_players_desc";
+                defaultValue = "true";
+                typeName = "BOOL";
+                property = QGVAR(onlyPlayers);
+            };
+            class isLethal: Checkbox {
+                displayName = "$STR_anomaly_zeus_start_blowout_is_lethal";
+                tooltip = "$STR_anomaly_zeus_start_blowout_is_lethal_desc";
+                defaultValue = "true";
+                typeName = "BOOL";
+                property = QGVAR(isLethal);
+            };
+            class environmentParticleEffects: Checkbox {
+                displayName = "$STR_anomaly_zeus_start_blowout_env_particle_effect";
+                tooltip = "$STR_anomaly_zeus_start_blowout_env_particle_effect_desc";
+                defaultValue = "true";
+                typeName = "BOOL";
+                property = QGVAR(environmentParticleEffects);
+            };
+            class ModuleDescription: ModuleDescription {};
+        };
+        class ModuleDescription: ModuleDescription {
+            description = "$STR_anomaly_blowoutSystem_desc";
+            sync[] = {};
+        };
+    };
+
     class GVAR(soundComet): Sound {
         author = "diwako";
         sound = QGVAR(soundComet);

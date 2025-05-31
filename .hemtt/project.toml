@@ -24,6 +24,8 @@ workshop = [
     "463939057", # ACE3
     # "2523439183",  # APS
     "1779063631", # ZEN
+    "2369477168", # Advanced developer tools
+    "2073243184", # String table viewer
 ]
 parameters = ["-world=empty", "-noPause"]
 mission = "test.vr"

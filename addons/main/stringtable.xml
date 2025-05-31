@@ -775,5 +775,33 @@
             <English>You do not feel safe here</English>
             <French>Vous ne vous sentez pas en sécurité ici</French>
         </Key>
+        <Key ID="STR_anomaly_blowoutSystem">
+            <Original>Blowout System</Original>
+            <English>Blowout System</English>
+        </Key>
+        <Key ID="STR_anomaly_blowoutSystem_desc">
+            <Original>Enables a system to have periodic blowouts with random intervals between them</Original>
+            <English>Enables a system to have periodic blowouts with random intervals between them</English>
+        </Key>
+        <Key ID="STR_anomaly_blowoutSystem_minimumDelay">
+            <Original>Minimum Delay</Original>
+            <English>Minimum Delay</English>
+        </Key>
+        <Key ID="STR_anomaly_blowoutSystem_minimumDelay_desc">
+            <Original>Minimum delay in minutes!</Original>
+            <English>Minimum delay in minutes!</English>
+        </Key>
+        <Key ID="STR_anomaly_blowoutSystem_maximumDelay">
+            <Original>Minimum Delay</Original>
+            <English>Minimum Delay</English>
+        </Key>
+        <Key ID="STR_anomaly_blowoutSystem_maximumDelay_desc">
+            <Original>Maximum delay in minutes!</Original>
+            <English>Maximum delay in minutes!</English>
+        </Key>
+        <Key ID="STR_anomaly_blowoutSystem_condition_desc">
+            <Original>Code that runs every check if a new blowout should be scheduled. When this returns false, it will not schedule a blowout. However, it will set the 'last blowout time' internally to the current time!</Original>
+            <English>Code that runs every check if a new blowout should be scheduled. When this returns false, it will not schedule a blowout. However, it will set the 'last blowout time' internally to the current time!</English>
+        </Key>
     </Package>
 </Project>
