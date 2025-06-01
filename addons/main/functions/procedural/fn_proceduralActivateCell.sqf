@@ -24,7 +24,14 @@ if (_cachedAnomalies isEqualTo []) then {
 
     private _fnc_cond = {
         params ["_pos"];
-        !(isNil "_pos" || {_pos isEqualTo []} || {surfaceIsWater _pos} || {(nearestTerrainObjects [_pos, ["All"], 3, false, true]) isNotEqualTo []} || {(nearestObjects [_pos, ["All"], 3, true]) isNotEqualTo []})
+        !(
+            isNil "_pos" ||
+            {_pos isEqualTo []} ||
+            {surfaceIsWater _pos} ||
+            {(nearestTerrainObjects [_pos, ["All"], 3, false, true]) isNotEqualTo []} ||
+            {(nearestObjects [_pos, ["All"], 3, true]) isNotEqualTo []} ||
+            {(GVAR(proceduralExclusionZones) findIf {_pos inArea _x}) > -1}
+        )
     };
 
     // step 1: standalone anomalies

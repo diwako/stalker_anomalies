@@ -495,6 +495,30 @@ class cfgVehicles {
         };
     };
 
+    class GVAR(moduleProceduralExclusion): Module_F {
+       author = "diwako";
+       category = "DIW_ANOMALY";
+       displayName = "$STR_anomaly_procedural_exclusion";
+       function = QFUNC(proceduralExclusionModule);
+       functionPriority = 1;
+       canSetArea = 1;
+       canSetAreaHeight = 0;
+       canSetAreaShape = 1;
+       scope = 2;  //show in editor
+       isGlobal = 0; //run on server
+       class Attributes: AttributesBase {
+              class ModuleDescription: ModuleDescription {};
+       };
+       class AttributeValues {
+              size3[] = {100, 100, -1};
+              isRectangle = 0;
+       };
+       class ModuleDescription: ModuleDescription {
+              description = "$STR_anomaly_procedural_exclusion_desc";
+              sync[] = {};
+       };
+    };
+
     class GVAR(soundComet): Sound {
         author = "diwako";
         sound = QGVAR(soundComet);

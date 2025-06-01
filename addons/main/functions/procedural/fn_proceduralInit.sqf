@@ -30,5 +30,7 @@ if (GVAR(proceduralGridCount) <= 0) exitWith {
     hintC "Could not initialize the procedural anomaly system! No grids were created! Check your proceduralGridSize setting!";
 };
 GVAR(prodecuralAnomalyCount) = 0;
+if (isNil QGVAR(proceduralExclusionZones)) then {
+    GVAR(proceduralExclusionZones) = [];
+};
 [FUNC(proceduralLoop), nil, 1] call CBA_fnc_waitAndExecute;
-
