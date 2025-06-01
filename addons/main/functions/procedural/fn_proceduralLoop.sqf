@@ -8,6 +8,9 @@ if !(isServer) exitWith {};
 if !(GVAR(procedrualEnable)) exitWith {};
 
 private _players = ([] call CBA_fnc_players) select {alive _x && {!(_x getVariable ["anomaly_ignore", false])} && {_x isKindOf "CAManBase"}};
+
+if (_players isEqualTo []) exitWith {};
+
 // private _players = allunits select {alive _x && {_x isKindOf "CAManBase"}};
 private _timePerGrid = GVAR(procedrualScanInterval) / GVAR(proceduralGridCount);
 

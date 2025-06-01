@@ -55,6 +55,7 @@ GVAR(medicalSystemMap) set ["aps", createHashMapFromArray [
 if (isServer) then {
     GVAR(movingAnomalyPFH) = -1;
     GVAR(movingAnomalyHolder) = [];
+    GVAR(proceduralExclusionZones) = [];
     [QGVAR(createAnomaly), {
         params ["_args", "_type"];
         switch (_type) do {

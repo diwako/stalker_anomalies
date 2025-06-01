@@ -8,7 +8,7 @@ class EditorData
 	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=82;
+		nextID=83;
 	};
 	class MarkerIDProvider
 	{
@@ -126,7 +126,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=54;
+		items=55;
 		class Item0
 		{
 			dataType="Logic";
@@ -1411,6 +1411,19 @@ class Mission
 			{
 			};
 			id=78;
+		};
+		class Item54
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7900.5771,5,2889.4709};
+				angles[]={0,4.2061205,0};
+			};
+			areaSize[]={316.39795,0,385.48547};
+			flags=1;
+			id=82;
+			type="diwako_anomalies_main_moduleProceduralExclusion";
 		};
 	};
 };
