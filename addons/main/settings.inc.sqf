@@ -6,6 +6,7 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 #define SUB_CAT_GENERAL format ["1 - %1", localize "STR_anomaly_settings_generalSettingCategory"]
 #define SUB_CAT_DETECTOR format ["2 - %1", localize "STR_anomaly_detector"]
 #define SUB_CAT_ANOMALIES format ["3 - %1", localize "STR_anomaly_settings_anomalySettingCategory"]
+#define SUB_CAT_PROCEDURAL format ["4 - %1", localize "STR_anomaly_settings_proceduralsettingcategory"]
 
 //Enable Diwako Anomalies:
 [
@@ -231,3 +232,67 @@ if (isClass(configFile >> "CfgPatches" >> "zen_common")) then {
     ,true
 ] call CBA_fnc_addSetting;
 
+/* Procedural anomaly spawning system */
+
+[
+    QGVAR(procedrualEnable)
+    ,"CHECKBOX"
+    ,[localize "STR_anomaly_settings_enable", localize "STR_anomaly_settings_proceduralEnable_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,false
+    ,true
+    ,nil
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralGridSize)
+    ,"SLIDER"
+    ,[localize "STR_anomaly_settings_procedural_gridSize", localize "STR_anomaly_settings_procedural_gridSize_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[100, 5000, 500, 0]
+    ,true
+    ,nil
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(procedrualScanInterval)
+    ,"SLIDER"
+    ,[localize "STR_anomaly_settings_procedural_procedrualScanInterval", localize "STR_anomaly_settings_procedural_procedrualScanInterval_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[1, 300, 10, 1]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralMaxAnomalyCount)
+    ,"SLIDER"
+    ,[localize "STR_anomaly_settings_procedural_proceduralMaxAnomalyCount", localize "STR_anomaly_settings_procedural_proceduralMaxAnomalyCount_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[100, 2000, 800, 0]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralCountCoef)
+    ,"SLIDER"
+    ,[localize "STR_anomaly_settings_procedural_proceduralCountCoef", localize "STR_anomaly_settings_procedural_proceduralCountCoef_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0.01, 5, 1, 2]
+    ,true
+    ,nil
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralRangeCoef)
+    ,"SLIDER"
+    ,[localize "STR_anomaly_settings_procedural_proceduralRangeCoef", localize "STR_anomaly_settings_procedural_proceduralRangeCoef_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0.5, 5, 1, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(procedrualResetOnEmission)
+    ,"CHECKBOX"
+    ,[localize "STR_anomaly_settings_procedural_procedrualResetOnEmission", localize "STR_anomaly_settings_procedural_procedrualResetOnEmission_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,true
+    ,true
+] call CBA_fnc_addSetting;

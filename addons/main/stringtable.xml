@@ -587,6 +587,10 @@
             <French>Anomalies</French>
             <Polish>Anomalie</Polish>
         </Key>
+        <Key ID="STR_anomaly_settings_proceduralSettingCategory">
+            <Original>Procedural Anomaly Spawning</Original>
+            <English>Procedural Anomaly Spawning</English>
+        </Key>
         <Key ID="STR_anomaly_settings_minCooldown">
             <Original>Minimum Cooldown:</Original>
             <English>Minimum Cooldown:</English>
@@ -802,6 +806,66 @@
         <Key ID="STR_anomaly_blowoutSystem_condition_desc">
             <Original>Code that runs every check if a new blowout should be scheduled. When this returns false, it will not schedule a blowout. However, it will set the 'last blowout time' internally to the current time!</Original>
             <English>Code that runs every check if a new blowout should be scheduled. When this returns false, it will not schedule a blowout. However, it will set the 'last blowout time' internally to the current time!</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_proceduralEnable_desc">
+            <Original>Enables the automatic spawning of anomalies across the map. It will only spawn basic anomalies which do not need further setup, these will remain in the hands of the mission maker. This setting is default disabled, so a conscious decision needs to be made to enable it.</Original>
+            <English>Enables the automatic spawning of anomalies across the map. It will only spawn basic anomalies which do not need further setup, these will remain in the hands of the mission maker. This setting is default disabled, so a conscious decision needs to be made to enable it.</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_gridSize">
+            <Original>Grid Size</Original>
+            <English>Grid Size</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_gridSize_desc">
+            <Original>The size of the cell grid the system use to populate the map with anomalies</Original>
+            <English>The size of the cell grid the system use to populate the map with anomalies</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_procedrualScanInterval">
+            <Original>Scan Interval</Original>
+            <English>Scan Interval</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_procedrualScanInterval_desc">
+            <Original>The amount in seconds how long it takes to scan the whole map for player</Original>
+            <English>The amount in seconds how long it takes to scan the whole map for player</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_proceduralMaxAnomalyCount">
+            <Original>Maximal amount of Anomalies</Original>
+            <English>Maximal amount of Anomalies</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_proceduralMaxAnomalyCount_desc">
+            <Original>Amount of anomalies which at most will be created with this system. If the spawned number exceeds this value, the system will stop spawning anomalies until unused ones from the same system will be cleaned automatically up. Heavy performance warning! If the value is too high and there are many spread out players on the server this might cause issues!</Original>
+            <English>Amount of anomalies which at most will be created with this system. If the spawned number exceeds this vales, the system will stop spawning anomalies until unused ones from the same system will be automatically cleaned up. Heavy performance warning! If the value is too high and there are many spread out players on the server this might cause issues!</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_proceduralCountCoef">
+            <Original>Anomaly Count Coef</Original>
+            <English>Anomaly Count Coef</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_proceduralCountCoef_desc">
+            <Original>Acts as multiplier. Anything below 1 will reduce the amount of anomalies, anything above 2 will increase the amount of anomalies per grid cell. BIG PERFORMANCE WARNING! If you crank this option up it is a lot more likely to reach the maximum cap! This either means performance might become bad OR you will simply not see enough anomalies as they spawn in another cell grid you are not in!</Original>
+            <English>Acts as multiplier. Anything below 1 will reduce the amount of anomalies, anything above 2 will increase the amount of anomalies per grid cell. BIG PERFORMANCE WARNING! If you crank this option up it is a lot more likely to reach the maximum cap! This either means performance might become bad OR you will simply not see enough anomalies as they spawn in another cell grid you are not in!</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_proceduralRangeCoef">
+            <Original>Spawn Range Coef</Original>
+            <English>Spawn Range Coef</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_proceduralRangeCoef_desc">
+            <Original>Multiplier for the detection range of the system. Higher values mean grid cells become active earlier. Lower values mean the grid cells become active later. A value of 0.5 means that the cell only becomes active if a player steps into it</Original>
+            <English>Multiplier for the detection range of the system. Higher values mean grid cells become active earlier. Lower values mean the grid cells become active later. A value of 0.5 means that the cell only becomes active if a player steps into it</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_procedrualResetOnEmission">
+            <Original>Reset Anomalies on Blowout</Original>
+            <English>Reset Anomalies on Blowout</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_procedrualResetOnEmission_desc">
+            <Original>Resets all anomaly positions and anomalies themselves spawned using the procedural system when a blowout concludes, meaning they will show up in new positions</Original>
+            <English>Resets all anomaly positions and anomalies themselves spawned using the procedural system when a blowout concludes, meaning they will show up in new positions</English>
+        </Key>
+        <Key ID="STR_anomaly_procedural_exclusion">
+            <Original>Procedural Exlcusion Zone</Original>
+            <English>Procedural Exlcusion Zone</English>
+        </Key>
+        <Key ID="STR_anomaly_procedural_exclusion_desc">
+            <Original>Will add an exlcusion zone, or safe zone, to the procedural anomaly spawning system. The area of the module will be anomaly free. Edgcases are anomalies with an area like the fog anomaly, if one of those is spawned at the edge of the exlcusion zone, it might protrude into the zone.</Original>
+            <English>Will add an exlcusion zone, or safe zone, to the procedural anomaly spawning system. The area of the module will be anomaly free. Edgcases are anomalies with an area like the fog anomaly, if one of those is spawned at the edge of the exlcusion zone, it might protrude into the zone.</English>
         </Key>
     </Package>
 </Project>

@@ -66,3 +66,11 @@ SUBPREP(blowout,isInShelter);
 
 // zeus
 SUBPREP(zeus,zeusDraw3D);
+
+// procedural anomaly fields
+if (isServer) then {
+    SUBPREP(procedural,proceduralInit);
+    SUBPREP(procedural,proceduralLoop);
+    SUBPREP(procedural,proceduralActivateCell);
+    SUBPREP(procedural,proceduralExclusionModule);
+};
