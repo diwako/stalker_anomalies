@@ -796,8 +796,8 @@
             <English>Minimum delay in minutes!</English>
         </Key>
         <Key ID="STR_anomaly_blowoutSystem_maximumDelay">
-            <Original>Minimum Delay</Original>
-            <English>Minimum Delay</English>
+            <Original>Maximum Delay</Original>
+            <English>Maximum Delay</English>
         </Key>
         <Key ID="STR_anomaly_blowoutSystem_maximumDelay_desc">
             <Original>Maximum delay in minutes!</Original>
