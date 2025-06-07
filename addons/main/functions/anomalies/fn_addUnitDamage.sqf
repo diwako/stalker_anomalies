@@ -50,6 +50,11 @@ switch (GVAR(medicalSystem)) do {
         private _coef = _damageCoefs select !_isPlayer;
         private _damage = (missionNamespace getVariable [["ace_medical_AIDamageThreshold", "ace_medical_playerDamageThreshold"] select _isPlayer, 1]) * _coef;
         [_unit, _damage, selectRandom _bodyParts, _damageType, _unit] call ace_medical_fnc_addDamageToUnit;
+
+        // handle ambient animals
+        if (!(_unit isKindOf "CAManBase") && {_unit isKindOf "Animal_Base_F"}) then {
+            _unit setDamage 1;
+        };
     };
     case "aps": {
         private _medicalInfo = GVAR(medicalSystemMap) getOrDefault [GVAR(medicalSystem), []];
