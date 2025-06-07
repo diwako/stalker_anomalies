@@ -38,7 +38,7 @@ _target setVariable [QGVAR(isGettingClicked), true];
 }, _trg, GVAR(anomalySettingClickerCooldownMin) + random GVAR(anomalySettingClickerCooldownRand)] call CBA_fnc_waitAndExecute;
 
 private _velocity = vectorNormalized velocity _target;
-private _flashBandPos = getPosASL _target vectorAdd (_velocity vectorMultiply ((speed _target) * 5/18 * (CLICKER_EXPLODE_TIME + 0.5))) vectorAdd [0, 0, 1.25];
+private _flashBandPos = getPosASL _target vectorAdd (_velocity vectorMultiply ((speed _target) * 1/4 * (CLICKER_EXPLODE_TIME + 0.5))) vectorAdd [0, 0, 1.25];
 
 private _pelvisPos = AGLToASL (_target modelToWorld (_target selectionPosition "pelvis"));
 private _intersect = lineIntersectsSurfaces [_pelvisPos, _flashBandPos, _target, objNull, true, -1, "FIRE", "GEOM"];
