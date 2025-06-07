@@ -1,5 +1,5 @@
 #include "\z\diwako_anomalies\addons\main\script_component.hpp"
-params ["_gridData", "_index"];
+params ["_gridData", "_index", ["_force", false]];
 _gridData params ["_area", "", "_status", "_cachedAnomalies", "_spawnedAnomalies"];
 _area params ["_posArea", "_radius"];
 
@@ -75,7 +75,7 @@ if (_cachedAnomalies isEqualTo []) then {
 
 private _newStatus = GRID_ACTIVE;
 {
-    if (GVAR(prodecuralAnomalyCount) >= GVAR(proceduralMaxAnomalyCount)) then {
+    if (!_force && GVAR(prodecuralAnomalyCount) >= GVAR(proceduralMaxAnomalyCount)) then {
         _newStatus = GRID_PARTIAL;
         break;
     };

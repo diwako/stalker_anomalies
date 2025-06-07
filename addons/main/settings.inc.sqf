@@ -296,3 +296,11 @@ if (isClass(configFile >> "CfgPatches" >> "zen_common")) then {
     ,true
     ,true
 ] call CBA_fnc_addSetting;
+[
+    QGVAR(procedrualAllowOverPopulation)
+    ,"CHECKBOX"
+    ,[localize "STR_anomaly_settings_procedural_allowOverPopulation", localize "STR_anomaly_settings_procedural_allowOverPopulation_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,true
+    ,true
+] call CBA_fnc_addSetting;

@@ -38,7 +38,8 @@ private _timePerGrid = GVAR(procedrualScanInterval) / GVAR(proceduralGridCount);
             };
             case GRID_PARTIAL: {
                 if (_hasPlayers) then {
-                    [_gridData, _index] call FUNC(proceduralActivateCell);
+                    [_gridData, _index, GVAR(procedrualAllowOverPopulation) && {
+                        (_players inAreaArray _area) isNotEqualTo []}] call FUNC(proceduralActivateCell);
                 } else {
                     call _fnc_delete;
                 };
