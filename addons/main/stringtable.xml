@@ -867,5 +867,13 @@
             <Original>Will add an exlcusion zone, or safe zone, to the procedural anomaly spawning system. The area of the module will be anomaly free. Edgcases are anomalies with an area like the fog anomaly, if one of those is spawned at the edge of the exlcusion zone, it might protrude into the zone.</Original>
             <English>Will add an exlcusion zone, or safe zone, to the procedural anomaly spawning system. The area of the module will be anomaly free. Edgcases are anomalies with an area like the fog anomaly, if one of those is spawned at the edge of the exlcusion zone, it might protrude into the zone.</English>
         </Key>
+        <Key ID="STR_anomaly_settings_procedural_allowOverPopulation">
+            <Original>Allow overpopulation</Original>
+            <English>Allow overpopulation</English>
+        </Key>
+        <Key ID="STR_anomaly_settings_procedural_allowOverPopulation_desc">
+            <Original>When enabled allows spawning of additional anomalies in grids players are in while ignoring the max cap. This is to prevent empty grids even tho players are active in them</Original>
+            <English>When enabled allows spawning of additional anomalies in grids players are in while ignoring the max cap. This is to prevent empty grids even tho players are active in them</English>
+        </Key>
     </Package>
 </Project>
