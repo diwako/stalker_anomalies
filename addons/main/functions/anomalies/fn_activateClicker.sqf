@@ -18,7 +18,14 @@
 params[["_trg", objNull], ["_list", []]];
 if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "clicker") exitWith {};
 
-private _targets = _list select {alive _x && {lifeState _x != "INCAPACITATED" && {!(_x getVariable [QGVAR(isGettingClicked), false]) && {!(_x getVariable ["anomaly_ignore", false])}}}};
+private _targets = _list select {
+    !(_x getVariable ["anomaly_ignore", false])
+    && {alive _x}
+} select {
+    !(_x getVariable [QGVAR(isGettingClicked), false])
+} select {
+    lifeState _x != "INCAPACITATED"
+};
 
 _trg setVariable [QGVAR(cooldown), true];
 if (_targets isEqualTo []) exitWith {
