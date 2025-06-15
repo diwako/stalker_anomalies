@@ -29,14 +29,14 @@ if (!isPlayer _unit || !_inside) exitWith {
 private _eyePos = eyePos _unit;
 
 // up
-private _trace = lineIntersectsSurfaces [_eyePos vectorAdd [0.5, 0, 0], _eyePos vectorAdd [0.5, 0, 10], _unit, objNull, true, -1, "GEOM", "NONE", true];
+private _trace = lineIntersectsSurfaces [_eyePos vectorAdd [0.5, 0, 0], _eyePos vectorAdd [0.5, 0, 10], _unit, objNull, true, -1, "GEOM", "FIRE", true];
 if (_trace isEqualTo [] || {_trace findIf {_x select 3 isKindOf "Building"} == -1}) exitWith {false};
 
-_trace = lineIntersectsSurfaces [_eyePos vectorAdd [0, 0.5, 0], _eyePos vectorAdd [0, 0.5, 10], _unit, objNull, true, -1, "GEOM", "NONE", true];
+_trace = lineIntersectsSurfaces [_eyePos vectorAdd [0, 0.5, 0], _eyePos vectorAdd [0, 0.5, 10], _unit, objNull, true, -1, "GEOM", "FIRE", true];
 if (_trace isEqualTo [] || {_trace findIf {_x select 3 isKindOf "Building"} == -1}) exitWith {false};
 
-_trace = lineIntersectsSurfaces [_eyePos vectorAdd [-0.5, 0, 0], _eyePos vectorAdd [-0.5, 0, 10], _unit, objNull, true, -1, "GEOM", "NONE", true];
+_trace = lineIntersectsSurfaces [_eyePos vectorAdd [-0.5, 0, 0], _eyePos vectorAdd [-0.5, 0, 10], _unit, objNull, true, -1, "GEOM", "FIRE", true];
 if (_trace isEqualTo [] || {_trace findIf {_x select 3 isKindOf "Building"} == -1}) exitWith {false};
 
-_trace = lineIntersectsSurfaces [_eyePos vectorAdd [0, -0.5, 0], _eyePos vectorAdd [0, -0.5, 10], _unit, objNull, true, -1, "GEOM", "NONE", true];
+_trace = lineIntersectsSurfaces [_eyePos vectorAdd [0, -0.5, 0], _eyePos vectorAdd [0, -0.5, 10], _unit, objNull, true, -1, "GEOM", "FIRE", true];
 _trace isNotEqualTo [] && {_trace findIf {_x select 3 isKindOf "Building"} != -1}
