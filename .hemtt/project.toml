@@ -27,7 +27,7 @@ workshop = [
     "3499977893", # Advanced developer tools
     "2073243184", # String table viewer
 ]
-parameters = ["-world=empty", "-noPause"]
+parameters = ["-world=empty", "-noPause", "-noPauseAudio", "-limitFPS=144"]
 mission = "test.vr"
 
 [hemtt.signing]
