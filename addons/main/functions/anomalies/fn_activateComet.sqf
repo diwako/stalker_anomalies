@@ -20,10 +20,11 @@ if (isNull _trg || _trg getVariable [QGVAR(anomalyType),""] != "comet") exitWith
 
 private _time = time;
 private _local = _list select {
-    local _x && {
-    alive _x && {
-    !(_x getVariable ["anomaly_ignore", false])
-}}} select {(_x getVariable [QGVAR(nextCometAffected), -1]) <= _time};
+    local _x
+    && {alive _x}
+    && {!(_x getVariable ["anomaly_ignore", false])}
+    && {(_x getVariable [QGVAR(nextCometAffected), -1]) <= _time}
+};
 
 // set the cooldown in case there is another object in the path to give trigger's condition a new spin
 _trg setVariable [QGVAR(cooldown), true];
