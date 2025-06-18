@@ -26,10 +26,8 @@ _trg setVariable [QGVAR(cooldown), true, true];
     params[["_trg",objNull],["_list",[]]];
 
     {
-        if (!(_x isKindOf "Man" || _x isKindOf "LandVehicle" || _x isKindOf "Air")) then {
-            deleteVehicle _x;
-        };
-    } forEach _list;
+        deleteVehicle _x;
+    } forEach (_list select {!(_x isKindOf "Man" || {_x isKindOf "LandVehicle"} || {_x isKindOf "Air"})});
 
     private _men = (nearestObjects [getPos _trg,  ["Man", "LandVehicle" ,"Air"], 5]) select {!(_x getVariable ["anomaly_ignore", false])};
     {
