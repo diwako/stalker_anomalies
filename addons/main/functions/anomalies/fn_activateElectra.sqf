@@ -21,10 +21,8 @@ if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "ele
 [QGVAR(electraEffect), [_trg, _list]] call CBA_fnc_globalEvent;
 
 {
-    if !(_x isKindOf "Man" || _x isKindOf "LandVehicle" || _x isKindOf "air") then {
-        deleteVehicle _x;
-    };
-} forEach _list;
+    deleteVehicle _x;
+} forEach (_list select {!(_x isKindOf "Man" || {_x isKindOf "LandVehicle"} || {_x isKindOf "air"})});
 {
     if (alive _x) then {
         if (_x isKindOf "LandVehicle" || _x isKindOf "air") then {

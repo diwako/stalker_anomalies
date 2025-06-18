@@ -22,10 +22,8 @@ if (isNull _trg || !isServer || _trg getVariable [QGVAR(anomalyType),""] != "mea
 _trg setVariable [QGVAR(cooldown), true, true];
 
 {
-    if (!(_x isKindOf "Man" || _x isKindOf "LandVehicle" || _x isKindOf "Air")) then {
-        deleteVehicle _x;
-    };
-} forEach _list;
+    deleteVehicle _x;
+} forEach (_list select {!(_x isKindOf "Man" || {_x isKindOf "LandVehicle"} || {_x isKindOf "Air"})});
 
 private _men = (nearestObjects [getPos _trg,  ["Man", "LandVehicle" ,"Air"], 5]) select {!(_x getVariable ["anomaly_ignore", false])};
 private _sucked = [];

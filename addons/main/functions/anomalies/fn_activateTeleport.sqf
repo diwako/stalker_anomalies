@@ -49,10 +49,8 @@ if (isNil "_exit") exitWith {
 [{
     params["_trg", "_list", "_exit", "_men"];
     {
-        if !(_x isKindOf "Man" || _x isKindOf "LandVehicle" || _x isKindOf "Air")  then {
-            deleteVehicle _x;
-        };
-    } forEach _list;
+        deleteVehicle _x;
+    } forEach (_list select {!(_x isKindOf "Man" || {_x isKindOf "LandVehicle"} || {_x isKindOf "Air"})});
     private _exitPos = getPos _exit;
     {
         if (alive _x) then {
@@ -66,10 +64,8 @@ if (isNil "_exit") exitWith {
             if ((_x isKindOf "LandVehicle" || _x isKindOf "Air") && {getMass _x < 10000}) then {
                 _doTeleport = true;
                 {
-                    if (isPlayer _x) then {
-                        [QGVAR(teleportFlash), nil, _x] call CBA_fnc_targetEvent;
-                    };
-                } forEach crew _x;
+                    [QGVAR(teleportFlash), nil, _x] call CBA_fnc_targetEvent;
+                } forEach ((crew _x) select {isPlayer _x});
             };
 
             if (_doTeleport) then {
