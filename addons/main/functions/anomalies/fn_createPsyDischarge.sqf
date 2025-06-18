@@ -98,9 +98,9 @@ if (hasInterface && {((AGLToASL positionCameraToWorld [0,0,0]) distance _pos) < 
     private _units = (allUnits select {local _x && {isNull objectParent _x && {!(_x getVariable ["anomaly_ignore", false])}}}) inAreaArray [ASLToAGL _pos, GVAR(anomalySettingPsyRange), GVAR(anomalySettingPsyRange), 0, false, -1];
 
     {
-        if ((lineIntersectsSurfaces [getPosASL _x, _pos, _x, objNull, true, 1, "FIRE", "GEOM"]) isEqualTo []) then {
+        if (_x isEqualTo []) then {
             // ouch
-            ["psydischarge", _x] call FUNC(addUnitDamage);
+            ["psydischarge", _units select _forEachIndex] call FUNC(addUnitDamage);
         };
-    } forEach _units;
+    } forEach (lineIntersectsSurfaces [_units apply {[getPosASL _x, _pos, _x, objNull, true, 1, "FIRE", "GEOM"]}]);
 }, [_pos], DISCHARGE_TIME] call CBA_fnc_waitAndExecute;
