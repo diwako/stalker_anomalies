@@ -94,6 +94,8 @@ if !(hasInterface) exitWith {};
 GVAR(activeAnomalies) = [];
 GVAR(detectorActive) = false;
 GVAR(detectorVolume) = 0;
+GVAR(razorPlayInsideSound) = false;
+GVAR(bloodEffectRunning) = false;
 
 enableCamShake true;
 if (isNil QGVAR(holder)) then {
@@ -112,11 +114,14 @@ if (isNil QGVAR(holder)) then {
     private _triggerActivateDistance = GVAR(triggerDistance) * _speedmod;
     private _idleDistance = GVAR(idleDistance) * _speedmod;
     private _fnc_addIdleSoundsLocal = {
-        params ["_trg", "_type"];
-        if !(isNull (_trg getVariable [QGVAR(soundIdleLocal), objNull])) exitWith {};
+        params ["_trg", "_type", ["_varName", QGVAR(soundIdleLocal)]];
+        if !(isNull (_trg getVariable [_varName, objNull])) exitWith {};
+        private _array = _trg getVariable [QGVAR(soundIdleLocalAll), []];
         private _sound = createSoundSourceLocal [_type, [0, 0, 0], [], 0];
         _sound setPosASL (getPosASL _trg);
-        _trg setVariable [QGVAR(soundIdleLocal), _sound];
+        _trg setVariable [_varName, _sound];
+        _array pushBack _sound;
+        _trg setVariable [QGVAR(soundIdleLocalAll), _array];
     };
 
     // find trigger
@@ -163,6 +168,11 @@ if (isNil QGVAR(holder)) then {
                         [_source, "idle"] call FUNC(fruitPunchEffect);
                         [_x, QGVAR(soundFruitpunch)] call _fnc_addIdleSoundsLocal;
                     };
+                    case "razor": {
+                        [_source, "idle"] call FUNC(razorEffect);
+                        [_x, QGVAR(soundRazorFar)] call _fnc_addIdleSoundsLocal;
+                        [_x, QGVAR(soundRazorClose), QGVAR(soundIdleLocalClose)] call _fnc_addIdleSoundsLocal;
+                    };
                     default {
                         _source enableSimulation false;
                     };
@@ -198,7 +208,10 @@ if (isNil QGVAR(holder)) then {
     {
         [_x] call FUNC(deleteParticleSource);
         // delete local only idle sound
-        deleteVehicle (_x getVariable [QGVAR(soundIdleLocal), objNull]);
+        {
+            deleteVehicle _x;
+        } forEach (_x getVariable [QGVAR(soundIdleLocalAll), []]);
+        _x setVariable [QGVAR(soundIdleLocalAll), nil];
         // if player is not playing in multiplayer disable it here.
         // in mp the server will disable the trigger
         if (_isNotMp) then {

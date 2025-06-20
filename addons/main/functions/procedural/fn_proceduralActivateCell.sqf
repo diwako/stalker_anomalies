@@ -39,7 +39,7 @@ if (_cachedAnomalies isEqualTo []) then {
     for "_i" from 1 to _anomalyDensity do {
         _pos = [_area] call CBA_fnc_randPosArea;
         if ([_pos] call _fnc_cond) then {
-            _type = selectRandomWeighted ["springboard", 10, "burner", 4, "electra", 3, "meatgrinder", 1];
+            _type = selectRandomWeighted ["springboard", 10, "burner", 4, "electra", 3, "meatgrinder", 1, "razor", 2];
             _cachedAnomalies pushBack [AGLToASL _pos, _type];
         };
     };
@@ -51,7 +51,16 @@ if (_cachedAnomalies isEqualTo []) then {
         private _pos = locationPosition _x;
         private _size = size _x;
         _pos = [[_pos, _size select 0, _size select 1, 0, true]] call CBA_fnc_randPosArea;
-        _type = selectRandomWeighted ["springboard", 10, "burner", 4, "electra", 3, "meatgrinder", 1, "fruitpunch", 2, "clicker", 0.5, "fog", 1];
+        _type = selectRandomWeighted [
+            "springboard", 10,
+            "burner", 4,
+            "electra", 3,
+            "meatgrinder", 1,
+            "fruitpunch", 2,
+            "clicker", 0.5,
+            "fog", 1,
+            "razor", 2.5
+        ];
         if (_type in ["clicker", "fog"]) then {
             _cachedAnomalies pushBack [AGLToASL _pos, _type, _size];
         } else {
@@ -88,6 +97,7 @@ private _newStatus = GRID_ACTIVE;
         case "electra": {[_pos] call FUNC(createElectra)};
         case "meatgrinder": {[_pos] call FUNC(createMeatgrinder)};
         case "fruitpunch": {[_pos] call FUNC(createFruitPunch)};
+        case "razor": {[_pos] call FUNC(createRazor)};
         case "clicker": {[_pos, (_size select 0) max (33 + random 33), (_size select 1) max (33 + random 33)] call FUNC(createClicker)};
         case "fog": {[_pos, (_size select 0) max (_size select 1) max 25] call FUNC(createFog)};
         default {objNull};

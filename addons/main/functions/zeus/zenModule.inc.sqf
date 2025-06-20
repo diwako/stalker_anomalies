@@ -12,7 +12,8 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                 localize "STR_anomaly_fog",
                 localize "STR_anomaly_fruitpunch",
                 localize "STR_anomaly_psy_discharge",
-                localize "STR_anomaly_clicker"
+                localize "STR_anomaly_clicker",
+                localize "STR_anomaly_razor"
             ];
 
             [localize "STR_anomaly_zeus_spawn_anomaly", [
@@ -72,6 +73,7 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                                 }, {}, [_pos]
                             ] call zen_dialog_fnc_create;
                         };
+                        case 9: { [QGVAR(createAnomaly), [[_pos], "razor"]] call CBA_fnc_serverEvent; };
                         default { };
                     };
                 }, {}, [_pos, _anomalies]

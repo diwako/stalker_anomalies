@@ -20,15 +20,28 @@ exclude = ["*.psd", "*.png", "*.tga", "/**/cfg*.hpp"]
 
 [hemtt.launch.default]
 workshop = [
-    "450814997", # CBA_A3's Workshop ID
-    "463939057", # ACE3
-    # "2523439183",  # APS
+    "450814997",  # CBA_A3's Workshop ID
     "1779063631", # ZEN
     "3499977893", # Advanced developer tools
     "2073243184", # String table viewer
 ]
 parameters = ["-world=empty", "-noPause", "-noPauseAudio", "-limitFPS=144"]
 mission = "test.vr"
+
+[hemtt.launch.ace]
+extends = "default"
+workshop = [
+    # "3053169823", # ace no medical
+    "463939057", # ACE3
+]
+
+[hemtt.launch.aps]
+extends = "default"
+workshop = [
+    "463939057",  # ACE3
+    "3053169823", # ace no medical
+    "2523439183", # APS
+]
 
 [hemtt.signing]
 authority = "diwako_anomalies"

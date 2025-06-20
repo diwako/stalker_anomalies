@@ -30,6 +30,8 @@ SUBPREP(anomalies,createCometLocal);
 SUBPREP(anomalies,activateComet);
 SUBPREP(anomalies,createClicker);
 SUBPREP(anomalies,activateClicker);
+SUBPREP(anomalies,createRazor);
+SUBPREP(anomalies,activateRazor);
 
 SUBPREP(anomalies,addUnitDamage);
 
@@ -41,6 +43,9 @@ SUBPREP(effects,burnerEffect);
 SUBPREP(effects,teleportEffect);
 SUBPREP(effects,fogEffect);
 SUBPREP(effects,fruitPunchEffect);
+SUBPREP(effects,razorEffect);
+SUBPREP(effects,blockerEffect);
+SUBPREP(effects,bloodEffect);
 
 // detector
 SUBPREP(detector,detector);
@@ -74,3 +79,6 @@ if (isServer) then {
     SUBPREP(procedural,proceduralActivateCell);
     SUBPREP(procedural,proceduralExclusionModule);
 };
+
+// event handler
+SUBPREP(eventHandler,blockerHitPart);

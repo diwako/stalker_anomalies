@@ -8,7 +8,7 @@ class EditorData
 	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=83;
+		nextID=89;
 	};
 	class MarkerIDProvider
 	{
@@ -126,7 +126,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=55;
+		items=57;
 		class Item0
 		{
 			dataType="Logic";
@@ -1424,6 +1424,81 @@ class Mission
 			flags=1;
 			id=82;
 			type="diwako_anomalies_main_moduleProceduralExclusion";
+		};
+		class Item55
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7920.0752,5,2960.2441};
+			};
+			id=83;
+			type="diwako_anomalies_main_moduleRazor";
+		};
+		class Item56
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7919.9263,5.0014391,2945.9861};
+						angles[]={0,6.2824154,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=85;
+					type="B_Soldier_F";
+				};
+				class Item1
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={7919.9727,5,2969.707};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=86;
+					type="Move";
+				};
+				class Item2
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={7919.9624,5,2950.7109};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=87;
+					type="Move";
+				};
+				class Item3
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={7919.4961,5,2969.792};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=88;
+					type="Cycle";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=84;
 		};
 	};
 };

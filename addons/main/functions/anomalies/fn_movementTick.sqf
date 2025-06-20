@@ -42,7 +42,7 @@ while {_delatTime >= _timeToTake || {_lastTime > _delatTime}} do {
 
 // private _interPolatedPos = (_lastPos vectorAdd ((_newPos vectorDiff _lastPos) vectorMultiply (linearConversion [_lastTime, _timeToTake, _delatTime, 0, 1, true]))) vectorAdd [0, 0, 1.5];
 
-private _interPolatedPos =(linearConversion [_lastTime, _timeToTake, _delatTime, 0, 1, false]) bezierInterpolation [_lastPos, _bezierPoint1, _bezierPoint2, _newPos];
+private _interPolatedPos = (linearConversion [_lastTime, _timeToTake, _delatTime, 0, 1, false]) bezierInterpolation [_lastPos, _bezierPoint1, _bezierPoint2, _newPos];
 
 _obj setPosASL _interPolatedPos;
 _interPolatedPos

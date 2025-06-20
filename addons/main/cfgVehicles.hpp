@@ -518,6 +518,25 @@ class cfgVehicles {
               sync[] = {};
        };
     };
+    class GVAR(moduleRazor): Module_F {
+        author = "diwako";
+        category = "DIW_ANOMALY";
+        displayName = "$STR_anomaly_razor";
+        icon = QPATHTOF(data\ui\modules\fruitpunch_ca.paa); // TODO: add icon
+        portrait = QPATHTOF(data\ui\modules\fruitpunch_ca.paa); // TODO: add icon
+        function = QFUNC(createRazor);
+        functionPriority = 1;
+        scope = 2;  //show in editor
+        isGlobal = 0; //run on server
+        isTriggerActivated = 1; //Wait for triggers
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+        };
+        class ModuleDescription: ModuleDescription {
+            description = "$STR_anomaly_razor_desc";
+            sync[] = {};
+        };
+    };
 
     class GVAR(soundComet): Sound {
         author = "diwako";
@@ -540,5 +559,25 @@ class cfgVehicles {
     };
     class GVAR(blowoutWave): GVAR(soundComet) {
         sound = QGVAR(blowoutWave);
+    };
+    class GVAR(soundRazorFar): GVAR(soundComet) {
+        sound = QGVAR(soundRazorFar);
+    };
+    class GVAR(soundRazorClose): GVAR(soundComet) {
+        sound = QGVAR(soundRazorClose);
+    };
+
+    class ProtectionZone_F;
+    class GVAR(blocker): ProtectionZone_F {
+        scope = 2;
+        displayName = "Projectile Blocker";
+        author = "Luca";
+        model = QPATHTOF(data\models\blocker.p3d);
+        class EventHandlers {
+            class ADDON {
+                HandleDamage = "0";
+                HitPart = QUOTE(call FUNC(blockerHitPart));
+            };
+        };
     };
 };

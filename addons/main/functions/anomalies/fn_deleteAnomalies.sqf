@@ -46,6 +46,8 @@ private _type = "";
             };
             default {};
         };
+
+        deleteVehicle (_x getVariable [QGVAR(blocker), objNull]);
         [{
             deleteVehicle _this;
         }, _x, 1] call CBA_fnc_waitAndExecute;

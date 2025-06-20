@@ -18,6 +18,7 @@ private _range = GVAR(idleDistance) + 150;
         case "fruitpunch": { QPATHTOF(data\ui\modules\fruitpunch_ca.paa) };
         case "comet": { QPATHTOF(data\ui\modules\comet_ca.paa) };
         case "clicker": { QPATHTOF(data\ui\modules\clicker_ca.paa) };
+        case "razor": { QPATHTOF(data\ui\modules\clicker_ca.paa) }; // TODO: add icon
         default { "\A3\modules_f\data\portraitModule_ca.paa" };
     };
     drawIcon3D [_icon, [1, 1, 1, 1], ASLToAGL _pos, _size, _size, 0, "", true];
