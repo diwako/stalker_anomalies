@@ -95,7 +95,11 @@ if (hasInterface && {((AGLToASL positionCameraToWorld [0,0,0]) distance _pos) < 
 
 [{
     params ["_pos"];
-    private _units = (allUnits select {local _x && {isNull objectParent _x && {!(_x getVariable ["anomaly_ignore", false])}}}) inAreaArray [ASLToAGL _pos, GVAR(anomalySettingPsyRange), GVAR(anomalySettingPsyRange), 0, false, -1];
+    private _units = (allUnits select {
+        local _x
+        && {isNull objectParent _x}
+        && {!(_x getVariable ["anomaly_ignore", false])}
+    }) inAreaArray [ASLToAGL _pos, GVAR(anomalySettingPsyRange), GVAR(anomalySettingPsyRange), 0, false, -1];
 
     {
         if (_x isEqualTo []) then {

@@ -377,10 +377,8 @@ if (hasInterface) then {
                         _units = _units - [player];
                     };
                     {
-                        if (local _x && {alive _x} && {isDamageAllowed _x} && {!([_x] call FUNC(isInShelter))}) then {
-                            _x setDamage [1, true, _x, _x];
-                        };
-                    } forEach _units;
+                        _x setDamage [1, true, _x, _x];
+                    } forEach (_units select {local _x && {alive _x} && {isDamageAllowed _x}} select {!([_x] call FUNC(isInShelter))});
                 }, nil, 10] call CBA_fnc_waitAndExecute;
             };
             [] call FUNC(blowoutWave);
@@ -407,10 +405,8 @@ if (hasInterface) then {
                     };
                     if !(GVAR(blowoutAffectPlayersOnly)) then {
                         {
-                            if (local _x && {!isNull _x && {alive _x && {isDamageAllowed _x && {!([_x] call FUNC(isInShelter))}}}}) then {
-                                _x setDamage [1, true, _x, _x];
-                            };
-                        } forEach (allUnits - [player, _player]);
+                            _x setDamage [1, true, _x, _x];
+                        } forEach ((allUnits - [player, _player]) select {local _x && {alive _x} && {isDamageAllowed _x}} select {!([_x] call FUNC(isInShelter))});
                     };
                 };
             }, nil, 10] call CBA_fnc_waitAndExecute;
