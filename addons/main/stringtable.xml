@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="diwako_anomalies">
     <Package name="anomaly">
-        <Key ID="STR_anomaly_empty">
-            <Original></Original>
-            <English></English>
-            <Czech></Czech>
-            <French></French>
-            <Spanish></Spanish>
-            <Italian></Italian>
-            <Polish></Polish>
-            <Portuguese></Portuguese>
-            <Russian></Russian>
-            <German></German>
-            <Korean></Korean>
-            <Japanese></Japanese>
-            <Chinese></Chinese>
-            <Chinesesimp></Chinesesimp>
-        </Key>
         <Key ID="STR_anomaly_category">
             <Original>Stalker anomalies</Original>
             <English>Stalker anomalies</English>
@@ -340,6 +324,12 @@
             <Original>Spawn a clicker anomaly at module location. The activation area will be the area of the module</Original>
             <English>Spawn a clicker anomaly at module location. The activation area will be the area of the module</English>
             <French>Créer une anomalie de clicker à l'emplacement du module. La zone d'activation sera la zone du module.</French>
+        </Key>
+        <Key ID="STR_anomaly_razor">
+            <Original>Razor</Original>
+        </Key>
+        <Key ID="STR_anomaly_razor_desc">
+            <Original>Spawn a razor anomaly at module location. The anomaly consists out of razor sharp glass shards that casue damage</Original>
         </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>

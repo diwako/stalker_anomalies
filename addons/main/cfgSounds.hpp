@@ -229,4 +229,10 @@ class cfgSounds {
         sound[] = {QPATHTOF(sounds\blowout\blowout.ogg), 2, 1, 50};
         titles[] = {};
     };
+    class GVAR(razorInside1)
+    {
+        name = QGVAR(razorInside1);
+        sound[] = {QPATHTOF(sounds\anomalies\razor_inside_1.ogg), 1.5, 1, 50};
+        titles[] = {};
+    };
 };

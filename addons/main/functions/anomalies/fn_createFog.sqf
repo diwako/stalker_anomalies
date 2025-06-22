@@ -20,7 +20,7 @@
     diwako 2018-05-22
 */
 params[["_pos",[0,0,0]],["_radius",10],["_isRectangle",true],["_angle",0]];
-if (!isServer) exitWith {};
+if !(isServer) exitWith {};
 
 private _varName = "";
 if !(_pos isEqualType []) then {

@@ -27,3 +27,4 @@ class CfgPatches {
 #include "cfgWeapons.hpp"
 #include "cfgVehicles.hpp"
 #include "cfgSfx.hpp"
+#include "cfgRSC.hpp"

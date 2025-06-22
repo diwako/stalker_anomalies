@@ -291,3 +291,7 @@ DFUNC(playLocalAnomalyActivationSound) = {
         };
     }, [_pos, _light], CLICKER_EXPLODE_TIME] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(blockerEffect), {
+    _this call FUNC(blockerEffect);
+}] call CBA_fnc_addEventHandler;

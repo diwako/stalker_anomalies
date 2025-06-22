@@ -27,7 +27,8 @@ GVAR(medicalSystemMap) set ["vanilla", createHashMapFromArray [
     ["fruitpunch", [0.2, 0.2]],
     ["springboard", [0.5, 1]],
     ["psydischarge", [{0.35 + random 0.75}, {0.5 + random 0.75}]],
-    ["clicker", [{0.1 + random 0.5}, {0.5 + random 0.5}]]
+    ["clicker", [{0.1 + random 0.5}, {0.5 + random 0.5}]],
+    ["razor", [{random 0.2}, {0.2 + random 0.2}]]
 ]];
 GVAR(medicalSystemMap) set ["ace_medical", createHashMapFromArray [
     // [anomaly_type, [[multiplier_player, ai], body_part_array, damage_type]]
@@ -38,7 +39,8 @@ GVAR(medicalSystemMap) set ["ace_medical", createHashMapFromArray [
     ["fruitpunch", [[0.2, 0.333], ["leg_l", "leg_r"], "stab"]],
     ["springboard", [[1.5, 10], ["leg_l", "leg_r"], "stab"]],
     ["psydischarge", [[0.9, 0.9], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]],
-    ["clicker", [[1.5, 3], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]]
+    ["clicker", [[1.5, 3], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]],
+    ["razor", [[1.5, 3], ["body", "hand_l", "hand_r", "leg_l", "leg_r"], "stab"]]
 ]];
 GVAR(medicalSystemMap) set ["aps", createHashMapFromArray [
     // [anomaly_type, [[multiplier_player, ai], body_part_array, bullet_type]]
@@ -49,7 +51,8 @@ GVAR(medicalSystemMap) set ["aps", createHashMapFromArray [
     ["fruitpunch", [[0.2, 0.333], ["legs"], "B_9x21_Ball"]],
     ["springboard", [[1.5, 2], ["legs"], "B_45ACP_Ball"]],
     ["psydischarge", [[0.9, 0.9], ["head", "pelvis", "hands", "legs"], "B_9x21_Ball"]],
-    ["clicker", [[1.5, 2], ["head", "pelvis", "hands", "legs"], "B_45ACP_Ball"]]
+    ["clicker", [[1.5, 2], ["head", "pelvis", "hands", "legs"], "B_45ACP_Ball"]],
+    ["razor", [[0.2, 0.4], ["head", "pelvis", "hands", "legs"], "B_9x21_Ball"]]
 ]];
 
 if (isServer) then {
@@ -68,6 +71,7 @@ if (isServer) then {
             case "fruitpunch":   { _args call FUNC(createFruitpunch) };
             case "psyDischarge": { /* Handled in global eventhandler */ };
             case "clicker":      { _args call FUNC(createClicker) };
+            case "razor":        { _args call FUNC(createRazor) };
             default {
                 hintC ( format ["Unknown type: %1", _type]);
             };
@@ -102,7 +106,12 @@ if (hasInterface) then {
         params ["_trg"];
         [_trg] call FUNC(deleteParticleSource);
         // delete local only idle sound
-        deleteVehicle (_trg getVariable [QGVAR(soundIdleLocal), objNull]);
+        {
+            deleteVehicle _x;
+        } forEach (_trg getVariable [QGVAR(soundIdleLocalAll), []]);
+        _trg setVariable [QGVAR(soundIdleLocalAll), nil];
+
+        deleteVehicle (_trg getVariable [QGVAR(blocker), objNull]);
     }] call CBA_fnc_addEventHandler;
 
     #include "anomalyFXEvents.inc.sqf"
@@ -414,6 +423,14 @@ if (hasInterface) then {
         default {
         };
     };
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(createBlocker), {
+    params [["_trg", objNull]];
+    if (isNull _trg) exitWith {};
+    private _blocker = QGVAR(blocker) createVehicleLocal [0, 0, 0];
+    _blocker setPosWorld getPosWorld _trg;
+    _trg setVariable [QGVAR(blocker), _blocker];
 }] call CBA_fnc_addEventHandler;
 
 ADDON = true;
