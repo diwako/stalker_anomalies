@@ -40,7 +40,7 @@ GVAR(medicalSystemMap) set ["ace_medical", createHashMapFromArray [
     ["springboard", [[1.5, 10], ["leg_l", "leg_r"], "stab"]],
     ["psydischarge", [[0.9, 0.9], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]],
     ["clicker", [[1.5, 3], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]],
-    ["razor", [[0.4, 0.4], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "stab"]]
+    ["razor", [[1.5, 3], ["body", "hand_l", "hand_r", "leg_l", "leg_r"], "stab"]]
 ]];
 GVAR(medicalSystemMap) set ["aps", createHashMapFromArray [
     // [anomaly_type, [[multiplier_player, ai], body_part_array, bullet_type]]

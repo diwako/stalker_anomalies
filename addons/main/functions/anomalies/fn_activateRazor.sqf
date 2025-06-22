@@ -21,7 +21,8 @@ if (isNull _trg || _trg getVariable [QGVAR(anomalyType),""] != "razor") exitWith
 private _player = [] call CBA_fnc_currentUnit;
 if (hasInterface && ({_list isNotEqualTo [] || GVAR(razorPlayInsideSound)})) then {
     if (GVAR(razorPlayInsideSound)) then {
-        if (_player getVariable [QGVAR(razorAnomaly), objNull] isEqualTo _trg && !(_player in _list)) then {
+        if ((isNull (_player getVariable [QGVAR(razorAnomaly), objNull]) ||
+            {_player getVariable [QGVAR(razorAnomaly), objNull] isEqualTo _trg}) && {!(_player in _list)}) then {
             GVAR(razorPlayInsideSound) = false;
             _player setVariable [QGVAR(razorAnomaly), nil];
             deleteVehicle GVAR(razorPlayerSound)
