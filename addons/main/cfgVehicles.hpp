@@ -522,8 +522,8 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_razor";
-        icon = QPATHTOF(data\ui\modules\fruitpunch_ca.paa); // TODO: add icon
-        portrait = QPATHTOF(data\ui\modules\fruitpunch_ca.paa); // TODO: add icon
+        icon = QPATHTOF(data\ui\modules\razor_ca.paa);
+        portrait = QPATHTOF(data\ui\modules\razor_ca.paa);
         function = QFUNC(createRazor);
         functionPriority = 1;
         scope = 2;  //show in editor
