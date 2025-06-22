@@ -16,7 +16,7 @@
 */
 params[["_pos",[0,0,0]]];
 
-if (!isServer) exitWith {};
+if !(isServer) exitWith {};
 
 private _varName = "";
 if !(_pos isEqualType []) then {

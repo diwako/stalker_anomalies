@@ -1,20 +1,20 @@
 #include "\z\diwako_anomalies\addons\main\script_component.hpp"
 /*
     Function: diwako_anomalies_main_fnc_bloodEffect
-    File: fn_bloodEffect.sqf
-    Author: Vladimir Hynek, diwako
 
     Description:
-    Blood splash (texture) postprocess.
+        Blood splash (texture) postprocess.
 
     Parameters:
         _time - Bleeding time in seconds, could be <5;90>
+                Can be called multiple times, time for blood on screen will update
 
     Returns:
         nothing
 
-    Returned value:
-    None.
+    Author:
+    Vladimir Hynek
+    diwako 2025-06-20
 */
 
 params [["_time", 0]];

@@ -17,7 +17,7 @@
 */
 params[["_trg",objNull], ["_list",[]]];
 if (isNull _trg || _trg getVariable [QGVAR(anomalyType),""] != "razor") exitWith {false};
-// systemChat format ["Tick: %1", time];
+
 private _player = [] call CBA_fnc_currentUnit;
 if (hasInterface && ({_list isNotEqualTo [] || GVAR(razorPlayInsideSound)})) then {
     if (GVAR(razorPlayInsideSound)) then {

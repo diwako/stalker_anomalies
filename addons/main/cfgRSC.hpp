@@ -23,14 +23,6 @@ class RscTitles {
                 idc = 1213;
                 text = "A3\Ui_f\data\igui\rsctitles\HealthTextures\blood_upper_ca.paa";
             };
-            // class Dust_1: Blood_1 {
-            //     idc = 1214;
-            //     text = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_lower_ca.paa";
-            // };
-            // class Dust_2: Blood_1 {
-            //     idc = 1215;
-            //     text = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
-            // };
         };
     };
 };
