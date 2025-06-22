@@ -17,6 +17,7 @@
     diwako 2025-06-20
 */
 
+if !(hasInterface) exitWith {nil};
 params [["_time", 0]];
 
 if (GVAR(bloodEffectRunning)) exitWith {
