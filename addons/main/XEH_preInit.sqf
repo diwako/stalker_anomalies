@@ -426,7 +426,8 @@ if (hasInterface) then {
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(createBlocker), {
-    params ["_trg"];
+    params [["_trg", objNull]];
+    if (isNull _trg) exitWith {};
     private _blocker = QGVAR(blocker) createVehicleLocal [0, 0, 0];
     _blocker setPosWorld getPosWorld _trg;
     _trg setVariable [QGVAR(blocker), _blocker];
