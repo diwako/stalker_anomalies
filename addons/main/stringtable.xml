@@ -319,21 +319,21 @@
             <Original>Clicker</Original>
             <English>Clicker</English>
             <French>Clicker</French>
-			<Polish>Klikacz</Polish>
+            <Polish>Klikacz</Polish>
         </Key>
         <Key ID="STR_anomaly_clicker_desc">
             <Original>Spawn a clicker anomaly at module location. The activation area will be the area of the module</Original>
             <English>Spawn a clicker anomaly at module location. The activation area will be the area of the module</English>
             <French>Créer une anomalie de clicker à l'emplacement du module. La zone d'activation sera la zone du module.</French>
-			<Polish>Tworzy anomalię "Klikacz" w miejscu modułu. Strefą aktywacji będzie strefa modułu.</Polish>
+            <Polish>Tworzy anomalię "Klikacz" w miejscu modułu. Strefą aktywacji będzie strefa modułu.</Polish>
         </Key>
         <Key ID="STR_anomaly_razor">
             <Original>Razor</Original>
-			<Polish>Żyletka</Polish>
+            <Polish>Żyletka</Polish>
         </Key>
         <Key ID="STR_anomaly_razor_desc">
             <Original>Spawn a razor anomaly at module location. The anomaly consists out of razor sharp glass shards that cause damage</Original>
-			<Polish>Tworzy anomalię "Żyletka" w miejscu modułu. Anomalia ta składa się z wirujących, ostrych odłamków szkła zadających obrażenia.</Polish>
+            <Polish>Tworzy anomalię "Żyletka" w miejscu modułu. Anomalia ta składa się z wirujących, ostrych odłamków szkła zadających obrażenia.</Polish>
         </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
@@ -625,13 +625,13 @@
             <Original>Show anomalies in Zeus interface</Original>
             <English>Show anomalies in Zeus interface</English>
             <French>Afficher les anomalies dans l'interface de Zeus</French>
-			<Polish>Pokazuj anomalie w Zeusie</Polish>
+            <Polish>Pokazuj anomalie w Zeusie</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_zeus_show_anomalies_desc">
             <Original>Shows an icon for each anomaly within idle distance. Requires Zeus Enhanced</Original>
             <English>Shows an icon for each anomaly within idle distance. Requires Zeus Enhanced</English>
             <French>Affiche une icône pour chaque anomalie se trouvant à distance de marche à vide. Nécessite Zeus Enhanced</French>
-			<Polish>Wyświetla ikony na pozycjach anomalii w pobliżu. Wymaga moda Zeus Enhanced.</Polish>
+            <Polish>Wyświetla ikony na pozycjach anomalii w pobliżu. Wymaga moda Zeus Enhanced.</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_spawn_anomaly">
             <Original>Spawn Anomaly</Original>
@@ -744,163 +744,163 @@
             <Original>Lethal</Original>
             <English>Lethal</English>
             <French>Létal</French>
-			<Polish>Śmiertelność</Polish>
+            <Polish>Śmiertelność</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_is_lethal_desc">
             <Original>The final blowout wave is lethal and kills those that are not in cover</Original>
             <English>The final blowout wave is lethal and kills those that are not in cover</English>
             <French>La vague finale de l'explosion est mortelle et tue ceux qui ne sont pas à couvert.</French>
-			<Polish>Ostatnia fala Emisji będzie śmiertelna i zabije wszystkie jednostki, które nie są w ukryciu.</Polish>
+            <Polish>Ostatnia fala Emisji będzie śmiertelna i zabije wszystkie jednostki, które nie są w ukryciu.</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_env_particle_effect">
             <Original>Environment particle effects</Original>
             <English>Environment particle effects</English>
             <French>Effets des particules sur l'environnement</French>
-			<Polish>Efekty środowiskowe</Polish>
+            <Polish>Efekty środowiskowe</Polish>
         </Key>
         <Key ID="STR_anomaly_zeus_start_blowout_env_particle_effect_desc">
             <Original>When enabled causes leaves blowing in the wind, dust being kicked up and some other things</Original>
             <English>When enabled causes leaves blowing in the wind, dust being kicked up and some other things</English>
             <French>Lorsqu'il est activé, le vent souffle sur les feuilles, la poussière est soulevée et d'autres choses encore.</French>
-			<Polish>Kiedy włączone, tworzy liście powiewające na wietrze, chmury dymu i inne efekty.</Polish>
+            <Polish>Kiedy włączone, tworzy liście powiewające na wietrze, chmury dymu i inne efekty.</Polish>
         </Key>
         <Key ID="STR_anomaly_blowout_safe_check_name">
             <Original>Am I safe from the blowout?</Original>
             <English>Am I safe from the blowout?</English>
             <French>Suis-je à l'abri de la déflagration?</French>
-			<Polish>Czy jestem osłonięty przed Emisją?</Polish>
+            <Polish>Czy jestem osłonięty przed Emisją?</Polish>
         </Key>
         <Key ID="STR_anomaly_blowout_safe_check_safe">
             <Original>You feel safe at this spot from the blowout</Original>
             <English>You feel safe at this spot from the blowout</English>
             <French>Vous vous sentez à l'abri à cet endroit de la déflagration.</French>
-			<Polish>Czujesz się chroniony przed Emisją...</Polish>
+            <Polish>Czujesz się chroniony przed Emisją...</Polish>
         </Key>
         <Key ID="STR_anomaly_blowout_safe_check_not_safe">
             <Original>You do not feel safe here</Original>
             <English>You do not feel safe here</English>
             <French>Vous ne vous sentez pas en sécurité ici</French>
-			<Polish>Nie czujesz się tu bezpiecznie...</Polish>
+            <Polish>Nie czujesz się tu bezpiecznie...</Polish>
         </Key>
         <Key ID="STR_anomaly_blowoutSystem">
             <Original>Blowout System</Original>
             <English>Blowout System</English>
-			<Polish>System Emisji</Polish>
+            <Polish>System Emisji</Polish>
         </Key>
         <Key ID="STR_anomaly_blowoutSystem_desc">
             <Original>Enables a system to have periodic blowouts with random intervals between them</Original>
             <English>Enables a system to have periodic blowouts with random intervals between them</English>
-			<Polish>Włącza system automatycznego powstawania Emisji z losowymi przerwami między nimi.</Polish>
+            <Polish>Włącza system automatycznego powstawania Emisji z losowymi przerwami między nimi.</Polish>
         </Key>
         <Key ID="STR_anomaly_blowoutSystem_minimumDelay">
             <Original>Minimum Delay</Original>
             <English>Minimum Delay</English>
-			<Polish>Min. opóźnienie</Polish>
+            <Polish>Min. opóźnienie</Polish>
         </Key>
         <Key ID="STR_anomaly_blowoutSystem_minimumDelay_desc">
             <Original>Minimum delay in minutes!</Original>
             <English>Minimum delay in minutes!</English>
-			<Polish>Minimalne opóźnienie w minutach!</Polish>
+            <Polish>Minimalne opóźnienie w minutach!</Polish>
         </Key>
         <Key ID="STR_anomaly_blowoutSystem_maximumDelay">
             <Original>Maximum Delay</Original>
             <English>Maximum Delay</English>
-			<Polish>Maks. opóźnienie</Polish>
+            <Polish>Maks. opóźnienie</Polish>
         </Key>
         <Key ID="STR_anomaly_blowoutSystem_maximumDelay_desc">
             <Original>Maximum delay in minutes!</Original>
             <English>Maximum delay in minutes!</English>
-			<Polish>Maksymalne opóźnienie w minutach!</Polish>
+            <Polish>Maksymalne opóźnienie w minutach!</Polish>
         </Key>
         <Key ID="STR_anomaly_blowoutSystem_condition_desc">
             <Original>Code that runs every check if a new blowout should be scheduled. When this returns false, it will not schedule a blowout. However, it will set the 'last blowout time' internally to the current time!</Original>
             <English>Code that runs every check if a new blowout should be scheduled. When this returns false, it will not schedule a blowout. However, it will set the 'last blowout time' internally to the current time!</English>
-			<Polish>Kod przetwarzany co jakiś czas w celu sprawdzenia, czy powinna zacząć się kolejna Emisja. Jeśli ten kod zwraca fałsz, Emisja się nie wygeneruje, jednakże 'czas od ostatniej Emisji' zostanie zmieniony na obecny!</Polish>
+            <Polish>Kod przetwarzany co jakiś czas w celu sprawdzenia, czy powinna zacząć się kolejna Emisja. Jeśli ten kod zwraca fałsz, Emisja się nie wygeneruje, jednakże 'czas od ostatniej Emisji' zostanie zmieniony na obecny!</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_proceduralEnable_desc">
             <Original>Enables the automatic spawning of anomalies across the map. It will only spawn basic anomalies which do not need further setup, these will remain in the hands of the mission maker. This setting is default disabled, so a conscious decision needs to be made to enable it.</Original>
             <English>Enables the automatic spawning of anomalies across the map. It will only spawn basic anomalies which do not need further setup, these will remain in the hands of the mission maker. This setting is default disabled, so a conscious decision needs to be made to enable it.</English>
-			<Polish>Włącza automatyczne generowanie anomalii na mapie. Będzie generować podstawowe anomalie niewymagające dotakowej konfiguracji; te muszą być postawione ręcznie przez twórcę misji. To ustawienie jest domyślnie wyłączone, więc należy się dobrze zstanowić przed jego włączeniem.</Polish>
+            <Polish>Włącza automatyczne generowanie anomalii na mapie. Będzie generować podstawowe anomalie niewymagające dotakowej konfiguracji; te muszą być postawione ręcznie przez twórcę misji. To ustawienie jest domyślnie wyłączone, więc należy się dobrze zstanowić przed jego włączeniem.</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_gridSize">
             <Original>Grid Size</Original>
             <English>Grid Size</English>
-			<Polish>Wielkość siatki</Polish>
+            <Polish>Wielkość siatki</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_gridSize_desc">
             <Original>The size of the cell grid the system use to populate the map with anomalies</Original>
             <English>The size of the cell grid the system use to populate the map with anomalies</English>
-			<Polish>Wielkość siatki, której system używa do generowania anomalii na mapie.</Polish>
+            <Polish>Wielkość siatki, której system używa do generowania anomalii na mapie.</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_procedrualScanInterval">
             <Original>Scan Interval</Original>
             <English>Scan Interval</English>
-			<Polish>Interwał skanu</Polish>
+            <Polish>Interwał skanu</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_procedrualScanInterval_desc">
             <Original>The amount in seconds how long it takes to scan the whole map for player</Original>
             <English>The amount in seconds how long it takes to scan the whole map for player</English>
-			<Polish>Liczba sekund potrzebnych do przeskanowania całej mapy w celu znalezienia gracza.</Polish>
+            <Polish>Liczba sekund potrzebnych do przeskanowania całej mapy w celu znalezienia gracza.</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_proceduralMaxAnomalyCount">
             <Original>Maximal amount of Anomalies</Original>
             <English>Maximal amount of Anomalies</English>
-			<Polish>Maks. liczba anomalii</Polish>
+            <Polish>Maks. liczba anomalii</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_proceduralMaxAnomalyCount_desc">
             <Original>Amount of anomalies which at most will be created with this system. If the spawned number exceeds this value, the system will stop spawning anomalies until unused ones from the same system will be cleaned automatically up. Heavy performance warning! If the value is too high and there are many spread out players on the server this might cause issues!</Original>
             <English>Amount of anomalies which at most will be created with this system. If the spawned number exceeds this vales, the system will stop spawning anomalies until unused ones from the same system will be automatically cleaned up. Heavy performance warning! If the value is too high and there are many spread out players on the server this might cause issues!</English>
-			<Polish>Liczba anomalii, która zostanie wygenerowana. Jeśli liczba wygenerowanych anomalii przekroczy tę wartość, system przestanie generować nowe anomalie póki nieużywane nie zostaną automatycznie usunięte. Ostrzeżenie wydajnościowe! Jeśli ta wartość jest zbyt wysoka, a gracze są rozproszeni po mapie, może to spowodować problemy!</Polish>
+            <Polish>Liczba anomalii, która zostanie wygenerowana. Jeśli liczba wygenerowanych anomalii przekroczy tę wartość, system przestanie generować nowe anomalie póki nieużywane nie zostaną automatycznie usunięte. Ostrzeżenie wydajnościowe! Jeśli ta wartość jest zbyt wysoka, a gracze są rozproszeni po mapie, może to spowodować problemy!</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_proceduralCountCoef">
             <Original>Anomaly Count Coef</Original>
             <English>Anomaly Count Coef</English>
-			<Polish>Mnożnik liczby anomalii</Polish>
+            <Polish>Mnożnik liczby anomalii</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_proceduralCountCoef_desc">
             <Original>Acts as multiplier. Anything below 1 will reduce the amount of anomalies, anything above 2 will increase the amount of anomalies per grid cell. BIG PERFORMANCE WARNING! If you crank this option up it is a lot more likely to reach the maximum cap! This either means performance might become bad OR you will simply not see enough anomalies as they spawn in another cell grid you are not in!</Original>
             <English>Acts as multiplier. Anything below 1 will reduce the amount of anomalies, anything above 2 will increase the amount of anomalies per grid cell. BIG PERFORMANCE WARNING! If you crank this option up it is a lot more likely to reach the maximum cap! This either means performance might become bad OR you will simply not see enough anomalies as they spawn in another cell grid you are not in!</English>
-			<Polish>Mnożnik liczby anomalii. Wszystko poniżej 1 zmniejszy liczbę anomalii, a powyżej 2 zwiększy ich liczbę na komórkę siatki. OSTRZEŻENIE WYDAJNOŚCIOWE! Jeśli zwiększysz tę wartość, zwiększa się szansa na sięgnięcie limitu anomalii! Onzacza to, że wydajność może się pogorszyć lub nie będziesz widzieć anomalii, bo te wygenerują się w komórce, w której cię nie ma!</Polish>
+            <Polish>Mnożnik liczby anomalii. Wszystko poniżej 1 zmniejszy liczbę anomalii, a powyżej 2 zwiększy ich liczbę na komórkę siatki. OSTRZEŻENIE WYDAJNOŚCIOWE! Jeśli zwiększysz tę wartość, zwiększa się szansa na sięgnięcie limitu anomalii! Onzacza to, że wydajność może się pogorszyć lub nie będziesz widzieć anomalii, bo te wygenerują się w komórce, w której cię nie ma!</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_proceduralRangeCoef">
             <Original>Spawn Range Coef</Original>
             <English>Spawn Range Coef</English>
-			<Polish>Mnożnik zasięgu generowania</Polish>
+            <Polish>Mnożnik zasięgu generowania</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_proceduralRangeCoef_desc">
             <Original>Multiplier for the detection range of the system. Higher values mean grid cells become active earlier. Lower values mean the grid cells become active later. A value of 0.5 means that the cell only becomes active if a player steps into it</Original>
             <English>Multiplier for the detection range of the system. Higher values mean grid cells become active earlier. Lower values mean the grid cells become active later. A value of 0.5 means that the cell only becomes active if a player steps into it</English>
-			<Polish>Mnożnik zasięgu wykrywania w systemie. Wyższe wartości oznaczają, że komórki siatki będą aktywne wcześniej. Niższe, że komórki aktywują się później. Wartość 0.5 oznacza, że komórka aktywuje się dopiero, gdy gracz się w niej znajdzie.</Polish>
+            <Polish>Mnożnik zasięgu wykrywania w systemie. Wyższe wartości oznaczają, że komórki siatki będą aktywne wcześniej. Niższe, że komórki aktywują się później. Wartość 0.5 oznacza, że komórka aktywuje się dopiero, gdy gracz się w niej znajdzie.</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_procedrualResetOnEmission">
             <Original>Reset Anomalies on Blowout</Original>
             <English>Reset Anomalies on Blowout</English>
-			<Polish>Reset Anomalii po Emisji</Polish>
+            <Polish>Reset Anomalii po Emisji</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_procedrualResetOnEmission_desc">
             <Original>Resets all anomaly positions and anomalies themselves spawned using the procedural system when a blowout concludes, meaning they will show up in new positions</Original>
             <English>Resets all anomaly positions and anomalies themselves spawned using the procedural system when a blowout concludes, meaning they will show up in new positions</English>
-			<Polish>Resetuje położenie anomalii wygenerowanych proceduralnie i umieszczonych ręcznie po zakończeniu Emisji. Oznacza to, że pojawią się one w nowych miejscach.</Polish>
+            <Polish>Resetuje położenie anomalii wygenerowanych proceduralnie i umieszczonych ręcznie po zakończeniu Emisji. Oznacza to, że pojawią się one w nowych miejscach.</Polish>
         </Key>
         <Key ID="STR_anomaly_procedural_exclusion">
             <Original>Procedural Exclusion Zone</Original>
             <English>Procedural Exclusion Zone</English>
-			<Polish>Proceduralna Strefa Wykluczenia</Polish>
+            <Polish>Proceduralna Strefa Wykluczenia</Polish>
         </Key>
         <Key ID="STR_anomaly_procedural_exclusion_desc">
             <Original>Will add an exclusion zone, or safe zone, to the procedural anomaly spawning system. The area of the module will be anomaly free. Edgcases are anomalies with an area like the fog anomaly, if one of those is spawned at the edge of the exclusion zone, it might protrude into the zone.</Original>
             <English>Will add an exclusion zone, or safe zone, to the procedural anomaly spawning system. The area of the module will be anomaly free. Edgcases are anomalies with an area like the fog anomaly, if one of those is spawned at the edge of the exclusion zone, it might protrude into the zone.</English>
-			<Polish>Stworzy strefę wykluczenia, lub bezpieczną strefę, w której anomalie nie będą się pojawiać. Wyjątkiem mogą być anomalie obszarowe jak Mgła - jeśli jedna z nich wygeneruje się na krańcu strefy wykluczenia, jej część może znaleźć się wewnątrz tego obszaru.</Polish>
+            <Polish>Stworzy strefę wykluczenia, lub bezpieczną strefę, w której anomalie nie będą się pojawiać. Wyjątkiem mogą być anomalie obszarowe jak Mgła - jeśli jedna z nich wygeneruje się na krańcu strefy wykluczenia, jej część może znaleźć się wewnątrz tego obszaru.</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_allowOverPopulation">
             <Original>Allow overpopulation</Original>
             <English>Allow overpopulation</English>
-			<Polish>Zezwól na przeludnienie</Polish>
+            <Polish>Zezwól na przeludnienie</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_procedural_allowOverPopulation_desc">
             <Original>When enabled allows spawning of additional anomalies in grids players are in while ignoring the max cap. This is to prevent empty grids even tho players are active in them</Original>
             <English>When enabled allows spawning of additional anomalies in grids players are in while ignoring the max cap. This is to prevent empty grids even tho players are active in them</English>
-			<Polish>Gdy włączone, pozwala na powstawanie dodatkowych anomalii w pobliżu graczy ignorując limit. Jest to po to, by uniknąć pustych miejsc wokół graczy.</Polish>
+            <Polish>Gdy włączone, pozwala na powstawanie dodatkowych anomalii w pobliżu graczy ignorując limit. Jest to po to, by uniknąć pustych miejsc wokół graczy.</Polish>
         </Key>
     </Package>
 </Project>
