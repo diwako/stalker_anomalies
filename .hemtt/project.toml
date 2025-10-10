@@ -12,7 +12,7 @@ include = [
     "meta.cpp",
     "mod.cpp",
     "authors.txt",
-    "license.txt",
+    "licence.txt",
     "icon.paa",
     "icon.png",
 ]
