@@ -1,5 +1,5 @@
 #include "\z\diwako_anomalies\addons\main\script_component.hpp"
-if !(isServer && {GVAR(procedrualEnable)} && {isNil QGVAR(proceduralGrids) }) exitWith {};
+if !(GVAR(procedrualEnable) && {isServer} && {isNil QGVAR(proceduralGrids) }) exitWith {};
 
 private _halfGridSize = GVAR(proceduralGridSize) / 2;
 private _size = worldSize;

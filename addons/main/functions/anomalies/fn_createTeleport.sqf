@@ -39,9 +39,9 @@ if (isNil QGVAR(teleportIDs)) then {
   GVAR(teleportIDs) = createHashMap;
 };
 
-_teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
+private _teleporters = GVAR(teleportIDs) getOrDefault [_id, []];
 
-_trg = createTrigger ["EmptyDetector", _pos];
+private _trg = createTrigger ["EmptyDetector", _pos];
 if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
 _trg setPosASL _pos;
 _teleporters pushBack _trg;
@@ -66,7 +66,7 @@ GVAR(holder) pushBack _trg;
 publicVariable QGVAR(teleportIDs);
 
 if (GVAR(debug)) then {
-    _marker = createMarkerLocal [str(_pos),_pos];
+    private _marker = createMarkerLocal [str(_pos),_pos];
     _marker setMarkerShapeLocal "ICON";
     _marker setMarkerTypeLocal "hd_dot";
     _marker setMarkerTextLocal (_trg getVariable QGVAR(anomalyType));

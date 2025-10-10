@@ -34,6 +34,7 @@ if !(_posParams isEqualType []) then {
 };
 
 private _anomalies = [];
+private _pos = [];
 
 for "_i" from 1 to _springboard do {
     _pos = _posParams call CBA_fnc_randPosArea;

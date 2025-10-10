@@ -17,7 +17,7 @@
 
 if !(isServer) exitWith {};
 params [["_anomalies",[]]];
-_anomalies = if !(_anomalies isEqualType []) then {[_anomalies]} else {_anomalies};
+_anomalies = if (_anomalies isEqualType []) then {_anomalies} else {[_anomalies]};
 private _type = "";
 {
     if !(isNull _x) then {

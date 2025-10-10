@@ -32,7 +32,7 @@ private _men = nearestObjects [getPos _trg,  ["Man","LandVehicle","air"], 5] sel
 {
     if (alive _x) then {
         if (_x isKindOf "Man") then {
-            if (!isNil "ace_fire_enabled" && {ace_fire_enabled}) then {
+            if (missionNamespace getVariable ["ace_fire_enabled", false]) then {
                 ["ace_fire_burn", [_x, 4], _x] call CBA_fnc_targetEvent;
             };
             [{

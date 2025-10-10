@@ -10,7 +10,7 @@ if (_movementInfo isEqualTo []) then {
     _movementInfo = [
         0, // _pathIndex
         _pathPoints select -1 select 0, // _endTime
-        getPosASL _pos, // _lastPos
+        getPosASL _obj, // _lastPos
         cba_missionTime mod (_pathPoints select -1 select 0), // _lastTime
         count _pathPoints // _pathCount
     ];

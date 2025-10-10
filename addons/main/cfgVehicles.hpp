@@ -24,10 +24,10 @@ class cfgVehicles {
     class Logic;
     class Module_F: Logic {
         class AttributesBase {
-            class Default;
+            // class Default;
             class Edit;
-            class EditMulti5;
-            class Combo;
+            // class EditMulti5;
+            // class Combo;
             class Checkbox;
             class ModuleDescription;
         };
