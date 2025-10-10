@@ -59,7 +59,7 @@ if (hasInterface && {((AGLToASL positionCameraToWorld [0,0,0]) distance _pos) < 
         private _size = linearConversion [DISCHARGE_TIME, 0, _remaining, 1, 10];
         // _sphere setObjectScale (linearConversion [DISCHARGE_TIME, 0, _remaining, 1, 10]);
         _sphere setObjectScale (_size * 1.5);
-        // _particleEmitter setParticleCircle [_size - 1, [0, 0, 0]];
+        _particleEmitter setParticleCircle [_size - 1, [0, 0, 0]];
         _particleEmitter setParticleRandom [0, [_size, _size, _size], [0.175, 0.175, 0], 0, 0.25, [0, 0, 0, 0.1], 0, 0];
         _light setLightBrightness (linearConversion [DISCHARGE_TIME, 0, _remaining, 2, 7.5]);
         _light setLightFlareSize _size;
