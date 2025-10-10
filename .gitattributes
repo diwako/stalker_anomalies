@@ -10,3 +10,5 @@
 *.toml text eol=crlf
 *.txt text eol=crlf
 *.xml text eol=crlf
+*.yaml text eol=crlf
+*.yml text eol=crlf
