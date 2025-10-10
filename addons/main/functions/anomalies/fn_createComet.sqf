@@ -60,10 +60,10 @@ if (_useMarkerPath) then {
     _end = count _marker;
 };
 
-if (_end isEqualTo 0) exitWith {
+if (_useMarkerPath && {_end isEqualTo 0}) exitWith {
     [{
-        hintC format ["Comet anomaly could not find a path for ""%1"". Make sure to have at least one marker named ""%1%2""", _marker, 0];
-    }, nil, 1] call CBA_fnc_waitAndExecute;
+        hintC format ["Comet anomaly could not find a path for ""%1"". Make sure to have at least one marker named ""%1%2""", _this, 0];
+    }, _marker, 1] call CBA_fnc_waitAndExecute;
     nil
 };
 

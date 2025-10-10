@@ -45,7 +45,6 @@ if (_cachedAnomalies isEqualTo []) then {
     };
 
     // step 2: clusters
-    private _clusterNO = _anomalyDensity / 100;
     private _clusterChance = 0.2 * GVAR(proceduralCountCoef);
     {
         private _pos = locationPosition _x;

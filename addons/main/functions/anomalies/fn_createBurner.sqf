@@ -44,7 +44,7 @@ if (isNil QGVAR(holder)) then {
 GVAR(holder) pushBack _trg;
 
 if (GVAR(debug)) then {
-    _marker = createMarkerLocal [str(_pos),_pos];
+    private _marker = createMarkerLocal [str(_pos),_pos];
     _marker setMarkerShapeLocal "ICON";
     _marker setMarkerTypeLocal "hd_dot";
     _marker setMarkerTextLocal (_trg getVariable QGVAR(anomalyType));

@@ -34,14 +34,14 @@ if !(_pos isEqualType []) then {
     _pos = getPosASL _pos;
     deleteVehicle _module;
 };
-private _angle = 0;
+_angle = 0;
 
 if (count _pos < 3) then {
     _pos set [2,0];
 };
 
 _pos set [2,(_pos#2) - 2];
-_trg = createTrigger ["EmptyDetector", _pos];
+private _trg = createTrigger ["EmptyDetector", _pos];
 if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
 _trg setPosASL _pos;
 _trg setDir _angle;
@@ -67,7 +67,7 @@ GVAR(holder) pushBack _trg;
 // publicVariable QGVAR(holder);
 
 if (GVAR(debug)) then {
-    _marker = createMarkerLocal [str(_pos),_pos];
+    private _marker = createMarkerLocal [str(_pos),_pos];
     _marker setMarkerShapeLocal (["ELLIPSE", "RECTANGLE"] select _isRectangle);
     // _marker setMarkerTypeLocal "hd_dot";
     _marker setMarkerSizeLocal [_radius, _radius];

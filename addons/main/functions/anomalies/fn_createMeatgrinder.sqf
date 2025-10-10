@@ -27,7 +27,7 @@ _pos = [_pos] call FUNC(getLocationFromModule);
 if (count _pos < 3) then {
     _pos set [2,0];
 };
-_trg = createTrigger ["EmptyDetector", _pos];
+private _trg = createTrigger ["EmptyDetector", _pos];
 if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _trg, true]; };
 _trg setPosASL _pos;
 _trg setVariable [QGVAR(cooldown), false, true];
@@ -45,7 +45,7 @@ GVAR(holder) pushBack _trg;
 // publicVariable QGVAR(holder);
 
 if (GVAR(debug)) then {
-    _marker = createMarkerLocal [str(_pos),_pos];
+    private _marker = createMarkerLocal [str(_pos),_pos];
     _marker setMarkerShapeLocal "ICON";
     _marker setMarkerTypeLocal "hd_dot";
     _marker setMarkerTextLocal (_trg getVariable QGVAR(anomalyType));

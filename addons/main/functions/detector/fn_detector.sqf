@@ -30,7 +30,6 @@
         private _min = GVAR(detectionRange) + 4;
         // add support for remote controlled units
         private _plr = [] call CBA_fnc_currentUnit;
-        private _nearestAnomaly = objNull;
         {
             _type = _x getVariable [QGVAR(anomalyType), nil];
             // only accept triggers that are anomalies
@@ -41,22 +40,13 @@
                 private _tmp = _x distance _plr;
                 if (_tmp < _min) then {
                     _min = _tmp;
-                    _nearestAnomaly = _x;
                 };
             };
         } forEach (GVAR(holder) inAreaArray [getPos _plr, _min/2, _min/2, 0, false, _min/2]);
         if (_found) then {
             _sleep = linearConversion [GVAR(detectionRange), 5, _min, 1, 0.08, true];
             if ( (CBA_missionTime - _lastBeep) >= _sleep) then {
-                if !(GVAR(detector3DSound)) then {
-                    playSound (switch (GVAR(detectorVolume)) do {
-                        case 1:  { "da_2_beep1_high_1"; };
-                        case 2:  { "da_2_beep1_high_2"; };
-                        case -1: { "da_2_beep1_low_1"; };
-                        case -2: { "da_2_beep1_low_2"; };
-                        default  { "da_2_beep1"; };
-                    });
-                } else {
+                if (GVAR(detector3DSound)) then {
                     private _sound = switch (GVAR(detectorVolume)) do {
                         case 1:  { 2 };
                         case 2:  { 4 };
@@ -65,6 +55,14 @@
                         default  { 1 };
                     };
                     playSound3D [QPATHTOF(sounds\detector\da-2_beep1.ogg), _player, false, getPosASL _player, _sound * 2, 1, GVAR(detectionRange) * 2, 0, false];
+                } else {
+                    playSound (switch (GVAR(detectorVolume)) do {
+                        case 1:  { "da_2_beep1_high_1"; };
+                        case 2:  { "da_2_beep1_high_2"; };
+                        case -1: { "da_2_beep1_low_1"; };
+                        case -2: { "da_2_beep1_low_2"; };
+                        default  { "da_2_beep1"; };
+                    });
                 };
                 _lastBeep = CBA_missionTime;
             };

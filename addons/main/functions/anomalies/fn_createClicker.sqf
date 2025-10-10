@@ -59,7 +59,7 @@ if (isNil QGVAR(holder)) then {
 GVAR(holder) pushBack _trg;
 
 if (GVAR(debug)) then {
-    _marker = createMarkerLocal [str(_pos), _pos];
+    private _marker = createMarkerLocal [str(_pos), _pos];
     _marker setMarkerShapeLocal (["ELLIPSE", "RECTANGLE"] select _isRectangle);
     _marker setMarkerSizeLocal [_radiusA, _radiusB];
     _marker setMarkerTextLocal (_trg getVariable QGVAR(anomalyType));

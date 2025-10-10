@@ -44,13 +44,14 @@ _time = _time + 5;
             continue;
         };
         _x setVariable [QGVAR(nextCometAffected), _time];
-        if (!isNil "ace_fire_enabled" && {ace_fire_enabled}) then {
+        if (missionNamespace getVariable ["ace_fire_enabled", false]) then {
             ["ace_fire_burn", [_x, 4]] call CBA_fnc_localEvent;
         };
         [{
-            ["comet", _this] call FUNC(addUnitDamage);
-            [QGVAR(cometOnDamage), [_x, _trg getVariable QGVAR(sourceTrg)]] call CBA_fnc_localEvent;
-        }, _x, [0.5, 0] select (isPlayer _x)] call CBA_fnc_waitAndExecute;
+            params ["_unit", "_trg"];
+            ["comet", _unit] call FUNC(addUnitDamage);
+            [QGVAR(cometOnDamage), [_unit, _trg getVariable QGVAR(sourceTrg)]] call CBA_fnc_localEvent;
+        }, [_x, _trg], [0.5, 0] select (isPlayer _x)] call CBA_fnc_waitAndExecute;
     } else {
         if (_x isKindOf "LandVehicle" || _x isKindOf "Air") then {
             _x setVariable [QGVAR(nextCometAffected), _time];

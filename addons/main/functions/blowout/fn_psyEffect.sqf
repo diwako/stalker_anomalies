@@ -52,7 +52,7 @@ if !(GVAR(psyActive)) then {
         // };
         // GVAR(ppeFilmGrain) ppEffectEnable true;
         private _curStrength = -1;
-        private _modGrain = 1;
+        // private _modGrain = 1;
         private _modPissFilter = 1;
         private _wiggleStrength = 0;
         private _wiggleFrequency = 0;
@@ -62,21 +62,21 @@ if !(GVAR(psyActive)) then {
                 _curStrength = GVAR(psyStrength);
                 switch (GVAR(psyStrength)) do {
                     case 1: {
-                        _modGrain = 3.33;
+                        // _modGrain = 3.33;
                         // _modPissFilter = 0.66;
                         _modPissFilter = 0.98;
                         _wiggleStrength = 1;
                         _wiggleFrequency = 0.5;
                     };
                     case 2: {
-                        _modGrain = 6.66;
+                        // _modGrain = 6.66;
                         // _modPissFilter = 0.333;
                         _modPissFilter = 0.5;
                         _wiggleStrength = 1.5;
                         _wiggleFrequency = 1;
                     };
                     case 3: {
-                        _modGrain = 10;
+                        // _modGrain = 10;
                         // _modPissFilter = 0;
                         _modPissFilter = 0.25;
                         _wiggleStrength = 3;
