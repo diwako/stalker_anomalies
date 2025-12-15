@@ -26,7 +26,7 @@ jobs:
       - name: Run HEMTT build
         run: hemtt release
       - name: Upload Release
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: "@diwako_anomalies"
           path: ".hemttout/release/*"
