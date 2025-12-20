@@ -1,4 +1,4 @@
-name: Book
+name: Wiki
 
 on:
   push:
@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy-book:
+  deploy-wiki:
     name: Deploy
     environment:
       name: github-pages
@@ -28,9 +28,11 @@ jobs:
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v2
         with:
-          mdbook-version: 'latest'
+          mdbook-version: "latest"
 
-      - run: mdbook build
+      - run: |
+          cd wiki
+          mdbook build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -38,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "./target/book"
+          path: "./wiki/book"
 
       - name: Deploy to GitHub Pages
         id: deployment

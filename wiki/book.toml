@@ -2,3 +2,8 @@
 title = "Diwako's STALKER-like anomalies Wiki"
 authors = ["diwako"]
 language = "en"
+
+[output.html]
+additional-css = ["./theme/catppuccin.css"]
+default-theme = "frappe"
+preferred-dark-theme = "mocha"
