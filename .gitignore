@@ -23,3 +23,5 @@ keys/*
 /.hemtt/missions/*
 *.sqm
 *.ini
+
+wiki/book
