@@ -13,13 +13,15 @@
         Currently under construction and does not work on effect right now
         _angle - Angle the anomaly should have (default: 0)
 
+        _color - Color of the fog in RGB array (default: [249/255, 248/255, 242/255])
+
     Returns:
         Anomaly Trigger
 
     Author:
     diwako 2018-05-22
 */
-params[["_pos",[0,0,0]],["_radius",10],["_isRectangle",true],["_angle",0]];
+params[["_pos",[0,0,0]], ["_radius",10], ["_isRectangle",true], ["_angle",0], ["_color", [249/255, 248/255, 242/255]]];
 if !(isServer) exitWith {};
 
 private _varName = "";
@@ -51,6 +53,12 @@ _trg setVariable [QGVAR(radius), _radius, true];
 _trg setVariable [QGVAR(angle), _angle, true];
 _trg setVariable [QGVAR(rectangle), _isRectangle, true];
 _trg setVariable [QGVAR(detectable), false, true];
+
+if (count _color < 4) then {
+    _color pushBack 1;
+};
+_color set [3, (1 / _radius) max 0.1];
+_trg setVariable [QGVAR(color), _color, true];
 private _jipID = [QGVAR(setTrigger), [
     _trg, //trigger
     [_radius, _radius, _angle, _isRectangle, 4], // area
