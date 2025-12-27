@@ -32,6 +32,18 @@ if !(_pos isEqualType []) then {
     _radius = _area#0;
     _isRectangle = _area#3;
     // _angle = _area#2;
+    private _configColor = _pos getVariable ["color", "ColorWhite"];
+    if (_configColor isEqualTo "ColorWhite") then {
+        _color = [249/255, 248/255, 242/255];
+    } else {
+        _color = getArray (configFile >> "CfgMarkerColors" >> _configColor >> "color");
+        if (_color isEqualTo []) then {
+            _color = [249/255, 248/255, 242/255];
+        };
+        if (count _color > 3) then {
+            _color = _color select [0,3];
+        };
+    };
     private _module = _pos;
     _pos = getPosASL _pos;
     deleteVehicle _module;
