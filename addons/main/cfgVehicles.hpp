@@ -27,7 +27,7 @@ class cfgVehicles {
             // class Default;
             class Edit;
             // class EditMulti5;
-            // class Combo;
+            class Combo;
             class Checkbox;
             class ModuleDescription;
         };
@@ -215,6 +215,60 @@ class cfgVehicles {
         isGlobal = 0; //run on server
         isTriggerActivated = 1; //Wait for triggers
         class Attributes: AttributesBase {
+            class color: Combo {
+                displayName="$STR_A3_CfgVehicles_ModuleCuratorAddIcon_F_Arguments_Color";
+                tooltip = "";
+                typeName = "STRING";
+                property = QGVAR(color);
+                defaultValue="ColorWhite";
+                class Values {
+                    class ColorWhite {
+                        name="$STR_CFG_MARKERCOL_WHITE";
+                        value="ColorWhite";
+                        default=1;
+                    };
+                    class ColorYellow {
+                        name="$STR_CFG_MARKERCOL_YELLOW";
+                        value="ColorYellow";
+                    };
+                    class ColorOrange {
+                        name="$STR_CFG_MARKERCOL_ORANGE";
+                        value="ColorOrange";
+                    };
+                    class ColorRed {
+                        name="$STR_CFG_MARKERCOL_RED";
+                        value="ColorRed";
+                    };
+                    class ColorPink {
+                        name="$STR_A3_CfgMarkerColors_ColorPink_0";
+                        value="ColorPink";
+                    };
+                    class ColorBlue {
+                        name="$STR_CFG_MARKERCOL_BLUE";
+                        value="ColorBlue";
+                    };
+                    class ColorKhaki {
+                        name="$STR_A3_CfgMarkerColors_ColorKhaki_0";
+                        value="ColorKhaki";
+                    };
+                    class ColorGreen {
+                        name="$STR_CFG_MARKERCOL_GREEN";
+                        value="ColorGreen";
+                    };
+                    class ColorBrown {
+                        name="$STR_A3_CfgMarkerColors_ColorBrown_0";
+                        value="ColorBrown";
+                    };
+                    class ColorGrey {
+                        name="$STR_A3_CfgMarkerColors_ColorGrey_0";
+                        value="ColorGrey";
+                    };
+                    class ColorBlack {
+                        name="$STR_CFG_MARKERCOL_BLACK";
+                        value="ColorBlack";
+                    };
+                };
+            };
             class ModuleDescription: ModuleDescription {};
         };
         class AttributeValues {

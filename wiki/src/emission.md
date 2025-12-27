@@ -83,7 +83,7 @@ The main issue here is, not every building is considered safe then. Doing it the
 
 ### The mission maker way
 
-Over in the [Functions and Variables](https://github.com/diwako/stalker_anomalies/wiki/Functions-and-Variables) wiki section there are some variables that can be used by a mission maker to make any building or area safe from a blowout.
+Over in the [Functions and Variables](functions_variables.md) wiki section there are some variables that can be used by a mission maker to make any building or area safe from a blowout.
 
 I am talking about the `blowout_safe` variable. Coupled that with setting it in Zeus or with a trigger, or global event, can make any spot on the map safe if the mission maker wills it.
 

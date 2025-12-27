@@ -3,7 +3,7 @@
 - [Home](./home.md)
 - [Anomalies](./anomalies.md)
 - [Anomaly Dector](./detector.md)
-- [Blowout Emission](./emission.md)
+- [Blowout / Emission](./emission.md)
 - [Bolts](./bolts.md)
 - [CBA Events](./cba_events.md)
 - [Functions and Variables](./functions_variables.md)

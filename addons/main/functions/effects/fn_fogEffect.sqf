@@ -7,6 +7,7 @@ switch (_state) do {
         private _radius = _attached getVariable QGVAR(radius);
         private _angle = _attached getVariable QGVAR(angle);
         private _rectangle = _attached getVariable QGVAR(rectangle);
+        private _color = _attached getVariable [QGVAR(color), [249/255, 248/255, 242/255, (1/_radius) max 0.1]];
         if (_rectangle) then {
             _source setParticleCircle [0, [0, 0, 0]];
             _source setParticleRandom [0, [_radius, _radius, 0], [0.01, 0.01, 0], 0, 0, [0, 0, 0, 0], 0, 0];
@@ -34,7 +35,7 @@ switch (_state) do {
             7.9, //volume
             0, //rubbing
             [0.01, 5, 5, 0.01], //size array of numbers
-            [[(249/255), (248/255), (242/255), ((1/_radius) max 0.1)]], //color rgba array of rgba
+            [_color], //color rgba array of rgba
             // [[1, 1, 1, ((1/_radius) max 0.1)]], //color rgba array of rgba
             [1], //animation speed array of numbers
             1, //randomDirectionPeriod
