@@ -18,7 +18,7 @@ Must be executed on server!
 Function: diwako_anomalies_main_fnc_createBurner
 
 Parameter:
-    _pos - PositionASL where the anomaly should be (default: [0,0,0]])
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
 
 Returns:
     Anomaly Trigger
@@ -118,7 +118,7 @@ Must be executed on server!
 Function: diwako_anomalies_main_fnc_createElectra
 
 Parameter:
-    _pos - PositionASL where the anomaly should be (default: [0,0,0]])
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
 
 Returns:
     Anomaly Trigger
@@ -142,7 +142,7 @@ Must be executed on server!
 Function: diwako_anomalies_main_fnc_createFog
 
 Parameter:
-    _pos - PositionASL where the anomaly should be (default: [0,0,0]])
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
     _radius - Radius parameter of area anomaly (default: 10)
     _isRectangle - is this anomaly rectangular shaped (default: true)
 
@@ -170,7 +170,7 @@ Must be executed on server!
 Function: diwako_anomalies_main_fnc_createFruitPunch
 
 Parameter:
-    _pos - PositionASL where the anomaly should be (default: [0,0,0]])
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
 
 Returns:
     Anomaly Trigger
@@ -194,7 +194,7 @@ Must be executed on server!
 Function: diwako_anomalies_main_fnc_createMeatgrinder
 
 Parameter:
-    _pos - PositionASL where the anomaly should be (default: [0,0,0]])
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
 
 Returns:
     Anomaly Trigger
@@ -223,7 +223,7 @@ This function **MUST** be run on **ALL** machines!
 Function: diwako_anomalies_main_fnc_createPsyDischarge
 
 Parameter:
-    _pos - PositionASL where the anomaly should be (default: [0,0,0]])
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
 
 Returns:
     Anomaly Trigger
@@ -301,7 +301,7 @@ Must be executed on server!
 Function: diwako_anomalies_main_fnc_createTeleport
 
 Parameter:
-    _pos - PositionASL where the anomaly should be (default: [0,0,0]])
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
     _id - ID which connects teleporters
 
 Returns:
