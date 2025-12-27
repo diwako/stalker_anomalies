@@ -1,0 +1,36 @@
+name: Validate wiki
+
+on:
+  pull_request:
+    paths:
+      - 'wiki/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-mdbook:
+    name: Validate mdBook build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v2
+        with:
+          mdbook-version: 'latest'
+
+      - name: Build book
+        working-directory: wiki
+        run: |
+          set -e
+          mdbook build
+
+      - name: Verify build output
+        working-directory: wiki
+        run: |
+          if [ ! -d "book" ]; then
+            echo "mdbook did not produce wiki/book — failing workflow"
+            exit 1
+          fi

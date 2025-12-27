@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the source code
-        uses: actions/checkout@master
+        uses: actions/checkout@v6
       - name: Check for BOM
         uses: arma-actions/bom-check@master
 
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Setup HEMTT
