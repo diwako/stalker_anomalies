@@ -26,7 +26,7 @@ The same applies to grid size and activation range. Increasing these values caus
 
 ## Mission Makers
 
-This system will ignore any player which have the [`anomaly_ignore`](https://github.com/diwako/stalker_anomalies/wiki/Functions-and-Variables#anomaly_ignore) variable set on them. It is recommended to have this set on Zeus players or players designed to stay outside the mission area.
+This system will ignore any player which have the [`anomaly_ignore`](functions_variables.md#anomaly_ignore) variable set on them. It is recommended to have this set on Zeus players or players designed to stay outside the mission area.
 
 In addition to these settings, a new module is included in 3den to add exclusion zones to the system. In these zones, the system will refrain from spawning anomalies. This can be used for safe zones, such as hideouts or hubs.
 
