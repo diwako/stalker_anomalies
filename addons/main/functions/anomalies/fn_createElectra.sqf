@@ -6,7 +6,7 @@
         Creates an anomaly of the type "Electra"
 
     Parameter:
-        _pos - PositionASL where the anomaly should be (default: [0,0,0]])
+        _pos - PositionASL where the anomaly should be (default: [0,0,0])
 
     Returns:
         Anomaly Trigger

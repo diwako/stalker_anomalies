@@ -32,6 +32,7 @@ SUBPREP(anomalies,createClicker);
 SUBPREP(anomalies,activateClicker);
 SUBPREP(anomalies,createRazor);
 SUBPREP(anomalies,activateRazor);
+SUBPREP(anomalies,createWillowisp);
 
 SUBPREP(anomalies,addUnitDamage);
 
@@ -46,6 +47,7 @@ SUBPREP(effects,fruitPunchEffect);
 SUBPREP(effects,razorEffect);
 SUBPREP(effects,blockerEffect);
 SUBPREP(effects,bloodEffect);
+SUBPREP(effects,willowispEffect);
 
 // detector
 SUBPREP(detector,detector);

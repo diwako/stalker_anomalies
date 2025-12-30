@@ -335,6 +335,14 @@
             <Original>Spawn a razor anomaly at module location. The anomaly consists out of razor sharp glass shards that cause damage</Original>
             <Polish>Tworzy anomalię "Żyletka" w miejscu modułu. Anomalia ta składa się z wirujących, ostrych odłamków szkła zadających obrażenia.</Polish>
         </Key>
+        <Key ID="STR_anomaly_willowisp">
+            <Original>Will-o'-wisp</Original>
+            <English>Will-o'-wisp</English>
+        </Key>
+        <Key ID="STR_anomaly_willowisp_desc">
+            <Original>Flickering and dancing lights in the distant darkness, they vanish when getting too close. Used to lure people into potentially dangerous areas, but otherwise harmless.</Original>
+            <English>Flickering and dancing lights in the distant darkness, they vanish when getting too close. Used to lure people into potentially dangerous areas, but otherwise harmless.</English>
+        </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
             <English>Blowout</English>

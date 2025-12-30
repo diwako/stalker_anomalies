@@ -72,6 +72,7 @@ if (isServer) then {
             case "psyDischarge": { /* Handled in global eventhandler */ };
             case "clicker":      { _args call FUNC(createClicker) };
             case "razor":        { _args call FUNC(createRazor) };
+            case "willowisp":    { _args call FUNC(createWillowisp) };
             default {
                 hintC ( format ["Unknown type: %1", _type]);
             };
@@ -93,6 +94,9 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
+    GVAR(willowispPFHHandle) = -1;
+    GVAR(willowispHolder) = [];
+
     [QGVAR(say3D), {
         params ["_obj", "_sound"];
         _obj say3D _sound;

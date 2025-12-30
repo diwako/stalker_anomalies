@@ -173,6 +173,9 @@ if (isNil QGVAR(holder)) then {
                         [_x, QGVAR(soundRazorFar)] call _fnc_addIdleSoundsLocal;
                         [_x, QGVAR(soundRazorClose), QGVAR(soundIdleLocalClose)] call _fnc_addIdleSoundsLocal;
                     };
+                    case "willowisp": {
+                        [_x] call FUNC(willowispEffect);
+                    };
                     default {
                         _source enableSimulation false;
                     };

@@ -307,3 +307,30 @@ Parameter:
 Returns:
     Anomaly Trigger
 ```
+
+## Will-o'-wisp
+
+Flickering and dancing lights in the distant darkness, they vanish when getting too close. Stalkers on the campfire say they lure people into potentially dangerous areas and traps, but otherwise they are harmless and somewhat pretty.
+
+### Setup
+
+The 3den module will spawn a Will-o'-wisp anomaly at the placed location.
+
+_This anomaly is included for Zeus, if you have the Zeus Enhanced mod enabled._
+
+### Scripting
+
+Must be executed on server!
+
+```
+Function: diwako_anomalies_main_fnc_createWillowisp
+
+Parameter:
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
+    _color - Color of the fog in RGB array, string "randomColor" for random color, or string of CfgMarker entry (default: "randomColor")
+    _count - Number of lights (default: random between 1 and 3)
+    _spread - Maximum of distance from center point in meters (default: 15)
+
+Returns:
+    Anomaly Trigger
+```

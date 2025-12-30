@@ -13,7 +13,8 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                 localize "STR_anomaly_fruitpunch",
                 localize "STR_anomaly_psy_discharge",
                 localize "STR_anomaly_clicker",
-                localize "STR_anomaly_razor"
+                localize "STR_anomaly_razor",
+                localize "STR_anomaly_willowisp"
             ];
 
             [localize "STR_anomaly_zeus_spawn_anomaly", [
@@ -44,7 +45,7 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                         };
                         case 5: {
                             [localize "STR_anomaly_fog", [
-                                    ["SLIDER", localize "str_a3_cfgvehicles_sign_radius_f0", [1, 250, 50]],
+                                    ["SLIDER:RADIUS", localize "str_a3_cfgvehicles_sign_radius_f0", [1, 250, 50, 1, ASLToAGL _pos, [1, 0, 0, 1]]],
                                     ["CHECKBOX", localize "str_disp_arcmark_rect", [false]],
                                     ["COLOR", localize "str_a3_cfgvehicles_modulestrategicmapimage_f_arguments_color_0", [249/255, 248/255, 242/255]]
                                 ],
@@ -60,9 +61,9 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                         case 7: { [QGVAR(createAnomaly), [[_pos], "psyDischarge"]] call CBA_fnc_globalEvent;};
                         case 8: {
                             [localize "STR_anomaly_clicker", [
-                                    ["SLIDER", format ["%1 A", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 250, 1]],
-                                    ["SLIDER", format ["%1 B", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 250, 1]],
-                                    ["SLIDER", localize "str_a3_cfgvehicles_modulestrategicmapimage_f_arguments_height_0", [1, 250, 1]],
+                                    ["SLIDER:RADIUS", format ["%1 A", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 250, 10, 1, ASLToAGL _pos, [1, 0, 0, 1]]],
+                                    ["SLIDER:RADIUS", format ["%1 B", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 250, 10, 1, ASLToAGL _pos, [0, 0, 1, 1]]],
+                                    ["SLIDER", localize "str_a3_cfgvehicles_modulestrategicmapimage_f_arguments_height_0", [1, 250, 1, 1]],
                                     ["CHECKBOX", localize "str_disp_arcmark_rect", [false]],
                                     ["SLIDER", localize "str_a3_cfgvehicles_modulepositioning_f_arguments_rotation_0", [0, 359]]
                                 ],
@@ -75,6 +76,20 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                             ] call zen_dialog_fnc_create;
                         };
                         case 9: { [QGVAR(createAnomaly), [[_pos], "razor"]] call CBA_fnc_serverEvent; };
+                        case 10: {
+                            [localize "STR_anomaly_willowisp", [
+                                    ["SLIDER", localize "str_a3_cfgvehicles_moduleanimals_f_arguments_count", [1, 10, 1, 0]],
+                                    ["COLOR", localize "str_a3_cfgvehicles_modulestrategicmapimage_f_arguments_color_0", [random 1, random 1, random 1]],
+                                    ["SLIDER:RADIUS", localize "STR_A3_TargetBootcampTable_maxdistance", [1, 100, 15, 1, ASLToAGL _pos, [1, 0, 0, 1]]]
+                                ],
+                                {
+                                    params ["_dialog", "_args"];
+                                    _dialog params ["_count", "_color", "_spread"];
+                                    _args params ["_pos"];
+                                    [QGVAR(createAnomaly), [[_pos, _color, round _count, _spread], "willowisp"]] call CBA_fnc_serverEvent;
+                                }, {}, [_pos]
+                            ] call zen_dialog_fnc_create;
+                        };
                         default { };
                     };
                 }, {}, [_pos, _anomalies]

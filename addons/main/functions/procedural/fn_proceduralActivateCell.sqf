@@ -39,8 +39,13 @@ if (_cachedAnomalies isEqualTo []) then {
     for "_i" from 1 to _anomalyDensity do {
         _pos = [_area] call CBA_fnc_randPosArea;
         if ([_pos] call _fnc_cond) then {
-            _type = selectRandomWeighted ["springboard", 10, "burner", 4, "electra", 3, "meatgrinder", 1, "razor", 2];
+            _type = selectRandomWeighted ["springboard", 10, "burner", 4, "electra", 3, "meatgrinder", 1, "razor", 2, "willowisp", 0.25];
             _cachedAnomalies pushBack [AGLToASL _pos, _type];
+        } else {
+            if (random 1 < 0.1 && {surfaceIsWater _pos}) then {
+                _type = selectRandomWeighted ["willowisp", 0.25];
+                _cachedAnomalies pushBack [AGLToASL _pos, _type];
+            };
         };
     };
 
@@ -99,6 +104,7 @@ private _newStatus = GRID_ACTIVE;
         case "razor": {[_pos] call FUNC(createRazor)};
         case "clicker": {[_pos, (_size select 0) max (33 + random 33), (_size select 1) max (33 + random 33)] call FUNC(createClicker)};
         case "fog": {[_pos, (_size select 0) max (_size select 1) max 25] call FUNC(createFog)};
+        case "willowisp": {[_pos, "randomColor", ceil random 15, 35] call FUNC(createWillowisp)};
         default {objNull};
     };
     _anomalies pushBack _anomaly;
