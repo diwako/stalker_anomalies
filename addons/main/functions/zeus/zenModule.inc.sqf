@@ -4,21 +4,21 @@ if !(isNil "zen_custom_modules_fnc_register") then {
         {
             private _pos = (ASLToAGL (_this select 0));
             private _anomalies = [
-                localize "STR_anomaly_burner",
-                localize "STR_anomaly_electra",
-                localize "STR_anomaly_meatgrinder",
-                localize "STR_anomaly_springboard",
-                localize "STR_anomaly_teleport",
-                localize "STR_anomaly_fog",
-                localize "STR_anomaly_fruitpunch",
-                localize "STR_anomaly_psy_discharge",
-                localize "STR_anomaly_clicker",
-                localize "STR_anomaly_razor",
-                localize "STR_anomaly_willowisp"
+                [localize "STR_anomaly_burner", localize "STR_anomaly_burner_desc", QPATHTOF(data\ui\modules\burner_ca.paa)],
+                [localize "STR_anomaly_electra", localize "STR_anomaly_electra_desc", QPATHTOF(data\ui\modules\electra_ca.paa)],
+                [localize "STR_anomaly_meatgrinder", localize "STR_anomaly_meatgrinder_desc", QPATHTOF(data\ui\modules\meatgrinder_ca.paa)],
+                [localize "STR_anomaly_springboard", localize "STR_anomaly_springboard_desc", QPATHTOF(data\ui\modules\springboard_ca.paa)],
+                [localize "STR_anomaly_teleport", localize "STR_anomaly_teleport_desc", QPATHTOF(data\ui\modules\teleport_ca.paa)],
+                [localize "STR_anomaly_fog", localize "STR_anomaly_fog_desc", QPATHTOF(data\ui\modules\fog_ca.paa)],
+                [localize "STR_anomaly_fruitpunch", localize "STR_anomaly_fruitpunch_desc", QPATHTOF(data\ui\modules\fruitpunch_ca.paa)],
+                [localize "STR_anomaly_psy_discharge", localize "STR_anomaly_psy_discharge_desc", QPATHTOF(data\ui\modules\psydischarge_ca.paa)],
+                [localize "STR_anomaly_clicker", localize "STR_anomaly_clicker_desc", QPATHTOF(data\ui\modules\clicker_ca.paa)],
+                [localize "STR_anomaly_razor", localize "STR_anomaly_razor_desc", QPATHTOF(data\ui\modules\razor_ca.paa)],
+                [localize "STR_anomaly_willowisp", localize "STR_anomaly_willowisp_desc", QPATHTOF(data\ui\modules\willowisp_ca.paa)]
             ];
 
             [localize "STR_anomaly_zeus_spawn_anomaly", [
-                    ["COMBO", localize "STR_anomaly_singular", [_anomalies, _anomalies apply {[_x]}, 0]]
+                    ["COMBO", localize "STR_anomaly_singular", [_anomalies apply {_x select 0}, _anomalies, 0]]
                 ],
                 {
                     params ["_dialog", "_args"];
@@ -78,7 +78,7 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                         case 9: { [QGVAR(createAnomaly), [[_pos], "razor"]] call CBA_fnc_serverEvent; };
                         case 10: {
                             [localize "STR_anomaly_willowisp", [
-                                    ["SLIDER", localize "str_a3_cfgvehicles_moduleanimals_f_arguments_count", [1, 10, 1, 0]],
+                                    ["SLIDER", localize "str_a3_cfgvehicles_moduleanimals_f_arguments_count", [1, 20, 1, 0]],
                                     ["COLOR", localize "str_a3_cfgvehicles_modulestrategicmapimage_f_arguments_color_0", [random 1, random 1, random 1]],
                                     ["SLIDER:RADIUS", localize "STR_A3_TargetBootcampTable_maxdistance", [1, 100, 15, 1, ASLToAGL _pos, [1, 0, 0, 1]]]
                                 ],
@@ -92,7 +92,7 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                         };
                         default { };
                     };
-                }, {}, [_pos, _anomalies]
+                }, {}, [_pos, _anomalies apply {_x select 0}]
             ] call zen_dialog_fnc_create;
         },
         QPATHTOF(data\ui\icon.paa)

@@ -407,8 +407,8 @@ class cfgVehicles {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = "$STR_anomaly_willowisp";
-        icon=QPATHTOF(data\ui\modules\comet_ca.paa);
-        portrait=QPATHTOF(data\ui\modules\comet_ca.paa);
+        icon=QPATHTOF(data\ui\modules\willowisp_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\willowisp_ca.paa);
         function = QFUNC(createWillowisp);
         functionPriority = 1;
         scope = 2;  //show in editor

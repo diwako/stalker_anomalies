@@ -61,6 +61,7 @@ _trg setPosASL _pos;
 _trg setVariable [QGVAR(color), _color, true];
 _trg setVariable [QGVAR(count), _count, true];
 _trg setVariable [QGVAR(spread), _spread, true];
+_trg setVariable [QGVAR(detectable), false, true];
 _trg setVariable [QGVAR(anomalyType), "willowisp", true];
 
 if (isNil QGVAR(holder)) then {
