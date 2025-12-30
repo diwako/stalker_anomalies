@@ -25,6 +25,7 @@ _trg setVariable [QGVAR(lights), _ligtHolder];
 if ((_trg getVariable [QGVAR(pathPoints), []]) isEqualTo []) then {
     private _pathPointsHolder = [];
     private _movementInfoHolder = [];
+    private _lightConfigHolder = [];
 
     for "_" from 1 to (_trg getVariable QGVAR(count)) do {
         private _speed = 0.5 + random 1;
@@ -71,10 +72,12 @@ if ((_trg getVariable [QGVAR(pathPoints), []]) isEqualTo []) then {
 
         _pathPointsHolder pushBack _pathPoints;
         _movementInfoHolder pushBack [];
+        _lightConfigHolder pushBack [10 + random 50, random 180];
     };
 
     _trg setVariable [QGVAR(pathPoints), _pathPointsHolder];
     _trg setVariable [QGVAR(movementInfo), _movementInfoHolder];
+    _trg setVariable [QGVAR(lightConfig), _lightConfigHolder];
 };
 
 GVAR(willowispHolder) pushBack _trg;
@@ -111,6 +114,8 @@ if (GVAR(willowispPFHHandle) isEqualTo -1) then {
                     GVAR(wispDummy) setVariable [QGVAR(movementInfo), (_trg getVariable QGVAR(movementInfo)) select _forEachIndex];
                     GVAR(wispDummy) setPosWorld (getPosWorld _x);
                     _x setPosWorld ([GVAR(wispDummy)] call FUNC(movementTick));
+                    ((_trg getVariable QGVAR(lightConfig)) select _forEachIndex) params ["_lightMultiplier", "_lightOffset"];
+                    _x setLightFlareSize (0.25 + (sin ((_lightOffset + cba_missiontime * _lightMultiplier) mod 180)) / 2);
                     _x setLightBrightness ((linearConversion [1225, 1600, _player distanceSqr _x, 0, 0.75, true]) * _nightValue);
                 } forEach _lights;
             };
