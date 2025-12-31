@@ -8,7 +8,7 @@
     Parameter:
         _pos - PositionASL where the anomaly should be (default: [0,0,0])
         _color - Color of the fog in RGB array, string "randomColor" for random color, or string of CfgMarker entry (default: "randomColor")
-        _count - Number of lights (default: random between 1 and 3)
+        _count - Number of lights (default: -1 (random between 1 and 5))
         _spread - Maximum of distance from center point in meters (default: 15)
 
     Returns:
