@@ -6,7 +6,7 @@
         Creates an area anomaly of the type "Clicker"
 
     Parameter:
-        _pos - PositionASL where the anomaly should be (default: [0,0,0]])
+        _pos - PositionASL where the anomaly should be (default: [0,0,0])
         _radiusA - Radius A parameter of area anomaly (default: 10)
         _radiusB - Radius B parameter of area anomaly (default: 10)
         _isRectangle - is this anomaly rectangular shaped (default: true)

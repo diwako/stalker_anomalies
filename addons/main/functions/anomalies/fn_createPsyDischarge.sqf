@@ -7,7 +7,7 @@
         Make sure to run this on all machines!
 
     Parameter:
-        _pos - PositionASL where the anomaly should be (default: [0,0,0]])
+        _pos - PositionASL where the anomaly should be (default: [0,0,0])
 
     Returns:
         nothing

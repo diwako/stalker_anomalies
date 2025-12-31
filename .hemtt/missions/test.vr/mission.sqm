@@ -8,7 +8,7 @@ class EditorData
 	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=89;
+		nextID=90;
 	};
 	class MarkerIDProvider
 	{
@@ -126,7 +126,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=57;
+		items=58;
 		class Item0
 		{
 			dataType="Logic";
@@ -226,6 +226,23 @@ class Mission
 			flags=1;
 			id=3;
 			type="diwako_anomalies_main_moduleCreateFog";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="diwako_anomalies_main_color";
+					expression="_this setVariable ['color',_value,true];";
+					class Value
+					{
+						class data
+						{
+							nil=1;
+							singleType="ANY";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item4
 		{
@@ -1499,6 +1516,59 @@ class Mission
 			{
 			};
 			id=84;
+		};
+		class Item57
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7952.083,5,2959.824};
+			};
+			id=89;
+			type="diwako_anomalies_main_moduleWillowisp";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="diwako_anomalies_main_count";
+					expression="_this setVariable ['count',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="diwako_anomalies_main_color";
+					expression="_this setVariable ['color',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="randomColor";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="diwako_anomalies_main_spread";
+					expression="_this setVariable ['spread',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				nAttributes=3;
+			};
 		};
 	};
 };
