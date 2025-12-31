@@ -310,7 +310,7 @@ Returns:
 
 ## Will-o'-wisp
 
-Flickering and dancing lights in the distant darkness, they vanish when getting too close. Stalkers on the campfire say they lure people into potentially dangerous areas and traps, but otherwise they are harmless and somewhat pretty.
+Flickering and dancing lights in the distant darkness, only around at night, they vanish when getting too close. Stalkers on the campfire say they lure people into potentially dangerous areas and traps, but otherwise they are harmless and somewhat pretty.
 
 ### Setup
 
