@@ -25,6 +25,7 @@ Currently in:
   - Psy Discharge
   - Springboard
   - Teleport
+  - Will-o'-wisp
 - Anomaly detector
 - Blowout/Emission event
 - It is possible to throw bolts with a custom model
@@ -32,3 +33,5 @@ Currently in:
 - Zeus Enhanced support
 - Support for ACE Medical
 - Support for APS
+- Anomalies place able from the editor!
+- System to populate the whole map with anomalies (See inside "Addon Options")
