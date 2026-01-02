@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1025;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=90;
+		nextID=111;
 	};
 	class MarkerIDProvider
 	{
@@ -126,7 +126,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=58;
+		items=61;
 		class Item0
 		{
 			dataType="Logic";
@@ -1568,6 +1568,95 @@ class Mission
 					};
 				};
 				nAttributes=3;
+			};
+		};
+		class Item58
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7971.1079,5,3000.5591};
+			};
+			areaSize[]={4.961,20,10};
+			flags=1;
+			id=90;
+			type="diwako_anomalies_main_moduleCreatePsy";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="diwako_anomalies_main_strength";
+					expression="_this setVariable ['strength',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item59
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7969.9702,5,3011.7871};
+				angles[]={0,2.0943952,0};
+			};
+			areaSize[]={4.961,10,10};
+			flags=1;
+			id=91;
+			type="diwako_anomalies_main_moduleCreatePsy";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="diwako_anomalies_main_strength";
+					expression="_this setVariable ['strength',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item60
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7977.5918,5,3008.377};
+				angles[]={0,4.1887903,0};
+			};
+			areaSize[]={4.961,-1,10};
+			flags=1;
+			id=92;
+			type="diwako_anomalies_main_moduleCreatePsy";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="diwako_anomalies_main_strength";
+					expression="_this setVariable ['strength',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};

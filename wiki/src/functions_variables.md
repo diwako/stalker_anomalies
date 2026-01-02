@@ -144,11 +144,14 @@ Hear psy voices, shake the screen slightly and tint the screen increasingly oran
 
 Has 4 different strength settings ranging from 0 to 3. 0 being no effect and 3 being highest effect.
 
+The ID given to the function add the psy effect to a pool. The effect with the matching ID will be removed if the ID and strength value of 0 is given. The psy effect will always draw the highest strength value from the pool until it is empty.
+
 ```
 Function: diwako_anomalies_main_fnc_psyEffect
 
 Parameters:
     _strength - Integer Number as strength of the effects, 0 for off and max of 3 for maximum effect (default: 0)
+    _id - String ID to identify the source of the psy effect (default: "mission")
 
 Returns:
     nothing

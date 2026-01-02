@@ -6,10 +6,10 @@
         Creates an anomaly of the type "Comet"
 
     Parameter:
-        _marker - marker ID of path objects, will be used to move said path (default: "")
-                - array of objects, makers, positionASL used to create a path from, order of entries is used for path
-        _speed - measured in meters per second (default: 6)
-        _smoothCurves - interpolates the path corners using bezier curves (default: true)
+        _marker - Marker ID of path objects used to move the anomaly (default: "")
+            - Alternatively, an array of objects, markers, or PositionASL entries used to create a path; order matters
+        _speed - Movement speed in meters per second (default: 6)
+        _smoothCurves - Interpolates path corners using Bezier curves (default: true)
 
     Returns:
         Anomaly Trigger

@@ -7,16 +7,32 @@
 
     Parameters:
         _strength - Integer Number as strength of the effects, 0 for off and max of 3 for maximum effect (default: 0)
+        _id - String ID to identify the source of the psy effect (default: "mission")
 
     Returns:
         nothing
 
     Author:
-    diwako 2026-10-26
+    diwako 2024-10-26
 */
 if !(hasInterface) exitWith {};
-params [["_strength", 0]];
+params [["_strength", 0], ["_id", "mission"]];
 if (_strength < 0 || _strength > 3) exitWith {};
+
+if (isNil QGVAR(psyIDMap)) then {
+    GVAR(psyIDMap) = createHashMap;
+};
+_id = toLowerANSI _id;
+if (_strength > 0) then {
+    GVAR(psyIDMap) set [_id, _strength];
+} else {
+    GVAR(psyIDMap) deleteAt _id;
+};
+_strength = selectMax values GVAR(psyIDMap);
+// nothing left in the map
+if (isNil "_strength") then {
+    _strength = 0;
+};
 
 if (isNil QGVAR(psyActive)) then {
     GVAR(psyActive) = false;
@@ -103,7 +119,9 @@ if !(GVAR(psyActive)) then {
         // GVAR(ppeFilmGrain) ppEffectCommit 10;
         GVAR(psyActive) = false;
         sleep 11;
-        GVAR(ppeColorCorrections) ppEffectEnable false;
-        // GVAR(ppeFilmGrain) ppEffectEnable false;
+        if !(GVAR(psyActive)) then {
+            GVAR(ppeColorCorrections) ppEffectEnable false;
+            // GVAR(ppeFilmGrain) ppEffectEnable false;
+        };
     };
 };

@@ -8,12 +8,12 @@
     Parameter:
         _pos - PositionASL where the anomaly should be (default: [0,0,0])
         _radius - Radius parameter of area anomaly (default: 10)
-        _isRectangle - is this anomaly rectangular shaped (default: true)
+        _isRectangle - Is this anomaly rectangular shaped (default: true)
 
-        Currently under construction and does not work on effect right now
+        Currently under construction and does not affect the area shape yet
         _angle - Angle the anomaly should have (default: 0)
 
-        _color - Color of the fog in RGB array (default: [249/255, 248/255, 242/255])
+        _color - Color of the fog as an RGB array (default: [249/255, 248/255, 242/255])
 
     Returns:
         Anomaly Trigger

@@ -78,6 +78,7 @@ if (isServer) then {
             case "clicker":      { _args call FUNC(createClicker) };
             case "razor":        { _args call FUNC(createRazor) };
             case "willowisp":    { _args call FUNC(createWillowisp) };
+            case "psy":          { _args call FUNC(createPsyField) };
             default {
                 hintC ( format ["Unknown type: %1", _type]);
             };
@@ -183,7 +184,7 @@ if (hasInterface) then {
             enableEnvironment true;
             if (hasInterface) then {
                 30 fadeEnvironment 1;
-                [0] call FUNC(psyEffect);
+                [0, QGVAR(blowout)] call FUNC(psyEffect);
                 [false] call FUNC(showPsyWavesInSky);
                 private _fnc_lightning = {
                     if (time >= (_this select 1)) exitWith {};
@@ -224,7 +225,7 @@ if (hasInterface) then {
                         if !(GVAR(blowoutInProgress)) exitWith {};
                         playSound "blowout_wave_1";
                         [] call FUNC(chromatic);
-                        // [1] call FUNC(psyEffect);
+                        // [1, QGVAR(blowout)] call FUNC(psyEffect);
                     }, nil, 15] call CBA_fnc_waitAndExecute;
                     [{
                         if !(GVAR(blowoutInProgress)) exitWith {};
@@ -246,7 +247,7 @@ if (hasInterface) then {
             if !(hasInterface) exitWith {};
             playSound "blowout_wave_2";
             [] call FUNC(chromatic);
-            [1] call FUNC(psyEffect);
+            [1, QGVAR(blowout)] call FUNC(psyEffect);
             [] call FUNC(blowoutRumble);
             [true] call FUNC(showPsyWavesInSky);
 
@@ -383,7 +384,7 @@ if (hasInterface) then {
                 playSound "blowout_wave_2";
             }, nil, 10] call CBA_fnc_waitAndExecute;
             [] call FUNC(chromatic);
-            [2] call FUNC(psyEffect);
+            [2, QGVAR(blowout)] call FUNC(psyEffect);
         };
         case 4: {
             if !(hasInterface) exitWith {
