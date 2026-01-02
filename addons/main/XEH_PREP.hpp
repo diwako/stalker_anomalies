@@ -33,6 +33,7 @@ SUBPREP(anomalies,activateClicker);
 SUBPREP(anomalies,createRazor);
 SUBPREP(anomalies,activateRazor);
 SUBPREP(anomalies,createWillowisp);
+SUBPREP(anomalies,createPsyField);
 
 SUBPREP(anomalies,addUnitDamage);
 

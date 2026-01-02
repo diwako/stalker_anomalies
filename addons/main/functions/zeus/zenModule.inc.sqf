@@ -14,7 +14,8 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                 [localize "STR_anomaly_psy_discharge", localize "STR_anomaly_psy_discharge_desc", QPATHTOF(data\ui\modules\psydischarge_ca.paa)],
                 [localize "STR_anomaly_clicker", localize "STR_anomaly_clicker_desc", QPATHTOF(data\ui\modules\clicker_ca.paa)],
                 [localize "STR_anomaly_razor", localize "STR_anomaly_razor_desc", QPATHTOF(data\ui\modules\razor_ca.paa)],
-                [localize "STR_anomaly_willowisp", localize "STR_anomaly_willowisp_desc", QPATHTOF(data\ui\modules\willowisp_ca.paa)]
+                [localize "STR_anomaly_willowisp", localize "STR_anomaly_willowisp_desc", QPATHTOF(data\ui\modules\willowisp_ca.paa)],
+                [localize "STR_anomaly_psy", localize "STR_anomaly_psy_desc", QPATHTOF(data\ui\modules\psy_ca.paa)]
             ];
 
             [localize "STR_anomaly_zeus_spawn_anomaly", [
@@ -87,6 +88,22 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                                     _dialog params ["_count", "_color", "_spread"];
                                     _args params ["_pos"];
                                     [QGVAR(createAnomaly), [[_pos, _color, round _count, _spread], "willowisp"]] call CBA_fnc_serverEvent;
+                                }, {}, [_pos]
+                            ] call zen_dialog_fnc_create;
+                        };
+                        case 11: {
+                            [localize "STR_anomaly_psy", [
+                                    ["SLIDER", localize "STR_anomaly_psy_strength", [1, 3, 1, 0]],
+                                    ["SLIDER:RADIUS", format ["%1 A", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 250, 10, 1, ASLToAGL _pos, [1, 0, 0, 1]]],
+                                    ["SLIDER:RADIUS", format ["%1 B", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 250, 10, 1, ASLToAGL _pos, [0, 0, 1, 1]]],
+                                    ["SLIDER", localize "str_a3_cfgvehicles_modulestrategicmapimage_f_arguments_height_0", [-1, 250, -1, 0]],
+                                    ["CHECKBOX", localize "str_disp_arcmark_rect", [false]]
+                                ],
+                                {
+                                    params ["_dialog", "_args"];
+                                    _dialog params ["_strength", "_radiusA", "_radiusB", "_height", "_rectangle"];
+                                    _args params ["_pos"];
+                                    [QGVAR(createAnomaly), [[_pos, _strength, _radiusA, _radiusB, _rectangle, 0, _height], "psy"]] call CBA_fnc_serverEvent;
                                 }, {}, [_pos]
                             ] call zen_dialog_fnc_create;
                         };

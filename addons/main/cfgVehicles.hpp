@@ -497,6 +497,46 @@ class cfgVehicles {
         };
     };
 
+    class GVAR(moduleCreatePsy): Module_F {
+        author = "diwako";
+        category = "DIW_ANOMALY";
+        displayName = "$STR_anomaly_psy";
+        icon = QPATHTOF(data\ui\modules\psy_ca.paa);
+        portrait = QPATHTOF(data\ui\modules\psy_ca.paa);
+        function = QFUNC(createPsyField);
+        functionPriority = 1;
+        canSetArea = 1;
+        canSetAreaHeight = 1;
+        canSetAreaShape = 1;
+        scope = 2;  //show in editor
+        isGlobal = 0; //run on server
+        isTriggerActivated = 1; //Wait for triggers
+        class Attributes: AttributesBase {
+            class strength: Edit {
+                displayName = "$STR_anomaly_psy_strength";
+                tooltip = "$STR_anomaly_psy_strength_desc";
+                typeName = "NUMBER";
+                validate = "number";
+                defaultValue = 1;
+                property = QGVAR(strength);
+            };
+            class ModuleDescription: ModuleDescription {};
+        };
+        class AttributeValues {
+            size3[] = {10, 10, -1};
+            isRectangle = 0;
+        };
+        class ModuleDescription : ModuleDescription{
+            description = "$STR_anomaly_psy_desc";
+            sync[] = {"LocationArea_F"};
+            class LocationArea_F {
+                description[] = {};
+                optional = 1;
+                synced[] = {"Any"};
+            };
+        };
+    };
+
     class GVAR(moduleBlowout): Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";

@@ -343,6 +343,34 @@
             <Original>Flickering and dancing lights in the distant darkness, only visible at night, they vanish when getting too close. Used to lure people into potentially dangerous areas, but otherwise harmless.</Original>
             <English>Flickering and dancing lights in the distant darkness, only visible at night, they vanish when getting too close. Used to lure people into potentially dangerous areas, but otherwise harmless.</English>
         </Key>
+        <Key ID="STR_anomaly_psy">
+            <Original>Psy Field</Original>
+            <English>Psy Field</English>
+        </Key>
+        <Key ID="STR_anomaly_psy_desc">
+            <Original>A field charged with psy energy. The effects might be harmless but cause paranoia. The people inside the field will have their vision altered and they will hear voices</Original>
+            <English>A field charged with psy energy. The effects might be harmless but cause paranoia. The people inside the field will have their vision altered and they will hear voices</English>
+        </Key>
+        <Key ID="STR_anomaly_psy_strength">
+            <Original>Strength</Original>
+            <English>Strength</English>
+            <Czech>Síla</Czech>
+            <French>Force</French>
+            <Spanish>Fuerza</Spanish>
+            <Italian>Forza</Italian>
+            <Polish>Siła</Polish>
+            <Portuguese>Força</Portuguese>
+            <Russian>Сила ветра</Russian>
+            <German>Stärke</German>
+            <Korean>강도</Korean>
+            <Japanese>強さ</Japanese>
+            <Chinese>強度</Chinese>
+            <Turkish>Güç</Turkish>
+        </Key>
+        <Key ID="STR_anomaly_psy_strength_desc">
+            <Original>Stength value is allowed to be between 1 and 3. Decimal values will be rounded!</Original>
+            <English>Stength value is allowed to be between 1 and 3. Decimal values will be rounded!</English>
+        </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
             <English>Blowout</English>
