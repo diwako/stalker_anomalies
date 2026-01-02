@@ -28,3 +28,4 @@ class CfgPatches {
 #include "cfgVehicles.hpp"
 #include "cfgSfx.hpp"
 #include "cfgRSC.hpp"
+#include "ZEN_cfgContext.hpp"

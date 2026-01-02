@@ -126,9 +126,7 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                     params ["_dialog", "_args"];
                     _dialog params ["_radius"];
                     _args params ["_pos"];
-                    private _trigs = _pos nearObjects ["EmptyDetector", _radius];
-                    _trigs = _trigs select {_x getVariable [QGVAR(anomalyType), ""] isNotEqualTo ""};
-                    [QGVAR(deleteAnomalies), [_trigs]] call CBA_fnc_serverEvent;
+                    [_pos, _radius] call FUNC(findAndDeleteAnomalies);
                 }, {}, [_pos]
             ] call zen_dialog_fnc_create;
         }

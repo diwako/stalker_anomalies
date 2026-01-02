@@ -34,6 +34,7 @@ SUBPREP(anomalies,createRazor);
 SUBPREP(anomalies,activateRazor);
 SUBPREP(anomalies,createWillowisp);
 SUBPREP(anomalies,createPsyField);
+SUBPREP(anomalies,findAndDeleteAnomalies);
 
 SUBPREP(anomalies,addUnitDamage);
 
@@ -85,3 +86,7 @@ if (isServer) then {
 
 // event handler
 SUBPREP(eventHandler,blockerHitPart);
+
+// ZEN context menu
+SUBPREP(contextMenu,setIgnore);
+SUBPREP(contextMenu,showOptionIgnore);

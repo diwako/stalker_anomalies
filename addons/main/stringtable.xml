@@ -938,5 +938,23 @@
             <English>When enabled allows spawning of additional anomalies in grids players are in while ignoring the max cap. This is to prevent empty grids even tho players are active in them</English>
             <Polish>Gdy włączone, pozwala na powstawanie dodatkowych anomalii w pobliżu graczy ignorując limit. Jest to po to, by uniknąć pustych miejsc wokół graczy.</Polish>
         </Key>
+        <Key ID="STR_anomaly_contextMenu_setIgnore">
+            <Original>Set ignore anomalies and blowout</Original>
+            <English>Set ignore anomalies and blowout</English>
+        </Key>
+        <Key ID="STR_anomaly_contextMenu_setUnignore">
+            <Original>Unset ignore anomalies and blowout</Original>
+            <English>Unset ignore anomalies and blowout</English>
+        </Key>
+        <Key ID="STR_anomaly_contextMenu_Context_Actions_25m">
+            <English>25 m</English>
+            <French>25 m</French>
+            <Italian>25 m</Italian>
+            <German>25 m</German>
+            <Korean>25 m</Korean>
+            <Japanese>25 m</Japanese>
+            <Chinese>25米</Chinese>
+            <Chinesesimp>25米</Chinesesimp>
+        </Key>
     </Package>
 </Project>
