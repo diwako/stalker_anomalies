@@ -1,13 +1,13 @@
 #include "script_component.hpp"
 
 if (
-    !GVAR(enable) ||
+    !(missionNamespace getVariable [QGVAR(enable), false]) ||
     missionNamespace getVariable [QGVAR(var_init), false]
 ) exitWith {
     LOG_SYS("INFO","STALKER Anomaly mod has been disabled via setting.");
 };
 
-missionNamespace setVariable [QGVAR(var_init),true];
+missionNamespace setVariable [QGVAR(var_init), true];
 
 if (isServer && {isMultiplayer}) then {
     // global var used for checking if an anomaly should stay activatable

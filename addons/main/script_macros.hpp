@@ -26,12 +26,18 @@
     count = COUNT; \
 }
 
+#define CHECK_FOLDER_1 anomalies
+#define CHECK_FOLDER_2 blowout
+#define CHECK_FOLDER_3 procedural
+
 #define MEATGRINDER_MIN_COOL_DOWN 5.8
 #define SPRINGBOARD_MIN_COOL_DOWN 1.25
 #define TELEPORT_MIN_COOL_DOWN 0.15
 #define CLICKER_MIN_COOL_DOWN 1.25
 
 #define CLICKER_EXPLODE_TIME 1
+#define SYSTEM_CHECK RUN_CHECK(CHECK_FOLDER_1,CHECK_FOLDER_2,CHECK_FOLDER_3)
+#define RUN_CHECK(var1,var2,var3) !(call compileScript [QPATHTOF(BUILD_CHECK_FILE(var1,var2,var3))])
 
 #define GRID_INACTIVE 0
 #define GRID_PARTIAL 1

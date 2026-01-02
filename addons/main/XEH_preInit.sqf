@@ -1,5 +1,10 @@
 #include "script_component.hpp"
 ADDON = false;
+
+if !(SYSTEM_CHECK) exitWith {
+    ADDON = true;
+};
+
 #include "XEH_PREP.hpp"
 
 #include "settings.inc.sqf"
