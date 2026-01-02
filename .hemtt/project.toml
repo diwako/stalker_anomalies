@@ -16,7 +16,7 @@ include = [
     "icon.paa",
     "icon.png",
 ]
-exclude = ["*.psd", "*.png", "*.tga", "/**/cfg*.hpp", "*.ini"]
+exclude = ["*.psd", "*.png", "*.tga", "/**/cfg*.hpp", "/**/ZEN_cfg*.hpp", "*.ini"]
 
 [hemtt.launch.default]
 workshop = [
