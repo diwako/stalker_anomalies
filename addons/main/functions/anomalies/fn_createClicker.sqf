@@ -9,7 +9,7 @@
         _pos - PositionASL where the anomaly should be (default: [0,0,0])
         _radiusA - Radius A parameter of area anomaly (default: 10)
         _radiusB - Radius B parameter of area anomaly (default: 10)
-        _isRectangle - is this anomaly rectangular shaped (default: true)
+        _isRectangle - Is this anomaly rectangular shaped (default: true)
         _angle - Angle the anomaly should have (default: 0)
         _height - Height of the area (default: 8)
 

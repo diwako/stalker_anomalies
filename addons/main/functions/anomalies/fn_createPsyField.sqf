@@ -7,10 +7,10 @@
 
     Parameter:
         _pos - PositionASL where the anomaly should be (default: [0,0,0])
-        _strength - Strength of the anomaly, range from 1 to 3 (default: 1)
+        _strength - Strength of the anomaly, ranging from 1 to 3 (default: 1)
         _radiusA - Radius A parameter of area anomaly (default: 10)
         _radiusB - Radius B parameter of area anomaly (default: 10)
-        _isRectangle - is this anomaly rectangular shaped (default: true)
+        _isRectangle - Is this anomaly rectangular shaped (default: true)
         _angle - Angle the anomaly should have (default: 0)
         _height - Height of the anomaly, -1 for infinite (default: -1)
 

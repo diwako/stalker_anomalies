@@ -7,7 +7,7 @@
 
     Parameter:
         _pos - PositionASL where the anomaly should be (default: [0,0,0])
-        _id - ID which connects teleporters
+        _id - ID that links teleporters together
 
     Returns:
         Anomaly Trigger
