@@ -6,7 +6,7 @@ While the anomaly functions are inside the anomaly page, there are a few more fu
 
 ### blowoutWave
 
-Shows an approaching wave of psy energy used in the blowout event. The wave is none damaging, merely an effect. Wave is only shown on machines this function is run on.
+Shows an approaching wave of psy energy used in the blowout event. The wave is non-damaging, merely an effect. Wave is only shown on machines this function is run on.
 
 ```
 Function: diwako_anomalies_main_fnc_blowoutWave
@@ -32,19 +32,19 @@ Must be executed on server!
 Function: diwako_anomalies_main_fnc_createAnomalyField
 
 Parameter:
-    _posParams - array containing parameters for the function CBA_fnc_randPosArea, See dokumentation here:http://cbateam.github.io/CBA_A3/docs/files/common/fnc_randPosArea-sqf.html (default: [])
+    _posParams - array containing parameters for the function CBA_fnc_randPosArea, See documentation here:http://cbateam.github.io/CBA_A3/docs/files/common/fnc_randPosArea-sqf.html (default: [])
     _springboard    - how many anomalies of the type springboard should be created (default: 0)
     _burner         - how many anomalies of the type burner should be created (default: 0)
     _electra        - how many anomalies of the type electra should be created (default: 0)
     _meatgrinder    - how many anomalies of the type meatgrinder should be created (default: 0)
 
 Returns:
-    array of all crated anomalies
+    array of all created anomalies
 ```
 
 ### createLocalLightningBolt
 
-Shows a none destructive local only lightning bolt at given position. Uses the map's configured thunder sounds. \
+Shows a non-destructive local only lightning bolt at given position. Uses the map's configured thunder sounds. \
 Only appears on the machine this function is run on.
 
 ```
@@ -227,3 +227,4 @@ If you want to mess with your players, you can simply turn the detector off at r
 
 Turning on the detector via script is a bit trickier, but not hard.
 First set the variable to true, then run the function `diwako_anomalies_main_fnc_detector` with no parameters on the target player machine.
+
