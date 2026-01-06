@@ -195,9 +195,9 @@ Returns:
 Object namespace variable! \
 `anomaly_ignore`
 
-When zeusing, teleporting into your own placed anomalies might be a bit suboptimal. There is a variable you can set that most anomalies will leave you alone.
+When using Zeus, teleporting into your own placed anomalies can be inconvenient. This variable can be set to make most anomalies ignore the affected unit.
 
-Simply set it to true and you are bueno. Just make sure that variable is synced as well. This variable will also ignore the bad effects of the blowout event and will exclude the player from checks in the procedural anomaly spawning system.
+Set it to true and the unit will be ignored by anomalies. Make sure the variable is synced if needed. This variable also disables the negative effects of the blowout event and excludes the player from checks in the procedural anomaly spawning system.
 
 Examples: \
 initPlayerLocal.sqf - `player setVariable ["anomaly_ignore", true, true];` \
@@ -208,9 +208,9 @@ initPlayerLocal.sqf - `player setVariable ["anomaly_ignore", true, true];` \
 Object namespace variable! \
 `blowout_safe`
 
-Extra object namespace variable for just the blowout event. It prevents being knocked over and killed by the blowout. Can be used to create your own little safe spaces in which players can take shelter in, in case the automatic check does not declare the hiding spot to be safe.
+Additional object namespace variable specific to the blowout event. It prevents the unit from being knocked over or killed by the blowout. This can be used to create custom safe areas where players can take shelter if the automatic shelter check does not recognize the location as safe.
 
-Does not need syncing to everyone else.
+This variable does not need to be synced to other machines.
 
 Examples: \
 initPlayerLocal.sqf - `player setVariable ["blowout_safe", true];` \
@@ -221,10 +221,10 @@ initPlayerLocal.sqf - `player setVariable ["blowout_safe", true];` \
 Mission namespace variable! \
 `diwako_anomalies_main_detectorActive`
 
-Variable to check if the anomaly detector is running. Right now, there is no CBA event when it is being turned on or off, not sure if that is needed.
-When the variable is set to true, the detector is currently running, when it is set to false, then it is not running.
+Variable used to check whether the anomaly detector is currently running. At the moment, there is no CBA event fired when the detector is turned on or off, which may or may not be necessary.
 
-If you want to mess with your players, you can simply turn the detector off at random. Simply set the variable to false and the detector will shut down.
+When this variable is set to true, the detector is active. When set to false, the detector is inactive.
 
-Turning on the detector via script is a bit trickier, but not hard.
-First set the variable to true, then run the function `diwako_anomalies_main_fnc_detector` with no parameters on the target player machine.
+If you want to mess with your players, you can disable the detector at random by setting this variable to false, which will immediately shut it down.
+
+Enabling the detector via script is slightly more involved, but still straightforward. First, set the variable to true, then execute the function `diwako_anomalies_main_fnc_detector` without parameters on the target player’s machine.
