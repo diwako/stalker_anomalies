@@ -1,93 +1,104 @@
 # Blowout Emission
 
-A blowout (also called an emission) is a map wide event. Every player will be experiencing this event at the same time, almost fully synced between everyone as well.
-A large chunk of psy energy is being set free, which announces this by harsh winds, thunderstorms, orange waves in the sky, and ultimately a wave like energy burst that kills anyone not in shelter.
+A blowout, also known as an emission, is a map-wide event. All players experience it at the same time and it is almost fully synchronized across clients. A massive surge of psy energy is released, announced by harsh winds, thunderstorms, orange waves in the sky, and ultimately a wave-like energy burst that kills anyone not in shelter.
 
-## Blowout stages
+## Blowout Stages
 
-A blowout has 5 distinct stages.
+A blowout consists of five distinct stages.
 
 ### Stage 0
 
-The first stage is that there is simply no blowout event happening, or it just concluded. Normal play as usual really.
-Hence why it is dubbed the zero stage, as nothing is going on.
+This stage represents normal gameplay. Either no blowout is currently happening or one has just concluded. Nothing unusual is occurring, which is why this stage is referred to as stage zero.
 
 ### Stage 1
 
-This is the warmup stage, the blowout just started. Environmental sounds fade, it becomes quiet, until a groan and eventually what sounds like an explosion is heard in the air.
+This is the warm-up stage, marking the beginning of a blowout. Environmental sounds fade, the world becomes eerily quiet, and is eventually followed by a groan and what sounds like an explosion in the air.  
 This stage lasts 60 seconds.
 
 ### Stage 2
 
-This stage is the holding stage. Meant for the players to haul their asses into a safe spot. The length of this stage is determined by the mission maker, Zeus, or script that initiated the blowout.
-During this stage, stronger winds are rocking the trees, lightning bolts rain down from the sky, the sky forms psy lines over the horizon while a constant background rumbling is going on.
+This is the holding stage, intended to give players time to reach a safe location. The duration of this stage is defined by the mission maker, Zeus, or the script that initiated the blowout.
+
+During this stage, strong winds shake the trees, lightning bolts strike frequently, psy lines form across the horizon, and a constant background rumble can be heard.
 
 ### Stage 3
 
-This stage lasts 30 seconds. It is the last stage before the blowout fully hits. The wind becomes extreme, the lightning bolts become very frequent, the psy effect becomes pronounced. And to top it all, the first psy wave arrives during this stage. It does not kill or knock players out, but it should sell the importance of hurrying up.
-It is meant to be a sign, if you are not in a safe spot yet, your time is running out rapidly.
+This stage lasts 30 seconds and is the final warning before the blowout fully strikes. Winds become extreme, lightning intensifies, and psy effects grow stronger. During this stage, the first psy wave appears. It does not kill or knock players unconscious, but serves as a clear warning that time is running out.
+
+If you are not in a safe location by this point, you are in serious danger.
 
 ### Stage 4
 
-The stage the deadly psy waves arrives. While you are not in cover, first the player will be thrown onto the ground right before the wave hits. When the wave hits it will kill the player instantly without any way to prevent this. Seeking shelter is the only way during normal play.
-There are some more options for mission makers, but these are detailed below.
+This is the lethal stage where the deadly psy wave arrives. If the player is not in cover, they will first be thrown to the ground shortly before the wave hits. When the wave strikes, it kills instantly with no way to survive unless the player is in shelter.
 
-## Starting a blowout
+There are additional options available for mission makers, which are described below.
+
+## Starting a Blowout
 
 ### Zeus
 
-The most common use case is most likely just through the Zeus interface. You will need to have the mod [ZEN](https://steamcommunity.com/workshop/filedetails/?id=1779063631) enabled for this option to show up in your modules tab.
+The most common way to start a blowout is through the Zeus interface. To use this method, the mod [ZEN](https://steamcommunity.com/workshop/filedetails/?id=1779063631) must be enabled for the blowout module to appear in the Zeus modules tab.
 
-### 3den module
+### 3DEN Module
 
-There is a module in 3den which mission makers can use to start a blowout. Do mind it will instantly activate the blowout if it is not synced to a trigger.
-When syncing the module to a trigger you can delay its activation until the used trigger is activated.
+A dedicated module is available in the 3DEN Editor for starting a blowout. Be aware that the blowout will activate immediately unless the module is synchronized to a trigger.
+
+By syncing the module to a trigger, activation can be delayed until the trigger conditions are met.
 
 ### Scripting
 
-There is a coordinator script for the blowout. It is only available on the server, calling this on a none server will not work.
-The function is named `diwako_anomalies_main_fnc_blowoutCoordinator`. Its parameters are as follows.
-|Index|Name|Description|Default|
-|-|-|-|-|
-|1|\_time|Time until the deadly psy wave hits. Must me at least 102 else it will abort|400|
-|2|\_direction|Direction the wave approaches, in bearing degrees|0|
-|3|\_useSirens|Boolean value if there should be sirens be heard|true|
-|4|\_onlyPlayers|Should only players be affected by this? Performance warning for setting this to false with many AI on the map|true|
-|5|\_isLethal|The final blowout wave is lethal and kills those that are not in cover|true|
-|6|\_environmentParticleEffects|When enabled causes leaves blowing in the wind, dust being kicked up and some other things|true|
+A coordinator function exists for controlling blowouts via script. This function is server-only and will not work if called on a non-server machine.
 
-There is a also a CBA event named `diwako_anomalies_main_startBlowout` registered on the server, that just pushes through the given parameter directly into the function. That means you can just do a CBA server event and do not have to deal with locality.
+Function name:  
+`diwako_anomalies_main_fnc_blowoutCoordinator`
 
-Example
+Parameters:
+
+| Index | Name                         | Description                                                                | Default |
+| ----: | ---------------------------- | -------------------------------------------------------------------------- | ------- |
+|     1 | \_time                       | Time until the deadly psy wave hits. Must be at least 102 or it will abort | 400     |
+|     2 | \_direction                  | Direction the wave approaches, in bearing degrees                          | 0       |
+|     3 | \_useSirens                  | Whether sirens should be audible                                           | true    |
+|     4 | \_onlyPlayers                | If false, AI are also affected. May impact performance with many AI        | true    |
+|     5 | \_isLethal                   | Whether the final wave is lethal                                           | true    |
+|     6 | \_environmentParticleEffects | Enables wind-blown leaves, dust, and similar effects                       | true    |
+
+There is also a CBA server event named `diwako_anomalies_main_startBlowout`. It forwards its parameters directly to the coordinator function, allowing you to avoid dealing with locality.
+
+Example:
 
 ```sqf
 ["diwako_anomalies_main_startBlowout", [_time, _direction, _useSirens, _onlyPlayers, _isLethal, _environmentParticleEffects]] call CBA_fnc_serverEvent;
 ```
 
-## How is a player safe from a blowout?
+## How Is a Player Safe From a Blowout?
 
-By default, once the blowout wave hits, a check is done if the unit caught in the blowout is safe. There are two mechanisms to see if a unit is safe.
+By default, when the psy wave hits, a check is performed to determine whether the affected unit is safe. There are two mechanisms used to determine safety.
 
-### The automatic way
+### The Automatic Way
 
-There is a basic check if a unit is indoors. This check uses Arma’s vanilla command `insideBuilding` which was added with Arma 3 version 2.12.
-This command however is a biiit flakey as it relies on properly set up buildings, meaning while staying inside modded buildings might simply not be considered being "indoors" according to Arma.
+A basic check determines whether a unit is indoors using Arma’s vanilla `insideBuilding` command, which was introduced in Arma 3 version 2.12.
 
-So, what does indoors mean in the Arma sense? If you are playing Arma for longer, you might have noticed that firing a gun indoors general sounds more echo-y, right? That is a sound shader, any properly set up building will apply this sound shader to the player. The command `insideBuilding` uses this to determine if a unit is inside or outside. Sound shaders like that are part of Arma since very very early, so it is not really a recent change.
+This command can be unreliable, as it depends on buildings being properly configured. As a result, some modded buildings may not be recognized as indoor spaces by the engine.
 
-Why is this the case, why does Arma do this? Simple, it is super-fast and efficient, there is already a background routine going on to assign the sound shader, so using it in scripting to figure out if it is applied, thus the unit being indoors, is really cheap.
+In Arma terms, being indoors is determined using sound shaders. If you have played Arma for a while, you may have noticed that gunfire sounds more echo-like when fired inside buildings. Properly configured buildings apply an indoor sound shader to units inside them.
 
-This is the reason I am using this command as well, additionally with some ray casts to check if you have a roof above you and are not just standing in the doorway to the outside.
+The `insideBuilding` command checks for this shader to determine whether a unit is indoors. This approach is fast and efficient, as the engine already applies these shaders internally.
 
-The main issue here is, not every building is considered safe then. Doing it the old way with using just ray casts is expensive, thus slow, and can have a ton of false positives. As in, standing beneath a tree might be considered safe, because you are "not in the open". Or random props around you might make you unsafe because the props are not configured as buildings. Or standing in a large warehouse is not safe because the walls around you are too far away and the ray casts are not hitting them, making them think you are in an open field. Or some buildings have windows on the roof, standing beneath a broken window will simply mean your head is in the open, thus unsafe, and so on, you get the gist.
+Additional ray casts are used to verify that a roof is present above the unit, preventing edge cases such as standing in a doorway from being considered safe.
 
-### The mission maker way
+The downside of this method is that not all buildings are considered safe. Relying solely on ray casts would be expensive and error-prone. For example, standing under a tree might be considered safe, random props could interfere with checks, large warehouses might fail due to distant walls, or broken roof windows could expose the player.
 
-Over in the [Functions and Variables](functions_variables.md) wiki section there are some variables that can be used by a mission maker to make any building or area safe from a blowout.
+### The Mission Maker Way
 
-I am talking about the `blowout_safe` variable. Coupled that with setting it in Zeus or with a trigger, or global event, can make any spot on the map safe if the mission maker wills it.
+The [Functions and Variables](functions_variables.md) section documents variables that mission makers can use to define custom safe areas.
 
-As an example, using triggers. \
+The primary variable for this purpose is `blowout_safe`. When set on an object or unit, it marks that location as safe from blowouts.
+
+This variable can be set using Zeus, triggers, or global events to designate safe zones anywhere on the map.
+
+Example using a trigger:
+
 Condition:
 ` this && (player in thisList)`
 

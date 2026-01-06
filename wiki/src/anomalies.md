@@ -232,11 +232,11 @@ Returns:
 
 ## Psy Field
 
-Unlike the psy discharge, the psy field does not deal direct damage. Instead, it applies psy effects to any stalker entering the anomaly. While it can be considered harmless, it alters the stalker's vision and causes them to hear voices. Most stalkers feel paranoid while under the influence of psy, likely because whatever causes this effect can harm the mind and brain.
+Unlike the psy discharge, the psy field does not deal direct damage. Instead, it applies psy effects to any stalker who enters the anomaly. While it may appear harmless, it alters the stalker’s vision and causes auditory hallucinations. Most stalkers report feelings of paranoia while under its influence, likely because whatever causes the effect directly affects the mind and brain.
 
 ### Setup
 
-The 3den module will spawn a psy field anomaly at the placed location.
+The 3DEN module will spawn a psy field anomaly at the placed location.
 
 _This anomaly is available in Zeus when the Zeus Enhanced mod is enabled._
 
@@ -262,13 +262,13 @@ Returns:
 
 ## Razor
 
-An anomaly consisting of multiple hovering glass shards. The shards are razor sharp, hence the name, and touching them at sufficient velocity causes bleeding.
+An anomaly composed of multiple hovering glass shards. The shards are razor sharp, hence the name, and contact at sufficient speed causes severe bleeding.
 
-It is said that if you make yourself small and move slowly, it does nothing, allowing unharmed passage through the anomaly.
+It is said that if you make yourself small and move slowly, the anomaly does nothing, allowing safe passage through it.
 
 ### Setup
 
-The 3den module will spawn a razor anomaly at the placed location.
+The 3DEN module will spawn a razor anomaly at the placed location.
 
 _This anomaly is available in Zeus when the Zeus Enhanced mod is enabled._
 
@@ -288,11 +288,11 @@ Returns:
 
 ## Springboard
 
-Often seen as whirling leaves, closer inspection reveals small refractions as objects are repulsed from entering. If anyone touches the anomaly, they are forcibly flung away from it.
+Often appearing as swirling leaves, closer inspection reveals subtle refractions as objects are repelled from entering. If anyone touches the anomaly, they are violently flung away from it.
 
 ### Setup
 
-The 3den module will spawn a springboard anomaly at the placed location.
+The 3DEN module will spawn a springboard anomaly at the placed location.
 
 _This anomaly is available in Zeus when the Zeus Enhanced mod is enabled._
 
@@ -312,15 +312,15 @@ Returns:
 
 ## Teleport
 
-A large disc of pulsing energy that hums when approached. Touching it forcibly relocates you to one of its sister anomalies, enabling faster travel or access to hidden locations, or just death, who knows.
+A large disc of pulsing energy that emits a low hum when approached. Touching it forcibly relocates you to one of its sister anomalies, enabling faster travel, access to hidden locations, or, potentially, an untimely death.
 
 ### Setup
 
-The 3den module will spawn a teleport anomaly at the placed location.
+The 3DEN module will spawn a teleport anomaly at the placed location.
 
-You **MUST** set a teleport ID in the module. Any other teleport anomaly with the same ID will act as a sister anomaly.
+You **MUST** assign a teleport ID in the module. Any other teleport anomaly using the same ID will function as a sister anomaly.
 
-You **CAN** have more than two teleport anomalies with the same ID.
+You **CAN** have more than two teleport anomalies sharing the same ID.
 
 _This anomaly is available in Zeus when the Zeus Enhanced mod is enabled._
 
@@ -341,11 +341,11 @@ Returns:
 
 ## Will-o'-wisp
 
-Flickering, dancing lights in the distant darkness, only visible at night. They vanish when approached. Stalkers at the campfire claim they lure people into dangerous areas and traps, but otherwise they are harmless and somewhat pretty.
+Flickering, dancing lights that appear in the distance and are only visible at night. They vanish when approached. Campfire stories claim they lure stalkers into dangerous areas and traps, but in reality they are harmless, if somewhat eerie and beautiful.
 
 ### Setup
 
-The 3den module will spawn a Will-o'-wisp anomaly at the placed location.
+The 3DEN module will spawn a Will-o'-wisp anomaly at the placed location.
 
 _This anomaly is available in Zeus when the Zeus Enhanced mod is enabled._
 
