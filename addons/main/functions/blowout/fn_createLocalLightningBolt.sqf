@@ -3,10 +3,10 @@
     Function: diwako_anomalies_main_fnc_createLocalLightningBolt
 
     Description:
-        Creates a none destructive local only thunderbolt with sound and light
+        Creates a non-destructive, local-only lightning bolt with sound and light
 
     Parameters:
-        _pos - PositionAGL, can be left empty for effect around player (default: [)
+        _pos - PositionAGL. Can be left empty to display the effect randomly around the player (default: [])
 
     Returns:
         nothing

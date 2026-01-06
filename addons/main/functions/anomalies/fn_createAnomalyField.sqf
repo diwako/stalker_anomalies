@@ -6,19 +6,20 @@
         Creates and anomaly field with specific amount of each anomaly type
 
     Parameter:
-        _posParams - array containing parameters for the function CBA_fnc_randPosArea, See dokumentation here:http://cbateam.github.io/CBA_A3/docs/files/common/fnc_randPosArea-sqf.html (default: [])
-        _springboard     - how many anomalies of the type springboard should be created (default: 0)
-        _burner         - how many anomalies of the type burner should be created (default: 0)
-        _electra         - how many anomalies of the type electra should be created (default: 0)
-        _meatgrinder     - how many anomalies of the type meatgrinder should be created (default: 0)
+        _posParams - Array containing parameters for the function CBA_fnc_randPosArea. (default: [])
+                See documentation here: http://cbateam.github.io/CBA_A3/docs/files/common/fnc_randPosArea-sqf.html
+        _springboard - Number of springboard anomalies to create (default: 0)
+        _burner - Number of burner anomalies to create (default: 0)
+        _electra - Number of electra anomalies to create (default: 0)
+        _meatgrinder - Number of meatgrinder anomalies to create (default: 0)
 
     Returns:
-        array of all crated anomalies
+        Array of all created anomalies
 
     Author:
     diwako 2018-03-21
 */
-params["_posParams",["_springboard",0],["_burner",0],["_electra",0],["_meatgrinder",0]];
+params["_posParams", ["_springboard",0], ["_burner",0], ["_electra",0], ["_meatgrinder",0]];
 if !(isServer) exitWith {nil};
 
 if !(_posParams isEqualType []) then {

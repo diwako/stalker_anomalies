@@ -6,11 +6,11 @@
         Function to check if a specific item is in players inventory
 
     Parameters:
-        _unit - Unit to check. will be player if variable is objNull and is called on a client machine (default: objNull)
-        _itemClass - Itemclass to search for (default: "")
+        _unit - Unit to check. Defaults to the player if objNull is passed and the function is called on a client machine (default: objNull)
+        _itemClass - Item class name to search for (default: "")
 
     Returns:
-        true or false, if item is in inventory or empty string is given
+        true or false, depending on whether the item is present or an empty string is given
 
     Author:
     diwako 2017-12-29

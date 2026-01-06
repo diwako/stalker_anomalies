@@ -6,8 +6,8 @@
         Hear psy voices, see filmgrain, screen becomes orange
 
     Parameters:
-        _strength - Integer Number as strength of the effects, 0 for off and max of 3 for maximum effect (default: 0)
-        _id - String ID to identify the source of the psy effect (default: "mission")
+        _strength - Integer representing the strength of the effect. 0 disables the effect, 3 is the maximum (default: 0)
+        _id - String ID used to identify the source of the psy effect (default: "mission")
 
     Returns:
         nothing

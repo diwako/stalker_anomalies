@@ -1,18 +1,18 @@
 # Functions and Variables
 
-While the anomaly functions are inside the anomaly page, there are a few more functions and variables mission makers and scripters can utilize.
+While most anomaly-related functions are documented on the anomaly page, there are additional functions and variables that mission makers and scripters can use.
 
 ## Functions
 
 ### blowoutWave
 
-Shows an approaching wave of psy energy used in the blowout event. The wave is non-damaging, merely an effect. Wave is only shown on machines this function is run on.
+Displays an approaching wave of psy energy used during the blowout event. The wave is non-damaging and purely visual. It is only shown on machines where this function is executed.
 
 ```
 Function: diwako_anomalies_main_fnc_blowoutWave
 
 Parameter:
-    _time - seconds when it makes contact with the player (default: 10)
+    _time - Time in seconds until the wave reaches the player (default: 10)
 
 Returns:
     nothing
@@ -20,38 +20,39 @@ Returns:
 
 ### createAnomalyField
 
-Helper function to create a bunch of anomalies in the specified area. The placement of the anomalies will be random, but within the given area of the module.
+Helper function to create multiple anomalies within a specified area. Anomaly placement is randomized, but constrained to the area defined by the module.
 
-With this module you can create 4 types of anomalies, springboards, burners, electras and meatgrinders. If you need others supported, let me know!
+Using this function, you can create four types of anomalies: springboards, burners, electras, and meatgrinders. If you need support for additional anomaly types, let me know.
 
-This function is also available as module in 3den!
+This function is also available as a 3den editor module.
 
-Must be executed on server!
+Must be executed on the server.
 
 ```
 Function: diwako_anomalies_main_fnc_createAnomalyField
 
 Parameter:
-    _posParams - array containing parameters for the function CBA_fnc_randPosArea, See documentation here:http://cbateam.github.io/CBA_A3/docs/files/common/fnc_randPosArea-sqf.html (default: [])
-    _springboard    - how many anomalies of the type springboard should be created (default: 0)
-    _burner         - how many anomalies of the type burner should be created (default: 0)
-    _electra        - how many anomalies of the type electra should be created (default: 0)
-    _meatgrinder    - how many anomalies of the type meatgrinder should be created (default: 0)
+    _posParams - Array containing parameters for the function CBA_fnc_randPosArea. (default: [])
+            See documentation here: http://cbateam.github.io/CBA_A3/docs/files/common/fnc_randPosArea-sqf.html
+    _springboard - Number of springboard anomalies to create (default: 0)
+    _burner - Number of burner anomalies to create (default: 0)
+    _electra - Number of electra anomalies to create (default: 0)
+    _meatgrinder - Number of meatgrinder anomalies to create (default: 0)
 
 Returns:
-    array of all created anomalies
+    Array of all created anomalies
 ```
 
 ### createLocalLightningBolt
 
-Shows a non-destructive local only lightning bolt at given position. Uses the map's configured thunder sounds. \
-Only appears on the machine this function is run on.
+Displays a non-destructive, local-only lightning bolt at the given position. The effect uses the map’s configured thunder sounds.  
+It is only visible on the machine where this function is executed.
 
 ```
 Function: diwako_anomalies_main_fnc_createLocalLightningBolt
 
 Parameters:
-    _pos - PositionAGL, can be left empty for effect to show randomly around the player (default: [])
+    _pos - PositionAGL. Can be left empty to display the effect randomly around the player (default: [])
 
 Returns:
     nothing
@@ -59,15 +60,15 @@ Returns:
 
 ### deleteAnomalies
 
-Deletes anomalies and removes the effects for players. Valid anomalies can be found in the holder array named `diwako_anomalies_main_holder` or by checking if a trigger has set the variable named `diwako_anomalies_main_anomalyType`.
+Deletes anomalies and removes their effects for players. Valid anomalies can be obtained from the holder array `diwako_anomalies_main_holder`, or by checking whether a trigger has the variable `diwako_anomalies_main_anomalyType` set.
 
-Must be executed on server!
+Must be executed on the server.
 
 ```
 Function: diwako_anomalies_main_fnc_deleteAnomalies
 
 Parameter:
-    _anomalies - array containing anomaly triggers (default: [])
+    _anomalies - Array containing anomaly triggers (default: [])
 
 Returns:
     nothing
@@ -75,19 +76,19 @@ Returns:
 
 ### grenadeBolt
 
-As mentioned in the bolt page, grenades do not do anything on their own when thrown into an anomaly, this function attaches the “balloon” to the projectile to make the magic happen.
+As mentioned on the bolt page, grenades have no effect on anomalies on their own when thrown. This function attaches the “balloon” object to the projectile to enable anomaly interaction.
 
-The function will automatically clean up the balloon object after 10 seconds so no litter will be produced.
+The balloon object is automatically cleaned up after 10 seconds to prevent leftover objects.
 
-Use this function if you want to make other projectiles trigger the anomalies.
+Use this function if you want other projectiles to trigger anomalies as well.
 
-Execute where the projectile is local, there is no local check inside this function!
+Execute this function where the projectile is local. There is no locality check inside the function.
 
 ```
 Function: diwako_anomalies_main_fnc_grenadeBolt
 
 Parameters:
-    _projectile - the thrown grenade, or any other projectile, really (no default value!)
+    _projectile - The thrown grenade, or any other projectile (no default value)
 
 Returns:
     nothing
@@ -95,44 +96,44 @@ Returns:
 
 ### hasItem
 
-Function to check if an item exists in a player’s inventory.
+Checks whether a specific item exists in a unit’s inventory.
 
 ```
 Function: diwako_anomalies_main_fnc_hasItem
 
 Parameters:
-    _unit - Unit to check. will be player if variable is objNull and is called on a client machine (default: objNull)
-    _itemClass - Itemclass to search for (default: "")
+    _unit - Unit to check. Defaults to the player if objNull is passed and the function is called on a client machine (default: objNull)
+    _itemClass - Item class name to search for (default: "")
 
 Returns:
-    true or false, if item is in inventory or empty string is given
+    true or false, depending on whether the item is present or an empty string is given
 ```
 
 ### isInShelter
 
-Checks if the given unit is considered in shelter from a blowout.
+Checks whether the given unit is considered to be in shelter during a blowout.
 
 ```
 Function: diwako_anomalies_main_fnc_isInShelter
 
 Parameter:
-    _unit - unit to check if in shelter (default: objNull)
+    _unit - Unit to check for shelter status (default: objNull)
 
 Returns:
-    boolean, true if safe
+    Boolean, true if the unit is considered safe
 ```
 
 ### minceCorpse
 
-Want to see big fleshy bits fly around? This is the function for you! Turns any object, be it organic or otherwise, into red paste and hides the body.
+Want to see large fleshy chunks fly around? This function turns any object, organic or otherwise, into red paste and hides the body.
 
-Must be executed on all machines! There is however also the CBA event named `diwako_anomalies_main_minceCorpse` which takes the same parameters as the function, simply use `CBA_fnc_globalEvent` on that one for ease of use.
+Must be executed on all machines. There is also a CBA event named `diwako_anomalies_main_minceCorpse` that uses the same parameters. For convenience, you can trigger it using `CBA_fnc_globalEvent`.
 
 ```
 Function: diwako_anomalies_main_fnc_minceCorpse
 
 Parameter:
-    _body - Object that is about to be minced (default: objNull)
+    _body - Object that will be minced (default: objNull)
 
 Returns:
     nothing
@@ -140,18 +141,18 @@ Returns:
 
 ### psyEffect
 
-Hear psy voices, shake the screen slightly and tint the screen increasingly orange.
+Plays psy-related audio effects, applies a slight screen shake, and gradually tints the screen orange.
 
-Has 4 different strength settings ranging from 0 to 3. 0 being no effect and 3 being highest effect.
+The function supports four strength levels ranging from 0 to 3. A strength of 0 disables the effect, while 3 represents the maximum intensity.
 
-The ID given to the function add the psy effect to a pool. The effect with the matching ID will be removed if the ID and strength value of 0 is given. The psy effect will always draw the highest strength value from the pool until it is empty.
+The ID passed to the function adds the psy effect to an internal pool. If the same ID is provided with a strength value of 0, the corresponding effect is removed. While multiple effects are active, the highest strength value in the pool is applied until the pool is empty.
 
 ```
 Function: diwako_anomalies_main_fnc_psyEffect
 
 Parameters:
-    _strength - Integer Number as strength of the effects, 0 for off and max of 3 for maximum effect (default: 0)
-    _id - String ID to identify the source of the psy effect (default: "mission")
+    _strength - Integer representing the strength of the effect. 0 disables the effect, 3 is the maximum (default: 0)
+    _id - String ID used to identify the source of the psy effect (default: "mission")
 
 Returns:
     nothing
@@ -159,13 +160,13 @@ Returns:
 
 ### showPsyWavesInSky
 
-Shows orange psy lines in the sky. Takes two minutes to fully show, five minutes to fully disappear.
+Displays orange psy wave lines in the sky. The effect takes two minutes to fully appear and five minutes to fully fade out.
 
 ```
 Function: diwako_anomalies_main_fnc_showPsyWavesInSky
 
 Parameter:
-    _show - boolean, show sky waves (default: false)
+    _show - Boolean indicating whether to show the sky waves (default: false)
 
 Returns:
     nothing
@@ -173,15 +174,15 @@ Returns:
 
 ### bloodEffect
 
-Shows a bloody screens, so real, for a given amount of seconds. Can be called multiple times, time to show will be updated to the highest value. \
-This function has only local effect!
+Displays a bloody screen effect, so real, ffor a specified duration. The function can be called multiple times, with the displayed time always updating to the highest value provided.  
+This function only has a local effect.
 
 ```
 Function: diwako_anomalies_main_fnc_bloodEffect
 
 Parameters:
-    _time - Bleeding time in seconds, could be <5;90>
-            Can be called multiple times, time for blood on screen will update
+    _time - Duration of the bleeding effect in seconds. Example, could be 5 or 90.
+            Can be called multiple times, the on-screen duration will update accordingly.
 
 Returns:
     nothing
@@ -227,4 +228,3 @@ If you want to mess with your players, you can simply turn the detector off at r
 
 Turning on the detector via script is a bit trickier, but not hard.
 First set the variable to true, then run the function `diwako_anomalies_main_fnc_detector` with no parameters on the target player machine.
-

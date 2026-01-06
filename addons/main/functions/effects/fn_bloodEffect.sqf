@@ -6,8 +6,8 @@
         Blood splash (texture) postprocess.
 
     Parameters:
-        _time - Bleeding time in seconds, could be <5;90>
-                Can be called multiple times, time for blood on screen will update
+        _time - Duration of the bleeding effect in seconds. Example, could be 5 or 90.
+                Can be called multiple times, the on-screen duration will update accordingly.
 
     Returns:
         nothing
