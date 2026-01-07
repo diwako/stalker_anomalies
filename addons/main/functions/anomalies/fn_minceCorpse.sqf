@@ -6,7 +6,7 @@
         Turns a given object into (coarsely) minced meat
 
     Parameter:
-        _body - Object that is about to be minced (default: objNull)
+        _body - Object that will be minced (default: objNull)
 
     Returns:
         nothing

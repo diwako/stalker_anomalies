@@ -3,10 +3,10 @@
     Function: diwako_anomalies_main_fnc_isInShelter
 
     Description:
-        Check if a given unit is in shelter of a blowout
+        Checks whether the given unit is considered to be in shelter during a blowout.
 
     Parameters:
-        _unit - the unit to check if in shelter (default: objNull)
+        _unit - Unit to check for shelter status (default: objNull)
 
     Returns:
         nothing

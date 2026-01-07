@@ -1,20 +1,20 @@
-# Stalker like anomalies for Arma 3
+# STALKER-like Anomalies for Arma 3
 
-This is a small side project of mine to create some anomalies like they are found in the STALKER game series. I started working on this as I noticed a lack of available addons or mods that offer anomalies, like they are found in the zone.
+This is a small side project aimed at recreating anomalies similar to those found in the STALKER game series. Development started after noticing a lack of available addons or mods that provide Zone-like anomalies for Arma 3.
 
-If you like this idea and want to contribute, just do a pull request.
-If you want to use this in a mission, sure go ahead.
+If you like the idea and want to contribute, feel free to open a pull request.  
+If you want to use this mod in a mission, go right ahead.
 
-This project aims to be compatible with addons CBA and ACE. It works in single and multiplayer. The mod tries to use as much content as Vanilla offers, so this project can be implemented on a per mission basis and does not need any addons (besides CBA).
+This project is designed to be compatible with CBA and ACE. It works in both singleplayer and multiplayer environments. The mod intentionally relies as much as possible on vanilla Arma content, allowing it to be used on a per-mission basis without requiring additional addons beyond CBA.
 
-Additionally, some items have been added and this mod uses the CBA settings framework.
+In addition, several custom items are included, and the mod makes extensive use of the CBA settings framework.
 
-[Steam workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3351980695) \
-Also check out [BI forums thread](https://forums.bistudio.com/forums/topic/212324-release-stalker-like-anomalies/).
+[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3351980695)  
+Also check out the [BI Forums thread](https://forums.bistudio.com/forums/topic/212324-release-stalker-like-anomalies/).
 
-Currently in:
+## Currently Included
 
-- Anomalies:
+- **Anomalies**
   - Burner
   - Clicker
   - Comet
@@ -27,11 +27,11 @@ Currently in:
   - Teleport
   - Will-o'-wisp
 - Anomaly detector
-- Blowout/Emission event
-- It is possible to throw bolts with a custom model
-- System to show anomalies only around players to safe those scarce FPS
+- Blowout / Emission event
+- Throwable bolts with a custom model
+- Dynamic render system to improve performance by only show anomalies near players
 - Zeus Enhanced support
-- Support for ACE Medical
-- Support for APS
-- Anomalies place able from the editor!
-- System to populate the whole map with anomalies (See inside "Addon Options")
+- ACE Medical support
+- Armor Plates System (APS) support
+- Anomalies placeable from the editor
+- Procedural system to populate the entire map with anomalies (see Addon Options)

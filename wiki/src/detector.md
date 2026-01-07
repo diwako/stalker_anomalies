@@ -1,26 +1,25 @@
 # Editing Anomaly Detector
 
-The detector is an item in the player's inventory. By default, this item is of class `AnomalyDetector`.
+The detector is an item carried in the player’s inventory. By default, this item uses the class `AnomalyDetector`.
 
-However, you can change the item designated as detector in the mod's CBA setting's Menu (also known as Addon Options), in case you have a more fitting item for the job.
+You can change which item is used as the detector in the mod’s CBA Settings menu, also known as Addon Options. This allows you to assign a more thematically fitting item if desired.
 
-The detector starts beeping whenever it is enabled and detects an anomaly within range. It starts to beep faster the closer you get. It will always prioritize the closest anomaly for the beeping!
+When enabled, the detector begins beeping whenever it detects an anomaly within range. The beeping frequency increases as you get closer to the anomaly. The detector always prioritizes the closest anomaly when determining the beep rate.
 
-Depending on the mission settings, it stops beeping if there is _no active_ anomaly in range.
+Depending on the mission settings, the detector may stop beeping entirely if there is _no active_ anomaly within range.
 
-## Using the detector
+## Using the Detector
 
-The detector can be activated through several means when having the detector in your inventory.
+The detector can be activated in several ways, provided it is present in the player’s inventory.
 
 ### Without ACE
 
-You can enable and disable the detector using the action menu, also known as the "scroll wheel menu".
+You can enable or disable the detector using the action menu, also known as the "scroll wheel menu".
 
 ### With ACE
 
-Using ACE's interaction menu, you can self-interact, go to `Equipment` and there you see the detector. Here you can enable or disable it.
+Using ACE’s interaction menu, self-interact, navigate to `Equipment`, and locate the detector. From there, you can enable or disable it.
 
 ### With either
 
-It is possible to interact with the detector by double clicking the item icon right inside your inventory. There you have even more options. \
-The regular enable and disable option, but also to turn the volume of the detector up and down!
+It is also possible to interact with the detector by double-clicking its icon directly in the inventory. This method provides additional options, including enabling or disabling the detector and adjusting its volume.

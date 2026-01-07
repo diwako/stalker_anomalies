@@ -3,10 +3,10 @@
     Function: diwako_anomalies_main_fnc_deleteAnomalies
 
     Description:
-        Deletes given anomalies. Can be called on server only!!
+        Deletes given anomalies. Can be called on the server only!!
 
     Parameter:
-        _anomalies - array containing anomaly triggers (default: [])
+        _anomalies - Array containing anomaly triggers (default: [])
 
     Returns:
         nothing
