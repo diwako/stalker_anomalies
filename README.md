@@ -29,7 +29,7 @@ Also check out the [BI Forums thread](https://forums.bistudio.com/forums/topic/2
 - Anomaly detector
 - Blowout / Emission event
 - Throwable bolts with a custom model
-- Dynamic anomaly spawning system to improve performance by only spawning anomalies near players
+- Dynamic render system to improve performance by only show anomalies near players
 - Zeus Enhanced support
 - ACE Medical support
 - Armor Plates System (APS) support
