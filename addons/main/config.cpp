@@ -4,6 +4,24 @@ class CfgPatches {
         name = COMPONENT_NAME;
         units[] = {
             QGVAR(anomalyDetector),
+            QGVAR(moduleSpringboard),
+            QGVAR(moduleElectra),
+            QGVAR(moduleBurner),
+            QGVAR(moduleMeatgrinder),
+            QGVAR(moduleTeleport),
+            QGVAR(moduleCreateAnomalyField),
+            QGVAR(moduleCreateFog),
+            QGVAR(moduleClicker),
+            QGVAR(moduleFruitPunch),
+            QGVAR(modulePsyDischarge),
+            QGVAR(moduleComet),
+            QGVAR(moduleWillowisp),
+            QGVAR(moduleCreatePsy),
+            QGVAR(moduleBlowout),
+            QGVAR(moduleBlowoutSystem),
+            QGVAR(moduleProceduralExclusion),
+            QGVAR(moduleRazor),
+            QGVAR(blocker)
         };
         weapons[] = {
             "AnomalyDetector"
