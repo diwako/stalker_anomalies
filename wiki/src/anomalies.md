@@ -225,6 +225,7 @@ Function: diwako_anomalies_main_fnc_createPsyDischarge
 
 Parameter:
     _pos - PositionASL where the anomaly should be (default: [0,0,0])
+    _psyEffect - Integer strength of the psy effect to apply to players affected by the discharge (0-3, default: 2)
 
 Returns:
     Anomaly Trigger
