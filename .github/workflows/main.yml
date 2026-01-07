@@ -19,12 +19,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
       - name: Setup HEMTT
         uses: arma-actions/hemtt@v1
       - name: Run HEMTT build
-        run: hemtt release
+        run: |
+          hemtt check -p -e
+          hemtt release
       - name: Upload Release
         uses: actions/upload-artifact@v6
         with:
