@@ -1,221 +1,216 @@
-# CBA events for mission makers
+# CBA Events for Mission Makers
 
-The mod features some CBA events starting with version 2.1.0 which a mission maker can utilize for their own scripts.
+Starting with version **2.1.0**, the mod exposes several CBA events that mission makers can hook into for custom scripting.
 
-## Anomaly events
+All anomaly-related events are prefixed with:
+
+`diwako_anomalies_main_`
+
+## Anomaly Events
+
+These events are fired whenever an anomaly interacts with an object or unit.
 
 ### burnerOnDamage
 
-Activates whenever something or someone gets damaged or killed by a burner anomaly.
+Triggered whenever an object or unit is damaged or killed by a **Burner** anomaly.
 
-Locality: Server only
+- **Locality:** Server only
+- **Event name:** `diwako_anomalies_main_burnerOnDamage`
 
-Full event name: diwako_anomalies_main_burnerOnDamage
+**Parameters**
 
-Parameters:
-
-1. \_obj - object that got damaged/killed
-1. \_trg - the anomaly trigger
+1. `_obj` - Object that was damaged or killed
+2. `_trg` - Burner anomaly trigger
 
 ### clickerOnDamage
 
-Activates whenever something or someone gets flashbanged by a clicker anomaly.
+Triggered whenever an object or unit is flashbanged by a **Clicker** anomaly.
 
-Locality: Server only
+- **Locality:** Server only
+- **Event name:** `diwako_anomalies_main_clickerOnDamage`
 
-Full event name: diwako_anomalies_main_clickerOnDamage
+**Parameters**
 
-Parameters:
-
-1. \_obj - object that got damaged/killed
-1. \_trg - the anomaly trigger
+1. `_obj` - Object that was damaged or affected
+2. `_trg` - Clicker anomaly trigger
 
 ### cometOnDamage
 
-Whenever a comet anomaly burns something, this event is thrown
+Triggered whenever a **Comet** anomaly burns an object or unit.
 
-Locality: Where burned object is local
+- **Locality:** Where the affected object is local
+- **Event name:** `diwako_anomalies_main_cometOnDamage`
 
-Full event name: diwako_anomalies_main_cometOnDamage
+**Parameters**
 
-Parameters:
-
-1. \_obj - object that got damaged/killed
-1. \_trg - the anomaly trigger
+1. `_obj` - Object that was damaged or killed
+2. `_trg` - Comet anomaly trigger
 
 ### electraOnDamage
 
-Activates whenever something or someone gets damaged or killed by an electra anomaly.
+Triggered whenever an object or unit is damaged or killed by an **Electra** anomaly.
 
-Locality: Server only
+- **Locality:** Server only
+- **Event name:** `diwako_anomalies_main_electraOnDamage`
 
-Full event name: diwako_anomalies_main_electraOnDamage
+**Parameters**
 
-Parameters:
-
-1. \_obj - object that got damaged/killed
-1. \_trg - the anomaly trigger
+1. `_obj` - Object that was damaged or killed
+2. `_trg` - Electra anomaly trigger
 
 ### fogOnDamage
 
-Activates whenever something or someone gets damaged or killed by a fog anomaly.
+Triggered whenever an object or unit takes suffocation damage from a **Fog** anomaly.
 
-Locality: Where suffocating object is local
+- **Locality:** Where the affected object is local
+- **Event name:** `diwako_anomalies_main_fogOnDamage`
 
-Full event name: diwako_anomalies_main_fogOnDamage
+**Parameters**
 
-Parameters:
-
-1. \_obj - object that got damaged/killed
-1. \_trg - the anomaly trigger
+1. `_obj` - Object that was damaged or killed
+2. `_trg` - Fog anomaly trigger
 
 ### fruitpunchOnDamage
 
-Activates whenever something or someone gets damaged or killed by a fruitpunch anomaly.
+Triggered whenever an object or unit is damaged or killed by a **Fruit Punch** anomaly.
 
-Locality: Server only
+- **Locality:** Server only
+- **Event name:** `diwako_anomalies_main_fruitpunchOnDamage`
 
-Full event name: diwako_anomalies_main_fruitpunchOnDamage
+**Parameters**
 
-Parameters:
-
-1. \_obj - object that got damaged/killed
-1. \_trg - the anomaly trigger
+1. `_obj` - Object that was damaged or killed
+2. `_trg` - Fruit Punch anomaly trigger
 
 ### meatgrinderOnDamage
 
-Activates whenever something or someone gets ripped apart (or damaged if it is a vehicle) by a meatgrinder anomaly.
+Triggered whenever an object or unit is ripped apart (or damaged, in the case of vehicles) by a **Meatgrinder** anomaly.
 
-Locality: Server only
+- **Locality:** Server only
+- **Event name:** `diwako_anomalies_main_meatgrinderOnDamage`
 
-Full event name: diwako_anomalies_main_meatgrinderOnDamage
+**Parameters**
 
-Parameters:
-
-1. \_obj - object that got damaged/killed
-1. \_trg - the anomaly trigger
+1. `_obj` - Object that was damaged or killed
+2. `_trg` - Meatgrinder anomaly trigger
 
 ### razorOnDamage
 
-Activates whenever something or someone gets cut by a razor anomaly.
+Triggered whenever an object or unit is cut by a **Razor** anomaly.
 
-Locality: Where object is local only
+- **Locality:** Where the affected object is local
+- **Event name:** `diwako_anomalies_main_razorOnDamage`
 
-Full event name: diwako_anomalies_main_razorOnDamage
+**Parameters**
 
-Parameters:
-
-1. \_obj - object that got cut
-1. \_trg - the anomaly trigger
+1. `_obj` - Object that was cut
+2. `_trg` - Razor anomaly trigger
 
 ### springboardOnDamage
 
-Activates whenever something or someone gets flung or killed by a springboard anomaly.
+Triggered whenever an object or unit is flung or killed by a **Springboard** anomaly.
 
-Locality: Server only
+- **Locality:** Server only
+- **Event name:** `diwako_anomalies_main_springboardOnDamage`
 
-Full event name: diwako_anomalies_main_springboardOnDamage
+**Parameters**
 
-Parameters:
-
-1. \_obj - object that got damaged/killed
-1. \_trg - the anomaly trigger
+1. `_obj` - Object that was damaged or killed
+2. `_trg` - Springboard anomaly trigger
 
 ### teleportOnEnter
 
-Activates whenever something or someone is about to be teleported.
+Triggered when an object or unit is about to be teleported.
 
-Locality: Server only
+- **Locality:** Server only
+- **Event name:** `diwako_anomalies_main_teleportOnEnter`
 
-Full event name: diwako_anomalies_main_teleportOnEnter
+**Parameters**
 
-Parameters:
-
-1. \_obj - object that is about to be teleported
-1. \_trg - the entrance teleport trigger
-1. \_exit - the exit teleport trigger
+1. `_obj` - Object that is about to be teleported
+2. `_trg` - Entrance teleport trigger
+3. `_exit` - Exit teleport trigger
 
 ### teleportOnExit
 
-Activates whenever something or someone has teleported.
+Triggered after an object or unit has been teleported.
 
-Locality: Server only
+- **Locality:** Server only
+- **Event name:** `diwako_anomalies_main_teleportOnExit`
 
-Full event name: diwako_anomalies_main_teleportOnExit
+**Parameters**
 
-Parameters:
+1. `_obj` - Object that was teleported
+2. `_trg` - Entrance teleport trigger
+3. `_exit` - Exit teleport trigger
 
-1. \_obj - object that got damaged/killed
-1. \_trg - the entrance teleport trigger
-1. \_exit - the exit teleport trigger
+## Blowout Events
 
-## Blowout
-
-The blowout is a zonewide (or rather map wide) event which has an event a mission maker can use to maybe add some more spice to things.
+Blowouts are map-wide events. The following CBA events allow mission makers to react to or extend blowout behavior.
 
 ### blowOutStage
 
-The blowout stage event is used by the server to set up the blowout event and direct what is happening for players.
+Fired whenever the blowout enters a new stage.  
+Mission makers can listen to this event to trigger additional effects or logic.
 
-A mission maker can add their own event handler in case they want to add additional things to the blowout, or just to see on which stage the blowout currently is.
+- **Locality:** Global
+- **Event name:** `diwako_anomalies_main_blowOutStage`
 
-#### CBA Event
+**Parameters**
 
-Locality: Global
+1. `_stage` - Integer representing the newly entered stage
+2. `_args` - Additional arguments (used only by Stage 1)
 
-Full event name: diwako_anomalies_main_blowOutStage
+### Blowout Stages
 
-Parameters:
+#### Stage 0 - Idle
 
-1. \_stage - Integer, which stage of the blowout was just entered
-1. \_args - arguments for the stage, only stage 1 is using this
+No blowout active. Normal gameplay.  
+This stage is also fired after a blowout concludes.
 
-#### Stages
+#### Stage 1 - Warm-up
 
-There are five stages in a blowout.
+Lasts **60 seconds**.  
+Environmental sounds fade, effects begin, and preparation logic runs.
 
-##### Stage 0
+`_args` contains an array defining how long it takes to mute environment sounds before `enableEnvironment false` is applied.
 
-This is the stage when no blowout is rolling in, basically normal play. This stage gets called after a blowout has concluded.
+#### Stage 2 - Holding Stage
 
-##### Stage 1
+Variable length.  
+Main warning phase where players must seek shelter.
 
-The so called warm up stage. A stage that takes **one minute** to set things up in the background, give the players a glimpse of what is about to happen.
-Some effects are already shown at this stage.
+#### Stage 3 - Pre-Impact
 
-This stage fills the argument parameter with an array which houses the time in seconds how long it takes to mute the environment sounds and then afterwards sets the `enableEnvironment` command to false.
+Lasts **30 seconds**.  
+Strong psy effects, intense wind, frequent lightning, and the first non-lethal psy wave.
 
-##### Stage 2
+#### Stage 4 - Impact
 
-The holding stage. This one is of **variable length**, but arguably the longest stage. Used as the main stage in which the players scramble and seek shelter.
+Final stage.
 
-##### Stage 3
-
-Stage with the highest psy levels, the fastest winds, the most chaotic stage. It even features the first wave of the blowout, which does not harm the players, but should be alarming enough. \
-This stage lasts for **30 seconds**.
-
-##### Stage 4
-
-The last stage of a blowout. The damaging psy wave is about to roll in. This wave will hit in **10 seconds**. But before that, unsheltered players will be flung to the ground roughly 7 seconds into the stage.
-
-Once the final wave hits any unsheltered players, they are dead instantly if the blowout is set to be lethal.
+- Players outside cover are knocked down after ~7 seconds
+- Deadly psy wave hits after **10 seconds**
+- Unsheltered players die instantly if the blowout is lethal
 
 ### startBlowout
 
-This is an event consumed by the server to start a blowout. Of course, a mission maker can add an event handler to that as well or raise the event themselves on server to trigger a blowout.
+Event used by the server to initiate a blowout.  
+Mission makers may also raise or listen to this event.
 
-The time parameter is the time when the deadly wave should hit the players. Here it needs to be considered that there are multiple stages, that is stage 1, 3 and 4, to a blowout which combined are 100 seconds. As the hold stage (stage 2) should have some time of at least 2 seconds, the minimum number here is 102. Anything lower will not trigger a blowout!
+- **Locality:** Server only
+- **Event name:** `diwako_anomalies_main_startBlowout`
 
-Locality: Server only
+**Parameters**
 
-Full event name: diwako_anomalies_main_startBlowout
+1. `_time` - Time (in seconds) until the deadly wave hits (**minimum: 102**)
+2. `_direction` - Bearing (in degrees) from which the wave approaches
 
-Parameters:
+> **Note:**  
+> Stages 1, 3, and 4 together take 100 seconds.  
+> Stage 2 must be at least 2 seconds long, making 102 the absolute minimum.
 
-1. \_time - number, how long until the deadly wave hits the players, minimum 102!
-1. \_direction - number, from which bearing should the deadly wave approach?
-
-Example:
+**Example**
 
 ```sqf
 ["diwako_anomalies_main_startBlowout", [400, random 360]] call CBA_fnc_serverEvent;
