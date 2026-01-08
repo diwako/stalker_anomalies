@@ -8,6 +8,7 @@
 
     Parameter:
         _pos - PositionASL where the anomaly should be (default: [0,0,0])
+        _psyEffect - Integer strength of the psy effect to apply to players affected by the discharge (0-3, default: 2)
 
     Returns:
         nothing
@@ -16,7 +17,7 @@
     diwako 2022-01-26
 */
 #define DISCHARGE_TIME 5
-params[["_pos", [0,0,0]]];
+params[["_pos", [0,0,0]], ["_psyEffect", 2]];
 
 if (_pos isEqualType objNull) then {
     if (isServer) then {
@@ -24,9 +25,11 @@ if (_pos isEqualType objNull) then {
             deleteVehicle _this;
         }, _pos, 10] call CBA_fnc_waitAndExecute;
     };
+    _psyEffect = _pos getVariable ["psyEffect", 2];
     _pos = getPosASL _pos;
 };
 _pos = (AGLToASL ([ASLToAGL _pos] call CBA_fnc_getPos)) vectorAdd [0, 0, 50];
+_psyEffect = 0 max (round _psyEffect) min 3;
 
 if (hasInterface && {((AGLToASL positionCameraToWorld [0,0,0]) distance _pos) < (getObjectViewDistance select 0)}) then {
     private _sphere = createSimpleObject ["Sign_Sphere100cm_F", _pos, true];
@@ -94,17 +97,25 @@ if (hasInterface && {((AGLToASL positionCameraToWorld [0,0,0]) distance _pos) < 
 };
 
 [{
-    params ["_pos"];
+    params ["_pos", "_psyEffect"];
     private _units = (allUnits select {
         local _x
         && {isNull objectParent _x}
         && {!(_x getVariable ["anomaly_ignore", false])}
     }) inAreaArray [ASLToAGL _pos, GVAR(anomalySettingPsyRange), GVAR(anomalySettingPsyRange), 0, false, -1];
 
+    private _player = [] call CBA_fnc_currentUnit;
     {
         if (_x isEqualTo []) then {
             // ouch
             ["psydischarge", _units select _forEachIndex] call FUNC(addUnitDamage);
+            if (_psyEffect > 0 && (_player isEqualTo (_units select _forEachIndex))) then {
+                private _id = format ["psydischarge#%1", diag_tickTime];
+                [_psyEffect, _id] call FUNC(psyEffect);
+                [{
+                    [0, _this] call FUNC(psyEffect);
+                }, _id, 5] call CBA_fnc_waitAndExecute;
+            };
         };
     } forEach (lineIntersectsSurfaces [_units apply {[getPosASL _x, _pos, _x, objNull, true, 1, "FIRE", "GEOM"]}]);
-}, [_pos], DISCHARGE_TIME] call CBA_fnc_waitAndExecute;
+}, [_pos, _psyEffect], DISCHARGE_TIME] call CBA_fnc_waitAndExecute;

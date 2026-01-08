@@ -353,6 +353,14 @@ class cfgVehicles {
         isGlobal = 1; //run on everyone
         isTriggerActivated = 1; //Wait for triggers
         class Attributes: AttributesBase {
+            class psyEffect: Edit {
+                displayName = "$STR_anomaly_psy_strength";
+                tooltip = "$STR_anomaly_psy_strength_desc";
+                typeName = "NUMBER";
+                validate = "number";
+                defaultValue = 2;
+                property = QGVAR(psyEffect);
+            };
             class ModuleDescription: ModuleDescription {};
         };
         class ModuleDescription: ModuleDescription {
