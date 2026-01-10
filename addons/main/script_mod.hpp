@@ -16,4 +16,4 @@
     #define COMPONENT_NAME QUOTE(COMPONENT)
 #endif
 
-#define BUILD_CHECK_FILE(var1,var2,var3) sounds\##var1##\wisp_chime.wss
+#define BUILD_CHECK_FILE(var1,var2,var3) sounds\##var1##\wisp_chime.lip
