@@ -338,18 +338,22 @@
         <Key ID="STR_anomaly_willowisp">
             <Original>Will-o'-wisp</Original>
             <English>Will-o'-wisp</English>
+            <Polish>Ogniki</Polish>
         </Key>
         <Key ID="STR_anomaly_willowisp_desc">
             <Original>Flickering and dancing lights in the distant darkness, only visible at night, they vanish when getting too close. Used to lure people into potentially dangerous areas, but otherwise harmless.</Original>
             <English>Flickering and dancing lights in the distant darkness, only visible at night, they vanish when getting too close. Used to lure people into potentially dangerous areas, but otherwise harmless.</English>
+            <Polish>Mrugające i tańczące światła w odległej ciemności, widoczne tylko nocą - znikają, gdy się ktoś do nich zbliży. Wykorzystywane do przyciągania ludzi do potencjalnie niebezpiecznych miejsc, ale generalnie nieszkodliwe.</Polish>
         </Key>
         <Key ID="STR_anomaly_psy">
             <Original>Psy Field</Original>
             <English>Psy Field</English>
+            <Polish>Pole Psi</Polish>
         </Key>
         <Key ID="STR_anomaly_psy_desc">
             <Original>A field charged with psy energy. The effects might be harmless but cause paranoia. The people inside the field will have their vision altered and they will hear voices</Original>
             <English>A field charged with psy energy. The effects might be harmless but cause paranoia. The people inside the field will have their vision altered and they will hear voices</English>
+            <Polish>Pole naładowane energią Psi. Efekty mogą być nieszkodliwe, ale powodują paranoję. Każdy znajdujący się wewnątrz pola będzie miał problemy z wizją i będzie słyszeć głosy.</Polish>
         </Key>
         <Key ID="STR_anomaly_psy_strength">
             <Original>Strength</Original>
@@ -370,6 +374,7 @@
         <Key ID="STR_anomaly_psy_strength_desc">
             <Original>Stength value is allowed to be between 1 and 3. Decimal values will be rounded!</Original>
             <English>Stength value is allowed to be between 1 and 3. Decimal values will be rounded!</English>
+            <Polish>Wartość siły może być od 1 do 3. Wartości dziesiętne będą zaokrąglane!</Polish>
         </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
@@ -620,6 +625,7 @@
         <Key ID="STR_anomaly_settings_proceduralSettingCategory">
             <Original>Procedural Anomaly Spawning</Original>
             <English>Procedural Anomaly Spawning</English>
+            <Polish>Proceduralne Tworzenie Anomalii</Polish>
         </Key>
         <Key ID="STR_anomaly_settings_minCooldown">
             <Original>Minimum Cooldown:</Original>
@@ -941,10 +947,12 @@
         <Key ID="STR_anomaly_contextMenu_setIgnore">
             <Original>Set ignore anomalies and blowout</Original>
             <English>Set ignore anomalies and blowout</English>
+            <Polish>Włącz ignorowanie anomalii i emisji</Polish>
         </Key>
         <Key ID="STR_anomaly_contextMenu_setUnignore">
             <Original>Unset ignore anomalies and blowout</Original>
             <English>Unset ignore anomalies and blowout</English>
+            <Polish>Wyłącz ignorowanie anomalii i emisji</Polish>
         </Key>
         <Key ID="STR_anomaly_contextMenu_Context_Actions_25m">
             <English>25 m</English>
@@ -955,6 +963,7 @@
             <Japanese>25 m</Japanese>
             <Chinese>25米</Chinese>
             <Chinesesimp>25米</Chinesesimp>
+            <Polish>25 m</Polish>
         </Key>
     </Package>
 </Project>
