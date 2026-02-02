@@ -806,6 +806,18 @@
             <French>Lorsqu'il est activé, le vent souffle sur les feuilles, la poussière est soulevée et d'autres choses encore.</French>
             <Polish>Kiedy włączone, tworzy liście powiewające na wietrze, chmury dymu i inne efekty.</Polish>
         </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_psy_wave">
+            <Original>Psy Wave</Original>
+            <English>Psy Wave</English>
+            <French>Vague Psy</French>
+            <Polish>Fala Emisji</Polish>
+        </Key>
+        <Key ID="STR_anomaly_zeus_start_blowout_psy_wave_desc">
+            <Original>When enabled shows a wave of psy energy moving over the whole map at the end of the emission</Original>
+            <English>When enabled shows a wave of psy energy moving over the whole map at the end of the emission</English>
+            <French>Lorsqu'il est activé, une vague d'énergie psy se déplace sur toute la carte à la fin de l'émission.</French>
+            <Polish>Kiedy włączone, pokazuje falę energii Emisji poruszającą się po całej mapie na końcu emisji.</Polish>
+        </Key>
         <Key ID="STR_anomaly_blowout_safe_check_name">
             <Original>Am I safe from the blowout?</Original>
             <English>Am I safe from the blowout?</English>

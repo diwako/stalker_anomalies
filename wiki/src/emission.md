@@ -1,4 +1,4 @@
-# Blowout Emission
+# Blowout / Emission
 
 A blowout, also known as an emission, is a map-wide event. All players experience it at the same time and it is almost fully synchronized across clients. A massive surge of psy energy is released, announced by harsh winds, thunderstorms, orange waves in the sky, and ultimately a wave-like energy burst that kills anyone not in shelter.
 
@@ -62,13 +62,14 @@ Parameters:
 |     4 | \_onlyPlayers                | If false, AI are also affected. May impact performance with many AI        | true    |
 |     5 | \_isLethal                   | Whether the final wave is lethal                                           | true    |
 |     6 | \_environmentParticleEffects | Enables wind-blown leaves, dust, and similar effects                       | true    |
+|     6 | \_psyWave                    | Show a wave of psy energy go over the whole terrain                        | true    |
 
 There is also a CBA server event named `diwako_anomalies_main_startBlowout`. It forwards its parameters directly to the coordinator function, allowing you to avoid dealing with locality.
 
 Example:
 
 ```sqf
-["diwako_anomalies_main_startBlowout", [_time, _direction, _useSirens, _onlyPlayers, _isLethal, _environmentParticleEffects]] call CBA_fnc_serverEvent;
+["diwako_anomalies_main_startBlowout", [_time, _direction, _useSirens, _onlyPlayers, _isLethal, _environmentParticleEffects, _psyWave]] call CBA_fnc_serverEvent;
 ```
 
 ## How Is a Player Safe From a Blowout?
@@ -107,3 +108,68 @@ Activation:
 
 Deactivation:
 ` player setVariable ["blowout_safe", false];`
+
+## Blowout system
+
+The mod includes a system that can periodically trigger blowouts/emissions. This system is intended for long-running missions or scenarios where no Zeus is present.
+
+After a blowout has concluded, the system enters a waiting phase before initiating the next event. Mission makers can configure both a minimum and a maximum delay for this waiting period. The next blowout will be triggered at a random time between these two values.
+
+### Usage
+
+#### 3DEN
+
+In the 3DEN editor, a module named **"Blowout System"** is available. This module provides the same configuration options as the standard one-time blowout module, with the addition of two parameters that define the minimum and maximum delay (in minutes) between consecutive blowouts.
+
+#### Scripting
+
+The blowout system can also be started via script. This is useful for missions that do not want to rely on a hard dependency to the mod itself.
+
+This function must be executed on the server. It will not run on clients.
+
+Function name:  
+`diwako_anomalies_main_fnc_blowoutCoordinator`
+
+Parameters:
+
+| Index | Name                         | Description                                                                    | Default |
+| ----: | ---------------------------- | ------------------------------------------------------------------------------ | ------- |
+|     1 | \_minimalDelay               | Minimum delay before the next blowout, in minutes                              | 10      |
+|     2 | \_maximumDelay               | Maximum delay before the next blowout, in minutes                              | 60      |
+|     3 | \_condition                  | Code block or string. Return `true` to allow blowouts, `false` to prevent them | {true}  |
+|     4 | \_blowoutTime                | Time until the deadly psy wave hits. Must be at least 102 or it will abort     | 400     |
+|     5 | \_direction                  | Direction the wave approaches, in bearing degrees                              | 0       |
+|     6 | \_useSirens                  | Whether sirens should be audible                                               | true    |
+|     7 | \_onlyPlayers                | If false, AI are also affected. May impact performance with many AI            | true    |
+|     8 | \_isLethal                   | Whether the final wave is lethal                                               | true    |
+|     9 | \_environmentParticleEffects | Enables wind-blown leaves, dust, and similar effects                           | true    |
+|    10 | \_psyWave                    | Show a wave of psy energy go over the whole terrain                            | true    |
+
+Example:
+
+```sqf
+if (isServer) then {
+    private _minimalDelay = 10;
+    private _maximumDelay = 60;
+    private _condition = {true};
+    private _blowoutTime = 400;
+    private _direction = random 360;
+    private _useSirens = true;
+    private _onlyPlayers = true;
+    private _isLethal = true;
+    private _environmentParticleEffects = true;
+    private _psyWave = true;
+    [
+        _minimalDelay,
+        _maximumDelay,
+        _condition,
+        _blowoutTime,
+        _direction,
+        _useSirens,
+        _onlyPlayers,
+        _isLethal,
+        _environmentParticleEffects,
+        _psyWave
+    ] call diwako_anomalies_main_fnc_blowoutCoordinator;
+};
+```
