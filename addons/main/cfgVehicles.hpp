@@ -601,6 +601,13 @@ class cfgVehicles {
                 typeName = "BOOL";
                 property = QGVAR(environmentParticleEffects);
             };
+            class psyWave: Checkbox {
+                displayName = "$STR_anomaly_zeus_start_blowout_psy_wave";
+                tooltip = "$STR_anomaly_zeus_start_blowout_psy_wave_desc";
+                defaultValue = "true";
+                typeName = "BOOL";
+                property = QGVAR(psyWave);
+            };
             class ModuleDescription: ModuleDescription {};
         };
         class ModuleDescription: ModuleDescription {
@@ -682,6 +689,13 @@ class cfgVehicles {
                 defaultValue = "true";
                 typeName = "BOOL";
                 property = QGVAR(environmentParticleEffects);
+            };
+            class psyWave: Checkbox {
+                displayName = "$STR_anomaly_zeus_start_blowout_psy_wave";
+                tooltip = "$STR_anomaly_zeus_start_blowout_psy_wave_desc";
+                defaultValue = "true";
+                typeName = "BOOL";
+                property = QGVAR(psyWave);
             };
             class ModuleDescription: ModuleDescription {};
         };

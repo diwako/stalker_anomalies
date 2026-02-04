@@ -13,7 +13,8 @@ params [
     ["_useSirens", true, [true]],
     ["_onlyPlayers", true, [true]],
     ["_isLethal", true, [true]],
-    ["_environmentParticleEffects", true, [true]]
+    ["_environmentParticleEffects", true, [true]],
+    ["_psyWave", true, [true]]
 ];
 
 if (_time isEqualType objNull) then {
@@ -25,6 +26,7 @@ if (_time isEqualType objNull) then {
     _onlyPlayers = _module getVariable "onlyPlayers";
     _isLethal = _module getVariable "isLethal";
     _environmentParticleEffects = _module getVariable "environmentParticleEffects";
+    _psyWave = _module getVariable "psyWave";
     deleteVehicle _module;
 };
 
@@ -32,6 +34,7 @@ missionNamespace setVariable [QGVAR(blowoutUseSirens), _useSirens, true];
 missionNamespace setVariable [QGVAR(blowoutAffectPlayersOnly), _onlyPlayers, true];
 missionNamespace setVariable [QGVAR(blowoutIsLethal), _isLethal, true];
 missionNamespace setVariable [QGVAR(blowoutEnvironmentParticleEffects), _environmentParticleEffects, true];
+missionNamespace setVariable [QGVAR(blowoutPsyWave), _psyWave, true];
 
 
 private _stage2Time = _time - STAGE_1_TIME - STAGE_3_TIME - STAGE_4_TIME;

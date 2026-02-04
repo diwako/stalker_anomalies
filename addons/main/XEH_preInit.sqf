@@ -299,8 +299,8 @@ if (hasInterface) then {
 
                 private _wind = wind;
                 if (vectorMagnitude _wind > 8 && {insideBuilding ([] call CBA_fnc_currentUnit) isNotEqualTo 1}) then {
-                    // private _pos = positionCameraToWorld [0,0,0];
-                    private _pos = positionCameraToWorld [0,0,0] vectorAdd (_wind vectorMultiply -5);
+                    private _pos = positionCameraToWorld [0,0,0];
+                    // private _pos = positionCameraToWorld [0,0,0] vectorAdd (_wind vectorMultiply -5);
                     private _right = _wind select 0 * 2;
                     private _forward = _wind select 1 * 2;
 
@@ -378,7 +378,9 @@ if (hasInterface) then {
         case 3: {
             if !(hasInterface) exitWith {};
             playSound "blowout_wave_3";
-            [10] call FUNC(blowoutWave);
+            if (GVAR(blowoutPsyWave)) then {
+                [10] call FUNC(blowoutWave);
+            };
             [{
                 [] call FUNC(chromatic);
                 playSound "blowout_wave_2";
@@ -400,7 +402,9 @@ if (hasInterface) then {
                     } forEach (_units select {local _x && {alive _x} && {isDamageAllowed _x}} select {!([_x] call FUNC(isInShelter))});
                 }, nil, 10] call CBA_fnc_waitAndExecute;
             };
-            [] call FUNC(blowoutWave);
+            if (GVAR(blowoutPsyWave)) then {
+                [10] call FUNC(blowoutWave);
+            };
 
             [{
                 if !(GVAR(blowoutInProgress)) exitWith {};
