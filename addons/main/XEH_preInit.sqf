@@ -102,6 +102,7 @@ if (isServer) then {
 if (hasInterface) then {
     GVAR(willowispPFHHandle) = -1;
     GVAR(willowispHolder) = [];
+    GVAR(psyIDMap) = createHashMap;
 
     [QGVAR(say3D), {
         params ["_obj", "_sound"];

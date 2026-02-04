@@ -94,6 +94,41 @@ Triggered whenever an object or unit is ripped apart (or damaged, in the case of
 1. `_obj` - Object that was damaged or killed
 2. `_trg` - Meatgrinder anomaly trigger
 
+### psyFieldOnEnter
+
+Triggered whenever a player controlled unit enters a **Psy Field** anomaly.
+
+- **Locality:** Where the affected unit is local
+- **Event name:** `diwako_anomalies_main_psyFieldOnEnter`
+
+**Parameters**
+
+1. `_trg` - Psy field anomaly trigger
+2. `_strength` - Strength of the psy field
+3. `_psyID` - ID used in the psyIDMap
+
+Note: If you want the current applied psy strength you can use this snippet to get the highest current value. This might be from a psy field, an emission, or scripted behaviour.
+
+```sqf
+private _strength = selectMax values diwako_anomalies_main_psyIDMap;
+if (isNil "_strength") then {
+    _strength = 0;
+};
+```
+
+### psyFieldOnLeave
+
+Triggered whenever a player controlled unit leaves a **Psy Field** anomaly.
+
+- **Locality:** Where the affected unit is local
+- **Event name:** `diwako_anomalies_main_psyFieldOnLeave`
+
+**Parameters**
+
+1. `_trg` - Psy field anomaly trigger
+2. `_strength` - Strength of the psy field
+3. `_psyID` - ID used in the psyIDMap
+
 ### razorOnDamage
 
 Triggered whenever an object or unit is cut by a **Razor** anomaly.
