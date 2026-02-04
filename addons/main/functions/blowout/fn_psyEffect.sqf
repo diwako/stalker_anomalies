@@ -19,9 +19,6 @@ if !(hasInterface) exitWith {};
 params [["_strength", 0], ["_id", "mission"]];
 if (_strength < 0 || _strength > 3) exitWith {};
 
-if (isNil QGVAR(psyIDMap)) then {
-    GVAR(psyIDMap) = createHashMap;
-};
 _id = toLowerANSI _id;
 if (_strength > 0) then {
     GVAR(psyIDMap) set [_id, _strength];

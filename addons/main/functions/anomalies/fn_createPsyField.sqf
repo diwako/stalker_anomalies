@@ -63,7 +63,11 @@ private _jipID = [QGVAR(setTrigger), [
     _trg, //trigger
     [_radiusA, _radiusB, _angle, _isRectangle, _height], // area
     ["ANY", "PRESENT", true], // activation
-    ["this && hasInterface && {([] call CBA_fnc_currentUnit) in thisList}", format ["[%2, '%3'] call %1", QFUNC(psyEffect), _strength, _psyID], format ["[0, '%2'] call %1", QFUNC(psyEffect), _psyID]] // statements
+    [
+        "this && hasInterface && {([] call CBA_fnc_currentUnit) in thisList}",
+        format ["['%4', [thisTrigger,  %2, '%3']] call CBA_fnc_localEvent; [%2, '%3'] call %1", QFUNC(psyEffect), _strength, _psyID, QGVAR(psyFieldOnEnter)],
+        format ["['%4', [thisTrigger,  %2, '%3']] call CBA_fnc_localEvent; [0, '%3'] call %1", QFUNC(psyEffect), _strength, _psyID, QGVAR(psyFieldOnLeave)]
+    ] // statements
 ]] call CBA_fnc_globalEventJip;
 [_jipID, _trg] call CBA_fnc_removeGlobalEventJIP;
 
