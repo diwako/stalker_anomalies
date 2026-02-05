@@ -239,6 +239,22 @@
             <Russian>Только размер A будет задавать размер поля!</Russian>
             <German>Es wird nur die Größe A genutzt um die Größe des Feldes zu setzen!</German>
         </Key>
+        <Key ID="STR_anomaly_fog_effect_only">
+            <Original>Harmless</Original>
+            <English>Harmless</English>
+            <French>Inoffensif</French>
+            <Polish>Nieszkodliwy</Polish>
+            <Russian>Безвредный</Russian>
+            <German>Harmlos</German>
+        </Key>
+        <Key ID="STR_anomaly_fog_effect_only_desc">
+            <Original>Only show the fog effect without any damage or blur</Original>
+            <English>Only show the fog effect without any damage or blur</English>
+            <French>Affiche uniquement l'effet de brouillard sans dégâts ni flou</French>
+            <Polish>Pokazuje tylko efekt mgły bez żadnego uszkodzenia lub rozmycia</Polish>
+            <Russian>Показывает только эффект тумана без повреждений или размытия</Russian>
+            <German>Zeigt nur den Nebeleffekt ohne Schaden oder Unschärfe</German>
+        </Key>
         <Key ID="STR_anomaly_fruitpunch">
             <Original>Fruit Punch</Original>
             <English>Fruit Punch</English>

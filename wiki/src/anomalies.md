@@ -151,6 +151,7 @@ Parameter:
     _angle - Angle the anomaly should have (default: 0)
 
     _color - Color of the fog as an RGB array (default: [249/255, 248/255, 242/255])
+    _effectOnly - If true, the anomaly will only be harmless fog, no damage or blur (default: false)
 ```
 
 ## Fruitpunch

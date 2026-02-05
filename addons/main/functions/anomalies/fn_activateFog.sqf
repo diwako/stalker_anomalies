@@ -16,7 +16,7 @@
     diwako 2017-12-11
 */
 params[["_trg",objNull], ["_list",[]]];
-if (isNull _trg || _trg getVariable [QGVAR(anomalyType),""] != "fog") exitWith {};
+if (isNull _trg || _trg getVariable [QGVAR(anomalyType),""] != "fog" || _trg getVariable [QGVAR(effectOnly), false]) exitWith {};
 
 private _units = _list select {local _x && {!(_x getVariable ["anomaly_ignore", false]) && {_x isKindOf "Man"}}};
 {
