@@ -14,6 +14,7 @@
         _angle - Angle the anomaly should have (default: 0)
 
         _color - Color of the fog as an RGB array (default: [249/255, 248/255, 242/255])
+        _effectOnly - If true, the anomaly will only be harmless fog, no damage or blur (default: false)
 
     Returns:
         Anomaly Trigger
@@ -21,7 +22,7 @@
     Author:
     diwako 2018-05-22
 */
-params[["_pos",[0,0,0]], ["_radius",10], ["_isRectangle",true], ["_angle",0], ["_color", [249/255, 248/255, 242/255]]];
+params[["_pos",[0,0,0]], ["_radius",10], ["_isRectangle",true], ["_angle",0], ["_color", [249/255, 248/255, 242/255]], ["_effectOnly", false]];
 if !(isServer) exitWith {};
 
 private _varName = "";
@@ -44,6 +45,7 @@ if !(_pos isEqualType []) then {
             _color = _color select [0,3];
         };
     };
+    _effectOnly = _pos getVariable ["effectOnly", false];
     private _module = _pos;
     _pos = getPosASL _pos;
     deleteVehicle _module;
@@ -64,6 +66,7 @@ _trg setVariable [QGVAR(anomalyType), "fog", true];
 _trg setVariable [QGVAR(radius), _radius, true];
 _trg setVariable [QGVAR(angle), _angle, true];
 _trg setVariable [QGVAR(rectangle), _isRectangle, true];
+_trg setVariable [QGVAR(effectOnly), _effectOnly, true];
 _trg setVariable [QGVAR(detectable), false, true];
 
 if (count _color < 4) then {

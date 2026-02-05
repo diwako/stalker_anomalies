@@ -269,6 +269,13 @@ class cfgVehicles {
                     };
                 };
             };
+            class effectOnly: Checkbox {
+                displayName = "$STR_anomaly_fog_effect_only";
+                tooltip = "$STR_anomaly_fog_effect_only_desc";
+                defaultValue = "false";
+                typeName = "BOOL";
+                property = QGVAR(effectOnly);
+            };
             class ModuleDescription: ModuleDescription {};
         };
         class AttributeValues {
