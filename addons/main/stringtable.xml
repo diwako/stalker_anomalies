@@ -302,10 +302,10 @@
             <Polish>Ścieżka markerów</Polish>
         </Key>
         <Key ID="STR_anomaly_comet_marker_desc">
-            <Original>Uses markers with the same name and running number as path creation. This will loop! Example "marker_" for all markers like "marker_0", "marker_1", "marker_2" and so on.</Original>
-            <English>Uses markers with the same name and running number as path creation. This will loop! Example "marker_" for all markers like "marker_0", "marker_1", "marker_2" and so on.</English>
-            <French>Utilise des marqueurs avec le même nom et le même numéro d'exécution que la création du chemin. Éxécution en boucle! Exemple "marker_" pour tous les marqueurs comme "marker_0", "marker_1", "marker_2" ainsi de suite.</French>
-            <Polish>Wykorzystuje markery z tą samą nazwą i kolejnymi numerami do stworzenia ścieżki. Ścieżka będzie zapętlona! Przykład: "marker_" dla wszystkich markerów, np. "marker_0", "marker_1", "marker_2" i tak dalej.</Polish>
+            <Original>Uses markers with the same name and running number as path creation. This will loop! Example &quot;marker_&quot; for all markers like &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; and so on.</Original>
+            <English>Uses markers with the same name and running number as path creation. This will loop! Example &quot;marker_&quot; for all markers like &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; and so on.</English>
+            <French>Utilise des marqueurs avec le même nom et le même numéro d'exécution que la création du chemin. Éxécution en boucle! Exemple &quot;marker_&quot; pour tous les marqueurs comme &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; ainsi de suite.</French>
+            <Polish>Wykorzystuje markery z tą samą nazwą i kolejnymi numerami do stworzenia ścieżki. Ścieżka będzie zapętlona! Przykład: &quot;marker_&quot; dla wszystkich markerów, np. &quot;marker_0&quot;, &quot;marker_1&quot;, &quot;marker_2&quot; i tak dalej.</Polish>
         </Key>
         <Key ID="STR_anomaly_comet_speed">
             <Original>Speed</Original>
