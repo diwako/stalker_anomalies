@@ -351,7 +351,7 @@
         <Key ID="STR_anomaly_razor_desc">
             <Original>Spawn a razor anomaly at module location. The anomaly consists out of razor sharp glass shards that cause damage</Original>
             <Polish>Tworzy anomalię "Żyletka" w miejscu modułu. Anomalia ta składa się z wirujących, ostrych odłamków szkła zadających obrażenia.</Polish>
-            <French>Crée une anomalie « Rasoir » à l'emplacement du module. Cette anomalie est composée de fragments de verre tranchants qui tourbillonnent et infligent des dégâts.</French>
+            <French>Crée une anomalie "Rasoir" à l'emplacement du module. Cette anomalie est composée de fragments de verre tranchants qui tourbillonnent et infligent des dégâts.</French>
         </Key>
         <Key ID="STR_anomaly_willowisp">
             <Original>Will-o'-wisp</Original>
@@ -900,7 +900,7 @@
             <Original>Code that runs every check if a new blowout should be scheduled. When this returns false, it will not schedule a blowout. However, it will set the 'last blowout time' internally to the current time!</Original>
             <English>Code that runs every check if a new blowout should be scheduled. When this returns false, it will not schedule a blowout. However, it will set the 'last blowout time' internally to the current time!</English>
             <Polish>Kod przetwarzany co jakiś czas w celu sprawdzenia, czy powinna zacząć się kolejna Emisja. Jeśli ten kod zwraca fałsz, Emisja się nie wygeneruje, jednakże 'czas od ostatniej Emisji' zostanie zmieniony na obecny!</Polish>
-            <French>Code traité régulièrement afin de vérifier si une nouvelle émission doit être lancée. Si ce code renvoie une valeur fausse, l'émission ne sera pas générée, mais le « temps écoulé depuis la dernière émission » sera mis à jour !</French>
+            <French>Code traité régulièrement afin de vérifier si une nouvelle émission doit être lancée. Si ce code renvoie une valeur fausse, l'émission ne sera pas générée, mais le "temps écoulé depuis la dernière émission" sera mis à jour !</French>
         </Key>
         <Key ID="STR_anomaly_settings_proceduralEnable_desc">
             <Original>Enables the automatic spawning of anomalies across the map. It will only spawn basic anomalies which do not need further setup, these will remain in the hands of the mission maker. This setting is default disabled, so a conscious decision needs to be made to enable it.</Original>
