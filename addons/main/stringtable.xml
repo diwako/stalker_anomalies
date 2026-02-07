@@ -346,7 +346,7 @@
         <Key ID="STR_anomaly_razor">
             <Original>Razor</Original>
             <Polish>Żyletka</Polish>
-            <French>Żyletka</French>
+            <French>Lame de rasoir</French>
         </Key>
         <Key ID="STR_anomaly_razor_desc">
             <Original>Spawn a razor anomaly at module location. The anomaly consists out of razor sharp glass shards that cause damage</Original>
