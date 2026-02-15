@@ -375,6 +375,66 @@ if (hasInterface) then {
             };
             [_sticks, _fnc_sticks, []] call _fnc_sticks;
 
+            private _lights = [];
+            private _color = [1, 0.3, 0.25];
+            private _radius = 50;
+            private _player = [] call CBA_fnc_currentUnit;
+
+            for "_i" from 1 to 10 do {
+                private _position = (AGLToASL (_player getPos [random 300, random 360])) vectorAdd [0, 0, 100];
+
+                private _light = "#lightreflector" createVehicleLocal _position;
+                _light setPosASL _position;
+                _light setLightColor _color;
+                _light setLightAmbient _color;
+                _light setLightConePars [_radius, _radius / 2, 0];
+                _light setLightBrightness 0;
+                _light setLightUseFlare false;
+                _light setLightDayLight false;
+                _light setLightFlareSize 200;
+                _light setLightFlareMaxDistance 500;
+                _light setLightAttenuation [0, 0, 0, 0.01, 1000, 1050];
+                _light setVectorDirAndUp [[0,-4.37114e-008,-1], [0,1,-4.37114e-008]];
+                _lights pushBack [_light, _player distance2D _light, _radius];
+            };
+            [{
+                if (isGamePaused) exitWith {false};
+                params ["_lights"];
+                private _player = [] call CBA_fnc_currentUnit;
+                private _wind = wind;
+                private _frametime = _wind vectorMultiply diag_deltaTime;
+                private _dist = vectorMagnitude _frametime;
+                {
+                    _x params ["_light", "_walkDist", "_radius"];
+                    if (_walkDist > 300) then {
+                        if (GVAR(blowoutInProgress)) then {
+                            _x set [1, 0];
+                            private _dir = (_wind select 1) atan2 (_wind select 0);
+                            private _newPos = _player getPos [150, _dir + 90];
+                            _newPos = _newPos getPos [-300 + random 600, _dir];
+                            _radius = 40 + random 20;
+                            _x set [2, _radius];
+                            _light setLightConePars [0, 0, _radius];
+                            _light setPosASL (AGLToASL (_newPos vectorAdd [0, 0, 100]));
+                        } else {
+                            deleteVehicle _light;
+                            _lights deleteAt _forEachIndex;
+                        };
+                        continue
+                    };
+                    private _mult = ((-((_walkDist^2)/22500)) + (_walkDist/75)) max 0;
+                    _light setLightIntensity (2000 * _mult);
+                    _light setLightConePars [_radius * _mult, 0, 0];
+                    _x set [1, _dist + _walkDist];
+                    _light setPosWorld (getPosWorld _light vectorAdd _frametime);
+                } forEachReversed _lights;
+
+                _lights isEqualTo []
+            }, {
+                if (GVAR(debug)) then {
+                    systemChat format ["Blowout lights completed"];
+                };
+            }, [_lights]] call CBA_fnc_waitUntilAndExecute;
         };
         case 3: {
             if !(hasInterface) exitWith {};
