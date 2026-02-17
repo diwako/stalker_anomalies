@@ -13,6 +13,7 @@ Function: diwako_anomalies_main_fnc_blowoutWave
 
 Parameter:
     _time - Time in seconds until the wave reaches the player (default: 10)
+    _showPressure - Shows a wave of kicked up dust and dirt in front of the psy wave (default: true)
 
 Returns:
     nothing
