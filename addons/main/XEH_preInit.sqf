@@ -404,6 +404,9 @@ if (hasInterface) then {
                 private _wind = wind;
                 private _frametime = _wind vectorMultiply diag_deltaTime;
                 private _dist = vectorMagnitude _frametime;
+                if !(GVAR(blowoutInProgress)) then {
+                    _dist = _dist max 0.25;
+                };
                 {
                     _x params ["_light", "_walkDist", "_radius"];
                     if (_walkDist > 300) then {
@@ -440,7 +443,7 @@ if (hasInterface) then {
             if !(hasInterface) exitWith {};
             playSound "blowout_wave_3";
             if (GVAR(blowoutPsyWave)) then {
-                [10] call FUNC(blowoutWave);
+                [10, false] call FUNC(blowoutWave);
             };
             [{
                 [] call FUNC(chromatic);
