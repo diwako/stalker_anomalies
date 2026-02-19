@@ -45,11 +45,9 @@ private _velocityVectorForPressureWave = [sin GVAR(blowoutDirection), cos GVAR(b
             if (_showPressure && {random 1 < 0.5}) then {
                 drop [["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 13, 0], "", "Billboard", 1,
                     25, // lifetime
-                    // (_dropPos vectorAdd [0, 0, -7]) getPos [200, -GVAR(blowoutDirection)],
                     _dropPos getPos [-500, GVAR(blowoutDirection)],
                     _velocityVectorForPressureWave, // velocity
                     0,
-                    // 1.2777,
                     2,
                     1,
                     0.01, // rubbing

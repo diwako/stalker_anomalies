@@ -168,10 +168,20 @@ Function: diwako_anomalies_main_fnc_showPsyWavesInSky
 
 Parameter:
     _show - Boolean indicating whether to show the sky waves (default: false)
+    _useSkyLight - Boolean to brighten up the area around the player to simulate the psy wave's indirect light onto the ground (default: true)
 
 Returns:
     nothing
 ```
+
+#### Additional scripting support
+
+It is possible to set mission namespace variables to change the effects of this function.
+
+| Variable                               | Description                      | Default value                                                        |
+| -------------------------------------- | -------------------------------- | -------------------------------------------------------------------- |
+| diwako_anomalies_main_psySkyTecture    | The texture appearing in the sky | \z\diwako_anomalies\addons\main\data\textures\blowout_psy_sky_ca.paa |
+| diwako_anomalies_main_psySkyLightColor | The color of the indirect light  | [1, 0.3, 0.25]                                                       |
 
 ### bloodEffect
 
