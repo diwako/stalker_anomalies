@@ -1,5 +1,5 @@
 #include "\z\diwako_anomalies\addons\main\script_component.hpp"
-#define BRIGHTNESS 15
+#define BRIGHTNESS 16.5
 if !(hasInterface) exitWith {};
 params [["_show", false], ["_useSkyLight", true]];
 
@@ -39,7 +39,7 @@ if (_show) then {
         private _size = 0.5;
         _ctrl ctrlSetPosition [(1-_size) / 2, (1-_size) / 2, _size, _size];
         _ctrl ctrlSetTextColor [1, 1, 1, 1];
-        _ctrl ctrlSetText GVAR(psySkyTecture);
+        _ctrl ctrlSetText GVAR(psySkyTexture);
         _ctrl ctrlSetBackgroundColor [0, 0, 0, 0];
         _ctrl ctrlSetFade 1;
         _ctrl ctrlCommit 0;
@@ -58,11 +58,17 @@ if (_show) then {
             };
             _light = "#lightpoint" createVehicleLocal [0, 0, 0];
             GVAR(psySky) setVariable [QGVAR(light), _light];
-            _light setLightAmbient GVAR(psySkyLightColor);
-            _light setLightColor GVAR(psySkyLightColor);
+            if (isNil QGVAR(psySkyLightColor)) then {
+                private _color = vectorNormalized ((getTextureInfo GVAR(psySkyTexture)) select 2 select [0,3]);
+                _light setLightAmbient _color;
+                _light setLightColor _color;
+            } else {
+                _light setLightAmbient GVAR(psySkyLightColor);
+                _light setLightColor GVAR(psySkyLightColor);
+            };
             _light setLightUseFlare false;
-            _light setLightFlareSize 100;
-            _light setLightFlareMaxDistance 1000;
+            _light setLightFlareSize 0;
+            _light setLightFlareMaxDistance 0;
             _light setLightDayLight true;
             _light setLightBrightness 0;
             GVAR(skyPsyLightExecTime) = _commit;
@@ -79,7 +85,7 @@ if (_show) then {
             if !(isNull _light) then {
                 GVAR(skyPsyLightCurrentBrightness) = abs (([-GVAR(skyPsyLightMaxBrightness), 0] select GVAR(skyPsyWaves)) + (linearConversion [GVAR(skyPsyTime), GVAR(skyPsyTime) + GVAR(skyPsyLightExecTime), time, 0, GVAR(skyPsyLightMaxBrightness), true]));
                 _light setLightBrightness GVAR(skyPsyLightCurrentBrightness);
-                _light setPosWorld _pos;
+                _light setPosWorld (_pos vectorAdd [0, 0, 50]);
             };
 
             isNull _psySky

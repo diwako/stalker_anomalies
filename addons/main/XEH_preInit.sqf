@@ -103,8 +103,7 @@ if (hasInterface) then {
     GVAR(willowispPFHHandle) = -1;
     GVAR(willowispHolder) = [];
     GVAR(psyIDMap) = createHashMap;
-    GVAR(psySkyTecture) = QPATHTOF(data\textures\blowout_psy_sky_ca.paa);
-    GVAR(psySkyLightColor) = [1, 0.3, 0.25];
+    GVAR(psySkyTexture) = QPATHTOF(data\textures\blowout_psy_sky_ca.paa);
 
     [QGVAR(say3D), {
         params ["_obj", "_sound"];

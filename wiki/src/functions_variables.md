@@ -180,8 +180,8 @@ It is possible to set mission namespace variables to change the effects of this 
 
 | Variable                               | Description                      | Default value                                                        |
 | -------------------------------------- | -------------------------------- | -------------------------------------------------------------------- |
-| diwako_anomalies_main_psySkyTecture    | The texture appearing in the sky | \z\diwako_anomalies\addons\main\data\textures\blowout_psy_sky_ca.paa |
-| diwako_anomalies_main_psySkyLightColor | The color of the indirect light  | [1, 0.3, 0.25]                                                       |
+| diwako_anomalies_main_psySkyTexture    | The texture appearing in the sky | \z\diwako_anomalies\addons\main\data\textures\blowout_psy_sky_ca.paa |
+| diwako_anomalies_main_psySkyLightColor | The color of the indirect light  | Average color calculated from sky texture (default unset)            |
 
 ### bloodEffect
 
