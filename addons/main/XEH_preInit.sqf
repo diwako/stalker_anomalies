@@ -301,10 +301,10 @@ if (hasInterface) then {
 
                 private _wind = wind;
                 if (vectorMagnitude _wind > 8 && {insideBuilding ([] call CBA_fnc_currentUnit) isNotEqualTo 1}) then {
-                    private _pos = positionCameraToWorld [0,0,0];
-                    // private _pos = positionCameraToWorld [0,0,0] vectorAdd (_wind vectorMultiply -5);
-                    private _right = _wind select 0 * 2;
-                    private _forward = _wind select 1 * 2;
+                    // private _pos = positionCameraToWorld [0,0,0];
+                    private _pos = positionCameraToWorld [0,0,0] vectorAdd (_wind vectorMultiply -5);
+                    private _right = (_wind select 0) * 2;
+                    private _forward = (_wind select 1) * 2;
 
                     private _radius = 0;
                     private _lifetime = 0;
@@ -331,7 +331,7 @@ if (hasInterface) then {
                             0.075, // volume
                             0.01, // rubbing
                             [0.001, _size, _size, _size, _size,  0.001],
-                            [[0.69, 0.616, 0.498, 0], _color, _color, _color, _color, _color, _color, [0.69, 0.616, 0.498, 0]], [0], 0, 0, "",  "", "", 0, true, 0.75
+                            [[0.69, 0.616, 0.498, 0], _color, _color, _color, _color, _color, _color, [0.69, 0.616, 0.498, 0]], [0], 0, 0, "",  "", "", 0, true, 0.25
                         ];
                     };
                 };
