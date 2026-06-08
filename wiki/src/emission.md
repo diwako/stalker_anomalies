@@ -74,9 +74,15 @@ Example:
 
 ## How Is a Player Safe From a Blowout?
 
-By default, when the psy wave hits, a check is performed to determine whether the affected unit is safe. There are two mechanisms used to determine safety.
+By default, when the psy wave hits, a check is performed to determine whether the affected unit is safe. During a blowout/emission, players can check their current safety status via a scroll wheel action or, if ACE is loaded, through an ACE self-interaction. This makes it easier to determine whether their current location provides sufficient protection.
+
+Two mechanisms are used to determine safety.
 
 ### The Automatic Way
+
+The system checks whether a unit is inside a vehicle that is adequately protected against the emission. A vehicle's safety is determined by its armor value and whether it has any broken windows.
+
+For example, a regular civilian car lacks the necessary shielding and will not protect its occupants. An APC, however, should generally be able to shield everyone inside the vehicle. The vanilla Hunter/M-ATV can also protect its passengers; however, if even a single window is broken, that protection is lost.
 
 A basic check determines whether a unit is indoors using Arma’s vanilla `insideBuilding` command, which was introduced in Arma 3 version 2.12.
 

@@ -247,8 +247,8 @@ if (isNil "ace_interact_menu_fnc_createAction") then {
     },nil,0,false,true,"",format ["%1", QGVAR(detectorActive)]]]  call CBA_fnc_addPlayerAction;
 
     [[localize "STR_anomaly_blowout_safe_check_name", {
-        params ["_target"];
-        if ([_target] call FUNC(isInShelter)) then {
+        private _player = [] call CBA_fnc_currentUnit;
+        if ([_player] call FUNC(isInShelter)) then {
             titleText [localize "STR_anomaly_blowout_safe_check_safe", "PLAIN DOWN"];
         } else {
             titleText [localize "STR_anomaly_blowout_safe_check_not_safe", "PLAIN DOWN"];
