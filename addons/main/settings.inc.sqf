@@ -304,3 +304,11 @@ if (isClass(configFile >> "CfgPatches" >> "zen_common")) then {
     ,true
     ,true
 ] call CBA_fnc_addSetting;
+[
+    QGVAR(procedrualAllowOnRoad)
+    ,"CHECKBOX"
+    ,[LLSTRING(settings_procedural_allowOnRoad), LLSTRING(settings_procedural_allowOnRoad_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,true
+    ,true
+] call CBA_fnc_addSetting;

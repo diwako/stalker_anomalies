@@ -28,6 +28,7 @@ if (_cachedAnomalies isEqualTo []) then {
             isNil "_pos" ||
             {_pos isEqualTo []} ||
             {surfaceIsWater _pos} ||
+            {!GVAR(procedrualAllowOnRoad) && {isOnRoad _pos}} ||
             {(nearestTerrainObjects [_pos, ["All"], 3, false, true]) isNotEqualTo []} ||
             {(nearestObjects [_pos, ["All"], 3, true]) isNotEqualTo []} ||
             {(GVAR(proceduralExclusionZones) findIf {_pos inArea _x}) > -1}
