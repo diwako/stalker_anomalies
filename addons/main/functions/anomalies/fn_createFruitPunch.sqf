@@ -33,6 +33,7 @@ _trg setPosASL _pos;
 _trg setVariable [QGVAR(cooldown), false, true];
 _trg setVariable [QGVAR(anomalyType), "fruitpunch", true];
 private _radius = 1.5;
+_trg setVariable [QGVAR(detectorOffset), _radius, true];
 _trg setTriggerArea [_radius, _radius, 0, false, 2];
 _trg setTriggerActivation ["ANY", "PRESENT", true];
 _trg setTriggerStatements [format ["this && {!(thisTrigger getVariable ['%1', false])}", QGVAR(cooldown)], format ["[thisTrigger, thisList] call %1", QFUNC(activateFruitPunch)], ""];

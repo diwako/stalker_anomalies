@@ -32,7 +32,13 @@ _trg setVariable [QGVAR(cooldown), false];
 _trg setVariable [QGVAR(pathPoints), _pathPoints];
 _trg setVariable [QGVAR(sourceTrg), _sourceTrg];
 _trg setVariable [QGVAR(anomalyType), "comet"];
+_trg setVariable [QGVAR(detectorOffset), 3];
 _trg setTriggerInterval 0.1;
+
+if (isNil QGVAR(localCometHolder)) then {
+    GVAR(localCometHolder) = [];
+};
+GVAR(localCometHolder) pushBack _trg;
 
 [
     _trg,
@@ -126,6 +132,8 @@ if (hasInterface) then {
         systemChat format ["srcTrg particlesrc null: %1", isNull (_sourceTrg getVariable [QGVAR(particleSource), objNull])];
         systemChat format ["srcTrg not simulated: %1", !simulationEnabled _sourceTrg];
     };
+
+    GVAR(localCometHolder) = GVAR(localCometHolder) - [_trg];
 
     {
         deleteVehicle _x;
