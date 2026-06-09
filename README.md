@@ -23,6 +23,7 @@ Also check out the [BI Forums thread](https://forums.bistudio.com/forums/topic/2
   - Fruitpunch
   - Meatgrinder
   - Psy Discharge
+  - Quarry
   - Springboard
   - Teleport
   - Will-o'-wisp
