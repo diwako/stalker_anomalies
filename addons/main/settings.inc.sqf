@@ -7,6 +7,7 @@ Diwako Stalker Like Anomalies - added functions by Belbo
 #define SUB_CAT_DETECTOR format ["2 - %1", localize "STR_anomaly_detector"]
 #define SUB_CAT_ANOMALIES format ["3 - %1", localize "STR_anomaly_settings_anomalySettingCategory"]
 #define SUB_CAT_PROCEDURAL format ["4 - %1", localize "STR_anomaly_settings_proceduralsettingcategory"]
+#define SUB_CAT_BLOWOUT format ["5 - %1", localize "STR_anomaly_blowout"]
 
 //Enable Diwako Anomalies:
 [
@@ -327,5 +328,24 @@ if (isClass(configFile >> "CfgPatches" >> "zen_common")) then {
     ,[LLSTRING(settings_procedural_allowOnRoad), LLSTRING(settings_procedural_allowOnRoad_desc)]
     ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
     ,true
+    ,true
+] call CBA_fnc_addSetting;
+
+/* Blowout related settings */
+
+[
+    QGVAR(blowoutVehicleArmorThreshold)
+    ,"SLIDER"
+    ,[LLSTRING(settings_blowout_vehicleArmorThreshold), LLSTRING(settings_blowout_vehicleArmorThreshold_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_BLOWOUT]
+    ,[1, 1000, 100, 0]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(blowoutVehicleIngoreWindowBroken)
+    ,"CHECKBOX"
+    ,[LLSTRING(settings_blowout_vehicleIngoreWindowBroken), LLSTRING(settings_blowout_vehicleIngoreWindowBroken_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_BLOWOUT]
+    ,false
     ,true
 ] call CBA_fnc_addSetting;

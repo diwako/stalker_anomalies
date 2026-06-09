@@ -28,8 +28,7 @@ if !(isNull objectParent _unit) then {
     private _config = configOf _vehicle;
 
     _carCheck = (
-        getNumber (_config >> "armor") >= 100 && // general armor
-        // getNumber (_config >> "armor") >= 150 && // general armor
+        getNumber (_config >> "armor") >= GVAR(blowoutVehicleArmorThreshold) && // general armor
         {
             private _effectType = getText (configOf _vehicle >> "attenuationEffectType");
             private _turret = _vehicle unitTurret _unit;
@@ -45,7 +44,8 @@ if !(isNull objectParent _unit) then {
             !("open" in (toLowerANSI _effectType))
         } && // Quad bike, FFV or similar
         {
-            (('"glass" in (toLowerANSI configName _x)' configClasses (_config >> "HitPoints")) apply {configName _x}) findIf {_vehicle getHitPointDamage _x >= 0.95} isEqualTo -1
+            GVAR(blowoutVehicleIngoreWindowBroken) ||
+            {(('"glass" in (toLowerANSI configName _x)' configClasses (_config >> "HitPoints")) apply {configName _x}) findIf {_vehicle getHitPointDamage _x >= 0.95} isEqualTo -1}
         } && // broken windows
         {!(isTurnedOut _unit)} // late catch, turned out in armor
     );
