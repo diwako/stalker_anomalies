@@ -101,6 +101,9 @@ enableCamShake true;
 if (isNil QGVAR(holder)) then {
     GVAR(holder) = [];
 };
+if (isNil QGVAR(localCometHolder)) then {
+    GVAR(localCometHolder) = [];
+};
 
 [{
     // params ["_args", "_pfhHandle"]; //maybe needed for later

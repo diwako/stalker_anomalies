@@ -24,27 +24,26 @@
     titleText [localize "STR_Detector_turned_on", "PLAIN DOWN"];
     private _lastBeep = CBA_missionTime - 10;
     private _player = [] call CBA_fnc_currentUnit;
-    private _type = "";
     while {alive _player && GVAR(detectorActive) && ([_player, GVAR(detectorItem)] call FUNC(hasItem))} do {
         private _found = false;
-        private _min = GVAR(detectionRange) + 4;
+        private _min = GVAR(detectionRange);
+        private _areaRange = _min + 10;
         // add support for remote controlled units
         private _plr = [] call CBA_fnc_currentUnit;
         {
-            _type = _x getVariable [QGVAR(anomalyType), nil];
             // only accept triggers that are anomalies
-            if (!isNil "_type" &&
+            if (!isNil {_x getVariable [QGVAR(anomalyType), nil]} &&
                 {!GVAR(detectorSensesCooldown) || !(_x getVariable QGVAR(cooldown))} &&
                 {_x getVariable [QGVAR(detectable), true]}) then {
-                _found = true;
-                private _tmp = _x distance _plr;
+                private _tmp = ((_x distance _plr) - (_x getVariable [QGVAR(detectorOffset), 4])) max 0;
                 if (_tmp < _min) then {
+                    _found = true;
                     _min = _tmp;
                 };
             };
-        } forEach (GVAR(holder) inAreaArray [getPos _plr, _min/2, _min/2, 0, false, _min/2]);
+        } forEach ((GVAR(holder)+GVAR(localCometHolder)) inAreaArray [getPos _plr, _areaRange, _areaRange, 0, false, _areaRange]);
         if (_found) then {
-            _sleep = linearConversion [GVAR(detectionRange), 5, _min, 1, 0.08, true];
+            _sleep = linearConversion [GVAR(detectionRange), 0.5, _min, 1, 0.08, true];
             if ( (CBA_missionTime - _lastBeep) >= _sleep) then {
                 if (GVAR(detector3DSound)) then {
                     private _sound = switch (GVAR(detectorVolume)) do {

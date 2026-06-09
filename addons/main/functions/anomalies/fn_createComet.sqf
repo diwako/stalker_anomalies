@@ -73,6 +73,7 @@ if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _tr
 _trg setPosASL AGLToASL _pos;
 _trg setVariable [QGVAR(cooldown), false, true];
 _trg setVariable [QGVAR(anomalyType), "comet", true];
+_trg setVariable [QGVAR(detectable), false, true]; // local comet object will be detectable
 _trg setTriggerInterval 9999;
 
 if (isNil QGVAR(holder)) then {
