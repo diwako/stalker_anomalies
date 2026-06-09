@@ -21,6 +21,37 @@ if (_unit getVariable ["blowout_safe", false] || {
     !alive _unit // the dead do not need to fear this anymore
 }}) exitWith {true};
 
+// check if in vehicle
+private _carCheck = false;
+if !(isNull objectParent _unit) then {
+    private _vehicle = vehicle _unit;
+    private _config = configOf _vehicle;
+
+    _carCheck = (
+        getNumber (_config >> "armor") >= GVAR(blowoutVehicleArmorThreshold) && // general armor
+        {
+            private _effectType = getText (configOf _vehicle >> "attenuationEffectType");
+            private _turret = _vehicle unitTurret _unit;
+            if (_turret in [[], [-1]]) exitWith {
+                !("open" in (toLowerANSI _effectType))
+            };
+            private _turretConfig = [_vehicle, _turret] call CBA_fnc_getTurret;
+            if (getNumber (_turretConfig >> "disableSoundAttenuation") isEqualTo 1) exitWith {false};
+            if (isText (_turretConfig >> "soundAttenuationTurret")) then {
+                _effectType = getText (_turretConfig >> "soundAttenuationTurret");
+            };
+
+            !("open" in (toLowerANSI _effectType))
+        } && // Quad bike, FFV or similar
+        {
+            GVAR(blowoutVehicleIngoreWindowBroken) ||
+            {(('"glass" in (toLowerANSI configName _x)' configClasses (_config >> "HitPoints")) apply {configName _x}) findIf {_vehicle getHitPointDamage _x >= 0.95} isEqualTo -1}
+        } && // broken windows
+        {!(isTurnedOut _unit)} // late catch, turned out in armor
+    );
+};
+if (_carCheck) exitWith {true};
+
 private _inside = insideBuilding _unit isEqualTo 1;
 if (!isPlayer _unit || !_inside) exitWith {
     _inside

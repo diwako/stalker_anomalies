@@ -1043,5 +1043,21 @@
             <Chinese>25米</Chinese>
             <Chinesesimp>25米</Chinesesimp>
         </Key>
+        <Key ID="STR_diwako_anomalies_main_settings_blowout_vehiclearmorthreshold">
+            <Original>Safe Vehicle armor threshold</Original>
+            <English>Safe Vehicle armor threshold</English>
+        </Key>
+        <Key ID="STR_diwako_anomalies_main_settings_blowout_vehiclearmorthreshold_desc">
+            <Original>Dictates what minimum armor value a vehicle needs to possess in order to be considered safe from an emission. See the property named "armor" in the vehicles root config for reference.</Original>
+            <English>Dictates what minimum armor value a vehicle needs to possess in order to be considered safe from an emission. See the property named "armor" in the vehicles root config for reference.</English>
+        </Key>
+        <Key ID="STR_diwako_anomalies_main_settings_blowout_vehicleingorewindowbroken">
+            <Original>Ignore broken vehicle windows</Original>
+            <English>Ignore broken vehicle windows</English>
+        </Key>
+        <Key ID="STR_diwako_anomalies_main_settings_blowout_vehicleingorewindowbroken_desc">
+            <Original>When enabled, the shelter check will ignore any broken or missing windows for the vehicle to be considered safe.</Original>
+            <English>When enabled, the shelter check will ignore any broken or missing windows for the vehicle to be considered safe.</English>
+        </Key>
     </Package>
 </Project>
