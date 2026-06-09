@@ -21,7 +21,8 @@ class CfgPatches {
             QGVAR(moduleBlowoutSystem),
             QGVAR(moduleProceduralExclusion),
             QGVAR(moduleRazor),
-            QGVAR(blocker)
+            QGVAR(blocker),
+            QGVAR(moduleQuarry)
         };
         weapons[] = {
             "AnomalyDetector"

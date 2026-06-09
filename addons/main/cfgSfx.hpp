@@ -141,4 +141,13 @@ class CfgSFX {
             QPATHTOF(sounds\anomalies\razor_close_idle_11.ogg), 3, 1, 15, 0.09, 2, 5, 10
         };
     };
+    class GVAR(soundQuarry): GVAR(base) {
+        sounds[] = {
+            "quarry_0"
+        };
+        // {soundPath, soundVolume, soundPitch, maxDistance, probability, minDelay, midDelay, maxDelay}
+        quarry_0[] = {
+            QPATHTOF(sounds\anomalies\quarry_0.ogg), 3, 1, 100, 1, 0, 0, 0
+        };
+    };
 };

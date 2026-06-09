@@ -552,6 +552,26 @@ class cfgVehicles {
         };
     };
 
+    class GVAR(moduleQuarry): Module_F {
+        author = "diwako";
+        category = "DIW_ANOMALY";
+        displayName = CSTRING(anomaly_quarry);
+        icon=QPATHTOF(data\ui\modules\quarry_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\quarry_ca.paa);
+        function = QFUNC(createQuarry);
+        functionPriority = 1;
+        scope = 2;  //show in editor
+        isGlobal = 0; //run on server
+        isTriggerActivated = 1; //Wait for triggers
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+        };
+        class ModuleDescription: ModuleDescription {
+            description = CSTRING(anomaly_quarry_desc);
+            sync[] = {};
+        };
+    };
+
     class GVAR(moduleBlowout): Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
@@ -782,6 +802,9 @@ class cfgVehicles {
     };
     class GVAR(soundRazorClose): GVAR(soundComet) {
         sound = QGVAR(soundRazorClose);
+    };
+    class GVAR(soundQuarry): GVAR(soundComet) {
+        sound = QGVAR(soundQuarry);
     };
 
     class ProtectionZone_F;

@@ -295,3 +295,43 @@ DFUNC(playLocalAnomalyActivationSound) = {
 [QGVAR(blockerEffect), {
     _this call FUNC(blockerEffect);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(quarryProjectileEffect), {
+    params ["_rnd", "_target"];
+
+    private _object = createSimpleObject ["A3\data_f\ParticleEffects\Universal\Mud.p3d", [0, 0, 0], true];
+    _object setVectorDirAndUp [[random 360, random 360, random 360], [random 360, random 360, random 360]];
+    _object setPosWorld ((getPosWorld _trg) vectorAdd _rnd);
+    _object setObjectScale 0.01;
+
+    [{
+        params ["_object", "_startTime", "_endTime"];
+        _object setObjectScale (linearConversion [_startTime, _endTime, time, 0, 0.5, false]);
+
+        _endTime < time
+    }, {}, [_object, time, time + 0.75]] call CBA_fnc_waitUntilAndExecute;
+
+    [{
+        params ["_object", "_target"];
+        private _startPos = getPosWorld _object;
+        private _endPos = getPosWorld _target vectorAdd [0, 0, 1];
+        private _vector = (_startPos vectorFromTo _endPos);
+
+        private _proxy = "building" createVehicleLocal getPos _object;
+        _proxy setPosWorld _startPos;
+        _proxy enableSimulation false;
+        _proxy say3D [(format ["gravi_blowout%1", (floor random 4) + 7]), 200];
+        [{
+            params ["_proxy"];
+            deleteVehicle _proxy;
+        }, [_proxy], 10] call CBA_fnc_waitAndExecute;
+        [{
+            params ["_object", "_startPos", "_vector", "_startTime", "_endTime"];
+            _object setPosWorld (_startPos vectorAdd (_vector vectorMultiply (linearConversion [_startTime, _endTime, time, 0, 20, false])));
+
+            _endTime < time
+        }, {
+            deleteVehicle (_this select 0);
+        }, [_object, _startPos, _vector, time, time + 0.75]] call CBA_fnc_waitUntilAndExecute;
+    }, [_object, _target], 2] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;

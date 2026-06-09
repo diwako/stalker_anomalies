@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=111;
+		nextID=115;
 	};
 	class MarkerIDProvider
 	{
@@ -126,7 +126,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=61;
+		items=63;
 		class Item0
 		{
 			dataType="Logic";
@@ -241,7 +241,20 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="diwako_anomalies_main_effectOnly";
+					expression="_this setVariable ['effectOnly',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item4
@@ -811,6 +824,23 @@ class Mission
 			};
 			id=34;
 			type="diwako_anomalies_main_modulePsyDischarge";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="diwako_anomalies_main_psyEffect";
+					expression="_this setVariable ['psyEffect',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item19
 		{
@@ -1658,6 +1688,57 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item61
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7983.9434,5,2959.9841};
+			};
+			id=111;
+			type="diwako_anomalies_main_moduleQuarry";
+		};
+		class Item62
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7983.6924,5.0014391,2991.7239};
+						angles[]={0,3.1257696,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=113;
+					type="B_Soldier_F";
+				};
+				class Item1
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={7984.1787,5,2959.8936};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=114;
+					type="Move";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=112;
 		};
 	};
 };

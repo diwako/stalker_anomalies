@@ -15,7 +15,8 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                 [localize "STR_anomaly_clicker", localize "STR_anomaly_clicker_desc", QPATHTOF(data\ui\modules\clicker_ca.paa)],
                 [localize "STR_anomaly_razor", localize "STR_anomaly_razor_desc", QPATHTOF(data\ui\modules\razor_ca.paa)],
                 [localize "STR_anomaly_willowisp", localize "STR_anomaly_willowisp_desc", QPATHTOF(data\ui\modules\willowisp_ca.paa)],
-                [localize "STR_anomaly_psy", localize "STR_anomaly_psy_desc", QPATHTOF(data\ui\modules\psy_ca.paa)]
+                [localize "STR_anomaly_psy", localize "STR_anomaly_psy_desc", QPATHTOF(data\ui\modules\psy_ca.paa)],
+                [LLSTRING(anomaly_quarry), LLSTRING(anomaly_quarry_desc), QPATHTOF(data\ui\modules\quarry_ca.paa)]
             ];
 
             [localize "STR_anomaly_zeus_spawn_anomaly", [
@@ -108,6 +109,7 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                                 }, {}, [_pos]
                             ] call zen_dialog_fnc_create;
                         };
+                        case 12: { [QGVAR(createAnomaly), [[_pos], "quarry"]] call CBA_fnc_serverEvent; };
                         default { };
                     };
                 }, {}, [_pos, _anomalies apply {_x select 0}]

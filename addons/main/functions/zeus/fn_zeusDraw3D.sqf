@@ -21,6 +21,7 @@ private _range = GVAR(idleDistance) + 150;
         case "razor": { QPATHTOF(data\ui\modules\razor_ca.paa) };
         case "willowisp": { QPATHTOF(data\ui\modules\willowisp_ca.paa) };
         case "psy": { QPATHTOF(data\ui\modules\psy_ca.paa) };
+        case "quarry": { QPATHTOF(data\ui\modules\quarry_ca.paa) };
         default { "\A3\modules_f\data\portraitModule_ca.paa" };
     };
     drawIcon3D [_icon, [1, 1, 1, 1], ASLToAGL _pos, _size, _size, 0, "", true];

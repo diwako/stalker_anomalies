@@ -262,6 +262,30 @@ Returns:
     Anomaly Trigger
 ```
 
+## Quarry
+
+A cluster of levitating rocks suspended in an unseen gravitational field. The stones drift slowly up and down, seemingly inert until someone ventures too close. When disturbed, the anomaly violently launches nearby rocks at the intruder with remarkable accuracy, causing injury and potentially lethal blunt-force trauma. A Quarry anomaly is easy to spot, as several rocks float unnaturally around its center while dust and debris are continuously stirred up from the ground below.
+
+### Setup
+
+The 3DEN module will spawn a quarry anomaly at the placed location.
+
+_This anomaly is available in Zeus when the Zeus Enhanced mod is enabled._
+
+### Scripting
+
+Must be executed on the server!
+
+```
+Function: diwako_anomalies_main_fnc_createQuarry
+
+Parameter:
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
+
+Returns:
+    Anomaly Trigger
+```
+
 ## Razor
 
 An anomaly composed of multiple hovering glass shards. The shards are razor sharp, hence the name, and contact at sufficient speed causes severe bleeding.
