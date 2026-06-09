@@ -35,6 +35,8 @@ SUBPREP(anomalies,activateRazor);
 SUBPREP(anomalies,createWillowisp);
 SUBPREP(anomalies,createPsyField);
 SUBPREP(anomalies,findAndDeleteAnomalies);
+SUBPREP(anomalies,createQuarry);
+SUBPREP(anomalies,activateQuarry);
 
 SUBPREP(anomalies,addUnitDamage);
 
@@ -50,6 +52,7 @@ SUBPREP(effects,razorEffect);
 SUBPREP(effects,blockerEffect);
 SUBPREP(effects,bloodEffect);
 SUBPREP(effects,willowispEffect);
+SUBPREP(effects,quarryEffect);
 
 // detector
 SUBPREP(detector,detector);

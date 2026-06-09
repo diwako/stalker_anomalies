@@ -232,6 +232,23 @@ if (isClass(configFile >> "CfgPatches" >> "zen_common")) then {
     ,true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(anomalySettingQuarryCooldownMin)
+    ,"SLIDER"
+    ,[format ["%1 %2", localize "STR_anomaly_settings_randCooldown", LLSTRING(anomaly_quarry)], localize "STR_anomaly_settings_minCooldown_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_ANOMALIES]
+    ,[CLICKER_MIN_COOL_DOWN, 600, 1, 1]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(anomalySettingQuarryCooldownRand)
+    ,"SLIDER"
+    ,[format ["%1 %2", localize "STR_anomaly_settings_randCooldown", LLSTRING(anomaly_quarry)], localize "STR_anomaly_settings_randCooldown_desc"]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_ANOMALIES]
+    ,[0, 600, 5, 1]
+    ,true
+] call CBA_fnc_addSetting;
+
 /* Procedural anomaly spawning system */
 
 [

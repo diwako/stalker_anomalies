@@ -399,6 +399,14 @@
             <French>La valeur de résistance peut être comprise entre 1 et 3. Les valeurs décimales seront arrondies!</French>
             <Polish>Wartość siły może być od 1 do 3. Wartości dziesiętne będą zaokrąglane!</Polish>
         </Key>
+        <Key ID="STR_diwako_anomalies_main_anomaly_quarry">
+            <Original>Quarry</Original>
+            <English>Quarry</English>
+        </Key>
+        <Key ID="STR_diwako_anomalies_main_anomaly_quarry_desc">
+            <Original>Floating rocks anomaly, when entering it will try and pelt the intruder with them.</Original>
+            <English>Floating rocks anomaly, when entering it will try and pelt the intruder with them.</English>
+        </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
             <English>Blowout</English>

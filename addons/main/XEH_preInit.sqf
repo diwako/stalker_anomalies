@@ -79,6 +79,7 @@ if (isServer) then {
             case "razor":        { _args call FUNC(createRazor) };
             case "willowisp":    { _args call FUNC(createWillowisp) };
             case "psy":          { _args call FUNC(createPsyField) };
+            case "quarry":       { _args call FUNC(createQuarry) };
             default {
                 hintC ( format ["Unknown type: %1", _type]);
             };

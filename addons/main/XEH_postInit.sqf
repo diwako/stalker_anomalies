@@ -179,6 +179,13 @@ if (isNil QGVAR(localCometHolder)) then {
                     case "willowisp": {
                         [_x] call FUNC(willowispEffect);
                     };
+                    case "quarry": {
+                        private _source2 = "#particlesource" createVehicleLocal [0,0,0];
+                        _source2 setPosASL (getPosASL _x);
+                        [_source, "idle", _source2] call FUNC(quarryEffect);
+                        _x setVariable [QGVAR(particleSource2), _source2];
+                        [_x, QGVAR(soundQuarry)] call _fnc_addIdleSoundsLocal;
+                    };
                     default {
                         _source enableSimulation false;
                     };

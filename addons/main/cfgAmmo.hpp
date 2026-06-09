@@ -13,4 +13,14 @@ class cfgAmmo {
         timeToLive = 20;
         explosionTime = 25;
     };
+
+    class B_50BW_Ball_F;
+    class GVAR(quarryProjectile): B_50BW_Ball_F {
+        // model = "\A3\data_f\ParticleEffects\Universal\Mud";
+        hit = 30;
+        indirectHit = 5;
+        indirectHitRange = 3;
+        bulletFly[] = {};
+        class SuperSonicCrack {};
+    };
 };
