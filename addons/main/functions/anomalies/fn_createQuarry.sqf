@@ -32,7 +32,7 @@ if (_varName isNotEqualTo "") then { missionNamespace setVariable [_varName, _tr
 _trg setPosASL _pos;
 _trg setVariable [QGVAR(cooldown), false, true];
 _trg setVariable [QGVAR(anomalyType), "quarry", true];
-_trg setVariable [QGVAR(detectorOffset), 2.5, true];
+_trg setVariable [QGVAR(detectorOffset), 7.5, true];
 
 _trg setTriggerArea [7.5, 7.5, 0, false, 10];
 _trg setTriggerActivation ["ANY", "PRESENT", true];
