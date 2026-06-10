@@ -402,10 +402,12 @@
         <Key ID="STR_diwako_anomalies_main_anomaly_quarry">
             <Original>Quarry</Original>
             <English>Quarry</English>
+            <Polish>Kamieniołom</Polish>
         </Key>
         <Key ID="STR_diwako_anomalies_main_anomaly_quarry_desc">
             <Original>Floating rocks anomaly, when entering it will try and pelt the intruder with them.</Original>
             <English>Floating rocks anomaly, when entering it will try and pelt the intruder with them.</English>
+            <Polish>Anomalia lewitujących kamieni, rzuca nimi w intruza.</Polish>
         </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
@@ -1015,10 +1017,12 @@
         <Key ID="STR_diwako_anomalies_main_settings_procedural_allowonroad">
             <Original>Allow on roads</Original>
             <English>Allow on roads</English>
+            <Polish>Zezwól na drogach</Polish>
         </Key>
         <Key ID="STR_diwako_anomalies_main_settings_procedural_allowonroad_desc">
             <Original>When enabled allows the procedural system to place anomalies on roads. This means when disabled the CENTER of the anomaly cannot be on a road, but larger anomalies can still reach into a road!</Original>
             <English>When enabled allows the procedural system to place anomalies on roads. This means when disabled the CENTER of the anomaly cannot be on a road, but larger anomalies can still reach into a road!</English>
+            <Polish>Gdy włączone, pozwala systemowi generowania na umieszczanie anomalii na drogach. Gdy wyłączone, ŚRODEK anomalii nie może pojawić się na drodze, ale większe anomalie nadal mogą na nią nachodzić!</Polish>
         </Key>
         <Key ID="STR_anomaly_contextMenu_setIgnore">
             <Original>Set ignore anomalies and blowout</Original>
@@ -1046,18 +1050,22 @@
         <Key ID="STR_diwako_anomalies_main_settings_blowout_vehiclearmorthreshold">
             <Original>Safe Vehicle armor threshold</Original>
             <English>Safe Vehicle armor threshold</English>
+            <Polish>Poziom bezpiecznego pancerza pojazdu</Polish>
         </Key>
         <Key ID="STR_diwako_anomalies_main_settings_blowout_vehiclearmorthreshold_desc">
             <Original>Dictates what minimum armor value a vehicle needs to possess in order to be considered safe from an emission. See the property named "armor" in the vehicles root config for reference.</Original>
             <English>Dictates what minimum armor value a vehicle needs to possess in order to be considered safe from an emission. See the property named "armor" in the vehicles root config for reference.</English>
+            <Polish>Ustala minimalną wartość pancerza, jaki pojazd musi posiadać, by być uznanym za bezpieczne w trakcie emisji. Patrz: wartość "armor" w konfiguracji pojazdu.</Polish>
         </Key>
         <Key ID="STR_diwako_anomalies_main_settings_blowout_vehicleingorewindowbroken">
             <Original>Ignore broken vehicle windows</Original>
             <English>Ignore broken vehicle windows</English>
+            <Polish>Ignoruj uszkodzone okna pojazdu</Polish>
         </Key>
         <Key ID="STR_diwako_anomalies_main_settings_blowout_vehicleingorewindowbroken_desc">
             <Original>When enabled, the shelter check will ignore any broken or missing windows for the vehicle to be considered safe.</Original>
             <English>When enabled, the shelter check will ignore any broken or missing windows for the vehicle to be considered safe.</English>
+            <Polish>Gdy włączone, pojazdy z uszkodzonymi lub brakującymi oknami nadal będą uznawane za bezpieczne.</Polish>
         </Key>
     </Package>
 </Project>
