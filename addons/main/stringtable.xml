@@ -1067,5 +1067,21 @@
             <English>When enabled, the shelter check will ignore any broken or missing windows for the vehicle to be considered safe.</English>
             <Polish>Gdy włączone, pojazdy z uszkodzonymi lub brakującymi oknami nadal będą uznawane za bezpieczne.</Polish>
         </Key>
+        <Key ID="STR_diwako_anomalies_main_settings_blowout_blowoutClientHint">
+            <Original>"Am I safe" action reminder hint</Original>
+            <English>"Am I safe" action reminder hint</English>
+        </Key>
+        <Key ID="Str_diwako_anomalies_main_settings_blowout_blowoutClientHint_desc">
+            <Original>Shows a reminder hint about the "Am I safe" action when a blowout starts.</Original>
+            <English>Shows a reminder hint about the "Am I safe" action when a blowout starts.</English>
+        </Key>
+        <Key ID="Str_diwako_anomalies_main_blowoutSafeHint">
+            <Original>To figure out if you are safe from the blowout/emission, use the scroll wheel action named "%1"</Original>
+            <English>To figure out if you are safe from the blowout/emission, use the scroll wheel action named "%1"</English>
+        </Key>
+        <Key ID="Str_diwako_anomalies_main_blowoutSafeHintAce">
+            <Original>To figure out if you are safe from the blowout/emission, use the ACE self interaction named "%1"</Original>
+            <English>To figure out if you are safe from the blowout/emission, use the ACE self interaction named "%1"</English>
+        </Key>
     </Package>
 </Project>

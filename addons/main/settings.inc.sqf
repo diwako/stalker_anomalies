@@ -334,6 +334,14 @@ if (isClass(configFile >> "CfgPatches" >> "zen_common")) then {
 /* Blowout related settings */
 
 [
+    QGVAR(blowoutClientHint)
+    ,"CHECKBOX"
+    ,[LLSTRING(settings_blowout_blowoutClientHint), LLSTRING(settings_blowout_blowoutClientHint_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_BLOWOUT]
+    ,true
+    ,false
+] call CBA_fnc_addSetting;
+[
     QGVAR(blowoutVehicleArmorThreshold)
     ,"SLIDER"
     ,[LLSTRING(settings_blowout_vehicleArmorThreshold), LLSTRING(settings_blowout_vehicleArmorThreshold_desc)]
