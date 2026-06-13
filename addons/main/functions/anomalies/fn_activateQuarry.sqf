@@ -30,7 +30,7 @@ _list sort true;
 private _target = _list select 0 select 2;
 
 private _rnd = [-5 + random 10, -5 + random 10, 2 + random 7];
-[QGVAR(quarryProjectileEffect), [_rnd, _target]] call CBA_fnc_globalEvent;
+[QGVAR(quarryProjectileEffect), [_trg, _rnd, _target]] call CBA_fnc_globalEvent;
 
 private _posProjectile = (position _trg) vectorAdd _rnd;
 [{
