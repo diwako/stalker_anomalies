@@ -19,12 +19,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Setup HEMTT
-        uses: arma-actions/hemtt@v1
+
+      - name: Setup HEMTT 1
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: BrettMayson/HEMTT
+          latest: true
+          fileName: linux-x64.zip
+      - name: Setup HEMTT 2
+        run: |
+          unzip linux-x64.zip
+          chmod +x hemtt
+          rm linux-x64.zip
+      # - name: Setup HEMTT
+      #   uses: arma-actions/hemtt@v1
       - name: Run HEMTT build
         run: |
-          hemtt check -p -e
-          hemtt release
+          ./hemtt check -p -e
+          ./hemtt release
       - name: Upload Release
         uses: actions/upload-artifact@v7
         with:

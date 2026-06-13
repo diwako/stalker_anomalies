@@ -12,3 +12,4 @@
 *.xml text eol=crlf
 *.yaml text eol=crlf
 *.yml text eol=crlf
+*.sh text eol=lf
