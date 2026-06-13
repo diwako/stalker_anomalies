@@ -297,7 +297,7 @@ DFUNC(playLocalAnomalyActivationSound) = {
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(quarryProjectileEffect), {
-    params ["_rnd", "_target"];
+    params ["_trg", "_rnd", "_target"];
 
     private _object = createSimpleObject ["A3\data_f\ParticleEffects\Universal\Mud.p3d", [0, 0, 0], true];
     _object setVectorDirAndUp [[random 360, random 360, random 360], [random 360, random 360, random 360]];
