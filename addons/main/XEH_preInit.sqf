@@ -254,6 +254,13 @@ if (hasInterface) then {
             [] call FUNC(blowoutRumble);
             [true] call FUNC(showPsyWavesInSky);
 
+            if (GVAR(blowoutClientHint)) then {
+                [{
+                    private _text = [LSTRING(blowoutSafeHintAce), LSTRING(blowoutSafeHint)] select (isNil "ace_interact_menu_fnc_createAction");
+                    titleText [format [localize _text, localize "STR_anomaly_blowout_safe_check_name"], "PLAIN DOWN"];
+                }, nil, 5] call CBA_fnc_waitAndExecute;
+            };
+
             if !(GVAR(blowoutEnvironmentParticleEffects)) exitWith {};
             private _leaves = "#particlesource" createVehicleLocal [0, 0, 0];
             _leaves setParticleRandom [0, [25, 25, 25], [1, 1, 0], 3, 0.75, [0, 1, 0, 0.5], 1, 1];
