@@ -44,6 +44,11 @@ private _type = "";
             case "comet": {
                 GVAR(movingAnomalyHolder) = GVAR(movingAnomalyHolder) - [_x];
             };
+            case "psy": {
+                [{
+                    [QGVAR(setPsy), [0, _this]] call CBA_fnc_globalEvent;
+                }, _x getVariable [QGVAR(psyID), ""], 2] call CBA_fnc_waitAndExecute;
+            };
             default {};
         };
 
