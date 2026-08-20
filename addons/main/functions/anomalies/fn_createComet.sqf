@@ -32,7 +32,7 @@ if (_marker isEqualType objNull) then {
 };
 
 private _useMarkerPath = _marker isEqualType "";
-if (_useMarkerPath && {_marker isEqualTo ""}) exitWith {
+if (_useMarkerPath && _marker isEqualTo "") exitWith {
     [{
         hintC format ["There was no marker path set for the comet anomaly. Make sure to set the ""%1"" field in the module or supply a proper first parameter if you are using the script function!", localize "STR_anomaly_comet_marker"];
     }, nil, 1] call CBA_fnc_waitAndExecute;
@@ -60,7 +60,7 @@ if (_useMarkerPath) then {
     _end = count _marker;
 };
 
-if (_useMarkerPath && {_end isEqualTo 0}) exitWith {
+if (_useMarkerPath && _end isEqualTo 0) exitWith {
     [{
         hintC format ["Comet anomaly could not find a path for ""%1"". Make sure to have at least one marker named ""%1%2""", _this, 0];
     }, _marker, 1] call CBA_fnc_waitAndExecute;

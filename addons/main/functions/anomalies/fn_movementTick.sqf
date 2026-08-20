@@ -20,7 +20,7 @@ _movementInfo params ["_pathIndex", "_endTime", "_lastPos", "_lastTime", "_pathC
 
 private _delatTime = cba_missionTime mod _endTime;
 (_pathPoints select _pathIndex) params ["_timeToTake", "_newPos", "_bezierPoint1", "_bezierPoint2"];
-while {_delatTime >= _timeToTake || {_lastTime > _delatTime}} do {
+while {_delatTime >= _timeToTake || _lastTime > _delatTime} do {
     // next pos
     _pathIndex = _pathIndex + 1;
     if (_pathCount <= _pathIndex) then {

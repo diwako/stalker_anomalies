@@ -30,7 +30,7 @@ if (_minimalDelay isEqualType objNull) then {
 };
 
 if (_maximumDelay isEqualType [] ||
-    {_condition isEqualType false} ||
+    _condition isEqualType false ||
     {_blowoutTime isEqualType []} ||
     {_direction isEqualType []}) exitWith {
     private _text = "Blowout System canceled, one or more parameters are of invalid type!";
