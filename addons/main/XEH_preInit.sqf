@@ -127,6 +127,12 @@ if (hasInterface) then {
         deleteVehicle (_trg getVariable [QGVAR(blocker), objNull]);
     }] call CBA_fnc_addEventHandler;
 
+    [QGVAR(setPsy), {
+        params [["_strength", 0], ["_psyID", ""]];
+        if (_psyID isEqualTo "") exitWith {};
+        [_strength, _psyID] call FUNC(psyEffect);
+    }] call CBA_fnc_addEventHandler;
+
     #include "anomalyFXEvents.inc.sqf"
 };
 

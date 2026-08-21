@@ -58,6 +58,7 @@ _trg setVariable [QGVAR(strength), str _strength, true];
 _trg setVariable [QGVAR(detectable), false, true];
 
 private _psyID = format ["psy_trigger#%1", _pos];
+_trg setVariable [QGVAR(psyID), _psyID];
 
 private _jipID = [QGVAR(setTrigger), [
     _trg, //trigger

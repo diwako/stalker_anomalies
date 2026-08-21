@@ -17,7 +17,7 @@ if (GVAR(blowoutStage) == _stage) exitWith {
     systemChat _text;
     false
 };
-if (GVAR(blowoutStage) >= _stage && {_stage != 0}) exitWith {
+if (GVAR(blowoutStage) >= _stage && _stage != 0) exitWith {
     private _text = "Turning down the blowout event is not possible! You can disable it by setting it to stage 0!";
     LOG_SYS("WARNING",_text);
     systemChat _text;
