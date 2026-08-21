@@ -36,7 +36,7 @@ private _sucked = [];
             };
         } else {
             _sucked pushBack _x;
-            [QGVAR(suckToLocation), [_x, getPos _trg vectorAdd [0, 0, 3], 2, 10, true], _x] call CBA_fnc_targetEvent;
+            [QGVAR(suckToLocation), [_x, (getPos _trg) vectorAdd [0, 0, 3], 2, 10, !(isPlayer _x)], _x] call CBA_fnc_targetEvent;
             if !(isPlayer _x) then {
                 for "_i" from 1 to (2 + round random 4) do {
                     [{

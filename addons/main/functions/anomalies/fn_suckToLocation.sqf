@@ -36,7 +36,7 @@ if (_ragdoll && _obj isKindOf "CAManBase") then {
             [{
                 _this setUnconscious true;
             }, _obj] call CBA_fnc_execNextFrame;
-            _this set [4, time + 0.75];
+            _this set [4, time + 0.5];
         };
 
         !alive _obj || (time > _time)

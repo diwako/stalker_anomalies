@@ -5,14 +5,14 @@ params [["_unit", objNull]];
 if (!GVAR(allowUnitScreams) || !alive _unit || {!(_unit isKindOf "CAManBase")}) exitWith {};
 
 if (_unit getVariable [QGVAR(nextScreamAllowed), 0] > time) exitWith {};
-_unit setVariable [QGVAR(nextScreamAllowed), time + 0.3];
 
 private _voice = toLowerANSI speaker _unit;
 if (_voice in ["ace_novoice", "novoice"]) exitWith {};
 
+_unit setVariable [QGVAR(nextScreamAllowed), time + 0.3];
+
 // fetching these dynamically is not possible with ace loaded sooooo...
 // we do it hardcoded, results should not vary too much
-
 if (isNil QGVAR(speakerCache)) then {
     GVAR(speakerCache) =createHashMapFromArray [
         ["male08eng", "P01"],
