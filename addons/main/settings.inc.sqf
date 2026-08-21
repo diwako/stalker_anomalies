@@ -70,6 +70,15 @@ if (isClass(configFile >> "CfgPatches" >> "zen_common")) then {
     GVAR(zeusShowAnomalies) = false;
 };
 
+[
+    QGVAR(allowUnitScreams)
+    ,"CHECKBOX"
+    ,[LLSTRING(settings_allowUnitScreams), LLSTRING(settings_allowUnitScreams_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_GENERAL]
+    ,true
+    ,true
+] call CBA_fnc_addSetting;
+
 //Enable Debugging:
 [
     QGVAR(debug)

@@ -62,6 +62,11 @@ private _men = _list select {
         if (_player isEqualTo _x) then {
             [0.6] call FUNC(bloodEffect);
         };
+        if !(isPlayer _x) then {
+            [{
+                [_this] call FUNC(scream);
+            }, _x, 0.25 + random 0.5] call CBA_fnc_waitAndExecute;
+        };
         ["razor", _x] call FUNC(addUnitDamage);
     } else {
         if !(_x isKindOf "tank") then {

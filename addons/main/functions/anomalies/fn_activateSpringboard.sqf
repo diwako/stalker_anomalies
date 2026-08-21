@@ -46,6 +46,11 @@ _trg setVariable [QGVAR(cooldown), true, true];
                     _mult = 1;
                 };
             } else {
+                if !(isPlayer _x) then {
+                    [{
+                        [_this] call FUNC(scream);
+                    }, _x, random 0.5] call CBA_fnc_waitAndExecute;
+                };
                 [{
                     ["springboard", _this] call FUNC(addUnitDamage);
                 }, _x, [0.5, 0] select (isPlayer _x)] call CBA_fnc_waitAndExecute;

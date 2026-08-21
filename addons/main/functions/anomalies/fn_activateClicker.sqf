@@ -73,6 +73,10 @@ if (_intersect isNotEqualTo []) then {
             };
             if (isPlayer _x) then {
                 [QGVAR(teleportFlash), nil, _x] call CBA_fnc_targetEvent;
+            } else {
+                [{
+                    [_this] call FUNC(scream);
+                }, _x, random 0.5] call CBA_fnc_waitAndExecute;
             };
             ["clicker", _x] call FUNC(addUnitDamage);
         } else {
