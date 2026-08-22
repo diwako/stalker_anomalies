@@ -108,8 +108,14 @@ if (hasInterface && {((AGLToASL positionCameraToWorld [0,0,0]) distance _pos) < 
     {
         if (_x isEqualTo []) then {
             // ouch
-            ["psydischarge", _units select _forEachIndex] call FUNC(addUnitDamage);
-            if (_psyEffect > 0 && (_player isEqualTo (_units select _forEachIndex))) then {
+            private _unit = _units select _forEachIndex;
+            ["psydischarge", _unit] call FUNC(addUnitDamage);
+            if !(isPlayer _unit) then {
+                [{
+                    [_this] call FUNC(scream);
+                }, _unit, random 0.5] call CBA_fnc_waitAndExecute;
+            };
+            if (_psyEffect > 0 && (_player isEqualTo _unit)) then {
                 private _id = format ["psydischarge#%1", diag_tickTime];
                 [_psyEffect, _id] call FUNC(psyEffect);
                 [{

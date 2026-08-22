@@ -36,10 +36,17 @@ private _sucked = [];
             };
         } else {
             _sucked pushBack _x;
-            [QGVAR(suckToLocation), [_x, getPos _trg, 2], _x] call CBA_fnc_targetEvent;
+            [QGVAR(suckToLocation), [_x, (getPos _trg) vectorAdd [0, 0, 3], 2, 10, !(isPlayer _x)], _x] call CBA_fnc_targetEvent;
+            if !(isPlayer _x) then {
+                for "_i" from 1 to (2 + round random 4) do {
+                    [{
+                        [_this] call FUNC(scream);
+                    }, _x, (_i * 1) + random 1] call CBA_fnc_waitAndExecute;
+                };
+            };
         };
     } else {
-        if !(_x isKindOf "LandVehicle" || _x isKindOf "Air") then {
+        if !(_x isKindOf "LandVehicle" || _x isKindOf "Air" || isObjectHidden _x) then {
             [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
         };
     };
@@ -52,6 +59,9 @@ private _sucked = [];
     {
         if (_x isKindOf "Man") then {
             // ace medical not needed, people trapped in this trap are dead
+            if !(isPlayer _x) then {
+                [_x] call FUNC(scream);
+            };
             _x setDamage [1, true, _x, _x];
             [QGVAR(minceCorpse), [_x]] call CBA_fnc_globalEvent;
         } else {

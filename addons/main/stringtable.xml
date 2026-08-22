@@ -1083,5 +1083,13 @@
             <Original>To figure out if you are safe from the blowout/emission, use the ACE self interaction named "%1"</Original>
             <English>To figure out if you are safe from the blowout/emission, use the ACE self interaction named "%1"</English>
         </Key>
+        <Key ID="Str_diwako_anomalies_main_settings_allowunitscreams">
+            <Original>Allow screams</Original>
+            <English>Allow screams</English>
+        </Key>
+        <Key ID="Str_diwako_anomalies_main_settings_allowunitscreams_desc">
+            <Original>Some anomalies cause units to scream in pain. In case you do not want this, or it conflicts with some mod, you can disable that here</Original>
+            <English>Some anomalies cause units to scream in pain. In case you do not want this, or it conflicts with some mod, you can disable that here</English>
+        </Key>
     </Package>
 </Project>

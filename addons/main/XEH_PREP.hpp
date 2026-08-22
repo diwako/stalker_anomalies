@@ -93,3 +93,6 @@ SUBPREP(eventHandler,blockerHitPart);
 // ZEN context menu
 SUBPREP(contextMenu,setIgnore);
 SUBPREP(contextMenu,showOptionIgnore);
+
+// Unit related
+SUBPREP(unit,scream);

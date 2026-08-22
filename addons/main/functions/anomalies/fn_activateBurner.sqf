@@ -35,6 +35,9 @@ private _men = nearestObjects [getPos _trg,  ["Man","LandVehicle","air"], 5] sel
             if (missionNamespace getVariable ["ace_fire_enabled", false]) then {
                 ["ace_fire_burn", [_x, 4], _x] call CBA_fnc_targetEvent;
             };
+            if !(isPlayer _x) then {
+                [_x] call FUNC(scream);
+            };
             [{
                 ["burner", _this] call FUNC(addUnitDamage);
             }, _x, [0.5, 0] select (isPlayer _x)] call CBA_fnc_waitAndExecute;

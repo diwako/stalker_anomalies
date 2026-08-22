@@ -25,6 +25,11 @@ _trg setVariable [QGVAR(cooldown), true];
     if (_x isKindOf "Man") then {
         ["fruitpunch", _x] call FUNC(addUnitDamage);
         [QGVAR(fruitpunchOnDamage), [_x, _trg]] call CBA_fnc_localEvent;
+        if !(isPlayer _x) then {
+            [{
+                [_this] call FUNC(scream);
+            }, _x, 0.25 + random 0.5] call CBA_fnc_waitAndExecute;
+        };
     } else {
         if !(_x isKindOf "LandVehicle" || _x isKindOf "air") then {
             deleteVehicle _x;
