@@ -186,6 +186,29 @@ if (isNil QGVAR(localCometHolder)) then {
                         _x setVariable [QGVAR(particleSource2), _source2];
                         [_x, QGVAR(soundQuarry)] call _fnc_addIdleSoundsLocal;
                     };
+                    case "trees": {
+                        private _sources = [];
+                        private _positions = +(_x getVariable [QGVAR(particlePos), []]);
+                        private _firstPos = (_positions deleteAt 0);
+                        _source setPosWorld (_firstPos select 0);
+                        [_source, (_firstPos select 1), "dirt"] call FUNC(treesEffect);
+                        private _source2 = "#particlesource" createVehicleLocal [0,0,0];
+                        _x setVariable [QGVAR(particleSource2), _source2];
+                        _source2 setPosWorld (_firstPos select 0);
+                        [_source2, (_firstPos select 1), "dust"] call FUNC(treesEffect);
+                        // we can abuse "soundIdleLocalAll" for auto clean up later!
+                        {
+                            private _source3 = "#particlesource" createVehicleLocal [0,0,0];
+                            _source3 setPosWorld (_x select 0);
+                            [_source3, _x select 1, "dirt"] call FUNC(treesEffect);
+                            _sources pushBack _source3;
+                            private _source4 = "#particlesource" createVehicleLocal [0,0,0];
+                            _source4 setPosWorld (_x select 0);
+                            [_source4, _x select 1, "dust"] call FUNC(treesEffect);
+                            _sources pushBack _source4;
+                        } forEach _positions;
+                        _x setVariable [QGVAR(soundIdleLocalAll), _sources];
+                    };
                     default {
                         _source enableSimulation false;
                     };
@@ -219,12 +242,9 @@ if (isNil QGVAR(localCometHolder)) then {
 
     private _isNotMp = !isMultiplayer;
     {
-        [_x] call FUNC(deleteParticleSource);
         // delete local only idle sound
-        {
-            deleteVehicle _x;
-        } forEach (_x getVariable [QGVAR(soundIdleLocalAll), []]);
-        _x setVariable [QGVAR(soundIdleLocalAll), nil];
+        [QGVAR(deleteParticleSource), [_x]] call CBA_fnc_localEvent;
+
         // if player is not playing in multiplayer disable it here.
         // in mp the server will disable the trigger
         if (_isNotMp) then {

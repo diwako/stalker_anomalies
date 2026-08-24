@@ -37,6 +37,7 @@ SUBPREP(anomalies,createPsyField);
 SUBPREP(anomalies,findAndDeleteAnomalies);
 SUBPREP(anomalies,createQuarry);
 SUBPREP(anomalies,activateQuarry);
+SUBPREP(anomalies,createFloatingTrees);
 
 SUBPREP(anomalies,addUnitDamage);
 
@@ -53,6 +54,7 @@ SUBPREP(effects,blockerEffect);
 SUBPREP(effects,bloodEffect);
 SUBPREP(effects,willowispEffect);
 SUBPREP(effects,quarryEffect);
+SUBPREP(effects,treesEffect);
 
 // detector
 SUBPREP(detector,detector);

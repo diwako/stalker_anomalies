@@ -80,6 +80,7 @@ if (isServer) then {
             case "willowisp":    { _args call FUNC(createWillowisp) };
             case "psy":          { _args call FUNC(createPsyField) };
             case "quarry":       { _args call FUNC(createQuarry) };
+            case "trees":        { _args call FUNC(createFloatingTrees) };
             default {
                 hintC ( format ["Unknown type: %1", _type]);
             };

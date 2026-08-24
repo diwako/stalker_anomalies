@@ -60,11 +60,8 @@ if (_cachedAnomalies isEqualTo []) then {
 
     // step 2: clusters
     private _clusterChance = 0.2 * GVAR(proceduralCountCoef);
-    {
-        private _pos = locationPosition _x;
-        private _size = size _x;
-        _pos = [[_pos, _size select 0, _size select 1, 0, true]] call CBA_fnc_randPosArea;
-        _type = selectRandomWeighted [
+    private _fnc_clusterWeight = {
+        selectRandomWeighted [
             "springboard", 10,
             "burner", 4,
             "electra", 3,
@@ -73,9 +70,21 @@ if (_cachedAnomalies isEqualTo []) then {
             "clicker", 0.5,
             "fog", 1,
             "razor", 2.5,
-            "quarry", 1
+            "quarry", 1,
+            "trees", 0.5
         ];
-        if (_type in ["clicker", "fog"]) then {
+    };
+    {
+        private _pos = locationPosition _x;
+        private _size = size _x;
+        _pos = [[_pos, _size select 0, _size select 1, 0, true]] call CBA_fnc_randPosArea;
+        _type = call _fnc_clusterWeight;
+        if (_type in ["clicker", "fog", "trees"]) then {
+            if (_type isEqualTo "trees" && {_pos getEnvSoundController "trees" < 0.35}) then {
+                while {_type isEqualTo "trees"} do {
+                    _type = call _fnc_clusterWeight;
+                };
+            };
             _cachedAnomalies pushBack [AGLToASL _pos, _type, _size];
         } else {
             private _newArea = [_pos, 15, 15, 0, false];
@@ -116,6 +125,7 @@ private _newStatus = GRID_ACTIVE;
         case "fog": {[_pos, (_size select 0) max (_size select 1) max 25] call FUNC(createFog)};
         case "willowisp": {[_pos, "randomColor", ceil random 15, 35] call FUNC(createWillowisp)};
         case "quarry": {[_pos] call FUNC(createQuarry)};
+        case "trees": {[_pos, (_size select 0) max (_size select 1) max 25] call FUNC(createFloatingTrees)};
         default {objNull};
     };
     _anomalies pushBack _anomaly;

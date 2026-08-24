@@ -572,6 +572,38 @@ class cfgVehicles {
         };
     };
 
+    class GVAR(trees): Module_F {
+        author = "diwako";
+        category = "DIW_ANOMALY";
+        displayName = CSTRING(anomaly_trees);
+        icon = QPATHTOF(data\ui\modules\trees_ca.paa);
+        portrait = QPATHTOF(data\ui\modules\trees_ca.paa);
+        function = QFUNC(createFloatingTrees);
+        functionPriority = 1;
+        canSetArea = 1;
+        canSetAreaHeight = 1;
+        canSetAreaShape = 1;
+        scope = 2;  //show in editor
+        isGlobal = 0; //run on server
+        isTriggerActivated = 1; //Wait for triggers
+        class AttributeValues {
+            size3[] = {10, 10, -1};
+            isRectangle = 0;
+        };
+        class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+        };
+        class ModuleDescription : ModuleDescription{
+            description = CSTRING(anomaly_trees_desc);
+            sync[] = {"LocationArea_F"};
+            class LocationArea_F {
+                description[] = {};
+                optional = 1;
+                synced[] = {"Any"};
+            };
+        };
+    };
+
     class GVAR(moduleBlowout): Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
