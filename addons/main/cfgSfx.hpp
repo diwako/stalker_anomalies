@@ -150,4 +150,41 @@ class CfgSFX {
             QPATHTOF(sounds\anomalies\quarry_0.ogg), 3, 1, 100, 1, 0, 0, 0
         };
     };
+    class GVAR(soundTrees): GVAR(base) {
+        sounds[] = {
+            "trees_0", "trees_10",
+            "trees_1", "trees_11",
+            "trees_2", "trees_12",
+            "trees_3", "trees_13",
+            "trees_4", "trees_14",
+            "trees_5", "trees_15",
+            "trees_6", "trees_16",
+            "trees_7", "trees_17",
+            "trees_8", "trees_18",
+            "trees_9", "trees_19",
+            "trees_20"
+        };
+        // {soundPath, soundVolume, soundPitch, maxDistance, probability, minDelay, midDelay, maxDelay}
+        trees_0[] =  {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Low_01.wss", 2, 1, 50, 0.05, 0, 5, 15};
+        trees_1[] =  {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Low_02.wss", 2, 1, 50, 0.05, 0, 5, 15};
+        trees_2[] =  {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Low_03.wss", 2, 1, 50, 0.05, 0, 5, 15};
+        trees_3[] =  {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Low_04.wss", 2, 1, 50, 0.05, 0, 5, 15};
+        trees_4[] =  {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Low_05.wss", 2, 1, 50, 0.05, 0, 5, 15};
+        trees_5[] =  {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Low_06.wss", 2, 1, 50, 0.05, 0, 5, 15};
+        trees_6[] =  {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Low_07.wss", 2, 1, 50, 0.05, 0, 5, 15};
+        trees_7[] =  {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Light_01",   1, 1, 50, 0.05, 0, 5, 15};
+        trees_8[] =  {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Light_02",   1, 1, 50, 0.05, 0, 5, 15};
+        trees_9[] =  {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Light_03",   1, 1, 50, 0.05, 0, 5, 15};
+        trees_10[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Light_04",   1, 1, 50, 0.05, 0, 5, 15};
+        trees_11[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_01", 1, 1, 50, 0.05, 0, 5, 15};
+        trees_12[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_02", 1, 1, 50, 0.05, 0, 5, 15};
+        trees_13[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_03", 1, 1, 50, 0.05, 0, 5, 15};
+        trees_14[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_04", 1, 1, 50, 0.05, 0, 5, 15};
+        trees_15[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_05", 1, 1, 50, 0.05, 0, 5, 15};
+        trees_16[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_06", 1, 1, 50, 0.05, 0, 5, 15};
+        trees_17[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_07", 1, 1, 50, 0.05, 0, 5, 15};
+        trees_18[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_08", 1, 1, 50, 0.05, 0, 5, 15};
+        trees_19[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_09", 1, 1, 50, 0.05, 0, 5, 15};
+        trees_20[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_10", 1, 1, 50, 0.05, 0, 5, 15};
+    };
 };

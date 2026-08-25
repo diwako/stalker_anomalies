@@ -838,6 +838,9 @@ class cfgVehicles {
     class GVAR(soundQuarry): GVAR(soundComet) {
         sound = QGVAR(soundQuarry);
     };
+    class GVAR(soundTrees): GVAR(soundComet) {
+        sound = QGVAR(soundTrees);
+    };
 
     class ProtectionZone_F;
     class GVAR(blocker): ProtectionZone_F {

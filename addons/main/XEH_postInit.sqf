@@ -197,6 +197,9 @@ if (isNil QGVAR(localCometHolder)) then {
                         _source2 setPosWorld (_firstPos select 0);
                         [_source2, (_firstPos select 1), "dust"] call FUNC(treesEffect);
                         // we can abuse "soundIdleLocalAll" for auto clean up later!
+                        private _sound = createSoundSourceLocal [QGVAR(soundTrees), [0, 0, 0], [], 0];
+                        _sound setPosWorld (_firstPos select 0);
+                        _sources pushBack _sound;
                         {
                             private _source3 = "#particlesource" createVehicleLocal [0,0,0];
                             _source3 setPosWorld (_x select 0);
@@ -206,6 +209,10 @@ if (isNil QGVAR(localCometHolder)) then {
                             _source4 setPosWorld (_x select 0);
                             [_source4, _x select 1, "dust"] call FUNC(treesEffect);
                             _sources pushBack _source4;
+
+                            _sound = createSoundSourceLocal [QGVAR(soundTrees), [0, 0, 0], [], 0];
+                            _sound setPosWorld (_x select 0);
+                            _sources pushBack _sound;
                         } forEach _positions;
                         _x setVariable [QGVAR(soundIdleLocalAll), _sources];
                     };
