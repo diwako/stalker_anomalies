@@ -16,7 +16,8 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                 [localize "STR_anomaly_razor", localize "STR_anomaly_razor_desc", QPATHTOF(data\ui\modules\razor_ca.paa)],
                 [localize "STR_anomaly_willowisp", localize "STR_anomaly_willowisp_desc", QPATHTOF(data\ui\modules\willowisp_ca.paa)],
                 [localize "STR_anomaly_psy", localize "STR_anomaly_psy_desc", QPATHTOF(data\ui\modules\psy_ca.paa)],
-                [LLSTRING(anomaly_quarry), LLSTRING(anomaly_quarry_desc), QPATHTOF(data\ui\modules\quarry_ca.paa)]
+                [LLSTRING(anomaly_quarry), LLSTRING(anomaly_quarry_desc), QPATHTOF(data\ui\modules\quarry_ca.paa)],
+                [LLSTRING(anomaly_trees), LLSTRING(anomaly_trees_desc), QPATHTOF(data\ui\modules\trees_ca.paa)]
             ];
 
             [localize "STR_anomaly_zeus_spawn_anomaly", [
@@ -110,6 +111,18 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                             ] call zen_dialog_fnc_create;
                         };
                         case 12: { [QGVAR(createAnomaly), [[_pos], "quarry"]] call CBA_fnc_serverEvent; };
+                        case 13: {
+                            [LLSTRING(anomaly_trees), [
+                                    ["SLIDER:RADIUS", format ["%1", localize "str_a3_cfgvehicles_sign_radius_f0"], [1, 50, 10, 1, ASLToAGL _pos, [1, 0, 0, 1]]]
+                                ],
+                                {
+                                    params ["_dialog", "_args"];
+                                    _dialog params [ "_radius"];
+                                    _args params ["_pos"];
+                                    [QGVAR(createAnomaly), [[_pos, _radius], "trees"]] call CBA_fnc_serverEvent;
+                                }, {}, [_pos]
+                            ] call zen_dialog_fnc_create;
+                        };
                         default { };
                     };
                 }, {}, [_pos, _anomalies apply {_x select 0}]

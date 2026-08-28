@@ -44,5 +44,9 @@ if !(fileExists _sound) then {
 if (fileExists _sound) then {
     playSound3D [_sound, _unit, false, AGLToASL (_unit modelToWorld (_unit selectionPosition "head")), 3 + random 2, 0.9 + random 0.2, 150];
 } else {
-    systemChat _sound;
+    private _text = format ["Unit scream was not found: ""%1""", _sound];
+    if (GVAR(debug)) then {
+        systemChat _text;
+    };
+    LOG_SYS("WARNING",_text);
 };

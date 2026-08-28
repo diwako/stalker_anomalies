@@ -124,6 +124,34 @@ Returns:
     Anomaly Trigger
 ```
 
+## Floating trees
+
+Considered a harmless anomaly, despite the fact that it can rip fully grown trees from the ground and leave them floating in the air. The trees hover a few meters above the ground as if suspended by some unseen force. Soil that was once anchored around the roots continues to fall slowly from the tree, as though time itself has been significantly slowed down around the anomaly.
+
+### Setup
+
+Place the module in 3DEN. An area indicator will appear around it; adjust the area to your liking.
+
+This anomaly module will only work if the configured area contains trees. If no trees are found within the area, the module will do nothing.
+
+_This anomaly is available in Zeus when the Zeus Enhanced mod is enabled._
+
+### Scripting
+
+Must be executed on the server!
+
+```
+Function: diwako_anomalies_main_fnc_createFloatingTrees
+
+Parameter:
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
+    _range - Radius parameter of area anomaly (default: 10)
+                 or area param [a, b, isRectangle, direction, height]
+
+    Returns:
+        Anomaly Trigger, or objNull when creation failed
+```
+
 ## Fog
 
 A large area filled with dense white fog. It may appear harmless at first, but inhaling it corrodes the lungs. Make sure to wear a gas mask.
