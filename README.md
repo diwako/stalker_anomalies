@@ -19,6 +19,7 @@ Also check out the [BI Forums thread](https://forums.bistudio.com/forums/topic/2
   - Clicker
   - Comet
   - Electra
+  - Floating trees
   - Fog
   - Fruitpunch
   - Meatgrinder

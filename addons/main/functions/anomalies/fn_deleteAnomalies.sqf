@@ -49,6 +49,17 @@ private _type = "";
                     [QGVAR(setPsy), [0, _this]] call CBA_fnc_globalEvent;
                 }, _x getVariable [QGVAR(psyID), ""], 2] call CBA_fnc_waitAndExecute;
             };
+            case "trees": {
+                {
+                    deleteVehicle _x;
+                } forEach (_x getVariable [QGVAR(substitutes), []]);
+
+                {
+                    _x hideObjectGlobal false;
+                    _x enableSimulationGlobal true;
+                    _x allowDamage true;
+                } forEach (_x getVariable [QGVAR(terrainTrees), []]);
+            };
             default {};
         };
 
