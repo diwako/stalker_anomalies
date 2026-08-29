@@ -82,6 +82,18 @@ Triggered whenever an object or unit is damaged or killed by a **Fruit Punch** a
 1. `_obj` - Object that was damaged or killed
 2. `_trg` - Fruit Punch anomaly trigger
 
+### magmaOnDamage
+
+Triggered whenever an object or unit is damaged by a **Magma** anomaly.
+
+- **Locality:** Server only
+- **Event name:** `diwako_anomalies_main_magmaOnDamage`
+
+**Parameters**
+
+1. `_obj` - Object that was damaged or killed
+2. `_trg` - Magma anomaly trigger
+
 ### meatgrinderOnDamage
 
 Triggered whenever an object or unit is ripped apart (or damaged, in the case of vehicles) by a **Meatgrinder** anomaly.

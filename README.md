@@ -22,6 +22,7 @@ Also check out the [BI Forums thread](https://forums.bistudio.com/forums/topic/2
   - Floating trees
   - Fog
   - Fruitpunch
+  - Magma
   - Meatgrinder
   - Psy Discharge
   - Quarry

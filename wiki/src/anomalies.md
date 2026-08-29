@@ -206,6 +206,31 @@ Returns:
     Anomaly Trigger
 ```
 
+## Magma
+
+A highly dangerous anomaly that manifests as an area of intense heat and molten rock. The ground around the anomaly shimmers from the extreme temperatures, while the center has a distinct glow and molten rock continuously bubbles to the surface. Anyone who gets too close is barraged with superheated rocks, which burst open on impact, spilling lava into the surrounding area and burning anything caught nearby. Some daredevils attempt to sprint through them, but not many live to tell the tale.
+
+### Setup
+
+The 3DEN module will spawn a magma anomaly at the placed location.
+
+_This anomaly is available in Zeus when the Zeus Enhanced mod is enabled._
+
+### Scripting
+
+Must be executed on the server!
+
+```
+Function: diwako_anomalies_main_fnc_createMagma
+
+Parameter:
+    _pos - PositionASL where the anomaly should be (default: [0,0,0])
+    _addScorchMark - Boolean, if a scorchmark object should be added to the ground (default: true)
+
+Returns:
+    Anomaly Trigger
+```
+
 ## Meatgrinder
 
 An anomaly that initially appears as swirling leaves, similar to a springboard. Once activated, it pulls everything inward and grinds it into fine dust, or into minced flesh if the victim is a living being.

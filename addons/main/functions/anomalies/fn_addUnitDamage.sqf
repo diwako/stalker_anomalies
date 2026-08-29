@@ -17,6 +17,7 @@
                     - fruitpunch
                     - springboard
                     - psydischarge
+                    - magma
         _unit - unit to damage (default: objNull)
 
     Returns:
@@ -33,6 +34,8 @@ if !(local _unit) exitWith {
     [QGVAR(addUnitDamage), _this, _unit] call CBA_fnc_targetEvent;
     nil
 };
+
+if !(isDamageAllowed _unit) exitWith {nil};
 
 switch (GVAR(medicalSystem)) do {
     case "vanilla": {

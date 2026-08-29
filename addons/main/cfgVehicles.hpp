@@ -572,7 +572,7 @@ class cfgVehicles {
         };
     };
 
-    class GVAR(trees): Module_F {
+    class GVAR(moduleTrees): Module_F {
         author = "diwako";
         category = "DIW_ANOMALY";
         displayName = CSTRING(anomaly_trees);
@@ -601,6 +601,33 @@ class cfgVehicles {
                 optional = 1;
                 synced[] = {"Any"};
             };
+        };
+    };
+
+    class GVAR(moduleMagma): Module_F {
+        author = "diwako";
+        category = "DIW_ANOMALY";
+        displayName = CSTRING(anomaly_magma);
+        icon=QPATHTOF(data\ui\modules\magma_ca.paa);
+        portrait=QPATHTOF(data\ui\modules\magma_ca.paa);
+        function = QFUNC(createMagma);
+        functionPriority = 1;
+        scope = 2;  //show in editor
+        isGlobal = 0; //run on server
+        isTriggerActivated = 1; //Wait for triggers
+        class Attributes: AttributesBase {
+            class scorchMark: Checkbox {
+                displayName = CSTRING(anomaly_magma_addScorchMark);
+                // tooltip = "";
+                defaultValue = "true";
+                typeName = "BOOL";
+                property = QGVAR(scorchMark);
+            };
+            class ModuleDescription: ModuleDescription {};
+        };
+        class ModuleDescription: ModuleDescription {
+            description = CSTRING(anomaly_magma_desc);
+            sync[] = {};
         };
     };
 
@@ -840,6 +867,9 @@ class cfgVehicles {
     };
     class GVAR(soundTrees): GVAR(soundComet) {
         sound = QGVAR(soundTrees);
+    };
+    class GVAR(soundMagma): GVAR(soundComet) {
+        sound = QGVAR(soundMagma);
     };
 
     class ProtectionZone_F;

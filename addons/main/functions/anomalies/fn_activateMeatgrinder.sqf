@@ -72,5 +72,5 @@ private _sucked = [];
     } forEach _sucked;
     [{
         _this setVariable [QGVAR(cooldown), false, true];
-    }, _trg, anomalySettingMeatgrinderCooldownMin - MEATGRINDER_MIN_COOL_DOWN + random anomalySettingMeatgrinderCooldownRand] call CBA_fnc_waitAndExecute;
+    }, _trg, GVAR(anomalySettingMeatgrinderCooldownMin) - MEATGRINDER_MIN_COOL_DOWN + random GVAR(anomalySettingMeatgrinderCooldownRand)] call CBA_fnc_waitAndExecute;
 }, [_trg, _sucked], MEATGRINDER_MIN_COOL_DOWN] call CBA_fnc_waitAndExecute;

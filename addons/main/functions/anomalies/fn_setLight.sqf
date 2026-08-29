@@ -23,7 +23,9 @@
 params["_light",["_brightness",1],["_color",[1,1,1]],["_attenuation",[1,1,1,1,1,1]],["_ambient",[1,1,1]],["_daylight",false],["_flare",false]];
 
 _light setLightBrightness _brightness;
-_light setLightAttenuation _attenuation;
+if (_attenuation isNotEqualTo [1,1,1,1,1,1]) then {
+    _light setLightAttenuation _attenuation;
+};
 _light setLightAmbient _ambient;
 _light setLightColor _color;
 _light setLightDayLight _daylight;

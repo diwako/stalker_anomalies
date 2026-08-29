@@ -17,7 +17,8 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                 [localize "STR_anomaly_willowisp", localize "STR_anomaly_willowisp_desc", QPATHTOF(data\ui\modules\willowisp_ca.paa)],
                 [localize "STR_anomaly_psy", localize "STR_anomaly_psy_desc", QPATHTOF(data\ui\modules\psy_ca.paa)],
                 [LLSTRING(anomaly_quarry), LLSTRING(anomaly_quarry_desc), QPATHTOF(data\ui\modules\quarry_ca.paa)],
-                [LLSTRING(anomaly_trees), LLSTRING(anomaly_trees_desc), QPATHTOF(data\ui\modules\trees_ca.paa)]
+                [LLSTRING(anomaly_trees), LLSTRING(anomaly_trees_desc), QPATHTOF(data\ui\modules\trees_ca.paa)],
+                [LLSTRING(anomaly_magma), LLSTRING(anomaly_magma_desc), QPATHTOF(data\ui\modules\magma_ca.paa)]
             ];
 
             [localize "STR_anomaly_zeus_spawn_anomaly", [
@@ -120,6 +121,18 @@ if !(isNil "zen_custom_modules_fnc_register") then {
                                     _dialog params [ "_radius"];
                                     _args params ["_pos"];
                                     [QGVAR(createAnomaly), [[_pos, _radius], "trees"]] call CBA_fnc_serverEvent;
+                                }, {}, [_pos]
+                            ] call zen_dialog_fnc_create;
+                        };
+                        case 14: {
+                            [LLSTRING(anomaly_magma), [
+                                    ["CHECKBOX", LLSTRING(anomaly_magma_addScorchMark), [true]]
+                                ],
+                                {
+                                    params ["_dialog", "_args"];
+                                    _dialog params ["_scorchMark"];
+                                    _args params ["_pos"];
+                                    [QGVAR(createAnomaly), [[_pos, _scorchMark], "magma"]] call CBA_fnc_serverEvent;
                                 }, {}, [_pos]
                             ] call zen_dialog_fnc_create;
                         };

@@ -187,4 +187,13 @@ class CfgSFX {
         trees_19[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_09", 1, 1, 50, 0.05, 0, 5, 15};
         trees_20[] = {"A3\Sounds_F_Enoch\Assets\Environment\SpotFx\Wind\Wind_Wood_Creak_Whistle_10", 1, 1, 50, 0.05, 0, 5, 15};
     };
+    class GVAR(soundMagma): GVAR(base) {
+        sounds[] = {
+            "magma_0"
+        };
+        // {soundPath, soundVolume, soundPitch, maxDistance, probability, minDelay, midDelay, maxDelay}
+        magma_0[] = {
+            QPATHTOF(sounds\anomalies\magma_idle.ogg), 5, 1, 60, 1, 0, 0, 0
+        };
+    };
 };
