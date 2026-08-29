@@ -9,7 +9,7 @@ if (_unit getVariable [QGVAR(nextScreamAllowed), 0] > time) exitWith {};
 private _voice = toLowerANSI speaker _unit;
 if (_voice in ["ace_novoice", "novoice"]) exitWith {};
 
-_unit setVariable [QGVAR(nextScreamAllowed), time + 0.3];
+_unit setVariable [QGVAR(nextScreamAllowed), time + 0.4 + random 0.2];
 
 // fetching these dynamically is not possible with ace loaded sooooo...
 // we do it hardcoded, results should not vary too much

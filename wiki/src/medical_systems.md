@@ -32,3 +32,4 @@ The `_anomalyType` parameter will have one of the following values:
 - razor
 - springboard
 - psydischarge
+- magma

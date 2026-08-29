@@ -23,7 +23,8 @@ class CfgPatches {
             QGVAR(moduleRazor),
             QGVAR(blocker),
             QGVAR(moduleQuarry),
-            QGVAR(trees)
+            QGVAR(moduleTrees),
+            QGVAR(moduleMagma)
         };
         weapons[] = {
             "AnomalyDetector"

@@ -47,7 +47,8 @@ if (_cachedAnomalies isEqualTo []) then {
                 "meatgrinder", 1,
                 "razor", 2,
                 "willowisp", 0.25,
-                "quarry", 1
+                "quarry", 1,
+                "magma", 1
             ];
             _cachedAnomalies pushBack [AGLToASL _pos, _type];
         } else {
@@ -71,7 +72,8 @@ if (_cachedAnomalies isEqualTo []) then {
             "fog", 1,
             "razor", 2.5,
             "quarry", 1,
-            "trees", 0.5
+            "trees", 0.5,
+            "magma", 0.7
         ];
     };
     {
@@ -126,6 +128,7 @@ private _newStatus = GRID_ACTIVE;
         case "willowisp": {[_pos, "randomColor", ceil random 15, 35] call FUNC(createWillowisp)};
         case "quarry": {[_pos] call FUNC(createQuarry)};
         case "trees": {[_pos, (_size select 0) max (_size select 1) max 25] call FUNC(createFloatingTrees)};
+        case "magma": {[_pos] call FUNC(createMagma)};
         default {objNull};
     };
     _anomalies pushBack _anomaly;

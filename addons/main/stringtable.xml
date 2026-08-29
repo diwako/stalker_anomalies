@@ -417,6 +417,18 @@
             <Original>Harmless anomaly, rips trees out of the ground and makes them suspended in the air. Module needs to be placed near trees to work properly</Original>
             <English>Harmless anomaly, rips trees out of the ground and makes them suspended in the air. Module needs to be placed near trees to work properly</English>
         </Key>
+        <Key ID="STR_diwako_anomalies_main_anomaly_magma">
+            <Original>Magma</Original>
+            <English>Magma</English>
+        </Key>
+        <Key ID="STR_diwako_anomalies_main_anomaly_magma_desc">
+            <Original>Very dangerous anomaly, which flings super heated rocks at its victims which burst open and spew lava in an area.</Original>
+            <English>Very dangerous anomaly, which flings super heated rocks at its victims which burst open and spew lava in an area.</English>
+        </Key>
+        <Key ID="STR_diwako_anomalies_main_anomaly_magma_addscorchmark">
+            <Original>Add scorch mark on ground</Original>
+            <English>Add scorch mark on ground</English>
+        </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
             <English>Blowout</English>

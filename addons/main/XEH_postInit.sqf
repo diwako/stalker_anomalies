@@ -7,6 +7,10 @@ if (
     LOG_SYS("INFO","STALKER Anomaly mod has been disabled via setting.");
 };
 
+#ifdef DISABLE_COMPILE_CACHE
+enableSaving [false, false];
+#endif
+
 missionNamespace setVariable [QGVAR(var_init), true];
 
 if (isServer && {isMultiplayer}) then {
@@ -215,6 +219,14 @@ if (isNil QGVAR(localCometHolder)) then {
                             _sources pushBack _sound;
                         } forEach _positions;
                         _x setVariable [QGVAR(soundIdleLocalAll), _sources];
+                    };
+                    case "magma": {
+                        [_source, "splash"] call FUNC(magmaEffect);
+                        private _source2 = "#particlesource" createVehicleLocal [0,0,0];
+                        _source2 setPosASL (getPosASL _x);
+                        [_source2, "idle"] call FUNC(burnerEffect);
+                        _x setVariable [QGVAR(particleSource2), _source2];
+                        [_x, QGVAR(soundMagma)] call _fnc_addIdleSoundsLocal;
                     };
                     default {
                         _source enableSimulation false;

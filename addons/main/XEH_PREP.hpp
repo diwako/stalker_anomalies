@@ -38,8 +38,11 @@ SUBPREP(anomalies,findAndDeleteAnomalies);
 SUBPREP(anomalies,createQuarry);
 SUBPREP(anomalies,activateQuarry);
 SUBPREP(anomalies,createFloatingTrees);
+SUBPREP(anomalies,createMagma);
+SUBPREP(anomalies,activateMagma);
 
 SUBPREP(anomalies,addUnitDamage);
+SUBPREP(anomalies,damageMagma);
 
 // effects
 SUBPREP(effects,springboardEffect);
@@ -55,6 +58,8 @@ SUBPREP(effects,bloodEffect);
 SUBPREP(effects,willowispEffect);
 SUBPREP(effects,quarryEffect);
 SUBPREP(effects,treesEffect);
+SUBPREP(effects,magmaEffect);
+SUBPREP(effects,magmaArcEffect);
 
 // detector
 SUBPREP(detector,detector);
