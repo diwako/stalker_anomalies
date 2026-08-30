@@ -1,10 +1,15 @@
 #include "\z\diwako_anomalies\addons\main\script_component.hpp"
 params ["_startPosWorld", "_endPosWorld", ["_duration", 0.75]];
-private _magma = createSimpleObject [selectRandom ["Land_Lavaboulder_04_F","Land_Lavaboulder_03_F","Land_Lavaboulder_02_F"],_startPosWorld, true];
+private _model = selectRandomWeighted [QPATHTOF(data\models\magmarock.p3d), 1, "Land_Lavaboulder_04_F", 0.2, "Land_Lavaboulder_03_F", 0.2, "Land_Lavaboulder_02_F", 0.2];
+private _magma = createSimpleObject [_model, _startPosWorld, true];
 _magma setPosWorld _startPosWorld;
 _magma setDir random 360;
 _magma setVectorUp [-1 + random 2, -1 + random 2, -1 + random 2];
-_magma setObjectScale (0.02 + random 0.05);
+if (_model isNotEqualTo QPATHTOF(data\models\magmarock.p3d)) then {
+    _magma setObjectScale (0.02 + random 0.05);
+} else {
+    _magma setObjectScale (0.35 + random 0.25);
+};
 _magma setPhysicsCollisionFlag false;
 
 private _distance = (_startPosWorld distance _endPosWorld) max 5;
