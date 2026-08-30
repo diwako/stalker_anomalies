@@ -1,6 +1,6 @@
 #include "\z\diwako_anomalies\addons\main\script_component.hpp"
 params ["_startPosWorld", "_endPosWorld", ["_duration", 0.75]];
-private _magma = createSimpleObject [selectRandom ["Land_Lavaboulder_04_F","Land_Lavaboulder_03_F","Land_Lavaboulder_02_F"],_startPosWorld, true];
+private _magma = createSimpleObject [selectRandom [QPATHTOF(data\models\magmarock.p3d), "Land_Lavaboulder_04_F", "Land_Lavaboulder_03_F", "Land_Lavaboulder_02_F"],_startPosWorld, true];
 _magma setPosWorld _startPosWorld;
 _magma setDir random 360;
 _magma setVectorUp [-1 + random 2, -1 + random 2, -1 + random 2];
