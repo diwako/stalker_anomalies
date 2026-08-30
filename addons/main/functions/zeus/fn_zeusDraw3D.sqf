@@ -23,6 +23,7 @@ private _range = GVAR(idleDistance) + 150;
         case "psy": { QPATHTOF(data\ui\modules\psy_ca.paa) };
         case "quarry": { QPATHTOF(data\ui\modules\quarry_ca.paa) };
         case "trees": { QPATHTOF(data\ui\modules\trees_ca.paa) };
+        case "magma": { QPATHTOF(data\ui\modules\magma_ca.paa) };
         default { "\A3\modules_f\data\portraitModule_ca.paa" };
     };
     drawIcon3D [_icon, [1, 1, 1, 1], ASLToAGL _pos, _size, _size, 0, "", true];

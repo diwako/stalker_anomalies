@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=115;
+		nextID=126;
 	};
 	class MarkerIDProvider
 	{
@@ -126,7 +126,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=63;
+		items=65;
 		class Item0
 		{
 			dataType="Logic";
@@ -361,6 +361,7 @@ class Mission
 					class Attributes
 					{
 						init="this setVariable [""anomaly_ignore"", true]";
+						name="dev";
 						isPlayer=1;
 						class Inventory
 						{
@@ -847,7 +848,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7899.5098,5,2962.2532};
+				position[]={7899.5098,5,2962.2529};
 			};
 			id=35;
 			type="ModuleCurator_F";
@@ -862,7 +863,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="";
+							value="dev";
 						};
 					};
 				};
@@ -1739,6 +1740,99 @@ class Mission
 			{
 			};
 			id=112;
+		};
+		class Item63
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7888.1909,5.0014391,2967.5217};
+						angles[]={0,6.2824154,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=116;
+					type="B_Soldier_F";
+				};
+				class Item1
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={7888.0635,5,3006.2998};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=117;
+					type="Move";
+				};
+				class Item2
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={7888.1099,5,2975.0251};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=121;
+					type="Move";
+				};
+				class Item3
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={7887.7251,5,3005.759};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=122;
+					type="Cycle";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=115;
+		};
+		class Item64
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7888.002,5,2987.9929};
+			};
+			name="magma";
+			id=118;
+			type="diwako_anomalies_main_moduleMagma";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="diwako_anomalies_main_scorchMark";
+					expression="_this setVariable ['scorchMark',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

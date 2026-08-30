@@ -60,6 +60,11 @@ private _type = "";
                     _x allowDamage true;
                 } forEach (_x getVariable [QGVAR(terrainTrees), []]);
             };
+            case "magma": {
+                deleteVehicle (_x getVariable [QGVAR(light), objNull]);
+                deleteVehicle (_x getVariable [QGVAR(scorchMark), objNull]);
+                deleteVehicle (_x getVariable [QGVAR(grassCutter), objNull]);
+            };
             default {};
         };
 

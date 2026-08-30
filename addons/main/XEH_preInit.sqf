@@ -33,7 +33,8 @@ GVAR(medicalSystemMap) set ["vanilla", createHashMapFromArray [
     ["springboard", [0.5, 1]],
     ["psydischarge", [{0.35 + random 0.75}, {0.5 + random 0.75}]],
     ["clicker", [{0.1 + random 0.5}, {0.5 + random 0.5}]],
-    ["razor", [{random 0.2}, {0.2 + random 0.2}]]
+    ["razor", [{random 0.2}, {0.2 + random 0.2}]],
+    ["magma", [{random 0.2}, {0.2 + random 0.2}]]
 ]];
 GVAR(medicalSystemMap) set ["ace_medical", createHashMapFromArray [
     // [anomaly_type, [[multiplier_player, ai], body_part_array, damage_type]]
@@ -45,7 +46,8 @@ GVAR(medicalSystemMap) set ["ace_medical", createHashMapFromArray [
     ["springboard", [[1.5, 10], ["leg_l", "leg_r"], "stab"]],
     ["psydischarge", [[0.9, 0.9], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]],
     ["clicker", [[1.5, 3], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "backblast"]],
-    ["razor", [[1.5, 3], ["body", "hand_l", "hand_r", "leg_l", "leg_r"], "stab"]]
+    ["razor", [[1.5, 3], ["body", "hand_l", "hand_r", "leg_l", "leg_r"], "stab"]],
+    ["magma", [[0.5, 3], ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"], "burn"]]
 ]];
 GVAR(medicalSystemMap) set ["aps", createHashMapFromArray [
     // [anomaly_type, [[multiplier_player, ai], body_part_array, bullet_type]]
@@ -57,7 +59,8 @@ GVAR(medicalSystemMap) set ["aps", createHashMapFromArray [
     ["springboard", [[1.5, 2], ["legs"], "B_45ACP_Ball"]],
     ["psydischarge", [[0.9, 0.9], ["head", "pelvis", "hands", "legs"], "B_9x21_Ball"]],
     ["clicker", [[1.5, 2], ["head", "pelvis", "hands", "legs"], "B_45ACP_Ball"]],
-    ["razor", [[0.2, 0.4], ["head", "pelvis", "hands", "legs"], "B_9x21_Ball"]]
+    ["razor", [[0.2, 0.4], ["head", "pelvis", "hands", "legs"], "B_9x21_Ball"]],
+    ["magma", [[0.2, 0.4], ["head", "pelvis", "hands", "legs"], "B_65x39_Caseless"]]
 ]];
 
 if (isServer) then {
@@ -81,6 +84,7 @@ if (isServer) then {
             case "psy":          { _args call FUNC(createPsyField) };
             case "quarry":       { _args call FUNC(createQuarry) };
             case "trees":        { _args call FUNC(createFloatingTrees) };
+            case "magma":        { _args call FUNC(createMagma) };
             default {
                 hintC ( format ["Unknown type: %1", _type]);
             };
@@ -136,6 +140,28 @@ if (hasInterface) then {
 
     #include "anomalyFXEvents.inc.sqf"
 };
+[QGVAR(magmaActivation), {
+    if !(isServer || hasInterface) exitWith {};
+    _this spawn {
+        params ["_trg", "_target"];
+        private _posStart = getPosASL _trg;
+        while {_trg getVariable [QGVAR(active), false]} do {
+            private _posEnd = getPosASL _target;
+            if (hasInterface) then {
+                [_posStart, _posEnd, 0.5] call FUNC(magmaArcEffect);
+            };
+            if (isServer) then {
+                [{
+                    params ["_pos", "_trg"];
+                    {
+                        [_x, _trg] call FUNC(damageMagma);
+                    } forEach ((nearestObjects [_pos, ["All"], 10]) select {_x distanceSqr _pos < ([8, 5] select (_x isKindOf "Man"))});
+                }, [ASLToAGL _posEnd, _trg], 0.5] call CBA_fnc_waitAndExecute;
+            };
+            sleep 0.1;
+        };
+    };
+}] call CBA_fnc_addEventHandler;
 
 [QGVAR(createAnomaly), {
     params ["_args", "_type"];

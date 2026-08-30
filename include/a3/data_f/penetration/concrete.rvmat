@@ -1,0 +1,18 @@
+////////////////////////////////////////////////////////////////////
+//DeRap: Penetration\concrete.rvmat
+//Produced from mikero's Dos Tools Dll version 10.22
+//https://mikero.bytex.digital/Downloads
+//'now' is Mon Jun 22 12:11:48 2026 : 'file' last modified on Tue Jul 02 10:59:59 2019
+////////////////////////////////////////////////////////////////////
+
+#define _ARMA_
+
+surfaceInfo = "A3\data_f\Penetration\concrete.bisurf";
+ambient[] = {0.5,0.5,0.5,1};
+diffuse[] = {0.5,0.5,0.5,1};
+forcedDiffuse[] = {0,0,0,0};
+emmisive[] = {0,0,0,1};
+specular[] = {0,0,0,1};
+specularPower = 1;
+PixelShaderID = "Normal";
+VertexShaderID = "Basic";
