@@ -9,9 +9,12 @@ class cfgAmmo {
         explosionEffectsRadius = 0;
         explosionSoundEffect = "";
         CraterWaterEffects = "";
+		typicalspeed = 15;
         explosionType = "";
-        timeToLive = 20;
-        explosionTime = 25;
+		deflecting = 1;
+        deflectionSlowDown=0.05;
+        timeToLive = 30;
+        explosionTime = 35;
     };
 
     class B_50BW_Ball_F;
