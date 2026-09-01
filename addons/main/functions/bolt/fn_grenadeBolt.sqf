@@ -10,11 +10,16 @@ private _obj = createVehicle [QGVAR(boltThrowDummy), getPos _projectile, [], 0, 
 // private _obj = QGVAR(boltThrowDummy) createVehicleLocal getPos _projectile;
 // private _obj = createVehicle ["Land_Balloon_01_air_F", getPos _projectile, [], 0, "CAN_COLLIDE"];
 _obj attachTo [_projectile];
+_obj setVariable [QGVAR(projectile), _projectile];
+_obj addEventHandler ["Deleted", {
+    params ["_obj"];
+    deleteVehicle (_obj getVariable [QGVAR(projectile), objNull]);
+}];
 
 [{
     if (isNull _this) exitWith {};
     detach _this;
     deleteVehicle _this;
-}, _obj, 10] call CBA_fnc_waitAndExecute;
+}, _obj, 30] call CBA_fnc_waitAndExecute;
 
 nil
