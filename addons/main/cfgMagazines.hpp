@@ -6,6 +6,7 @@ class cfgMagazines {
         scope = 2;
         count = 9999;
         mass = 20;
+		initSpeed = 15;
         descriptionShort = "$STR_anomaly_bolt_bag_desc";
         displayName = "$STR_anomaly_bolt_bag";
         displayNameShort = "$STR_anomaly_bolt_bag";
