@@ -412,22 +412,27 @@
         <Key ID="STR_diwako_anomalies_main_anomaly_trees">
             <Original>Floating trees</Original>
             <English>Floating trees</English>
+			<Polish>Lewitujące drzewa</Polish>
         </Key>
         <Key ID="STR_diwako_anomalies_main_anomaly_trees_desc">
             <Original>Harmless anomaly, rips trees out of the ground and makes them suspended in the air. Module needs to be placed near trees to work properly</Original>
             <English>Harmless anomaly, rips trees out of the ground and makes them suspended in the air. Module needs to be placed near trees to work properly</English>
+			<Polish>Nieszkodliwa anomalia, wyrywa drzewa z ziemi i zawiesza je w powietrzu. Moduł musi zostać umieszczony w pobliżu drzew, by działać poprawnie.</Polish>
         </Key>
         <Key ID="STR_diwako_anomalies_main_anomaly_magma">
             <Original>Magma</Original>
             <English>Magma</English>
+			<Polish>Magma</Polish>
         </Key>
         <Key ID="STR_diwako_anomalies_main_anomaly_magma_desc">
             <Original>Very dangerous anomaly, which flings super heated rocks at its victims which burst open and spew lava in an area.</Original>
             <English>Very dangerous anomaly, which flings super heated rocks at its victims which burst open and spew lava in an area.</English>
+			<Polish>Bardzo niebezpieczna anomalia, która miota w ofiary rozgrzane skały, a te wybuchają, zalewając okolicę lawą.</Polish>
         </Key>
         <Key ID="STR_diwako_anomalies_main_anomaly_magma_addscorchmark">
             <Original>Add scorch mark on ground</Original>
             <English>Add scorch mark on ground</English>
+			<Polish>Efekt spalonej ziemi</Polish>
         </Key>
         <Key ID="STR_anomaly_blowout">
             <Original>Blowout</Original>
@@ -1106,26 +1111,32 @@
         <Key ID="STR_diwako_anomalies_main_settings_blowout_blowoutClientHint">
             <Original>"Am I safe" action reminder hint</Original>
             <English>"Am I safe" action reminder hint</English>
+			<Polish>Podpowiedź "Czy jestem bezpieczny"</Polish>
         </Key>
         <Key ID="Str_diwako_anomalies_main_settings_blowout_blowoutClientHint_desc">
             <Original>Shows a reminder hint about the "Am I safe" action when a blowout starts.</Original>
             <English>Shows a reminder hint about the "Am I safe" action when a blowout starts.</English>
+			<Polish>Wyświetla podpowiedź o akcji "Czy jestem bezpieczny" podczas rozpoczęcia emisji.</Polish>
         </Key>
         <Key ID="Str_diwako_anomalies_main_blowoutSafeHint">
             <Original>To figure out if you are safe from the blowout/emission, use the scroll wheel action named "%1"</Original>
             <English>To figure out if you are safe from the blowout/emission, use the scroll wheel action named "%1"</English>
+			<Polish>By sprawdzić, czy jesteś zabezpieczony przed emisją, użyj akcji kółka myszy "%1".</Polish>
         </Key>
         <Key ID="Str_diwako_anomalies_main_blowoutSafeHintAce">
             <Original>To figure out if you are safe from the blowout/emission, use the ACE self interaction named "%1"</Original>
             <English>To figure out if you are safe from the blowout/emission, use the ACE self interaction named "%1"</English>
+			<Polish>By sprawdzić, czy jesteś zabezpieczony przed emisją, użyj interakcji ACE na sobie "%1".</Polish>
         </Key>
         <Key ID="Str_diwako_anomalies_main_settings_allowunitscreams">
             <Original>Allow screams</Original>
             <English>Allow screams</English>
+			<Polish>Włącz krzyki</Polish>
         </Key>
         <Key ID="Str_diwako_anomalies_main_settings_allowunitscreams_desc">
             <Original>Some anomalies cause units to scream in pain. In case you do not want this, or it conflicts with some mod, you can disable that here</Original>
             <English>Some anomalies cause units to scream in pain. In case you do not want this, or it conflicts with some mod, you can disable that here</English>
+			<Polish>Niektóre anomalie powodują, że jednostki krzyczą z bólu. Jeśli nie chcesz tej opcji, albo koliduje ona z innym modem, możeszą ją tutaj wyłączyć.</Polish>
         </Key>
     </Package>
 </Project>
