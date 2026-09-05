@@ -357,6 +357,162 @@ if (isClass(configFile >> "CfgPatches" >> "zen_common")) then {
     ,true
 ] call CBA_fnc_addSetting;
 
+/* Procedural Weights */
+#define PROCEDUAL_WEIGHT_MAX 10
+[
+    QGVAR(proceduralWeightSpringboard)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weight), localize "STR_anomaly_springboard"], LLSTRING(settings_procedural_weight_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 10, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightBurner)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weight), localize "STR_anomaly_burner"], LLSTRING(settings_procedural_weight_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 4, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightElectra)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weight), localize "STR_anomaly_electra"], LLSTRING(settings_procedural_weight_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 3, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightMeatgrinder)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weight), localize "STR_anomaly_meatgrinder"], LLSTRING(settings_procedural_weight_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 1, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightRazor)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weight), localize "STR_anomaly_razor"], LLSTRING(settings_procedural_weight_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 2, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightWillowisp)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weight), localize "STR_anomaly_willowisp"], LLSTRING(settings_procedural_weight_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 0.25, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightQuarry)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weight), LLSTRING(anomaly_quarry)], LLSTRING(settings_procedural_weight_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 1, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightMagma)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weight), LLSTRING(anomaly_magma)], LLSTRING(settings_procedural_weight_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 1, 2]
+    ,true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(proceduralWeightClusterSpringboard)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), localize "STR_anomaly_springboard"], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 10, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightClusterBurner)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), localize "STR_anomaly_burner"], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 4, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightClusterElectra)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), localize "STR_anomaly_electra"], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 3, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightClusterMeatgrinder)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), localize "STR_anomaly_meatgrinder"], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 1, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightClusterFruitpunch)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), localize "STR_anomaly_fruitpunch"], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 2, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightClusterClicker)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), localize "STR_anomaly_clicker"], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 0.5, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightClusterFog)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), localize "STR_anomaly_fog"], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 1, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightClusterRazor)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), localize "STR_anomaly_razor"], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 2.5, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightClusterQuarry)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), LLSTRING(anomaly_quarry)], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 1, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightClusterTrees)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), LLSTRING(anomaly_trees)], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 0.5, 2]
+    ,true
+] call CBA_fnc_addSetting;
+[
+    QGVAR(proceduralWeightClusterMagma)
+    ,"SLIDER"
+    ,[format ["%1 %2", LLSTRING(settings_procedural_weightCluster), LLSTRING(anomaly_magma)], LLSTRING(settings_procedural_weightCluster_desc)]
+    ,[CBA_SETTINGS_CAT, SUB_CAT_PROCEDURAL]
+    ,[0, PROCEDUAL_WEIGHT_MAX, 0.7, 2]
+    ,true
+] call CBA_fnc_addSetting;
+
 /* Blowout related settings */
 
 [
