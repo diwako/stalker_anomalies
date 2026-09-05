@@ -26,9 +26,13 @@ The same applies to grid size and activation range. Increasing these values caus
 
 ## Mission Makers
 
+### Zeus units or units not in play
+
 This system ignores any player who has the [`anomaly_ignore`](functions_variables.md#anomaly_ignore) variable set. It is recommended to apply this variable to Zeus players or any players intended to remain outside the playable area.
 
-Additionally, a new 3DEN module is available to define exclusion zones. Within these zones, the system will not spawn anomalies. This is useful for safe areas such as hubs, bases, or hideouts.
+### Exclusion zones
+
+An 3DEN module is available to define exclusion zones. Within these zones, the system will not spawn anomalies. This is useful for safe areas such as hubs, bases, or hideouts.
 
 Exclusion zones can also be defined via scripting. To do so, append an area definition or trigger object to the variable `diwako_anomalies_main_proceduralExclusionZones` at any point before postInit.
 
@@ -41,3 +45,7 @@ Example:
 private _area = [[_xPos, _yPos], _a, _b, _angle, _isRectangle, -1];
 diwako_anomalies_main_proceduralExclusionZones pushBack _area;
 ```
+
+### CBA Setting / Addon Options
+
+Mission makers or server owners can set the random weights for the procedural system via CBA's Addon Options. This allows to disable anomalies, make them less or more frequent to appear.
