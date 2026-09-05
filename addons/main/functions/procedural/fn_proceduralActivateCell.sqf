@@ -41,19 +41,19 @@ if (_cachedAnomalies isEqualTo []) then {
         _pos = [_area] call CBA_fnc_randPosArea;
         if ([_pos] call _fnc_cond) then {
             _type = selectRandomWeighted [
-                "springboard", 10,
-                "burner", 4,
-                "electra", 3,
-                "meatgrinder", 1,
-                "razor", 2,
-                "willowisp", 0.25,
-                "quarry", 1,
-                "magma", 1
+                "springboard", GVAR(proceduralWeightSpringboard),
+                "burner", GVAR(proceduralWeightBurner),
+                "electra", GVAR(proceduralWeightElectra),
+                "meatgrinder", GVAR(proceduralWeightMeatgrinder),
+                "razor", GVAR(proceduralWeightRazor),
+                "willowisp", GVAR(proceduralWeightWillowisp),
+                "quarry", GVAR(proceduralWeightQuarry),
+                "magma", GVAR(proceduralWeightMagma)
             ];
             _cachedAnomalies pushBack [AGLToASL _pos, _type];
         } else {
             if (random 1 < 0.1 && {surfaceIsWater _pos}) then {
-                _type = selectRandomWeighted ["willowisp", 0.25];
+                _type = selectRandomWeighted ["willowisp", GVAR(proceduralWeightWillowisp)];
                 _cachedAnomalies pushBack [AGLToASL _pos, _type];
             };
         };
@@ -63,17 +63,17 @@ if (_cachedAnomalies isEqualTo []) then {
     private _clusterChance = 0.2 * GVAR(proceduralCountCoef);
     private _fnc_clusterWeight = {
         selectRandomWeighted [
-            "springboard", 10,
-            "burner", 4,
-            "electra", 3,
-            "meatgrinder", 1,
-            "fruitpunch", 2,
-            "clicker", 0.5,
-            "fog", 1,
-            "razor", 2.5,
-            "quarry", 1,
-            "trees", 0.5,
-            "magma", 0.7
+            "springboard", GVAR(proceduralWeightClusterSpringboard),
+            "burner", GVAR(proceduralWeightClusterBurner),
+            "electra", GVAR(proceduralWeightClusterElectra),
+            "meatgrinder", GVAR(proceduralWeightClusterMeatgrinder),
+            "fruitpunch", GVAR(proceduralWeightClusterFruitpunch),
+            "clicker", GVAR(proceduralWeightClusterClicker),
+            "fog", GVAR(proceduralWeightClusterFog),
+            "razor", GVAR(proceduralWeightClusterRazor),
+            "quarry", GVAR(proceduralWeightClusterQuarry),
+            "trees", GVAR(proceduralWeightClusterTrees),
+            "magma", GVAR(proceduralWeightClusterMagma)
         ];
     };
     {
